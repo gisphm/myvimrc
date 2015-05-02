@@ -150,8 +150,8 @@ let g:vim_json_syntax_conceal = 0
 
 " Unite.vim {{{
 
-"call unite#custom#source('file,file/new,buffer,file_rec', 'matchers', 'matcher_fuzzy')
-"call unite#custom#profile('files', 'filters', 'sorter_rank')
+call unite#custom#source('file,file/new,buffer,file_rec', 'matchers', 'matcher_fuzzy')
+call unite#custom#profile('files', 'filters', 'sorter_rank')
 let g:unite_prompt = '» '
 let g:unite_split_rule = 'botright'
 if executable('ag')
