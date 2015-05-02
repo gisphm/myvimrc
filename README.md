@@ -6,19 +6,20 @@
 ## 配置文件列表
 参照我的[neovim][2]的配置思路，分为以下文件：
 
-+ __vimrc__ 主配置文件，包含[vundle][3]的初始化和vim插件的初次安装
++ __vimrc__ 主配置文件，包含[neobundle][4]的初始化和vim插件的初次安装
 + __plugins.vim__ 插件列表文件，包含所有安装的插件，按照[spf13-vim][1]进行分组
 + __plugins.rc.vim__ 插件的配置，尽可能地不包含vim的基本配置
 + __local.vim__ vim的基本配置，离开了插件也能运行
 
-考虑再三，还是用[vundle][3]。
-原因主要是两个，比较熟悉vundle，及[neobundle][4]相对会难操作一点。
-但不排除以后改用[neobundle][4]。
+再三尝试，貌似使用[vundle][3]出了点问题，我无法解决。
+于是转试[neobundle][4]，希望能成功。
 
 ## 几点事项
 1. 这个配置只打算在linux上（目前是在archlinux）进行使用。
 2. 这个配置并不完善，许多地方会有问题。
 3. 感谢__Steve Francia__在github上分享了这么有用的配置。
+4. 感谢__Shougo__在github上为vim创造了这么多有用的vim插件。
+5. 感谢所有插件的作者与维护者们，你们共同创造了vim社区的现在。
 
 [1]: https://github.com/spf13/spf13-vim.git
 [2]: https://github.com/gisphm/myneovimrc.git
