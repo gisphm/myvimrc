@@ -8,6 +8,7 @@ Session.vim
 .netrwhist
 *~
 plugin/
+bundle/
 view/
 backup/
 undo/
