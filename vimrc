@@ -12,8 +12,8 @@ set background=dark
 
 " NeoBundle {{{
 
-set rtp+=~/.vim/plugin/neobundle.vim
-call neobundle#begin(expand('~/.vim/plugin/'))
+set rtp+=~/.vim/bundle/neobundle.vim
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
