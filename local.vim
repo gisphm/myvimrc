@@ -61,7 +61,9 @@ set viewdir=~/.vim/tmp/view/
 set tabpagemax=15               " Only show 15 tabs
 set showmode                    " Display the current mode
 
-set cursorline                  " Highlight current line
+au WinLeave * set nocursorline nocursorcolumn
+au WinEnter * set cursorline cursorcolumn
+set cursorline cursorcolumn
 
 highlight clear SignColumn      " SignColumn should match background
 highlight clear LineNr          " Current line number row will have same background color in relative mode
