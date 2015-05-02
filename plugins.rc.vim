@@ -2,6 +2,14 @@
 " vim: set ft=vim sw=4 ts=4 sts=4 et tw=78 foldlevel=0 foldmethod=marker:
 " }}}
 
+" ColorTheme {{{
+
+colorscheme molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
+
+" }}}
+
 " TextObj Sentence {{{
 
 augroup textobj_sentence
@@ -54,7 +62,7 @@ set completeopt=menu,preview,longest
 " }}}
 
 " Ctags {{{
-set tags=./tags;/,~/.vimtags
+set tags=./tags;/,~/.vimtags,gems.tags
 
 " Make tags placed in .git/tags file available in all levels of a repository
 let gitroot = substitute(system('git rev-parse --show-toplevel'), '[\n\r]', '', 'g')
@@ -160,8 +168,8 @@ if isdirectory(expand("~/.vim/plugin/tagbar/"))
     nnoremap <silent> <leader>tt :TagbarToggle<CR>
 endif
 let g:tagbar_type_css = {
-             \ 'ctagstype' : 'Css',
-             \ 'kinds'     : [
+            \ 'ctagstype' : 'Css',
+            \ 'kinds'     : [
             \ 'c:classes',
             \ 's:selectors',
             \ 'i:identities'
