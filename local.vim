@@ -49,10 +49,10 @@ let g:skipview_files = [
             \ '\[example pattern\]'
             \ ]
 
-set dir=~/.vim/swap/
-set backupdir=~/.vim/backup/
-set undodir=~/.vim/undo/
-set viewdir=~/.vim/view/
+set dir=~/.vim/tmp/swap/
+set backupdir=~/.vim/tmp/backup/
+set undodir=~/.vim/tmp/undo/
+set viewdir=~/.vim/tmp/view/
 
 " }}}
 
