@@ -34,13 +34,6 @@ set iskeyword-=-                    " '-' is an end of word designator
 
 au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 
-function! ResCur()
-    if line("'\"") <= line("$")
-        normal! g`"
-        return 1
-    endif
-endfunction
-
 augroup resCur
     autocmd!
     autocmd BufWinEnter * call ResCur()
@@ -272,6 +265,13 @@ function! WrapRelativeMotion(key, ...)
         execute "normal!" vis_sel . "g" . a:key
     else
         execute "normal!" vis_sel . a:key
+    endif
+endfunction
+
+function! ResCur()
+    if line("'\"") <= line("$")
+        normal! g`"
+        return 1
     endif
 endfunction
 
