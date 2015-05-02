@@ -49,10 +49,10 @@ let g:skipview_files = [
             \ '\[example pattern\]'
             \ ]
 
-set dir=~/.vim/swap/
-set backupdir=~/.vim/backup/
-set undodir=~/.vim/undo/
-set viewdir=~/.vim/view/
+set dir=~/.vim/tmp/swap/
+set backupdir=~/.vim/tmp/backup/
+set undodir=~/.vim/tmp/undo/
+set viewdir=~/.vim/tmp/view/
 
 " }}}
 
@@ -61,7 +61,9 @@ set viewdir=~/.vim/view/
 set tabpagemax=15               " Only show 15 tabs
 set showmode                    " Display the current mode
 
-set cursorline                  " Highlight current line
+au WinLeave * set nocursorline nocursorcolumn
+au WinEnter * set cursorline cursorcolumn
+set cursorline cursorcolumn
 
 highlight clear SignColumn      " SignColumn should match background
 highlight clear LineNr          " Current line number row will have same background color in relative mode
@@ -121,7 +123,7 @@ set pastetoggle=<F12>
 autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
 autocmd FileType puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
 autocmd BufNewFile,BufRead *.coffee set filetype=coffee
-autocmd FileType c,cpp,javascript,puppet,xml,yml,ruby,html,eruby,sql autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+autocmd FileType c,cpp,javascript,puppet,xml,yml,ruby,html,eruby,sql autocmd BufWritePre <buffer> call Preserve("%s/\\s\\+$//e")
 
 " }}}
 
@@ -243,6 +245,8 @@ nnoremap <silent> <leader>q gwip
 " fullscreen mode for GVIM and Terminal, need 'wmctrl' in you PATH
 map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
 
+nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
+
 " }}}
 
 " Functions {{{
@@ -254,10 +258,6 @@ function! Preserve(command)
     execute a:command
     let @/=_s
     call cursor(l,c)
-endfunction
-
-function! StripTrailingWhitespace()
-    call Preserve("%s\\s\\+$//e")
 endfunction
 
 function! WrapRelativeMotion(key, ...)

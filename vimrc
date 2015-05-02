@@ -10,48 +10,33 @@ set background=dark
 
 " }}}
 
-" Vundle Pre {{{
+" NeoBundle {{{
 
-let vundleInitial=1
-let vundleReadme=expand('~/.vim/plugin/Vundle.vim/README.md')
-if !filereadable(vundleReadme)
-    echo "Installing Vundle ..."
-    echo ""
-    silent !mkdir -p ~/.vim/plugin
-    silent !mkdir -p ~/.vim/backup
-    silent !mkdir -p ~/.vim/swap
-    silent !mkdir -p ~/.vim/undo
-    silent !mkdir -p ~/.vim/view
-    silent !git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/plugin/Vundle.vim/
-    let vundleInitial=0
+set rtp+=~/.vim/bundle/neobundle.vim
+call neobundle#begin(expand("~/.vim/bundle/"))
+
+NeoBundleFetch "Shougo/neobundle.vim"
+
+if filereadable(expand("~/.vim/plugins.vim"))
+    source ~/.vim/plugins.vim
 endif
 
-" }}}
-
-" Vundle {{{
-
-filetype off
-set rtp+=~/.vim/plugin/Vundle.vim
-call vundle#begin('~/.vim/plugin/')
-
-source ~/.vim/plugins.vim
-
-if vundleInitial == 0
-    echo "Installing Plugins, please waiting..."
-    echo ""
-    :PluginInstall
-    :qa
-endif
-
-call vundle#end()
+call neobundle#end()
 
 filetype plugin indent on
+
+NeoBundleCheck
 
 " }}}
 
 " Sourcing Configurations {{{
 
-source ~/.vim/local.vim
-source ~/.vim/plugins.rc.vim
+if filereadable(expand("~/.vim/local.vim"))
+    source ~/.vim/local.vim
+endif
+
+if filereadable(expand("~/.vim/plugins.rc.vim"))
+    source ~/.vim/plugins.rc.vim
+endif
 
 " }}}

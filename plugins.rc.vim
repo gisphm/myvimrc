@@ -2,6 +2,14 @@
 " vim: set ft=vim sw=4 ts=4 sts=4 et tw=78 foldlevel=0 foldmethod=marker:
 " }}}
 
+" ColorTheme {{{
+
+colorscheme molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
+
+" }}}
+
 " TextObj Sentence {{{
 
 augroup textobj_sentence
@@ -39,9 +47,7 @@ hi PmenuThumb  guifg=#F8F8F8 guibg=#8A95A7 gui=NONE ctermfg=lightgray ctermbg=da
 
 " Some convenient mappings
 inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
-if exists('g:spf13_map_cr_omni_complete')
-    inoremap <expr> <CR>     pumvisible() ? "\<C-y>" : "\<CR>"
-endif
+inoremap <expr> <CR>     pumvisible() ? "\<C-y>" : "\<CR>"
 inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
 inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
 inoremap <expr> <C-d>      pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<C-d>"
@@ -54,7 +60,7 @@ set completeopt=menu,preview,longest
 " }}}
 
 " Ctags {{{
-set tags=./tags;/,~/.vimtags
+set tags=./tags;/,~/.vimtags,gems.tags
 
 " Make tags placed in .git/tags file available in all levels of a repository
 let gitroot = substitute(system('git rev-parse --show-toplevel'), '[\n\r]', '', 'g')
@@ -74,54 +80,48 @@ nmap <Leader>ac <Plug>ToggleAutoCloseMappings
 
 " NerdTree {{{
 
-if isdirectory(expand("~/.vim/plugin/nerdtree"))
-    map <C-e> <plug>NERDTreeTabsToggle<CR>
-    map <leader>e :NERDTreeFind<CR>
-    nmap <leader>nt :NERDTreeFind<CR>
+map <C-e> <plug>NERDTreeTabsToggle<CR>
+map <leader>e :NERDTreeFind<CR>
+nmap <leader>nt :NERDTreeFind<CR>
 
-    let NERDTreeShowBookmarks=1
-    let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
-    let NERDTreeChDirMode=0
-    let NERDTreeQuitOnOpen=1
-    let NERDTreeMouseMode=2
-    let NERDTreeShowHidden=1
-    let NERDTreeKeepTreeInNewTab=1
-    let g:nerdtree_tabs_open_on_gui_startup=0
-endif
+let NERDTreeShowBookmarks=1
+let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
+let NERDTreeChDirMode=0
+let NERDTreeQuitOnOpen=1
+let NERDTreeMouseMode=2
+let NERDTreeShowHidden=1
+let NERDTreeKeepTreeInNewTab=1
+let g:nerdtree_tabs_open_on_gui_startup=0
 
 " }}}
 
 " Tabularize {{{
 
-if isdirectory(expand("~/.vim/plugin/tabular"))
-    nmap <Leader>a& :Tabularize /&<CR>
-    vmap <Leader>a& :Tabularize /&<CR>
-    nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
-    vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
-    nmap <Leader>a=> :Tabularize /=><CR>
-    vmap <Leader>a=> :Tabularize /=><CR>
-    nmap <Leader>a: :Tabularize /:<CR>
-    vmap <Leader>a: :Tabularize /:<CR>
-    nmap <Leader>a:: :Tabularize /:\zs<CR>
-    vmap <Leader>a:: :Tabularize /:\zs<CR>
-    nmap <Leader>a, :Tabularize /,<CR>
-    vmap <Leader>a, :Tabularize /,<CR>
-    nmap <Leader>a,, :Tabularize /,\zs<CR>
-    vmap <Leader>a,, :Tabularize /,\zs<CR>
-    nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-    vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-endif
+nmap <Leader>a& :Tabularize /&<CR>
+vmap <Leader>a& :Tabularize /&<CR>
+nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+nmap <Leader>a=> :Tabularize /=><CR>
+vmap <Leader>a=> :Tabularize /=><CR>
+nmap <Leader>a: :Tabularize /:<CR>
+vmap <Leader>a: :Tabularize /:<CR>
+nmap <Leader>a:: :Tabularize /:\zs<CR>
+vmap <Leader>a:: :Tabularize /:\zs<CR>
+nmap <Leader>a, :Tabularize /,<CR>
+vmap <Leader>a, :Tabularize /,<CR>
+nmap <Leader>a,, :Tabularize /,\zs<CR>
+vmap <Leader>a,, :Tabularize /,\zs<CR>
+nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 
 " }}}
 
 " Session List {{{
 
 set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
-if isdirectory(expand("~/.vim/plugin/sessionman.vim/"))
-    nmap <leader>sl :SessionList<CR>
-    nmap <leader>ss :SessionSave<CR>
-    nmap <leader>sc :SessionClose<CR>
-endif
+nmap <leader>sl :SessionList<CR>
+nmap <leader>ss :SessionSave<CR>
+nmap <leader>sc :SessionClose<CR>
 
 " }}}
 
@@ -134,8 +134,8 @@ let g:vim_json_syntax_conceal = 0
 
 " Unite.vim {{{
 
-call unite#custom#source('file,file/new,buffer,file_rec', 'matchers', 'matcher_fuzzy')
-call unite#custom#profile('files', 'filters', 'sorter_rank')
+"call unite#custom#source('file,file/new,buffer,file_rec', 'matchers', 'matcher_fuzzy')
+"call unite#custom#profile('files', 'filters', 'sorter_rank')
 let g:unite_prompt = '» '
 let g:unite_split_rule = 'botright'
 if executable('ag')
@@ -156,28 +156,42 @@ nnoremap <Space>u :<C-u>Unite -winheight=10 -buffer-name=outline outline<CR>
 
 " TagBar {{{
 
-if isdirectory(expand("~/.vim/plugin/tagbar/"))
-    nnoremap <silent> <leader>tt :TagbarToggle<CR>
-endif
+nnoremap <silent> <leader>tt :TagbarToggle<CR>
+let g:tagbar_type_css = {
+            \ 'ctagstype' : 'Css',
+            \ 'kinds'     : [
+            \ 'c:classes',
+            \ 's:selectors',
+            \ 'i:identities'
+            \ ]
+            \ }
+let g:tagbar_type_ruby = {
+            \ 'kinds' : [
+            \ 'm:modules',
+            \ 'c:classes',
+            \ 'd:describes',
+            \ 'C:contexts',
+            \ 'f:methods',
+            \ 'F:singleton methods'
+            \ ]
+            \ }
 
 " }}}
 
 " Fugitive {{{
 
-if isdirectory(expand("~/.vim/plugin/vim-fugitive/"))
-    nnoremap <silent> <leader>gs :Gstatus<CR>
-    nnoremap <silent> <leader>gd :Gdiff<CR>
-    nnoremap <silent> <leader>gc :Gcommit<CR>
-    nnoremap <silent> <leader>gb :Gblame<CR>
-    nnoremap <silent> <leader>gl :Glog<CR>
-    nnoremap <silent> <leader>gp :Git push<CR>
-    nnoremap <silent> <leader>gr :Gread<CR>
-    nnoremap <silent> <leader>gw :Gwrite<CR>
-    nnoremap <silent> <leader>ge :Gedit<CR>
-    " Mnemonic _i_nteractive
-    nnoremap <silent> <leader>gi :Git add -p %<CR>
-    nnoremap <silent> <leader>gg :SignifyToggle<CR>
-endif
+nnoremap <silent> <leader>gs :Gstatus<CR>
+nnoremap <silent> <leader>gd :Gdiff<CR>
+nnoremap <silent> <leader>gc :Gcommit<CR>
+nnoremap <silent> <leader>gb :Gblame<CR>
+nnoremap <silent> <leader>gl :Glog<CR>
+nnoremap <silent> <leader>gp :Git push<CR>
+nnoremap <silent> <leader>gr :Gread<CR>
+nnoremap <silent> <leader>gw :Gwrite<CR>
+nnoremap <silent> <leader>ge :Gedit<CR>
+" Mnemonic _i_nteractive
+nnoremap <silent> <leader>gi :Git add -p %<CR>
+nnoremap <silent> <leader>gg :SignifyToggle<CR>
 
 " }}}
 
@@ -222,6 +236,7 @@ inoremap <expr><C-l> neocomplete#complete_common_string()
 " <CR>: close popup
 " <s-CR>: close popup and save indent.
 inoremap <expr><s-CR> pumvisible() ? neocomplete#smart_close_popup()."\<CR>" : "\<CR>"
+inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
 
 " <CR> close popup and save indent or expand snippet
 imap <expr> <CR> CleverCr()
@@ -234,7 +249,6 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 
 imap <expr> <Tab> CleverTab()
 
-imap <expr> <C-r> neocomplete#close_popup()
 " }}}
 
 " Enable heavy omni completion.
@@ -281,21 +295,17 @@ set completeopt-=preview
 
 " UndoTree {{{
 
-if isdirectory(expand("~/.vim/plugin/undotree/"))
-    nnoremap <Leader>u :UndotreeToggle<CR>
-    " If undotree is opened, it is likely one wants to interact with it.
-    let g:undotree_SetFocusWhenToggle=1
-endif
+nnoremap <Leader>u :UndotreeToggle<CR>
+" If undotree is opened, it is likely one wants to interact with it.
+let g:undotree_SetFocusWhenToggle=1
 
 " }}}
 
 " indent_guides {{{
 
-if isdirectory(expand("~/.vim/plugin/vim-indent-guides/"))
-    let g:indent_guides_start_level = 2
-    let g:indent_guides_guide_size = 1
-    let g:indent_guides_enable_on_vim_startup = 1
-endif
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_enable_on_vim_startup = 1
 
 " }}}
 
@@ -463,5 +473,12 @@ function! CleverTab()
         endif
     endif
 endfunction
+
+" }}}
+
+" AutoPairs {{{
+
+let g:AutoPairsMapSpace = 0
+let g:AutoPairsFlyMode = 1
 
 " }}}

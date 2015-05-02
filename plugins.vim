@@ -4,141 +4,144 @@
 
 " Deps {{{
 
-Plugin 'gmarik/vundle'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
+NeoBundle 'Shougo/vimproc.vim', {
+            \ 'build' : {
+            \    'linux' : 'make',
+            \ },
+            \ }
+NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/unite-outline'
+NeoBundle 'MarcWeber/vim-addon-mw-utils'
+NeoBundle 'tomtom/tlib_vim'
 if executable('ag')
-    Plugin 'rking/ag.vim'
+    NeoBundle 'rking/ag.vim'
 endif
 
 " }}}
 
 " General {{{
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'kristijanhusak/vim-multiple-cursors'
-Plugin 'vim-scripts/sessionman.vim'
-Plugin 'Firef0x/matchit'
-Plugin 'bling/vim-airline'
-Plugin 'bling/vim-bufferline'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'mbbill/undotree'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'vim-scripts/restore_view.vim'
-Plugin 'mhinz/vim-signify'
-Plugin 'tpope/vim-abolish.git'
-Plugin 'osyo-manga/vim-over'
-Plugin 'kana/vim-textobj-user'
-Plugin 'kana/vim-textobj-indent'
-Plugin 'gcmt/wildfire.vim'
-Plugin 'tpope/vim-git'
-Plugin 'idanarye/vim-merginal'
-Plugin 'int3/vim-extradite'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'Shougo/neomru.vim'
-Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/unite-outline'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'kristijanhusak/vim-multiple-cursors'
+NeoBundle 'vim-scripts/sessionman.vim'
+NeoBundle 'Firef0x/matchit'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'bling/vim-bufferline'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'jistr/vim-nerdtree-tabs'
+NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'mbbill/undotree'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'vim-scripts/restore_view.vim'
+NeoBundle 'mhinz/vim-signify'
+NeoBundle 'tpope/vim-abolish.git'
+NeoBundle 'osyo-manga/vim-over'
+NeoBundle 'kana/vim-textobj-user'
+NeoBundle 'kana/vim-textobj-indent'
+NeoBundle 'gcmt/wildfire.vim'
+NeoBundle 'tpope/vim-git'
+NeoBundle 'idanarye/vim-merginal'
+NeoBundle 'int3/vim-extradite'
+NeoBundle 'plasticboy/vim-markdown'
 
 " }}}
 
 " Writing {{{
 
-Plugin 'reedes/vim-litecorrect'
-Plugin 'reedes/vim-textobj-sentence'
-Plugin 'reedes/vim-textobj-quote'
-Plugin 'reedes/vim-wordy'
+NeoBundle 'reedes/vim-litecorrect'
+NeoBundle 'reedes/vim-textobj-sentence'
+NeoBundle 'reedes/vim-textobj-quote'
+NeoBundle 'reedes/vim-wordy'
 
 " }}}
 
 " General Programming {{{
 
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-fugitive'
-Plugin 'mattn/webapi-vim'
-Plugin 'mattn/gist-vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-commentary'
-Plugin 'godlygeek/tabular'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'mattn/gist-vim'
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'tpope/vim-commentary'
+NeoBundle 'godlygeek/tabular'
 if executable('ctags')
-    Plugin 'majutsushi/tagbar'
+    NeoBundle 'majutsushi/tagbar'
 endif
-Plugin 'Raimondi/delimitMate'
+NeoBundle 'Raimondi/delimitMate'
 
 " }}}
 
 " Snippets & AutoComplete {{{
 
-Plugin 'Shougo/neocomplete.vim.git'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'Shougo/neosnippet'
-Plugin 'Shougo/neosnippet-snippets'
-Plugin 'honza/vim-snippets'
+NeoBundle 'Shougo/neocomplete.vim.git'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'honza/vim-snippets'
 
 " }}}
 
 " Javascript {{{
 
-Plugin 'elzr/vim-json'
-Plugin 'groenewege/vim-less'
-Plugin 'pangloss/vim-javascript'
-Plugin 'briancollins/vim-jst'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'Shutnik/jshint2.vim'
-Plugin 'othree/yajs.vim'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'othree/vim-syntax-enhanced'
-Plugin 'othree/jspc.vim'
+NeoBundle 'elzr/vim-json'
+NeoBundle 'groenewege/vim-less'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'briancollins/vim-jst'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'marijnh/tern_for_vim'
+NeoBundle 'Shutnik/jshint2.vim'
+NeoBundle 'othree/yajs.vim'
+NeoBundle 'othree/javascript-libraries-syntax.vim'
+NeoBundle 'othree/vim-syntax-enhanced'
+NeoBundle 'othree/jspc.vim'
 
 " }}}
 
 " HTML {{{
 
-Plugin 'othree/html5.vim'
-Plugin 'amirh/HTML-AutoCloseTag'
-Plugin 'tpope/vim-haml'
-Plugin 'mattn/emmet-vim'
+NeoBundle 'othree/html5.vim'
+NeoBundle 'amirh/HTML-AutoCloseTag'
+NeoBundle 'tpope/vim-haml'
+NeoBundle 'mattn/emmet-vim'
 
 " }}}
 
 " CSS {{{
 
-Plugin 'ap/vim-css-color'
-Plugin 'hail2u/vim-css3-syntax'
+NeoBundle 'ap/vim-css-color'
+NeoBundle 'hail2u/vim-css3-syntax'
 
 " }}}
 
 " Ruby {{{
 
-Plugin 'tpope/vim-rails'
-Plugin 'ecomba/vim-ruby-refactoring'
-Plugin 'tpope/vim-endwise'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rake'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-projectionist'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'ecomba/vim-ruby-refactoring'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'Chiel92/vim-autoformat'
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'tpope/vim-rake'
+NeoBundle 'tpope/vim-bundler'
+NeoBundle 'tpope/vim-projectionist'
 
 " }}}
 
 " Puppet {{{
 
-Plugin 'rodjek/vim-puppet'
+NeoBundle 'rodjek/vim-puppet'
 
 " }}}
 
 " Misc {{{
 
-Plugin 'jaxbot/semantic-highlight.vim'
-Plugin 'othree/xml.vim'
-Plugin 'dbext.vim'
-Plugin 'bootleq/LargeFile'
-Plugin 's3rvac/AutoFenc'
-Plugin 'junegunn/rainbow_parentheses.vim'
+NeoBundle 'jaxbot/semantic-highlight.vim'
+NeoBundle 'othree/xml.vim'
+NeoBundle 'dbext.vim'
+NeoBundle 'bootleq/LargeFile'
+NeoBundle 's3rvac/AutoFenc'
+NeoBundle 'junegunn/rainbow_parentheses.vim'
 
 " }}}
