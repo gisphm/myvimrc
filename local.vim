@@ -4,7 +4,6 @@
 
 " General {{{
 
-set background=dark         " Assume a dark background
 filetype plugin indent on   " Automatically detect file types.
 syntax on                   " Syntax highlighting
 set mouse=a                 " Automatically enable mouse usage
@@ -49,6 +48,11 @@ endif
 let g:skipview_files = [
             \ '\[example pattern\]'
             \ ]
+
+set dir=~/.vim/swap/
+set backupdir=~/.vim/backup/
+set undodir=~/.vim/undo/
+set viewdir=~/.vim/view/
 
 " }}}
 
