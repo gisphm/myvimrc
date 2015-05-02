@@ -4,6 +4,14 @@
 
 " Deps {{{
 
+NeoBundle 'Shougo/vimproc.vim', {
+            \ 'build' : {
+            \    'linux' : 'make',
+            \ },
+            \ }
+NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/unite-outline'
 NeoBundle 'MarcWeber/vim-addon-mw-utils'
 NeoBundle 'tomtom/tlib_vim'
 if executable('ag')
@@ -39,9 +47,6 @@ NeoBundle 'tpope/vim-git'
 NeoBundle 'idanarye/vim-merginal'
 NeoBundle 'int3/vim-extradite'
 NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/unite-outline'
 
 " }}}
 
@@ -73,11 +78,6 @@ NeoBundle 'Raimondi/delimitMate'
 " Snippets & AutoComplete {{{
 
 NeoBundle 'Shougo/neocomplete.vim.git'
-NeoBundle 'Shougo/vimproc.vim', {
-            \ 'build' : {
-            \    'linux' : 'make',
-            \ },
-            \ }
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'honza/vim-snippets'
