@@ -16,7 +16,7 @@
 但不排除以后改用[neobundle][4]。
 
 ## 几点事项
-1. 这个配置只打算在linux上，目前是在archlinux上进行使用。
+1. 这个配置只打算在linux上（目前是在archlinux）进行使用。
 2. 这个配置并不完善，许多地方会有问题。
 3. 感谢__Steve Francia__在github上分享了这么有用的配置。
 
