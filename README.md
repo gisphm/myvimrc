@@ -21,9 +21,25 @@
 ## 几点事项
 1. 这个配置只打算在linux上（目前是在archlinux）进行使用。
 2. 这个配置并不完善，许多地方会有问题。
+3. 感谢__Bram Moolenaar__和其他vim的维护者们创造了如此多彩的编辑器。
 3. 感谢__Steve Francia__在github上分享了这么有用的配置。
 4. 感谢__Shougo__在github上为vim创造了这么多有用的vim插件。
 5. 感谢所有插件的作者与维护者们，你们共同创造了vim社区的现在。
+
+## 许可证
+Copyright 2015 gisphm <phmfk@hotmail.com>
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 
 [1]: https://github.com/spf13/spf13-vim.git
 [2]: https://github.com/gisphm/myneovimrc.git
