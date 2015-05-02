@@ -13,6 +13,8 @@ view/
 backup/
 undo/
 swap/
+*tags*
+TAGS
 
 
 ### Python ###
