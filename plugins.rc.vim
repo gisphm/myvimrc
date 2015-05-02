@@ -47,9 +47,7 @@ hi PmenuThumb  guifg=#F8F8F8 guibg=#8A95A7 gui=NONE ctermfg=lightgray ctermbg=da
 
 " Some convenient mappings
 inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
-if exists('g:spf13_map_cr_omni_complete')
-    inoremap <expr> <CR>     pumvisible() ? "\<C-y>" : "\<CR>"
-endif
+inoremap <expr> <CR>     pumvisible() ? "\<C-y>" : "\<CR>"
 inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
 inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
 inoremap <expr> <C-d>      pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<C-d>"
@@ -238,6 +236,7 @@ inoremap <expr><C-l> neocomplete#complete_common_string()
 " <CR>: close popup
 " <s-CR>: close popup and save indent.
 inoremap <expr><s-CR> pumvisible() ? neocomplete#smart_close_popup()."\<CR>" : "\<CR>"
+inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
 
 " <CR> close popup and save indent or expand snippet
 imap <expr> <CR> CleverCr()
@@ -250,7 +249,6 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 
 imap <expr> <Tab> CleverTab()
 
-imap <expr> <C-r> neocomplete#close_popup()
 " }}}
 
 " Enable heavy omni completion.
@@ -475,5 +473,12 @@ function! CleverTab()
         endif
     endif
 endfunction
+
+" }}}
+
+" AutoPairs {{{
+
+let g:AutoPairsMapSpace = 0
+let g:AutoPairsFlyMode = 1
 
 " }}}
