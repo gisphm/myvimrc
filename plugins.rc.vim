@@ -82,48 +82,48 @@ nmap <Leader>ac <Plug>ToggleAutoCloseMappings
 
 " NerdTree {{{
 
-    map <C-e> <plug>NERDTreeTabsToggle<CR>
-    map <leader>e :NERDTreeFind<CR>
-    nmap <leader>nt :NERDTreeFind<CR>
+map <C-e> <plug>NERDTreeTabsToggle<CR>
+map <leader>e :NERDTreeFind<CR>
+nmap <leader>nt :NERDTreeFind<CR>
 
-    let NERDTreeShowBookmarks=1
-    let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
-    let NERDTreeChDirMode=0
-    let NERDTreeQuitOnOpen=1
-    let NERDTreeMouseMode=2
-    let NERDTreeShowHidden=1
-    let NERDTreeKeepTreeInNewTab=1
-    let g:nerdtree_tabs_open_on_gui_startup=0
+let NERDTreeShowBookmarks=1
+let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
+let NERDTreeChDirMode=0
+let NERDTreeQuitOnOpen=1
+let NERDTreeMouseMode=2
+let NERDTreeShowHidden=1
+let NERDTreeKeepTreeInNewTab=1
+let g:nerdtree_tabs_open_on_gui_startup=0
 
 " }}}
 
 " Tabularize {{{
 
-    nmap <Leader>a& :Tabularize /&<CR>
-    vmap <Leader>a& :Tabularize /&<CR>
-    nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
-    vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
-    nmap <Leader>a=> :Tabularize /=><CR>
-    vmap <Leader>a=> :Tabularize /=><CR>
-    nmap <Leader>a: :Tabularize /:<CR>
-    vmap <Leader>a: :Tabularize /:<CR>
-    nmap <Leader>a:: :Tabularize /:\zs<CR>
-    vmap <Leader>a:: :Tabularize /:\zs<CR>
-    nmap <Leader>a, :Tabularize /,<CR>
-    vmap <Leader>a, :Tabularize /,<CR>
-    nmap <Leader>a,, :Tabularize /,\zs<CR>
-    vmap <Leader>a,, :Tabularize /,\zs<CR>
-    nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-    vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+nmap <Leader>a& :Tabularize /&<CR>
+vmap <Leader>a& :Tabularize /&<CR>
+nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+nmap <Leader>a=> :Tabularize /=><CR>
+vmap <Leader>a=> :Tabularize /=><CR>
+nmap <Leader>a: :Tabularize /:<CR>
+vmap <Leader>a: :Tabularize /:<CR>
+nmap <Leader>a:: :Tabularize /:\zs<CR>
+vmap <Leader>a:: :Tabularize /:\zs<CR>
+nmap <Leader>a, :Tabularize /,<CR>
+vmap <Leader>a, :Tabularize /,<CR>
+nmap <Leader>a,, :Tabularize /,\zs<CR>
+vmap <Leader>a,, :Tabularize /,\zs<CR>
+nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 
 " }}}
 
 " Session List {{{
 
 set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
-    nmap <leader>sl :SessionList<CR>
-    nmap <leader>ss :SessionSave<CR>
-    nmap <leader>sc :SessionClose<CR>
+nmap <leader>sl :SessionList<CR>
+nmap <leader>ss :SessionSave<CR>
+nmap <leader>sc :SessionClose<CR>
 
 " }}}
 
@@ -158,7 +158,7 @@ nnoremap <Space>u :<C-u>Unite -winheight=10 -buffer-name=outline outline<CR>
 
 " TagBar {{{
 
-    nnoremap <silent> <leader>tt :TagbarToggle<CR>
+nnoremap <silent> <leader>tt :TagbarToggle<CR>
 let g:tagbar_type_css = {
             \ 'ctagstype' : 'Css',
             \ 'kinds'     : [
@@ -182,18 +182,18 @@ let g:tagbar_type_ruby = {
 
 " Fugitive {{{
 
-    nnoremap <silent> <leader>gs :Gstatus<CR>
-    nnoremap <silent> <leader>gd :Gdiff<CR>
-    nnoremap <silent> <leader>gc :Gcommit<CR>
-    nnoremap <silent> <leader>gb :Gblame<CR>
-    nnoremap <silent> <leader>gl :Glog<CR>
-    nnoremap <silent> <leader>gp :Git push<CR>
-    nnoremap <silent> <leader>gr :Gread<CR>
-    nnoremap <silent> <leader>gw :Gwrite<CR>
-    nnoremap <silent> <leader>ge :Gedit<CR>
-    " Mnemonic _i_nteractive
-    nnoremap <silent> <leader>gi :Git add -p %<CR>
-    nnoremap <silent> <leader>gg :SignifyToggle<CR>
+nnoremap <silent> <leader>gs :Gstatus<CR>
+nnoremap <silent> <leader>gd :Gdiff<CR>
+nnoremap <silent> <leader>gc :Gcommit<CR>
+nnoremap <silent> <leader>gb :Gblame<CR>
+nnoremap <silent> <leader>gl :Glog<CR>
+nnoremap <silent> <leader>gp :Git push<CR>
+nnoremap <silent> <leader>gr :Gread<CR>
+nnoremap <silent> <leader>gw :Gwrite<CR>
+nnoremap <silent> <leader>ge :Gedit<CR>
+" Mnemonic _i_nteractive
+nnoremap <silent> <leader>gi :Git add -p %<CR>
+nnoremap <silent> <leader>gg :SignifyToggle<CR>
 
 " }}}
 
@@ -297,17 +297,17 @@ set completeopt-=preview
 
 " UndoTree {{{
 
-    nnoremap <Leader>u :UndotreeToggle<CR>
-    " If undotree is opened, it is likely one wants to interact with it.
-    let g:undotree_SetFocusWhenToggle=1
+nnoremap <Leader>u :UndotreeToggle<CR>
+" If undotree is opened, it is likely one wants to interact with it.
+let g:undotree_SetFocusWhenToggle=1
 
 " }}}
 
 " indent_guides {{{
 
-    let g:indent_guides_start_level = 2
-    let g:indent_guides_guide_size = 1
-    let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_enable_on_vim_startup = 1
 
 " }}}
 
