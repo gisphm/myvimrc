@@ -13,11 +13,11 @@ set background=dark
 " NeoBundle {{{
 
 set rtp+=~/.vim/bundle/neobundle.vim
-call neobundle#begin(expand('~/.vim/bundle/'))
+call neobundle#begin(expand("~/.vim/bundle/"))
 
-NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundleFetch "Shougo/neobundle.vim"
 
-if filereadable(expand('~/.vim/plugins.vim'))
+if filereadable(expand("~/.vim/plugins.vim"))
     source ~/.vim/plugins.vim
 endif
 
@@ -31,11 +31,11 @@ NeoBundleCheck
 
 " Sourcing Configurations {{{
 
-if filereadable(expand('~/.vim/local.vim'))
+if filereadable(expand("~/.vim/local.vim"))
     source ~/.vim/local.vim
 endif
 
-if filereadable(expand('~/.vim/plugins.rc.vim'))
+if filereadable(expand("~/.vim/plugins.rc.vim"))
     source ~/.vim/plugins.rc.vim
 endif
 
