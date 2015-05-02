@@ -52,6 +52,6 @@ filetype plugin indent on
 " Sourcing Configurations {{{
 
 source ~/.vim/local.vim
-source ~/.vim/plugins.vim
+source ~/.vim/plugins.rc.vim
 
 " }}}
