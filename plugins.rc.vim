@@ -249,6 +249,8 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 
 imap <expr> <Tab> CleverTab()
+
+imap <expr> <C-r> neocomplete#close_popup()
 " }}}
 
 " Enable heavy omni completion.

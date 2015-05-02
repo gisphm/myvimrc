@@ -66,6 +66,7 @@ Plugin 'godlygeek/tabular'
 if executable('ctags')
     Plugin 'majutsushi/tagbar'
 endif
+Plugin 'Raimondi/delimitMate'
 
 " }}}
 
