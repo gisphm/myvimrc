@@ -7,8 +7,8 @@
 参照我的[neovim][2]的配置思路，分为以下文件：
 
 + __vimrc__ 主配置文件，包含[vundle][3]的初始化和vim插件的初次安装
-+ __bundles.vim__ 插件列表文件，包含所有安装的插件，按照[spf13-vim][1]进行分组
-+ __bundles.rc.vim__ 插件的配置，尽可能地不包含vim的基本配置
++ __plugins.vim__ 插件列表文件，包含所有安装的插件，按照[spf13-vim][1]进行分组
++ __plugins.rc.vim__ 插件的配置，尽可能地不包含vim的基本配置
 + __local.vim__ vim的基本配置，离开了插件也能运行
 
 考虑再三，还是用[vundle][3]。
