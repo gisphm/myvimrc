@@ -13,8 +13,7 @@ set background=dark
 " Vundle Pre {{{
 
 let vundleInitial=1
-let vundleReadme=expand('~/.vim/plugin/Vundle.vim/README.md')
-if !filereadable(vundleReadme)
+if !filereadable(expand('~/.vim/plugin/Vundle.vim/README.md'))
     echo "Installing Vundle ..."
     echo ""
     silent !mkdir -p ~/.vim/plugin
@@ -34,7 +33,11 @@ filetype off
 set rtp+=~/.vim/plugin/Vundle.vim
 call vundle#begin('~/.vim/plugin/')
 
-source ~/.vim/plugins.vim
+Plugin 'gmarik/Vundle.vim'
+
+if filereadable(expand('~/.vim/plugins.vim'))
+    source ~/.vim/plugins.vim
+endif
 
 if vundleInitial == 0
     echo "Installing Plugins, please waiting..."
@@ -51,7 +54,12 @@ filetype plugin indent on
 
 " Sourcing Configurations {{{
 
-source ~/.vim/local.vim
-source ~/.vim/plugins.rc.vim
+if filereadable(expand('~/.vim/local.vim'))
+    source ~/.vim/local.vim
+endif
+
+if filereadable(expand('~/.vim/plugins.rc.vim'))
+    source ~/.vim/plugins.rc.vim
+endif
 
 " }}}

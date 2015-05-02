@@ -4,7 +4,6 @@
 
 " Deps {{{
 
-Plugin 'gmarik/Vundle.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 if executable('ag')
