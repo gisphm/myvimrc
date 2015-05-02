@@ -159,6 +159,24 @@ nnoremap <Space>u :<C-u>Unite -winheight=10 -buffer-name=outline outline<CR>
 if isdirectory(expand("~/.vim/plugin/tagbar/"))
     nnoremap <silent> <leader>tt :TagbarToggle<CR>
 endif
+let g:tagbar_type_css = {
+             \ 'ctagstype' : 'Css',
+             \ 'kinds'     : [
+            \ 'c:classes',
+            \ 's:selectors',
+            \ 'i:identities'
+            \ ]
+            \ }
+let g:tagbar_type_ruby = {
+            \ 'kinds' : [
+            \ 'm:modules',
+            \ 'c:classes',
+            \ 'd:describes',
+            \ 'C:contexts',
+            \ 'f:methods',
+            \ 'F:singleton methods'
+            \ ]
+            \ }
 
 " }}}
 
