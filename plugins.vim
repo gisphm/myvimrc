@@ -19,8 +19,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'kristijanhusak/vim-multiple-cursors'
 Plugin 'vim-scripts/sessionman.vim'
 Plugin 'Firef0x/matchit'
@@ -42,6 +40,9 @@ Plugin 'tpope/vim-git'
 Plugin 'idanarye/vim-merginal'
 Plugin 'int3/vim-extradite'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'Shougo/neomru.vim'
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/unite-outline'
 
 " }}}
 

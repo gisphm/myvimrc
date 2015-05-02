@@ -132,41 +132,25 @@ let g:vim_json_syntax_conceal = 0
 
 " }}}
 
-" ctrlp {{{
+" Unite.vim {{{
 
-if isdirectory(expand("~/.vim/plugin/ctrlp.vim/"))
-    let g:ctrlp_working_path_mode = 'ra'
-    nnoremap <silent> <D-t> :CtrlP<CR>
-    nnoremap <silent> <D-r> :CtrlPMRU<CR>
-    let g:ctrlp_custom_ignore = {
-                \ 'dir':  '\.git$\|\.hg$\|\.svn$',
-                \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
-
-    " On Windows use "dir" as fallback command.
-    if executable('ag')
-        let s:ctrlp_fallback = 'ag %s --nocolor -l -g ""'
-    else
-        let s:ctrlp_fallback = 'find %s -type f'
-    endif
-    if exists("g:ctrlp_user_command")
-        unlet g:ctrlp_user_command
-    endif
-    let g:ctrlp_user_command = {
-                \ 'types': {
-                \ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others'],
-                \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-                \ },
-                \ 'fallback': s:ctrlp_fallback
-                \ }
-
-    if isdirectory(expand("~/.vim/plugin/ctrlp-funky/"))
-        " CtrlP extensions
-        let g:ctrlp_extensions = ['funky']
-
-        "funky
-        nnoremap <Leader>fu :CtrlPFunky<Cr>
-    endif
+call unite#custom#source('file,file/new,buffer,file_rec', 'matchers', 'matcher_fuzzy')
+call unite#custom#profile('files', 'filters', 'sorter_rank')
+let g:unite_prompt = '» '
+let g:unite_split_rule = 'botright'
+if executable('ag')
+    let g:unite_source_grep_command = 'ag'
+    let g:unite_source_grep_default_opts = '--nocolor --nogroup -S -C4'
+    let g:unite_source_grep_recursive_opt = ''
 endif
+let g:unite_source_history_yank_enable = 1
+nnoremap <silent> <Leader>m :Unite -buffer-name=recent -winheight=10 file_mru<cr>
+nnoremap <Leader>b :Unite -buffer-name=buffers -winheight=10 buffer<cr>
+nnoremap <Leader>p :<C-u>Unite -winheight=10 -buffer-name=file file_rec/async<cr>
+nnoremap <Space>/ :Unite grep:.<CR>
+nnoremap <Space>s :<C-u>Unite -winheight=10 -buffer-name=buffer -quick-match buffer<cr>
+nnoremap <leader>y :<C-u>Unite -winheight=10 -buffer-name=yank history/yank<cr>
+nnoremap <Space>u :<C-u>Unite -winheight=10 -buffer-name=outline outline<CR>
 
 " }}}
 
