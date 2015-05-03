@@ -1,7 +1,14 @@
 
-v0.7 / 2015-05-04
+v0.8(pre) / 2015-05-04
 ==================
 
+  * Merge tag 'v0.7' into develop
+
+v0.7 / 2015-05-04
+=================
+
+  * Merge branch 'release/v0.7'
+  * update History
   * added license to gvimrc
   * change session lock directory
   * added History by using git-changelog
