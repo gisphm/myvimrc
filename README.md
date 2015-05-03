@@ -13,9 +13,10 @@
 
 ## things todo
 1. ✓ replace nerdtree with vimfiler
-2. complete install.sh
-3. use less plugins as possible
-4. fixes issues met in use regularly
+2. ✓ fix arrow key and esc mapping error
+3. complete install.sh
+4. use less plugins as possible
+5. fixes issues met in use regularly
 
 ## 几点说明
 + 之所以用[neobundle][4]而不是[vundle][3]，是因为我对vim脚本不熟悉，`vundle`用着就出错了。
