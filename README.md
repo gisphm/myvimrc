@@ -14,15 +14,16 @@
 ## things todo
 1. ✓ replace nerdtree with vimfiler
 2. complete install.sh
-3. fixes issues met in use
+3. use less plugins as possible
+4. fixes issues met in use regularly
 
 ## 几点说明
-+ 之所以用[neobundle][4]而不是[vundle][3]，是因为我对vim脚本不熟悉。
-+ 出错的地方应该在`vundle`的配置路径上没用上函数`expand()`，导致vundle无法读取插件，出现一堆让我头疼的东西。
-+ `neobundle`的使用过程相对平滑，没有出现多少的问题。
++ 之所以用[neobundle][4]而不是[vundle][3]，是因为我对vim脚本不熟悉，`vundle`用着就出错了。
++ 出错的地方应该在`vundle`的配置路径上没用上函数`expand()`，导致`vundle`无法读取插件，出现一堆让我头疼的东西。
 + 让我最郁闷的是，`vundle`同样的写法，在`neovim`上不会有问题。
++ `neobundle`的使用过程相对平滑，没有出现无法读取插件的问题。
 + 不过，现在已经用上了`neobundle`，就安逸地用了，懒得再去换了。
-+ 该配置主要针对`ruby`而定制。
++ 该配置主要针对`ruby`开发而定制。
 
 ## 几点事项
 1. 这个配置只打算在linux上（目前是在archlinux）进行使用。
