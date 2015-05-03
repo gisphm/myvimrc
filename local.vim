@@ -70,6 +70,10 @@ set backupdir=~/.vim/tmp/backup/
 set undodir=~/.vim/tmp/undo/
 set viewdir=~/.vim/tmp/view/
 
+" Resolve performance problems
+" clear match command gracefully
+autocmd BufWinLeave * call clearmatches()
+
 " }}}
 
 " Vim UI {{{
@@ -120,7 +124,7 @@ set scrolljump=5                " Lines to scroll when cursor leaves screen
 set scrolloff=3                 " Minimum lines to keep above and below cursor
 set foldenable                  " Auto fold code
 set list
-set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+set listchars=tab:➪\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 
 " }}}
 

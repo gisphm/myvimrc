@@ -317,11 +317,13 @@ let g:undotree_SetFocusWhenToggle=1
 
 " }}}
 
-" indent_guides {{{
+" indentLine {{{
 
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
-let g:indent_guides_enable_on_vim_startup = 1
+let g:indentLine_char = '¦'
+let g:indentLine_first_char = '¦'
+let g:indentLine_bufNameExclude = ['NERD_tree.*']
+let g:indentLine_leadingSpaceChar = '·'
+let g:indentLine_leadingSpaceEnabled = 1
 
 " }}}
 
@@ -499,6 +501,7 @@ endfunction
 
 let g:AutoPairsMapSpace = 0
 let g:AutoPairsFlyMode = 1
+let g:AutoPairsMultilineClose = 0
 
 " }}}
 
