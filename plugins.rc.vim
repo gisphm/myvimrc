@@ -1,5 +1,21 @@
 " modeline and notes {{{
 " vim: set ft=vim sw=4 ts=4 sts=4 et tw=78 foldlevel=0 foldmethod=marker:
+"
+" Copyright 2015 gisphm <phmfk@hotmail.com>
+" Author: gisphm <phmfk@hotmail.com>
+"
+" Licensed under the Apache License, Version 2.0 (the "License");
+" you may not use this file except in compliance with the License.
+" You may obtain a copy of the License at
+"
+"   http://www.apache.org/licenses/LICENSE-2.0
+"
+" Unless required by applicable law or agreed to in writing, software
+" distributed under the License is distributed on an "AS IS" BASIS,
+" WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+" See the License for the specific language governing permissions and
+" limitations under the License.
+"
 " }}}
 
 " ColorTheme {{{
@@ -134,8 +150,8 @@ let g:vim_json_syntax_conceal = 0
 
 " Unite.vim {{{
 
-"call unite#custom#source('file,file/new,buffer,file_rec', 'matchers', 'matcher_fuzzy')
-"call unite#custom#profile('files', 'filters', 'sorter_rank')
+call unite#custom#source('file,file/new,buffer,file_rec', 'matchers', 'matcher_fuzzy')
+call unite#custom#profile('files', 'filters', 'sorter_rank')
 let g:unite_prompt = '» '
 let g:unite_split_rule = 'botright'
 if executable('ag')
@@ -301,11 +317,13 @@ let g:undotree_SetFocusWhenToggle=1
 
 " }}}
 
-" indent_guides {{{
+" indentLine {{{
 
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
-let g:indent_guides_enable_on_vim_startup = 1
+let g:indentLine_char = '¦'
+let g:indentLine_first_char = '¦'
+let g:indentLine_bufNameExclude = ['NERD_tree.*']
+let g:indentLine_leadingSpaceChar = '·'
+let g:indentLine_leadingSpaceEnabled = 1
 
 " }}}
 
@@ -355,6 +373,9 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
+
+" fixes bufferline printing to the status line
+let g:bufferline_echo = 0
 
 " }}}
 
@@ -480,5 +501,14 @@ endfunction
 
 let g:AutoPairsMapSpace = 0
 let g:AutoPairsFlyMode = 1
+let g:AutoPairsMultilineClose = 0
+
+" }}}
+
+" Licenses {{{
+
+let g:licenses_copyright_holders_name = 'gisphm <phmfk@hotmail.com>'
+let g:licenses_authors_name = 'gisphm <phmfk@hotmail.com>'
+let g:licenses_default_commands = ['apache', 'unlicense', 'wtfpl']
 
 " }}}
