@@ -46,7 +46,6 @@ NeoBundle 'kristijanhusak/vim-multiple-cursors'
 NeoBundle 'vim-scripts/sessionman.vim'
 NeoBundle 'Firef0x/matchit'
 NeoBundle 'bling/vim-airline'
-NeoBundle 'bling/vim-bufferline'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'flazz/vim-colorschemes'
@@ -87,7 +86,6 @@ NeoBundle 'tpope/vim-commentary'
 if executable('ctags')
     NeoBundle 'majutsushi/tagbar'
 endif
-NeoBundle 'Raimondi/delimitMate'
 
 " }}}
 
