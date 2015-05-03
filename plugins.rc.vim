@@ -114,7 +114,7 @@ vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
 let g:session_autoload = "no"
 let g:session_directory = "~/.vim/tmp/sessions/"
-let g:session_lock_directory = "~/.vim/tmp/sessions/lock/"
+let g:session_lock_directory = "~/.vim/tmp/lock/"
 let g:session_autosave = "yes"
 let g:session_autosave_periodic = 1
 nmap <Leader>so :OpenSession<CR>
@@ -501,5 +501,14 @@ function! CleverTab()
         endif
     endif
 endfunction
+
+" }}}
+
+" NeoBundle {{{
+
+nnoremap <leader>nu :NeoBundleUpdate<CR>
+nnoremap <Leader>ni :NeoBundleInstall<CR>
+nnoremap <Leader>nc :NeoBundleClean<CR>
+nnoremap <Leader>nl :NeoBundleUpdatesLog<CR>
 
 " }}}
