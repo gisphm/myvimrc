@@ -54,9 +54,9 @@ augroup END
 
 if has("autocmd") && exists("+omnifunc")
     autocmd Filetype *
-                \if &omnifunc == "" |
-                \setlocal omnifunc=syntaxcomplete#Complete |
-                \endif
+                \ if &omnifunc == "" |
+                \     setlocal omnifunc=syntaxcomplete#Complete |
+                \ endif
 endif
 
 hi Pmenu  guifg=#000000 guibg=#F8F8F8 ctermfg=black ctermbg=Lightgray
@@ -160,6 +160,7 @@ let g:vimfiler_tree_opened_icon = "▾"
 let g:vimfiler_tree_closed_icon = "▸"
 let g:vimfiler_file_icon = "✎"
 let g:vimfiler_max_directories_history = 100
+let g:vimfiler_ignore_pattern = "^\%(\.git\)$"
 
 " }}}
 
