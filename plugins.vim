@@ -26,9 +26,26 @@ NeoBundle 'Shougo/vimproc.vim', {
             \ },
             \ }
 NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimfiler.vim'
+NeoBundle 'Shougo/unite.vim', {
+            \ 'commands' : [{
+            \    'name' : 'Unite',
+            \    'complete' : 'customlist, unite#complete_source'
+            \ }],
+            \ }
+NeoBundle 'Shougo/vimfiler.vim', {
+            \ 'commands' : [
+            \    {
+            \      'name' : ['VimFiler', 'Edit', 'Write'],
+            \      'complete' : 'customlist, vimfiler#complete'
+            \    },
+            \    'Read',
+            \    'Source'
+            \ ],
+            \ 'mappings' : '<Plug>',
+            \ 'explorer' : 1,
+            \ }
 NeoBundle 'Shougo/unite-outline'
+NeoBundle 'Shougo/context_filetype.vim'
 NeoBundle 'MarcWeber/vim-addon-mw-utils'
 NeoBundle 'tomtom/tlib_vim'
 if executable('ag')
@@ -94,10 +111,15 @@ NeoBundle 'roman/golden-ratio'
 
 " Snippets & AutoComplete {{{
 
-NeoBundle 'Shougo/neocomplete.vim.git'
-NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'honza/vim-snippets'
+NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'Shougo/neosnippet.vim', {
+            \ 'filetypes' : 'snippet',
+            \ 'unite_sources' : [
+            \     'neosnippet', 'neosnippet/user', 'neosnippet/runtime'
+            \ ],
+            \ }
 
 " }}}
 
