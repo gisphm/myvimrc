@@ -15,12 +15,12 @@
 1. ✓ replace nerdtree with vimfiler
 2. ✓ fix arrow key and esc mapping error
 3. ~~complete install.sh~~
-    After executing `install.sh`, the basic plugin `neobundle` has been installed.
-    When you open `vim`, `neobundle` will take care of all other plugins that need installing.
-    So, in some way, this `install.sh` is complete.
-4. A good documentation enough to understand and use.
+        After executing `install.sh`, the basic plugin `neobundle` has been installed.
+        When you open `vim`, `neobundle` will take care of all other plugins that need installing.
+        So, in some way, this `install.sh` is complete.
+4. good documentation
 5. use less plugins as possible
-    This could be difficult for me now. I will try my best.
+        This could be difficult for me now. I will try my best.
 6. fix issues met in use regularly
 
 ## 几点说明
