@@ -358,6 +358,7 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
+nnoremap <silent> <Leader>ar :AirlineRefresh<CR>
 
 " }}}
 
