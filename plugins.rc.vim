@@ -499,7 +499,6 @@ endfunction
 " AutoPairs {{{
 
 let g:AutoPairsMapSpace = 0
-let g:AutoPairsFlyMode = 1
 let g:AutoPairsMultilineClose = 0
 
 " }}}
