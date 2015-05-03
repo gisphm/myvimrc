@@ -155,6 +155,22 @@ nnoremap <Space>u :<C-u>Unite -winheight=10 -buffer-name=outline outline<CR>
 
 " }}}
 
+" Vimfiler {{{
+
+map <C-e> :VimFilerExplorer<CR>
+let g:vimfiler_as_default_explorer = 1
+let g:loaded_netrwPlugin = 1
+let g:vimfiler_define_wrapper_commands = 1
+let g:vimfiler_tree_leaf_icon = "→"
+let g:vimfiler_readonly_file_icon = ''
+let g:vimfiler_marked_file_icon = "✓"
+let g:vimfiler_tree_opened_icon = "▾"
+let g:vimfiler_tree_closed_icon = "▸"
+let g:vimfiler_file_icon = "✎"
+let g:vimfiler_max_directories_history = 100
+
+" }}}
+
 " TagBar {{{
 
 nnoremap <silent> <leader>tt :TagbarToggle<CR>
@@ -277,7 +293,7 @@ autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 " Snippets {{{
 
 " Use honza's snippets.
-let g:neosnippet#snippets_directory='~/.vim/plugin/vim-snippets/snippets'
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 " Enable neosnippet snipmate compatibility mode
 let g:neosnippet#enable_snipmate_compatibility = 1
