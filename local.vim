@@ -100,7 +100,7 @@ if has('statusline')
     " Broken down into easily includeable segments
     set statusline=%<%f\                     " Filename
     set statusline+=%w%h%m%r                 " Options
-    if filereadable(expand('~/.vim/plugin/vim-fugitive/README.markdown'))
+    if filereadable(expand('~/.vim/bundle/vim-fugitive/README.markdown'))
         set statusline+=%{fugitive#statusline()} " Git Hotness
     endif
     set statusline+=\ [%{&ff}/%Y]            " Filetype
