@@ -27,6 +27,7 @@ NeoBundle 'Shougo/vimproc.vim', {
             \ }
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'MarcWeber/vim-addon-mw-utils'
 NeoBundle 'tomtom/tlib_vim'
@@ -38,7 +39,6 @@ endif
 
 " General {{{
 
-NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'jiangmiao/auto-pairs'
@@ -47,7 +47,6 @@ NeoBundle 'vim-scripts/sessionman.vim'
 NeoBundle 'Firef0x/matchit'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'mbbill/undotree'
 NeoBundle 'Yggdroot/indentLine'
@@ -68,6 +67,8 @@ NeoBundle 'reedes/vim-litecorrect'
 NeoBundle 'reedes/vim-textobj-sentence'
 NeoBundle 'reedes/vim-textobj-quote'
 NeoBundle 'reedes/vim-wordy'
+NeoBundle 'reedes/vim-pencil'
+NeoBundle 'reedes/vim-lexical'
 NeoBundle 'plasticboy/vim-markdown'
 
 " }}}
@@ -86,6 +87,7 @@ NeoBundle 'tpope/vim-commentary'
 if executable('ctags')
     NeoBundle 'majutsushi/tagbar'
 endif
+NeoBundle 'roman/golden-ratio'
 
 " }}}
 
@@ -158,5 +160,6 @@ NeoBundle 'bootleq/LargeFile'
 NeoBundle 's3rvac/AutoFenc'
 NeoBundle 'junegunn/rainbow_parentheses.vim'
 NeoBundle 'antoyo/vim-licenses'
+NeoBundle 'chrisbra/csv.vim'
 
 " }}}

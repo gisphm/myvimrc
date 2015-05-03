@@ -20,30 +20,32 @@
 
 " ColorTheme {{{
 
-colorscheme molokai
-let g:molokai_original = 1
-let g:rehash256 = 1
+if filereadable(expand("~/.vim/bundle/vim-colorschemes/README.md"))
+    colorscheme molokai
+    let g:molokai_original = 1
+    let g:rehash256 = 1
+endif
 
 " }}}
 
-" TextObj Sentence {{{
+" Writing {{{
 
-augroup textobj_sentence
+let g:pencil#wrapModeDefault = 'soft'
+augroup writingPlugins
     autocmd!
-    autocmd FileType markdown call textobj#sentence#init()
-    autocmd FileType textile call textobj#sentence#init()
-    autocmd FileType text call textobj#sentence#init()
-augroup END
-
-" }}}
-
-" TextObj Quote {{{
-
-augroup textobj_quote
-    autocmd!
-    autocmd FileType markdown call textobj#quote#init()
-    autocmd FileType textile call textobj#quote#init()
-    autocmd FileType text call textobj#quote#init({'educate': 0})
+    autocmd Filetype markdown,mkd call pencil#init()
+                \ | call lexical#init()
+                \ | call litecorrect#init()
+                \ | call textobj#quote#init()
+                \ | call textobj#sentence#init()
+    autocmd FileType textile call pencil#init()
+                \ | call lexical#init()
+                \ | call litecorrect#init()
+                \ | call textobj#quote#init()
+                \ | call textobj#sentence#init()
+    autocmd FileType text call pencil#init({ 'wrap': 'hard' })
+                \ | call lexical#init({ 'spell': '0' })
+                \ | call textobj#quote#init({ 'educate': 0 })
 augroup END
 
 " }}}
@@ -76,7 +78,7 @@ set completeopt=menu,preview,longest
 " }}}
 
 " Ctags {{{
-set tags=./tags;/,~/.vimtags,gems.tags
+set tags=./tags;/,~/.vimtags,./gems.tags
 
 " Make tags placed in .git/tags file available in all levels of a repository
 let gitroot = substitute(system('git rev-parse --show-toplevel'), '[\n\r]', '', 'g')
@@ -91,23 +93,6 @@ endif
 " Make it so AutoCloseTag works for xml and xhtml files as well
 au FileType xhtml,xml ru ftplugin/html/autoclosetag.vim
 nmap <Leader>ac <Plug>ToggleAutoCloseMappings
-
-" }}}
-
-" NerdTree {{{
-
-map <C-e> <plug>NERDTreeTabsToggle<CR>
-map <leader>e :NERDTreeFind<CR>
-nmap <leader>nt :NERDTreeFind<CR>
-
-let NERDTreeShowBookmarks=1
-let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
-let NERDTreeChDirMode=0
-let NERDTreeQuitOnOpen=1
-let NERDTreeMouseMode=2
-let NERDTreeShowHidden=1
-let NERDTreeKeepTreeInNewTab=1
-let g:nerdtree_tabs_open_on_gui_startup=0
 
 " }}}
 
@@ -167,6 +152,22 @@ nnoremap <Space>/ :Unite grep:.<CR>
 nnoremap <Space>s :<C-u>Unite -winheight=10 -buffer-name=buffer -quick-match buffer<cr>
 nnoremap <leader>y :<C-u>Unite -winheight=10 -buffer-name=yank history/yank<cr>
 nnoremap <Space>u :<C-u>Unite -winheight=10 -buffer-name=outline outline<CR>
+
+" }}}
+
+" Vimfiler {{{
+
+map <C-e> :VimFilerExplorer<CR>
+let g:vimfiler_as_default_explorer = 1
+let g:loaded_netrwPlugin = 1
+let g:vimfiler_define_wrapper_commands = 1
+let g:vimfiler_tree_leaf_icon = "→"
+let g:vimfiler_readonly_file_icon = ''
+let g:vimfiler_marked_file_icon = "✓"
+let g:vimfiler_tree_opened_icon = "▾"
+let g:vimfiler_tree_closed_icon = "▸"
+let g:vimfiler_file_icon = "✎"
+let g:vimfiler_max_directories_history = 100
 
 " }}}
 
@@ -292,7 +293,7 @@ autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 " Snippets {{{
 
 " Use honza's snippets.
-let g:neosnippet#snippets_directory='~/.vim/plugin/vim-snippets/snippets'
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 " Enable neosnippet snipmate compatibility mode
 let g:neosnippet#enable_snipmate_compatibility = 1
@@ -373,9 +374,7 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
-
-" fixes bufferline printing to the status line
-let g:bufferline_echo = 0
+nnoremap <silent> <Leader>ar :AirlineRefresh<CR>
 
 " }}}
 
@@ -451,18 +450,6 @@ let g:semanticTermColors = [28,1,2,3,4,5,6,7,25,9,10,34,12,13,14,15,16,125,124,1
 
 " Functions {{{
 
-function! NERDTreeInitAsNeeded()
-    redir => bufoutput
-    buffers!
-    redir END
-    let idx = stridx(bufoutput, "NERD_tree")
-    if idx > -1
-        NERDTreeMirror
-        NERDTreeFind
-        wincmd l
-    endif
-endfunction
-
 function! CleverCr()
     if pumvisible()
         if neosnippet#expandable()
@@ -500,7 +487,6 @@ endfunction
 " AutoPairs {{{
 
 let g:AutoPairsMapSpace = 0
-let g:AutoPairsFlyMode = 1
 let g:AutoPairsMultilineClose = 0
 
 " }}}
@@ -510,5 +496,16 @@ let g:AutoPairsMultilineClose = 0
 let g:licenses_copyright_holders_name = 'gisphm <phmfk@hotmail.com>'
 let g:licenses_authors_name = 'gisphm <phmfk@hotmail.com>'
 let g:licenses_default_commands = ['apache', 'unlicense', 'wtfpl']
+
+" }}}
+
+" Syntastic {{{
+
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " }}}
