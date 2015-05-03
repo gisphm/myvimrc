@@ -27,6 +27,7 @@ NeoBundle 'Shougo/vimproc.vim', {
             \ }
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'MarcWeber/vim-addon-mw-utils'
 NeoBundle 'tomtom/tlib_vim'
@@ -66,6 +67,8 @@ NeoBundle 'reedes/vim-litecorrect'
 NeoBundle 'reedes/vim-textobj-sentence'
 NeoBundle 'reedes/vim-textobj-quote'
 NeoBundle 'reedes/vim-wordy'
+NeoBundle 'reedes/vim-pencil'
+NeoBundle 'reedes/vim-lexical'
 NeoBundle 'plasticboy/vim-markdown'
 
 " }}}
