@@ -58,6 +58,7 @@ NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-indent'
 NeoBundle 'gcmt/wildfire.vim'
 NeoBundle 'godlygeek/tabular'
+NeoBundle 'Raimondi/delimitMate'
 
 " }}}
 
