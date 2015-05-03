@@ -54,9 +54,9 @@ augroup END
 
 if has("autocmd") && exists("+omnifunc")
     autocmd Filetype *
-                \if &omnifunc == "" |
-                \setlocal omnifunc=syntaxcomplete#Complete |
-                \endif
+                \ if &omnifunc == "" |
+                \     setlocal omnifunc=syntaxcomplete#Complete |
+                \ endif
 endif
 
 hi Pmenu  guifg=#000000 guibg=#F8F8F8 ctermfg=black ctermbg=Lightgray
@@ -109,12 +109,20 @@ vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 
 " }}}
 
-" Session List {{{
+" Session {{{
 
 set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
-nmap <leader>sl :SessionList<CR>
-nmap <leader>ss :SessionSave<CR>
-nmap <leader>sc :SessionClose<CR>
+let g:session_autoload = "no"
+let g:session_directory = "~/.vim/tmp/sessions/"
+let g:session_lock_directory = "~/.vim/tmp/sessions/lock/"
+let g:session_autosave = "yes"
+let g:session_autosave_periodic = 1
+nmap <Leader>so :OpenSession<CR>
+nmap <leader>ss :SaveSession<CR>
+nmap <leader>sc :CloseSession<CR>
+nmap <Leader>sd :DeleteSession<CR>
+nmap <Leader>sr :RestartVim<CR>
+nmap <Leader>sv :ViewSession<CR>
 
 " }}}
 
@@ -160,6 +168,7 @@ let g:vimfiler_tree_opened_icon = "▾"
 let g:vimfiler_tree_closed_icon = "▸"
 let g:vimfiler_file_icon = "✎"
 let g:vimfiler_max_directories_history = 100
+let g:vimfiler_ignore_pattern = "^\%(\.git\)$"
 
 " }}}
 
@@ -433,10 +442,29 @@ noremap <silent> <Space>f :Autoformat<CR>
 
 " }}}
 
-" SemanticHighlight {{{
+" AutoPairs {{{
 
-nnoremap <Leader>sh :SemanticHighlightToggle<cr>
-let g:semanticTermColors = [28,1,2,3,4,5,6,7,25,9,10,34,12,13,14,15,16,125,124,19]
+let g:AutoPairsMapSpace = 0
+let g:AutoPairsMultilineClose = 0
+
+" }}}
+
+" Licenses {{{
+
+let g:licenses_copyright_holders_name = 'gisphm <phmfk@hotmail.com>'
+let g:licenses_authors_name = 'gisphm <phmfk@hotmail.com>'
+let g:licenses_default_commands = ['apache', 'unlicense', 'wtfpl']
+
+" }}}
+
+" Syntastic {{{
+
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " }}}
 
@@ -473,31 +501,5 @@ function! CleverTab()
         endif
     endif
 endfunction
-
-" }}}
-
-" AutoPairs {{{
-
-let g:AutoPairsMapSpace = 0
-let g:AutoPairsMultilineClose = 0
-
-" }}}
-
-" Licenses {{{
-
-let g:licenses_copyright_holders_name = 'gisphm <phmfk@hotmail.com>'
-let g:licenses_authors_name = 'gisphm <phmfk@hotmail.com>'
-let g:licenses_default_commands = ['apache', 'unlicense', 'wtfpl']
-
-" }}}
-
-" Syntastic {{{
-
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '⚠'
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 " }}}

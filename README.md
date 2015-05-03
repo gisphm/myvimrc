@@ -14,9 +14,14 @@
 ## things todo
 1. ✓ replace nerdtree with vimfiler
 2. ✓ fix arrow key and esc mapping error
-3. complete install.sh
-4. use less plugins as possible
-5. fixes issues met in use regularly
+3. ~~complete install.sh~~
+    After executing `install.sh`, the basic plugin `neobundle` has been installed.
+    When you open `vim`, `neobundle` will take care of all other plugins that need installing.
+    So, in some way, this `install.sh` is complete.
+4. A good documentation enough to understand and use.
+5. use less plugins as possible
+    This could be difficult for me now. I will try my best.
+6. fix issues met in use regularly
 
 ## 几点说明
 + 之所以用[neobundle][4]而不是[vundle][3]，是因为我对vim脚本不熟悉，`vundle`用着就出错了。

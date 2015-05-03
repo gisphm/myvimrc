@@ -140,10 +140,9 @@ set nojoinspaces
 set splitright
 set splitbelow
 set pastetoggle=<F12>
-autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
 autocmd FileType puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
 autocmd BufNewFile,BufRead *.coffee set filetype=coffee
-autocmd FileType c,cpp,javascript,puppet,xml,yml,ruby,html,eruby,sql autocmd BufWritePre <buffer> call Preserve("%s/\\s\\+$//e")
+autocmd FileType * autocmd BufWritePre <buffer> call Preserve("%s/\\s\\+$//e")
 
 " }}}
 
