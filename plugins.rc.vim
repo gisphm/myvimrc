@@ -20,9 +20,11 @@
 
 " ColorTheme {{{
 
-colorscheme molokai
-let g:molokai_original = 1
-let g:rehash256 = 1
+if filereadable(expand("~/.vim/bundle/vim-colorschemes/README.md"))
+    colorscheme molokai
+    let g:molokai_original = 1
+    let g:rehash256 = 1
+endif
 
 " }}}
 
@@ -76,7 +78,7 @@ set completeopt=menu,preview,longest
 " }}}
 
 " Ctags {{{
-set tags=./tags;/,~/.vimtags,gems.tags
+set tags=./tags;/,~/.vimtags,./gems.tags
 
 " Make tags placed in .git/tags file available in all levels of a repository
 let gitroot = substitute(system('git rev-parse --show-toplevel'), '[\n\r]', '', 'g')
