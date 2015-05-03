@@ -503,3 +503,12 @@ function! CleverTab()
 endfunction
 
 " }}}
+
+" NeoBundle {{{
+
+nnoremap <leader>nu :NeoBundleUpdate<CR>
+nnoremap <Leader>ni :NeoBundleInstall<CR>
+nnoremap <Leader>nc :NeoBundleClean<CR>
+nnoremap <Leader>nl :NeoBundleUpdatesLog<CR>
+
+" }}}
