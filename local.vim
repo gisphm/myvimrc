@@ -70,6 +70,10 @@ set backupdir=~/.vim/tmp/backup/
 set undodir=~/.vim/tmp/undo/
 set viewdir=~/.vim/tmp/view/
 
+" Resolve performance problems
+" clear match command gracefully
+autocmd BufWinLeave * call clearmatches()
+
 " }}}
 
 " Vim UI {{{
