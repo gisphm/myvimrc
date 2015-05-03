@@ -1,7 +1,10 @@
 
-v0.7(pre) / 2015-05-04
+v0.7 / 2015-05-04
 ==================
 
+  * added license to gvimrc
+  * change session lock directory
+  * added History by using git-changelog
   * added neobundle keymappings
   * still update README
   * update README
