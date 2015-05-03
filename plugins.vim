@@ -38,7 +38,6 @@ endif
 
 " General {{{
 
-NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'jiangmiao/auto-pairs'
@@ -47,7 +46,6 @@ NeoBundle 'vim-scripts/sessionman.vim'
 NeoBundle 'Firef0x/matchit'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'mbbill/undotree'
 NeoBundle 'Yggdroot/indentLine'
