@@ -11,6 +11,11 @@
 + __plugins.rc.vim__    插件的配置，尽可能地不包含vim的基本配置
 + __local.vim__         vim的基本配置，离开了插件也能运行
 
+## things todo
+1. ✓ replace nerdtree with vimfiler
+2. complete install.sh
+3. fixes issues met in use
+
 ## 几点说明
 + 之所以用[neobundle][4]而不是[vundle][3]，是因为我对vim脚本不熟悉。
 + 出错的地方应该在`vundle`的配置路径上没用上函数`expand()`，导致vundle无法读取插件，出现一堆让我头疼的东西。
