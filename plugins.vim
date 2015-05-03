@@ -60,7 +60,6 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'kristijanhusak/vim-multiple-cursors'
-NeoBundle 'vim-scripts/sessionman.vim'
 NeoBundle 'Firef0x/matchit'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'Lokaltog/vim-easymotion'
@@ -76,6 +75,9 @@ NeoBundle 'kana/vim-textobj-indent'
 NeoBundle 'gcmt/wildfire.vim'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'xolox/vim-misc'
+NeoBundle 'xolox/vim-session'
+NeoBundle 'roman/golden-ratio'
 
 " }}}
 
@@ -105,7 +107,6 @@ NeoBundle 'tpope/vim-commentary'
 if executable('ctags')
     NeoBundle 'majutsushi/tagbar'
 endif
-NeoBundle 'roman/golden-ratio'
 
 " }}}
 
@@ -125,7 +126,6 @@ NeoBundle 'Shougo/neosnippet.vim', {
 
 " Javascript {{{
 
-NeoBundle 'elzr/vim-json'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'briancollins/vim-jst'
@@ -176,12 +176,11 @@ NeoBundle 'rodjek/vim-puppet'
 
 " Misc {{{
 
-NeoBundle 'jaxbot/semantic-highlight.vim'
+NeoBundle 'elzr/vim-json'
 NeoBundle 'othree/xml.vim'
 NeoBundle 'dbext.vim'
 NeoBundle 'bootleq/LargeFile'
 NeoBundle 's3rvac/AutoFenc'
-NeoBundle 'junegunn/rainbow_parentheses.vim'
 NeoBundle 'antoyo/vim-licenses'
 NeoBundle 'chrisbra/csv.vim'
 

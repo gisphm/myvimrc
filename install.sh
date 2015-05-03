@@ -16,6 +16,7 @@
 # limitations under the License.
 
 mkdir -p ~/.vim/bundle
+mkdir -p ~/.vim/tmp/sessions/lock
 mkdir -p ~/.vim/tmp/backup
 mkdir -p ~/.vim/tmp/swap
 mkdir -p ~/.vim/tmp/undo
