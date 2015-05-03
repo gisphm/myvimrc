@@ -253,7 +253,7 @@ inoremap <expr><C-l> neocomplete#complete_common_string()
 " <CR>: close popup
 " <s-CR>: close popup and save indent.
 inoremap <expr><s-CR> pumvisible() ? neocomplete#smart_close_popup()."\<CR>" : "\<CR>"
-inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
+imap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
 
 " <CR> close popup and save indent or expand snippet
 imap <expr> <CR> CleverCr()
