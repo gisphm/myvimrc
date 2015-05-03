@@ -372,6 +372,9 @@ let g:airline_symbols.linenr = ''
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
+" fixes bufferline printing to the status line
+let g:bufferline_echo = 0
+
 " }}}
 
 " emmet-vim {{{
