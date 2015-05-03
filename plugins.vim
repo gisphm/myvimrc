@@ -86,6 +86,7 @@ NeoBundle 'tpope/vim-commentary'
 if executable('ctags')
     NeoBundle 'majutsushi/tagbar'
 endif
+NeoBundle 'roman/golden-ratio'
 
 " }}}
 
@@ -158,5 +159,6 @@ NeoBundle 'bootleq/LargeFile'
 NeoBundle 's3rvac/AutoFenc'
 NeoBundle 'junegunn/rainbow_parentheses.vim'
 NeoBundle 'antoyo/vim-licenses'
+NeoBundle 'chrisbra/csv.vim'
 
 " }}}
