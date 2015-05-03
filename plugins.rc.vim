@@ -28,24 +28,24 @@ endif
 
 " }}}
 
-" TextObj Sentence {{{
+" Writing {{{
 
-augroup textobj_sentence
+let g:pencil#wrapModeDefault = 'soft'
+augroup writingPlugins
     autocmd!
-    autocmd FileType markdown call textobj#sentence#init()
-    autocmd FileType textile call textobj#sentence#init()
-    autocmd FileType text call textobj#sentence#init()
-augroup END
-
-" }}}
-
-" TextObj Quote {{{
-
-augroup textobj_quote
-    autocmd!
-    autocmd FileType markdown call textobj#quote#init()
-    autocmd FileType textile call textobj#quote#init()
-    autocmd FileType text call textobj#quote#init({'educate': 0})
+    autocmd Filetype markdown,mkd call pencil#init()
+                \ | call lexical#init()
+                \ | call litecorrect#init()
+                \ | call textobj#quote#init()
+                \ | call textobj#sentence#init()
+    autocmd FileType textile call pencil#init()
+                \ | call lexical#init()
+                \ | call litecorrect#init()
+                \ | call textobj#quote#init()
+                \ | call textobj#sentence#init()
+    autocmd FileType text call pencil#init({ 'wrap': 'hard' })
+                \ | call lexical#init({ 'spell': '0' })
+                \ | call textobj#quote#init({ 'educate': 0 })
 augroup END
 
 " }}}
