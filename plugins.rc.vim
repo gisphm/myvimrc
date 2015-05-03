@@ -509,3 +509,14 @@ let g:licenses_authors_name = 'gisphm <phmfk@hotmail.com>'
 let g:licenses_default_commands = ['apache', 'unlicense', 'wtfpl']
 
 " }}}
+
+" Syntastic {{{
+
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" }}}
