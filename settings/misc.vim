@@ -28,7 +28,7 @@ let g:vim_json_syntax_conceal = 0
 " Licenses {{{
 
 let g:licenses_copyright_holders_name = 'gisphm <phmfk@hotmail.com>'
-let g:licenses_authors_name = 'gisphm <phmfk@hotmail.com>'
-let g:licenses_default_commands = ['apache', 'unlicense', 'wtfpl']
+let g:licenses_authors_name           = 'gisphm <phmfk@hotmail.com>'
+let g:licenses_default_commands       = ['apache', 'unlicense', 'wtfpl']
 
 " }}}
