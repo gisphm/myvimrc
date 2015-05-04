@@ -59,10 +59,10 @@ vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 " Session {{{
 
 set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
-let g:session_autoload = "no"
-let g:session_directory = "~/.vim/tmp/sessions/"
-let g:session_lock_directory = "~/.vim/tmp/lock/"
-let g:session_autosave = "yes"
+let g:session_autoload          = "no"
+let g:session_directory         = "~/.vim/tmp/sessions/"
+let g:session_lock_directory    = "~/.vim/tmp/lock/"
+let g:session_autosave          = "yes"
 let g:session_autosave_periodic = 1
 nmap <Leader>so :OpenSession<CR>
 nmap <leader>ss :SaveSession<CR>
@@ -76,16 +76,9 @@ nmap <Leader>sv :ViewSession<CR>
 " Airline {{{
 
 let g:airline_theme_patch_func = 'AirlineThemePatch'
-function! AirlineThemePatch(palette)
-    if g:airline_theme == 'badwolf'
-        for colors in values(a:palette.inactive)
-            let colors[3] = 245
-        endfor
-    endif
-endfunction
-let g:airline_theme = 'badwolf'
-let g:airline_powerline_fonts=1
-let g:airline_mode_map = {
+let g:airline_theme            = 'badwolf'
+let g:airline_powerline_fonts  = 1
+let g:airline_mode_map         = {
             \ '__' : '-',
             \ 'n'  : 'N',
             \ 'i'  : 'I',
@@ -101,26 +94,16 @@ let g:airline_mode_map = {
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
-let g:airline_symbols.paste = '∥'
+let g:airline_left_sep           = ''
+let g:airline_left_alt_sep       = ''
+let g:airline_right_sep          = ''
+let g:airline_right_alt_sep      = ''
+let g:airline_symbols.branch     = ''
+let g:airline_symbols.readonly   = ''
+let g:airline_symbols.linenr     = ''
+let g:airline_symbols.paste      = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 nnoremap <silent> <Leader>ar :AirlineRefresh<CR>
-
-" }}}
-
-" indentLine {{{
-
-let g:indentLine_char = '¦'
-let g:indentLine_first_char = '¦'
-let g:indentLine_bufNameExclude = ['vimfiler.*', 'Unite.*']
-let g:indentLine_leadingSpaceChar = '·'
-let g:indentLine_leadingSpaceEnabled = 1
 
 " }}}
 
@@ -137,7 +120,7 @@ let g:wildfire_objects = {
 
 nnoremap <Leader>u :UndotreeToggle<CR>
 " If undotree is opened, it is likely one wants to interact with it.
-let g:undotree_SetFocusWhenToggle=1
+let g:undotree_SetFocusWhenToggle = 1
 
 " }}}
 
@@ -166,5 +149,26 @@ let g:SignatureMap = {
             \ 'ListLocalMarks'     :  "ms",
             \ 'ListLocalMarkers'   :  "m?"
             \ }
+
+" }}}
+
+" Indent Guides {{{
+
+let g:indent_guides_start_level           = 2
+let g:indent_guides_guide_size            = 1
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors           = 1
+
+" }}}
+
+" Functions {{{
+
+function! AirlineThemePatch(palette)
+    if g:airline_theme == 'badwolf'
+        for colors in values(a:palette.inactive)
+            let colors[3] = 245
+        endfor
+    endif
+endfunction
 
 " }}}
