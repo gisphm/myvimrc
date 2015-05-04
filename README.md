@@ -20,6 +20,8 @@
     > When you open `vim`, `neobundle` will take care of all other plugins that need installing.
     > So, in some way, this `install.sh` is complete.
 
+4. ✓ split plugins list
+4. split plugins settings
 4. good documentation
 5. use less plugins as possible
 
