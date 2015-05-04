@@ -28,8 +28,7 @@ NeoBundle 'int3/vim-extradite'
 NeoBundle 'mhinz/vim-signify'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'mattn/gist-vim'
-NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'tpope/vim-commentary'
+NeoBundle 'tomtom/tcomment_vim'
 if executable('ctags')
     NeoBundle 'majutsushi/tagbar'
 endif

@@ -20,7 +20,7 @@
 
 " General {{{
 
-filetype plugin indent on   " Automatically detect file types.
+filetype plugin on
 syntax on                   " Syntax highlighting
 set mouse=a                 " Automatically enable mouse usage
 set mousehide               " Hide the mouse cursor while typing
