@@ -31,11 +31,11 @@ nnoremap <Leader>nl :NeoBundleUpdatesLog<CR>
 
 call unite#custom#source('file,file/new,buffer,file_rec', 'matchers', 'matcher_fuzzy')
 call unite#custom#profile('files', 'filters', 'sorter_rank')
-let g:unite_prompt = '» '
-let g:unite_split_rule = 'botright'
+let g:unite_prompt                        = '» '
+let g:unite_split_rule                    = 'botright'
 if executable('ag')
-    let g:unite_source_grep_command = 'ag'
-    let g:unite_source_grep_default_opts = '--nocolor --nogroup -S -C4'
+    let g:unite_source_grep_command       = 'ag'
+    let g:unite_source_grep_default_opts  = '--nocolor --nogroup -S -C4'
     let g:unite_source_grep_recursive_opt = ''
 endif
 let g:unite_source_history_yank_enable = 1
@@ -52,17 +52,17 @@ nnoremap <Space>u :<C-u>Unite -winheight=10 -buffer-name=outline outline<CR>
 " Vimfiler {{{
 
 map <C-e> :VimFilerExplorer<CR>
-let g:vimfiler_as_default_explorer = 1
-let g:loaded_netrwPlugin = 1
+let g:vimfiler_as_default_explorer     = 1
+let g:loaded_netrwPlugin               = 1
 let g:vimfiler_define_wrapper_commands = 1
-let g:vimfiler_tree_leaf_icon = "→"
-let g:vimfiler_readonly_file_icon = ''
-let g:vimfiler_marked_file_icon = "✓"
-let g:vimfiler_tree_opened_icon = "▾"
-let g:vimfiler_tree_closed_icon = "▸"
-let g:vimfiler_file_icon = "✎"
+let g:vimfiler_tree_leaf_icon          = "→"
+let g:vimfiler_readonly_file_icon      = ''
+let g:vimfiler_marked_file_icon        = "✓"
+let g:vimfiler_tree_opened_icon        = "▾"
+let g:vimfiler_tree_closed_icon        = "▸"
+let g:vimfiler_file_icon               = "✎"
 let g:vimfiler_max_directories_history = 100
-let g:vimfiler_ignore_pattern = "^\%(\.git\)$"
+let g:vimfiler_ignore_pattern          = "^\%(\.git\)$"
 
 " }}}
 
