@@ -20,7 +20,8 @@
 
 " ColorTheme {{{
 
-if filereadable(expand("~/.vim/bundle/vim-colorschemes/README.md"))
+if filereadable(expand("~/.vim/bundle/vim-colorschemes/README.md")) &&
+            \ !has('gui_running')
     colorscheme molokai
     let g:molokai_original = 1
     let g:rehash256        = 1
