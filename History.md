@@ -2,6 +2,16 @@
 v0.8(pre) / 2015-05-04
 ==================
 
+  * added tcomment
+  * added signify settings
+  * move base and gvimrc to settings folder
+  * split plugins settings into seperate files
+  * update todo
+  * split plugin list to seperate files
+  * revert vimfiles location
+  * move all vim files to vimfiles folder but vimrc
+  * rename local.vim to base.vim
+  * update ChangeLog
   * Merge tag 'v0.7' into develop
 
 v0.7 / 2015-05-04
