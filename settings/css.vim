@@ -18,39 +18,13 @@
 "
 " }}}
 
-" Basic {{{
+" CSS {{{
 
-set nocompatible
-set shell=/bin/sh
-set background=dark
-
-" }}}
-
-" NeoBundle {{{
-
-let vimbundles = '~/.vim/neobundles/'
-set rtp+=~/.vim/bundle/neobundle.vim/
-call neobundle#begin(expand("~/.vim/bundle/"))
-
-NeoBundleFetch "Shougo/neobundle.vim"
-
-for eachbundle in split(globpath(vimbundles, '*.vim'), '\n')
-    exe 'source' eachbundle
-endfor
-
-call neobundle#end()
-
-filetype plugin indent on
-
-NeoBundleCheck
-
-" }}}
-
-" Sourcing Configurations {{{
-
-let bundlesettings = '~/.vim/settings/'
-for eachsetting in split(globpath(bundlesettings, '*.vim'), '\n')
-    exe 'source' eachsetting
-endfor
+augroup VimCSS3Syntax
+    autocmd!
+    autocmd FileType css setlocal iskeyword+=-
+augroup END
+au BufRead,BufNewFile *.scss set filetype=scss.css
+autocmd FileType scss set iskeyword+=-
 
 " }}}

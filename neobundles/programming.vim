@@ -18,39 +18,21 @@
 "
 " }}}
 
-" Basic {{{
+" Programming {{{
 
-set nocompatible
-set shell=/bin/sh
-set background=dark
-
-" }}}
-
-" NeoBundle {{{
-
-let vimbundles = '~/.vim/neobundles/'
-set rtp+=~/.vim/bundle/neobundle.vim/
-call neobundle#begin(expand("~/.vim/bundle/"))
-
-NeoBundleFetch "Shougo/neobundle.vim"
-
-for eachbundle in split(globpath(vimbundles, '*.vim'), '\n')
-    exe 'source' eachbundle
-endfor
-
-call neobundle#end()
-
-filetype plugin indent on
-
-NeoBundleCheck
-
-" }}}
-
-" Sourcing Configurations {{{
-
-let bundlesettings = '~/.vim/settings/'
-for eachsetting in split(globpath(bundlesettings, '*.vim'), '\n')
-    exe 'source' eachsetting
-endfor
+NeoBundle 'tpope/vim-git'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-dispatch'
+NeoBundle 'idanarye/vim-merginal'
+NeoBundle 'int3/vim-extradite'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'mhinz/vim-signify'
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'mattn/gist-vim'
+NeoBundle 'tomtom/tcomment_vim'
+if executable('ctags')
+    NeoBundle 'majutsushi/tagbar'
+endif
+NeoBundle 'Chiel92/vim-autoformat'
 
 " }}}

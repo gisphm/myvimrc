@@ -9,7 +9,7 @@
 + __vimrc__             主配置文件，包含[neobundle][4]的初始化和vim插件的初次安装
 + __plugins.vim__       插件列表文件，包含所有安装的插件，按照[spf13-vim][1]进行分组
 + __plugins.rc.vim__    插件的配置，尽可能地不包含vim的基本配置
-+ __local.vim__         基本配置，不需要插件支持
++ __base.vim__          基本配置，不需要插件支持
 
 ## things todo
 1. ✓ replace nerdtree with vimfiler
@@ -19,10 +19,14 @@
     > After executing `install.sh`, the basic plugin `neobundle` has been installed.
     > When you open `vim`, `neobundle` will take care of all other plugins that need installing.
     > So, in some way, this `install.sh` is complete.
+
+4. ✓ split plugins list
+4. split plugins settings
 4. good documentation
 5. use less plugins as possible
 
     > This could be difficult for me now. I will try my best.
+
 6. fix issues met in use regularly
 
 ## 几点说明

@@ -18,39 +18,28 @@
 "
 " }}}
 
-" Basic {{{
+" General {{{
 
-set nocompatible
-set shell=/bin/sh
-set background=dark
-
-" }}}
-
-" NeoBundle {{{
-
-let vimbundles = '~/.vim/neobundles/'
-set rtp+=~/.vim/bundle/neobundle.vim/
-call neobundle#begin(expand("~/.vim/bundle/"))
-
-NeoBundleFetch "Shougo/neobundle.vim"
-
-for eachbundle in split(globpath(vimbundles, '*.vim'), '\n')
-    exe 'source' eachbundle
-endfor
-
-call neobundle#end()
-
-filetype plugin indent on
-
-NeoBundleCheck
-
-" }}}
-
-" Sourcing Configurations {{{
-
-let bundlesettings = '~/.vim/settings/'
-for eachsetting in split(globpath(bundlesettings, '*.vim'), '\n')
-    exe 'source' eachsetting
-endfor
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'kristijanhusak/vim-multiple-cursors'
+NeoBundle 'Firef0x/matchit'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'mbbill/undotree'
+NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'vim-scripts/restore_view.vim'
+NeoBundle 'tpope/vim-abolish.git'
+NeoBundle 'osyo-manga/vim-over'
+NeoBundle 'kana/vim-textobj-user'
+NeoBundle 'kana/vim-textobj-indent'
+NeoBundle 'gcmt/wildfire.vim'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'xolox/vim-misc'
+NeoBundle 'xolox/vim-session'
+NeoBundle 'roman/golden-ratio'
 
 " }}}

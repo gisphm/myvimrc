@@ -1,7 +1,26 @@
 
-v0.7 / 2015-05-04
+0.8 / 2015-05-04
 ==================
 
+  * added dispatch.vim
+  * upate History
+  * added tcomment
+  * added signify settings
+  * move base and gvimrc to settings folder
+  * split plugins settings into seperate files
+  * update todo
+  * split plugin list to seperate files
+  * revert vimfiles location
+  * move all vim files to vimfiles folder but vimrc
+  * rename local.vim to base.vim
+  * update ChangeLog
+  * Merge tag 'v0.7' into develop
+
+v0.7 / 2015-05-04
+=================
+
+  * Merge branch 'release/v0.7'
+  * update History
   * added license to gvimrc
   * change session lock directory
   * added History by using git-changelog
