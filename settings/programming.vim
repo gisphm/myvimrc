@@ -55,7 +55,6 @@ nnoremap <silent> <leader>gw :Gwrite<CR>
 nnoremap <silent> <leader>ge :Gedit<CR>
 " Mnemonic _i_nteractive
 nnoremap <silent> <leader>gi :Git add -p %<CR>
-nnoremap <silent> <leader>gg :SignifyToggle<CR>
 
 " }}}
 
@@ -73,5 +72,31 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" }}}
+
+" Signify {{{
+
+let g:signify_vcs_list = ['git']
+let g:signify_cursorhold_insert = 1
+let g:signify_cursorhold_normal = 1
+let g:signify_update_on_bufenter = 1
+let g:signify_update_on_focusgained = 1
+let g:signify_sign_add = '✚'
+let g:signify_sign_delete = '✖'
+let g:signify_sign_delete_first_line = '✭'
+let g:signify_sign_change = '✹'
+let g:signify_sign_changedelete = '➜'
+" highlight lines in Sy and vimdiff etc.)
+highlight DiffAdd           cterm=bold ctermbg=none ctermfg=119
+highlight DiffDelete        cterm=bold ctermbg=none ctermfg=167
+highlight DiffChange        cterm=bold ctermbg=none ctermfg=227
+" highlight signs in Sy
+highlight SignifySignAdd    cterm=bold ctermbg=237  ctermfg=119
+highlight SignifySignDelete cterm=bold ctermbg=237  ctermfg=167
+highlight SignifySignChange cterm=bold ctermbg=237  ctermfg=227
+nnoremap <silent> <leader>gg :SignifyToggle<CR>
+nmap <Leader>gj <Plug>(signify-next-hunk)
+nmap <Leader>gk <Plug>(signify-prev-hunk)
 
 " }}}
