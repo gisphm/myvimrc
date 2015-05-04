@@ -1,7 +1,14 @@
 
-0.8 / 2015-05-04
+0.9(pre) / 2015-05-04
 ==================
 
+  * Merge tag 'v0.8' into develop
+
+v0.8 / 2015-05-04
+=================
+
+  * Merge branch 'release/v0.8'
+  * update History
   * added dispatch.vim
   * upate History
   * added tcomment
