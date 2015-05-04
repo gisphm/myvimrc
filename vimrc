@@ -48,13 +48,9 @@ NeoBundleCheck
 
 " Sourcing Configurations {{{
 
-if filereadable(expand("~/.vim/base.vim"))
-    source ~/.vim/base.vim
-endif
-
 let bundlesettings = '~/.vim/settings/'
-for eachbundle in split(globpath(bundlesettings, '*.vim'), '\n')
-    exe 'source' eachbundle
+for eachsetting in split(globpath(bundlesettings, '*.vim'), '\n')
+    exe 'source' eachsetting
 endfor
 
 " }}}

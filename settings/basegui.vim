@@ -20,15 +20,23 @@
 
 " General {{{
 
-" Disable toolbar and scrollbars
-set guioptions-=T
-set guioptions-=r
-set guioptions-=R
-set guioptions-=l
-set guioptions-=L
-set guioptions-=m
-set lines=40
-set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
-colo solarized
+if has('gui_running')
+    " Disable toolbar and scrollbars
+    set guioptions-=T
+    set guioptions-=r
+    set guioptions-=R
+    set guioptions-=l
+    set guioptions-=L
+    set guioptions-=m
+
+    " 50 lines of text
+    set lines=50
+
+    " Ubuntu Mono patched font
+    set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
+
+    " gui using solarized colorscheme
+    colo solarized
+endif
 
 " }}}
