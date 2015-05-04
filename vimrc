@@ -33,8 +33,8 @@ call neobundle#begin(expand("~/.vim/bundle/"))
 
 NeoBundleFetch "Shougo/neobundle.vim"
 
-if filereadable(expand("~/.vim/plugins.vim"))
-    source ~/.vim/plugins.vim
+if filereadable(expand("~/.vim/vimfiles/plugins.vim"))
+    source ~/.vim/vimfiles/plugins.vim
 endif
 
 call neobundle#end()
@@ -47,12 +47,12 @@ NeoBundleCheck
 
 " Sourcing Configurations {{{
 
-if filereadable(expand("~/.vim/base.vim"))
-    source ~/.vim/base.vim
+if filereadable(expand("~/.vim/vimfiles/base.vim"))
+    source ~/.vim/vimfiles/base.vim
 endif
 
-if filereadable(expand("~/.vim/plugins.rc.vim"))
-    source ~/.vim/plugins.rc.vim
+if filereadable(expand("~/.vim/vimfiles/plugins.rc.vim"))
+    source ~/.vim/vimfiles/plugins.rc.vim
 endif
 
 " }}}
