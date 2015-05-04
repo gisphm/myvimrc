@@ -1,7 +1,9 @@
 
-v0.8(pre) / 2015-05-04
+0.8 / 2015-05-04
 ==================
 
+  * added dispatch.vim
+  * upate History
   * added tcomment
   * added signify settings
   * move base and gvimrc to settings folder

@@ -21,10 +21,11 @@
 " Programming {{{
 
 NeoBundle 'tpope/vim-git'
-NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'idanarye/vim-merginal'
 NeoBundle 'int3/vim-extradite'
+NeoBundle 'scrooloose/syntastic'
 NeoBundle 'mhinz/vim-signify'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'mattn/gist-vim'
