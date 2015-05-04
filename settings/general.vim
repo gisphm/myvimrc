@@ -118,7 +118,7 @@ nnoremap <silent> <Leader>ar :AirlineRefresh<CR>
 
 let g:indentLine_char = '¦'
 let g:indentLine_first_char = '¦'
-let g:indentLine_bufNameExclude = ['NERD_tree.*']
+let g:indentLine_bufNameExclude = ['vimfiler.*', 'Unite.*']
 let g:indentLine_leadingSpaceChar = '·'
 let g:indentLine_leadingSpaceEnabled = 1
 
