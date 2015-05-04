@@ -20,7 +20,6 @@
 
 " Javascript {{{
 
-NeoBundle 'groenewege/vim-less'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'briancollins/vim-jst'
 NeoBundle 'kchmck/vim-coffee-script'
@@ -28,7 +27,6 @@ NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'Shutnik/jshint2.vim'
 NeoBundle 'othree/yajs.vim'
 NeoBundle 'othree/javascript-libraries-syntax.vim'
-NeoBundle 'othree/vim-syntax-enhanced'
 NeoBundle 'othree/jspc.vim'
 
 " }}}
