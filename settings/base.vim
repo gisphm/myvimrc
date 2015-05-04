@@ -20,6 +20,8 @@
 
 " General {{{
 
+set shell=/bin/sh
+set background=dark
 filetype plugin on
 syntax on                   " Syntax highlighting
 set mouse=a                 " Automatically enable mouse usage
