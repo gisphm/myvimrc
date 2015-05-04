@@ -47,8 +47,8 @@ NeoBundleCheck
 
 " Sourcing Configurations {{{
 
-if filereadable(expand("~/.vim/local.vim"))
-    source ~/.vim/local.vim
+if filereadable(expand("~/.vim/base.vim"))
+    source ~/.vim/base.vim
 endif
 
 if filereadable(expand("~/.vim/plugins.rc.vim"))
