@@ -42,6 +42,10 @@ augroup END
 
 " Markdown {{{
 
+augroup MarkdownFiles
+    autocmd!
+    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
 let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1
 
