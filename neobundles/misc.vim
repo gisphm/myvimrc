@@ -20,6 +20,9 @@
 
 " Misc {{{
 
+NeoBundle 'fatih/vim-go', {
+            \ 'filetype' : 'go'
+            \ }
 NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'othree/xml.vim'
