@@ -20,12 +20,15 @@
 
 " Deps {{{
 
+NeoBundle 'MarcWeber/vim-addon-mw-utils'
+NeoBundle 'tomtom/tlib_vim'
+NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'Shougo/context_filetype.vim'
 NeoBundle 'Shougo/vimproc.vim', {
             \ 'build' : {
             \    'linux' : 'make',
             \ },
             \ }
-NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/unite.vim', {
             \ 'commands' : [{
             \    'name' : 'Unite',
@@ -45,9 +48,33 @@ NeoBundle 'Shougo/vimfiler.vim', {
             \ 'explorer' : 1,
             \ }
 NeoBundle 'Shougo/unite-outline'
-NeoBundle 'Shougo/context_filetype.vim'
-NeoBundle 'MarcWeber/vim-addon-mw-utils'
-NeoBundle 'tomtom/tlib_vim'
+
+" }}}
+
+" General {{{
+
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'kristijanhusak/vim-multiple-cursors'
+NeoBundle 'Firef0x/matchit'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'mbbill/undotree'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'vim-scripts/restore_view.vim'
+NeoBundle 'tpope/vim-abolish.git'
+NeoBundle 'osyo-manga/vim-over'
+NeoBundle 'kana/vim-textobj-user'
+NeoBundle 'kana/vim-textobj-indent'
+NeoBundle 'gcmt/wildfire.vim'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'xolox/vim-misc'
+NeoBundle 'xolox/vim-session'
+NeoBundle 'roman/golden-ratio'
+NeoBundle 'kshenoy/vim-signature'
 if executable('ag')
     NeoBundle 'rking/ag.vim'
 endif

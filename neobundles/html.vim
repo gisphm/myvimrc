@@ -20,9 +20,15 @@
 
 " HTML {{{
 
-NeoBundle 'othree/html5.vim'
-NeoBundle 'amirh/HTML-AutoCloseTag'
-NeoBundle 'tpope/vim-haml'
+NeoBundleLazy 'othree/html5.vim', {
+            \ 'filetypes' : ['html', 'eruby'],
+            \ }
+NeoBundleLazy 'amirh/HTML-AutoCloseTag', {
+            \ 'filetypes' : ['html', 'eruby'],
+            \ }
+NeoBundleLazy 'tpope/vim-haml', {
+            \ 'filetypes' : 'haml',
+            \ }
 NeoBundle 'mattn/emmet-vim'
 
 " }}}

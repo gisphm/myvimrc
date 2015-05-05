@@ -20,12 +20,26 @@
 
 " Writing {{{
 
-NeoBundle 'reedes/vim-litecorrect'
-NeoBundle 'reedes/vim-textobj-sentence'
-NeoBundle 'reedes/vim-textobj-quote'
-NeoBundle 'reedes/vim-wordy'
-NeoBundle 'reedes/vim-pencil'
-NeoBundle 'reedes/vim-lexical'
-NeoBundle 'plasticboy/vim-markdown'
+NeoBundleLazy 'reedes/vim-litecorrect', {
+            \ 'filetypes' : ['markdwon', 'mkd', 'rst', 'text', 'textile'],
+            \ }
+NeoBundleLazy 'reedes/vim-textobj-sentence', {
+            \ 'filetypes' : ['markdwon', 'mkd', 'rst', 'text', 'textile'],
+            \ }
+NeoBundleLazy 'reedes/vim-textobj-quote', {
+            \ 'filetypes' : ['markdwon', 'mkd', 'rst', 'text', 'textile'],
+            \ }
+NeoBundleLazy 'reedes/vim-wordy', {
+            \ 'filetypes' : ['markdwon', 'mkd', 'rst', 'text', 'textile'],
+            \ }
+NeoBundleLazy 'reedes/vim-pencil', {
+            \ 'filetypes' : ['markdwon', 'mkd', 'rst', 'text', 'textile'],
+            \ }
+NeoBundleLazy 'reedes/vim-lexical', {
+            \ 'filetypes' : ['markdwon', 'mkd', 'rst', 'text', 'textile'],
+            \ }
+NeoBundleLazy 'plasticboy/vim-markdown', {
+            \ 'filetypes' : ['markdown', 'mkd'],
+            \}
 
 " }}}

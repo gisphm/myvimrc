@@ -20,16 +20,19 @@
 
 " Misc {{{
 
-NeoBundle 'fatih/vim-go', {
-            \ 'filetype' : 'go'
+NeoBundleLazy 'fatih/vim-go', {
+            \ 'filetypes' : 'go',
             \ }
-NeoBundle 'rodjek/vim-puppet'
-NeoBundle 'elzr/vim-json'
+NeoBundleLazy 'elzr/vim-json', {
+            \ 'filetypes' : 'json',
+            \ }
 NeoBundle 'othree/xml.vim'
 NeoBundle 'dbext.vim'
 NeoBundle 'bootleq/LargeFile'
 NeoBundle 's3rvac/AutoFenc'
 NeoBundle 'antoyo/vim-licenses'
-NeoBundle 'chrisbra/csv.vim'
+NeoBundleLazy 'chrisbra/csv.vim', {
+            \ 'filetypes' : 'csv',
+            \ }
 
 " }}}
