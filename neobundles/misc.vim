@@ -23,6 +23,11 @@
 NeoBundleLazy 'fatih/vim-go', {
             \ 'filetypes' : 'go',
             \ }
+NeoBundleLazy 'rhysd/unite-go-import.vim', {
+            \ 'autoload' : {
+            \     'unite_sources' : 'go/import',
+            \   }
+            \ }
 NeoBundleLazy 'elzr/vim-json', {
             \ 'filetypes' : 'json',
             \ }

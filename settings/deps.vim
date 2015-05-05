@@ -46,6 +46,7 @@ nnoremap <Space>/ :Unite grep:.<CR>
 nnoremap <Space>s :<C-u>Unite -winheight=10 -buffer-name=buffer -quick-match buffer<cr>
 nnoremap <leader>y :<C-u>Unite -winheight=10 -buffer-name=yank history/yank<cr>
 nnoremap <Space>u :<C-u>Unite -winheight=10 -buffer-name=outline outline<CR>
+nnoremap <Space>g :Unite -winheight=10 -buffer-name=goimport go/import<CR>
 
 " }}}
 
