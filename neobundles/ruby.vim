@@ -20,6 +20,9 @@
 
 " Ruby {{{
 
+NeoBundleLazy 'vim-ruby/vim-ruby', {
+            \ 'filetypes' : 'ruby',
+            \ }
 NeoBundleLazy 'tpope/vim-rails', {
             \ 'filetypes' : 'ruby',
             \ }
@@ -29,13 +32,13 @@ NeoBundleLazy 'ecomba/vim-ruby-refactoring', {
 NeoBundleLazy 'tpope/vim-endwise', {
             \ 'filetypes' : 'ruby',
             \ }
-NeoBundleLazy 'vim-ruby/vim-ruby', {
-            \ 'filetypes' : 'ruby',
-            \ }
 NeoBundleLazy 'tpope/vim-rake', {
             \ 'filetypes' : 'ruby',
             \ }
 NeoBundleLazy 'tpope/vim-bundler', {
+            \ 'filetypes' : 'ruby',
+            \ }
+NeoBundleLazy 'osyo-manga/vim-monster', {
             \ 'filetypes' : 'ruby',
             \ }
 
