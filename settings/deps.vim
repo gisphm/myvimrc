@@ -73,6 +73,7 @@ let g:vimfiler_ignore_pattern          = "^\%(\.git\)$"
 " }}}
 
 " Ctags {{{
+
 set tags=./tags;/,~/.vimtags,./gems.tags
 
 " Make tags placed in .git/tags file available in all levels of a repository
