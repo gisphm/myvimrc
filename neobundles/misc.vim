@@ -36,6 +36,7 @@ NeoBundle 'dbext.vim'
 NeoBundle 'bootleq/LargeFile'
 NeoBundle 's3rvac/AutoFenc'
 NeoBundle 'antoyo/vim-licenses'
+NeoBundle 'luochen1990/rainbow'
 NeoBundleLazy 'chrisbra/csv.vim', {
             \ 'filetypes' : 'csv',
             \ }
