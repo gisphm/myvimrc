@@ -29,6 +29,8 @@ NeoBundleLazy 'amirh/HTML-AutoCloseTag', {
 NeoBundleLazy 'tpope/vim-haml', {
             \ 'filetypes' : 'haml',
             \ }
-NeoBundle 'mattn/emmet-vim'
+NeoBundleLazy 'mattn/emmet-vim', {
+            \ 'filetypes' : ['html', 'eruby', 'css', 'xml', 'javascript'],
+            \ }
 
 " }}}
