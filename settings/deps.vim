@@ -68,11 +68,12 @@ let g:vimfiler_tree_opened_icon        = "▾"
 let g:vimfiler_tree_closed_icon        = "▸"
 let g:vimfiler_file_icon               = "✎"
 let g:vimfiler_max_directories_history = 100
-let g:vimfiler_ignore_pattern          = "^\%(\.git\)$"
+let g:vimfiler_ignore_pattern          = '\%(\.hg\|\.svn\|\.git\)$'
 
 " }}}
 
 " Ctags {{{
+
 set tags=./tags;/,~/.vimtags,./gems.tags
 
 " Make tags placed in .git/tags file available in all levels of a repository
