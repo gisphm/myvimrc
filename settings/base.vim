@@ -80,8 +80,7 @@ autocmd BufWinLeave * call clearmatches()
 
 " Vim UI {{{
 
-set tabpagemax=15               " Only show 15 tabs
-set showmode                    " Display the current mode
+set noshowmode
 
 au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn

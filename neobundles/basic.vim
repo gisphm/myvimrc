@@ -78,8 +78,5 @@ NeoBundle 'xolox/vim-misc'
 NeoBundle 'xolox/vim-session'
 NeoBundle 'roman/golden-ratio'
 NeoBundle 'kshenoy/vim-signature'
-if executable('ag')
-    NeoBundle 'rking/ag.vim'
-endif
 
 " }}}
