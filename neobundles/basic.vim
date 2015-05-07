@@ -65,9 +65,7 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'vim-scripts/restore_view.vim'
 NeoBundle 'tpope/vim-abolish.git'
 NeoBundle 'osyo-manga/vim-over'
-NeoBundle 'powerline/powerline', {
-            \ 'rtp' : 'powerline/bindings/vim',
-            \ }
+NeoBundle 'bling/vim-airline'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-indent'
 NeoBundle 'gcmt/wildfire.vim'

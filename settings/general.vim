@@ -127,3 +127,43 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors           = 1
 
 " }}}
+
+" Airline {{{
+
+function! AirlineThemePatch(palette)
+    if g:airline_theme == 'badwolf'
+        for colors in values(a:palette.inactive)
+            let colors[3] = 245
+        endfor
+    endif
+endfunction
+let g:airline_theme='badwolf'
+let g:airline_powerline_fonts=0
+let g:airline_mode_map = {
+            \ '__' : '-',
+            \ 'n'  : 'N',
+            \ 'i'  : 'I',
+            \ 'R'  : 'R',
+            \ 'c'  : 'C',
+            \ 'v'  : 'V',
+            \ 'V'  : 'V',
+            \ '' : 'V',
+            \ 's'  : 'S',
+            \ 'S'  : 'S',
+            \ '' : 'S',
+            \ }
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+nnoremap <Leader>ar :AirlineRefresh<CR>
+
+" }}}
