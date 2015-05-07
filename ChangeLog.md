@@ -2,6 +2,7 @@
 n.n.n / 2015-05-07
 ==================
 
+  * remove History and added ChangeLog
   * update README
   * Merge tag 'v0.9' into develop
 
