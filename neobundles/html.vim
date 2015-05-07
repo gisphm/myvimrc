@@ -20,9 +20,17 @@
 
 " HTML {{{
 
-NeoBundle 'othree/html5.vim'
-NeoBundle 'amirh/HTML-AutoCloseTag'
-NeoBundle 'tpope/vim-haml'
-NeoBundle 'mattn/emmet-vim'
+NeoBundleLazy 'othree/html5.vim', {
+            \ 'filetypes' : ['html', 'eruby'],
+            \ }
+NeoBundleLazy 'amirh/HTML-AutoCloseTag', {
+            \ 'filetypes' : ['html', 'eruby'],
+            \ }
+NeoBundleLazy 'tpope/vim-haml', {
+            \ 'filetypes' : 'haml',
+            \ }
+NeoBundleLazy 'mattn/emmet-vim', {
+            \ 'filetypes' : ['html', 'eruby', 'css', 'xml', 'javascript'],
+            \ }
 
 " }}}

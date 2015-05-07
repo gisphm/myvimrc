@@ -20,6 +20,8 @@
 
 " General {{{
 
+set shell=/bin/sh
+set background=dark
 filetype plugin on
 syntax on                   " Syntax highlighting
 set mouse=a                 " Automatically enable mouse usage
@@ -41,6 +43,7 @@ set shortmess+=filmnrxoOtT          " Abbrev. of messages (avoids 'hit enter')
 set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
 set virtualedit=onemore             " Allow for cursor beyond last character
 set history=1000                    " Store a ton of history (default is 20)
+set ttimeoutlen=50
 set spell                           " Spell checking on
 set hidden                          " Allow buffer switching without saving
 set iskeyword-=.                    " '.' is an end of word designator
@@ -78,8 +81,7 @@ autocmd BufWinLeave * call clearmatches()
 
 " Vim UI {{{
 
-set tabpagemax=15               " Only show 15 tabs
-set showmode                    " Display the current mode
+set showmode
 
 au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn

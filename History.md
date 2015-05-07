@@ -1,7 +1,44 @@
 
-0.8 / 2015-05-04
+v0.9 / 2015-05-07
 ==================
 
+  * remove some lazy
+  * display current mode
+  * revert to ariline and fix airline pause
+  * remove linepower
+  * added wiki
+  * fix error when writing markdown
+  * added rainbow
+  * remove ag.vim
+  * Merge branch 'feature/powerline' into develop
+  * fix vimfiler not ignore '.git' directory
+  * remove airline and added linepower
+  * attempt to replace airline with powerline
+  * added 'pt' as a search excutable candidate
+  * neobundlelazy emmet
+  * added unite-go-import
+  * added markdown filetype group
+  * added vim-go settings
+  * continue lazying bundles and combine some parts
+  * added monster.vim and update markdown settings
+  * lazy neobundles
+  * update vimrc as described in neobundle.vim
+  * fix gvim colorscheme not working
+  * continue using tabulize for fun...
+  * use tabularize for fun
+  * revert indentline to indentguides
+  * added signature for marks
+  * update indentline settings
+  * update README
+  * update README
+  * update History
+  * Merge tag 'v0.8' into develop
+
+v0.8 / 2015-05-04
+=================
+
+  * Merge branch 'release/v0.8'
+  * update History
   * added dispatch.vim
   * upate History
   * added tcomment

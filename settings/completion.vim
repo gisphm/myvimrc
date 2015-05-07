@@ -47,11 +47,11 @@ autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 " neocomplete {{{
 
-let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#enable_auto_delimiter = 1
-let g:neocomplete#max_list = 15
+let g:acp_enableAtStartup                      = 0
+let g:neocomplete#enable_at_startup            = 1
+let g:neocomplete#enable_smart_case            = 1
+let g:neocomplete#enable_auto_delimiter        = 1
+let g:neocomplete#max_list                     = 15
 let g:neocomplete#force_overwrite_completefunc = 1
 
 " Define dictionary.
@@ -105,15 +105,15 @@ imap <expr> <Tab> CleverTab()
 if !exists('g:neocomplete#sources#omni#input_patterns')
     let g:neocomplete#sources#omni#input_patterns = {}
 endif
-let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.c    = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplete#sources#omni#input_patterns.cpp  = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 " }}}
 
 " Snippets {{{
 
 " Use honza's snippets.
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+let g:neosnippet#snippets_directory = '~/.vim/bundle/vim-snippets/snippets'
 
 " Enable neosnippet snipmate compatibility mode
 let g:neosnippet#enable_snipmate_compatibility = 1

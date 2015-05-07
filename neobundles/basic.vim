@@ -18,6 +18,39 @@
 "
 " }}}
 
+" Deps {{{
+
+NeoBundle 'MarcWeber/vim-addon-mw-utils'
+NeoBundle 'tomtom/tlib_vim'
+NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'Shougo/context_filetype.vim'
+NeoBundle 'Shougo/vimproc.vim', {
+            \ 'build' : {
+            \    'linux' : 'make',
+            \ },
+            \ }
+NeoBundle 'Shougo/unite.vim', {
+            \ 'commands' : [{
+            \    'name' : 'Unite',
+            \    'complete' : 'customlist, unite#complete_source'
+            \ }],
+            \ }
+NeoBundle 'Shougo/vimfiler.vim', {
+            \ 'commands' : [
+            \    {
+            \      'name' : ['VimFiler', 'Edit', 'Write'],
+            \      'complete' : 'customlist, vimfiler#complete'
+            \    },
+            \    'Read',
+            \    'Source'
+            \ ],
+            \ 'mappings' : '<Plug>',
+            \ 'explorer' : 1,
+            \ }
+NeoBundle 'Shougo/unite-outline'
+
+" }}}
+
 " General {{{
 
 NeoBundle 'tpope/vim-surround'
@@ -25,14 +58,14 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'kristijanhusak/vim-multiple-cursors'
 NeoBundle 'Firef0x/matchit'
-NeoBundle 'bling/vim-airline'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'mbbill/undotree'
-NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'vim-scripts/restore_view.vim'
 NeoBundle 'tpope/vim-abolish.git'
 NeoBundle 'osyo-manga/vim-over'
+NeoBundle 'bling/vim-airline'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-indent'
 NeoBundle 'gcmt/wildfire.vim'
@@ -41,5 +74,6 @@ NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'xolox/vim-misc'
 NeoBundle 'xolox/vim-session'
 NeoBundle 'roman/golden-ratio'
+NeoBundle 'kshenoy/vim-signature'
 
 " }}}

@@ -34,5 +34,6 @@ if executable('ctags')
     NeoBundle 'majutsushi/tagbar'
 endif
 NeoBundle 'Chiel92/vim-autoformat'
+NeoBundle 'tpope/vim-projectionist'
 
 " }}}

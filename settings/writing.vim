@@ -23,11 +23,11 @@
 let g:pencil#wrapModeDefault = 'soft'
 augroup writingPlugins
     autocmd!
-    autocmd Filetype markdown,mkd call pencil#init()
-                \ | call lexical#init()
-                \ | call litecorrect#init()
-                \ | call textobj#quote#init()
-                \ | call textobj#sentence#init()
+    " autocmd Filetype markdown call pencil#init()
+    "             \ | call lexical#init()
+    "             \ | call litecorrect#init()
+    "             \ | call textobj#quote#init()
+    "             \ | call textobj#sentence#init()
     autocmd FileType textile call pencil#init()
                 \ | call lexical#init()
                 \ | call litecorrect#init()
@@ -37,5 +37,16 @@ augroup writingPlugins
                 \ | call lexical#init({ 'spell': '0' })
                 \ | call textobj#quote#init({ 'educate': 0 })
 augroup END
+
+" }}}
+
+" Markdown {{{
+
+augroup MarkdownFiles
+    autocmd!
+    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
+let g:vim_markdown_math = 1
+let g:vim_markdown_frontmatter = 1
 
 " }}}

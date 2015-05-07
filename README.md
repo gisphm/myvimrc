@@ -6,10 +6,13 @@
 ## 配置文件列表
 参照我的[neovim][2]的配置思路，分为以下文件：
 
-+ __vimrc__             主配置文件，包含[neobundle][4]的初始化和vim插件的初次安装
-+ __plugins.vim__       插件列表文件，包含所有安装的插件，按照[spf13-vim][1]进行分组
-+ __plugins.rc.vim__    插件的配置，尽可能地不包含vim的基本配置
-+ __base.vim__          基本配置，不需要插件支持
++ __vimrc__             主配置文件，包含[neobundle][4]的初始化和对以下两个文件夹的引用
++ __neobundles/__       插件列表文件所在文件夹，包含所有安装的插件，按照[spf13-vim][1]进行分组
++ __settings/__    插件配置文件夹，包含已安装插件的一些配置与vim的基本配置，与`neobundles`的分组对应
+
++ __install.sh__ 用来辅助安装的文件，生成`tmp`文件夹和克隆`neobundle.vim`。
++ __bundle__ 包含在git的忽略文件里，所有安装的插件都在这个文件夹里
++ __tmp__ 包含vim的`swap` `undo` `view` `backup` `session`文件夹
 
 ## things todo
 1. ✓ replace nerdtree with vimfiler
@@ -21,7 +24,7 @@
     > So, in some way, this `install.sh` is complete.
 
 4. ✓ split plugins list
-4. split plugins settings
+4. ✓ split plugins settings
 4. good documentation
 5. use less plugins as possible
 

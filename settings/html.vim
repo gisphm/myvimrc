@@ -61,7 +61,7 @@ let g:user_emmet_settings = {
             \ },
             \ }
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,eruby EmmetInstall
+autocmd FileType html,css,eruby,xml,javascript EmmetInstall
 
 " }}}
 

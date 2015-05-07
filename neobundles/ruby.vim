@@ -20,12 +20,26 @@
 
 " Ruby {{{
 
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'ecomba/vim-ruby-refactoring'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'tpope/vim-rake'
-NeoBundle 'tpope/vim-bundler'
-NeoBundle 'tpope/vim-projectionist'
+NeoBundleLazy 'vim-ruby/vim-ruby', {
+            \ 'filetypes' : 'ruby',
+            \ }
+NeoBundleLazy 'tpope/vim-rails', {
+            \ 'filetypes' : 'ruby',
+            \ }
+NeoBundleLazy 'ecomba/vim-ruby-refactoring', {
+            \ 'filetypes' : 'ruby',
+            \ }
+NeoBundleLazy 'tpope/vim-endwise', {
+            \ 'filetypes' : 'ruby',
+            \ }
+NeoBundleLazy 'tpope/vim-rake', {
+            \ 'filetypes' : 'ruby',
+            \ }
+NeoBundleLazy 'tpope/vim-bundler', {
+            \ 'filetypes' : 'ruby',
+            \ }
+NeoBundleLazy 'osyo-manga/vim-monster', {
+            \ 'filetypes' : 'ruby',
+            \ }
 
 " }}}

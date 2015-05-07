@@ -18,22 +18,22 @@
 "
 " }}}
 
-" Basic {{{
-
-set nocompatible
-set shell=/bin/sh
-set background=dark
-
-" }}}
-
 " NeoBundle {{{
 
-let vimbundles = '~/.vim/neobundles/'
-set rtp+=~/.vim/bundle/neobundle.vim/
+if !1 | finish | endif
+
+if has('vim_starting')
+    if &compatible
+        set nocompatible
+    endif
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
 call neobundle#begin(expand("~/.vim/bundle/"))
 
 NeoBundleFetch "Shougo/neobundle.vim"
 
+let vimbundles = '~/.vim/neobundles/'
 for eachbundle in split(globpath(vimbundles, '*.vim'), '\n')
     exe 'source' eachbundle
 endfor
@@ -46,7 +46,7 @@ NeoBundleCheck
 
 " }}}
 
-" Sourcing Configurations {{{
+" Configurations {{{
 
 let bundlesettings = '~/.vim/settings/'
 for eachsetting in split(globpath(bundlesettings, '*.vim'), '\n')
