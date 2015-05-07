@@ -41,5 +41,8 @@ NeoBundleLazy 'reedes/vim-lexical', {
 NeoBundleLazy 'plasticboy/vim-markdown', {
             \ 'filetypes' : ['markdown', 'mkd'],
             \}
+NeoBundle 'vimwiki/vimwiki', {
+            \ 'rev' : 'dev',
+            \ }
 
 " }}}
