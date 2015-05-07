@@ -1,7 +1,8 @@
 
-n.n.n / 2015-05-07
+n.n.n / 2015-05-08
 ==================
 
+  * update README
   * update ChangeLog
   * remove History and added ChangeLog
   * update README
