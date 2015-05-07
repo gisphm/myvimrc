@@ -23,11 +23,11 @@
 let g:pencil#wrapModeDefault = 'soft'
 augroup writingPlugins
     autocmd!
-    autocmd Filetype markdown,mkd call pencil#init()
-                \ | call lexical#init()
-                \ | call litecorrect#init()
-                \ | call textobj#quote#init()
-                \ | call textobj#sentence#init()
+    " autocmd Filetype markdown call pencil#init()
+    "             \ | call lexical#init()
+    "             \ | call litecorrect#init()
+    "             \ | call textobj#quote#init()
+    "             \ | call textobj#sentence#init()
     autocmd FileType textile call pencil#init()
                 \ | call lexical#init()
                 \ | call litecorrect#init()
