@@ -12,7 +12,7 @@
 
 + __install.sh__ 用来辅助安装的文件，生成`tmp`文件夹和克隆`neobundle.vim`。
 + __bundle__ 包含在git的忽略文件里，所有安装的插件都在这个文件夹里
-+ __tmp__ 包含vim的`swap` `undo` `view` `backup` `session`文件夹
++ __tmp__ 包含在git的忽略文件里，包括vim的`swap` `undo` `view` `backup` `session`文件夹
 
 ## things todo
 1. ✓ replace nerdtree with vimfiler

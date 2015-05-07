@@ -1,7 +1,15 @@
 
-v0.9 / 2015-05-07
+n.n.n / 2015-05-07
 ==================
 
+  * update README
+  * Merge tag 'v0.9' into develop
+
+v0.9 / 2015-05-07
+=================
+
+  * Merge branch 'release/v0.9'
+  * update History
   * remove some lazy
   * display current mode
   * revert to ariline and fix airline pause
