@@ -2,14 +2,13 @@
 n.n.n / 2015-05-07
 ==================
 
+  * update ChangeLog
   * remove History and added ChangeLog
   * update README
-  * Merge tag 'v0.9' into develop
 
 v0.9 / 2015-05-07
 =================
 
-  * Merge branch 'release/v0.9'
   * update History
   * remove some lazy
   * display current mode
@@ -19,7 +18,6 @@ v0.9 / 2015-05-07
   * fix error when writing markdown
   * added rainbow
   * remove ag.vim
-  * Merge branch 'feature/powerline' into develop
   * fix vimfiler not ignore '.git' directory
   * remove airline and added linepower
   * attempt to replace airline with powerline
@@ -41,12 +39,10 @@ v0.9 / 2015-05-07
   * update README
   * update README
   * update History
-  * Merge tag 'v0.8' into develop
 
 v0.8 / 2015-05-04
 =================
 
-  * Merge branch 'release/v0.8'
   * update History
   * added dispatch.vim
   * upate History
@@ -60,12 +56,10 @@ v0.8 / 2015-05-04
   * move all vim files to vimfiles folder but vimrc
   * rename local.vim to base.vim
   * update ChangeLog
-  * Merge tag 'v0.7' into develop
 
 v0.7 / 2015-05-04
 =================
 
-  * Merge branch 'release/v0.7'
   * update History
   * added license to gvimrc
   * change session lock directory
@@ -74,12 +68,10 @@ v0.7 / 2015-05-04
   * still update README
   * update README
   * update README
-  * Merge tag 'v0.6' into develop
 
 v0.6 / 2015-05-03
 =================
 
-  * Merge branch 'release/v0.6'
   * execute removing trailing space when saving
   * update README
   * install neobundle if not existed
@@ -87,19 +79,15 @@ v0.6 / 2015-05-03
   * changed session plugin and removed some plugins
   * I don't know what I have done -- WTF...
   * update vimfiler ignored pattern
-  * Merge tag 'fugitive-path-error' into develop
-  * Merge tag 'v0.5' into develop
 
 fugitive-path-error / 2015-05-03
 ================================
 
-  * Merge branch 'hotfix/fugitive-path-error'
   * fix fugitive path error in statusline
 
 v0.5 / 2015-05-03
 =================
 
-  * Merge branch 'release/v0.5'
   * update README
   * fix arrow key and esc key mapping
   * fixes space mapping
@@ -108,12 +96,10 @@ v0.5 / 2015-05-03
   * update neocomplete settings
   * added todo in README
   * update TODO
-  * Merge tag 'v0.4' into develop
 
 v0.4 / 2015-05-03
 =================
 
-  * Merge branch 'release/v0.4'
   * added vimfiler options and correct snippets path
   * combine all writing plugins' settings together
   * added keymap to refresh airline color
@@ -126,12 +112,10 @@ v0.4 / 2015-05-03
   * added syntastic configurations
   * added two more plugins
   * remove bufferline configuration
-  * Merge tag 'v0.3' into develop
 
 v0.3 / 2015-05-03
 =================
 
-  * Merge branch 'release/v0.3'
   * remove bufferline and delemate
   * show tab character more interesting
   * close match gracefully
@@ -141,12 +125,10 @@ v0.3 / 2015-05-03
   * uncommented unite plugin two callings
   * adjust order of plugins and added license plugin
   * update README
-  * Merge tag 'v0.2' into develop
 
 v0.2 / 2015-05-03
 =================
 
-  * Merge branch 'release/v0.2'
   * updated strip trailing space function calling
   * update settings
   * updated gitignore and README
@@ -164,12 +146,10 @@ v0.2 / 2015-05-03
   * format and added colorscheme
   * added css and ruby config for tagbar
   * fix vundle directory name error
-  * Merge tag '0.1' into develop
 
 v0.1 / 2015-05-02
 =================
 
-  * Merge branch 'release/0.1'
   * update gitignore for configuration uses
   * replace ctrlp with unite for a try
   * updated something
