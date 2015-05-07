@@ -68,7 +68,6 @@ NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'powerline/powerline', {
             \ 'rtp' : 'powerline/bindings/vim',
             \ }
-NeoBundle 'zhaocai/linepower.vim'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-indent'
 NeoBundle 'gcmt/wildfire.vim'
