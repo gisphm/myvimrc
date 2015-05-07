@@ -81,7 +81,7 @@ autocmd BufWinLeave * call clearmatches()
 
 " Vim UI {{{
 
-set noshowmode
+set showmode
 
 au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
