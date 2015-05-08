@@ -148,17 +148,16 @@ imap <expr> <Tab> CleverTab()
 
 " Snippets {{{
 
-" Use honza's snippets.
 let g:neosnippet#snippets_directory = '~/.vim/bundle/vim-snippets/snippets'
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#scope_aliases = {}
+let g:neosnippet#scope_aliases['ruby'] = 'ruby,rails'
+let g:neosnippet#scope_aliases['eruby'] = 'eruby,html,ruby,rails'
 
-" For snippet_complete marker.
 if has('conceal')
     set conceallevel=2 concealcursor=niv
 endif
 
-" Disable the neosnippet preview candidate window
-" When enabled, there can be too much visual noise
-" especially when splits are used.
 set completeopt-=preview
 
 " }}}
