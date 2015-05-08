@@ -111,6 +111,28 @@ let g:vimfiler_file_icon               = "✎"
 let g:vimfiler_max_directories_history = 100
 let g:vimfiler_ignore_pattern          = '\%(\.hg\|\.svn\|\.git\)$'
 
+let g:vimfiler_enable_clipboard = 0
+call vimfiler#custom#profile('default', 'context', {
+            \ 'safe' : 0,
+            \ 'auto_expand' : 1,
+            \ 'parent' : 0,
+            \ })
+
+function! s:vimfiler_my_settings() abort
+    nnoremap <silent><buffer> J
+                \ <C-u>:Unite -buffer-name=files -default-action=lcd directory mru<CR>
+    nmap <buffer> p <Plug>(vimfiler_quick_look)
+    nmap <buffer> <Tab> <Plug>(vimfiler_switch_to_other_window)
+    nnoremap <silent><buffer><expr> v
+                \ vimfiler#do_switch_action('vsplite')
+    nnoremap <silent><buffer><expr> s
+                \ vimfiler#do_switch_action('split')
+endfunction
+augroup VimFilerSetting
+    autocmd!
+    autocmd FileType vimfiler call s:vimfiler_my_settings()
+augroup END
+
 " }}}
 
 " Ctags {{{

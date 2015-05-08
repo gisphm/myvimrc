@@ -2,6 +2,7 @@
 n.n.n / 2015-05-08
 ==================
 
+  * update vimfiler settings
   * update unite settings
   * update neocomplete settings
   * update README
