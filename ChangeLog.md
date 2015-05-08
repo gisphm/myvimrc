@@ -2,6 +2,7 @@
 n.n.n / 2015-05-08
 ==================
 
+  * remove monster and update markdown fence
   * update README
   * update neosnippet scope_alias
   * update vimfiler settings

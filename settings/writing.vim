@@ -48,5 +48,18 @@ augroup MarkdownFiles
 augroup END
 let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1
+let g:markdown_fenced_languages = []
+let g:markdown_fenced_languages = [
+            \ 'coffee',
+            \ 'css',
+            \ 'erb=eruby',
+            \ 'javascript',
+            \ 'js=javascript',
+            \ 'json=javascript',
+            \ 'ruby',
+            \ 'sass',
+            \ 'xml',
+            \ 'vim',
+            \ ]
 
 " }}}

@@ -38,8 +38,5 @@ NeoBundleLazy 'tpope/vim-rake', {
 NeoBundleLazy 'tpope/vim-bundler', {
             \ 'filetypes' : 'ruby',
             \ }
-NeoBundleLazy 'osyo-manga/vim-monster', {
-            \ 'filetypes' : 'ruby',
-            \ }
 
 " }}}
