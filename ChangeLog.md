@@ -2,6 +2,7 @@
 n.n.n / 2015-05-08
 ==================
 
+  * update README
   * update neosnippet scope_alias
   * update vimfiler settings
   * update unite settings

@@ -22,7 +22,12 @@
 
 4. ✓ split plugins list
 4. ✓ split plugins settings
-4. documentation of snippets(especially rails)
+4. ~~documentation of snippets(especially rails)~~
+
+    > 1. This is impossible for me...
+    > 2. The snippets are too many... WTF ...
+    > 3. So... forget about it for now...
+
 5. use less plugins as possible
 
     > This could be difficult for me now. I will try my best.
@@ -42,8 +47,9 @@
     > 1. 插件基本齐全，多没关系，后面的版本可以慢慢删。但也不能多到插件映射打架。
     > 2. 至少对其中的一些配置写点文档，不然就算是我也难以记住这n多的快捷键。
     >
-    > 目前第1点基本算是修修补补一路搞得差不多了，第2点目前还没有想好到底要怎么来实现，
-    > 现在的打算是先把`snippets`的文档搞一搞，再把一些常用的操作映射写一写。
+    > 目前第1点基本算是修修补补一路搞得差不多了，
+    > 第2点目前还没有想好到底要怎么来实现，
+    > 现在的打算是~~先把`snippets`的文档搞一搞，再~~把一些常用的操作映射写一写。
 
 + 这个配置的整个过程用到了`git-flow-avh`的工作流模型，基本的分支流程可以在`network`图中看到。
 
