@@ -1,7 +1,8 @@
 
-n.n.n / 2015-05-08
+n.n.n / 2015-05-09
 ==================
 
+  * fix open md files not found coffee.vim
   * remove monster and update markdown fence
   * update README
   * update neosnippet scope_alias
