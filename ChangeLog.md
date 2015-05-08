@@ -2,6 +2,7 @@
 n.n.n / 2015-05-08
 ==================
 
+  * update neocomplete settings
   * update README
   * update README
   * update ChangeLog

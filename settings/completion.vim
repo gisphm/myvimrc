@@ -47,25 +47,68 @@ autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 " neocomplete {{{
 
-let g:acp_enableAtStartup                      = 0
-let g:neocomplete#enable_at_startup            = 1
-let g:neocomplete#enable_smart_case            = 1
-let g:neocomplete#enable_auto_delimiter        = 1
-let g:neocomplete#max_list                     = 15
-let g:neocomplete#force_overwrite_completefunc = 1
+let g:neocomplete#disable_auto_complete             = 0
+let g:neocomplete#enable_insert_char_pre            = 0
+let g:neocomplete#enable_at_startup                 = 1
+let g:neocomplete#enable_smart_case                 = 1
+let g:neocomplete#enable_camel_case                 = 1
+let g:neocomplete#enable_auto_delimiter             = 1
+let g:neocomplete#enable_fuzzy_completion           = 1
+let g:neocomplete#max_list                          = 15
+let g:neocomplete#force_overwrite_completefunc      = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#auto_completion_start_length      = 2
+let g:neocomplete#manual_completion_start_length    = 0
+let g:neocomplete#min_keyword_length                = 3
 
-" Define dictionary.
+let g:neocomplete#enable_complete_select = 1
+try
+    let completeopt_save = &completeopt
+    set completeopt+=noinsert,noselect
+catch
+    let g:neocomplete#enable_complete_select = 0
+finally
+    let &completeopt = completeopt_save
+endtry
+
+let g:neocomplete#enable_auto_select = 1
+let g:neocomplete#enable_refresh_always = 0
+let g:neocomplete#enable_cursor_hold_i = 0
+let g:neocomplete#enable_omni_fallback = 1
+let g:neocomplete#enable_auto_close_preview = 1
+
 let g:neocomplete#sources#dictionary#dictionaries = {
             \ 'default' : '',
-            \ 'vimshell' : $HOME.'/.vimshell_hist',
-            \ 'scheme' : $HOME.'/.gosh_completions'
+            \ 'vimshell' : $CACHE.'/vimshell/command-history',
             \ }
 
-" Define keyword.
+let g:neocomplete#disable_auto_select_buffer_name_pattern =
+            \ '\[Command Line\]'
+
 if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
 endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+let g:neocomplete#keyword_patterns._ = '\h\w*'
+let g:neocomplete#keyword_patterns.rst =
+            \ '\$\$\?\w*\|[[:alpha:]_.\\/~-][[:alnum:]_.\\/~-]*\|\d\+\%(\.\d\+\)\+'
+
+if !exists('g:neocomplete#sources#omni#input_patterns')
+    let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.c    = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplete#sources#omni#input_patterns.cpp  = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+
+let g:neocomplete#sources#vim#complete_functions = {
+            \ 'Unite' : 'unite#complete_source',
+            \ 'VimFiler' : 'vimfiler#complete',
+            \ }
+
+call neocomplete#custom#source('look', 'min_patter_length', 4)
 
 " Plugin key-mappings {{{
 
@@ -101,13 +144,6 @@ imap <expr> <Tab> CleverTab()
 
 " }}}
 
-" Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-    let g:neocomplete#sources#omni#input_patterns = {}
-endif
-let g:neocomplete#sources#omni#input_patterns.c    = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocomplete#sources#omni#input_patterns.cpp  = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 " }}}
 
 " Snippets {{{
@@ -115,12 +151,9 @@ let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 " Use honza's snippets.
 let g:neosnippet#snippets_directory = '~/.vim/bundle/vim-snippets/snippets'
 
-" Enable neosnippet snipmate compatibility mode
-let g:neosnippet#enable_snipmate_compatibility = 1
-
 " For snippet_complete marker.
 if has('conceal')
-    set conceallevel=2 concealcursor=i
+    set conceallevel=2 concealcursor=niv
 endif
 
 " Disable the neosnippet preview candidate window
