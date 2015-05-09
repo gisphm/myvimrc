@@ -2,6 +2,7 @@
 n.n.n / 2015-05-09
 ==================
 
+  * update writing settings
   * added diffchar.vim for better diff mode
   * fix open md files not found coffee.vim
   * remove monster and update markdown fence
