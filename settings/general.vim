@@ -57,23 +57,6 @@ vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 
 " }}}
 
-" Session {{{
-
-set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
-let g:session_autoload          = "no"
-let g:session_directory         = "~/.vim/tmp/sessions/"
-let g:session_lock_directory    = "~/.vim/tmp/lock/"
-let g:session_autosave          = "yes"
-let g:session_autosave_periodic = 1
-nmap <Leader>so :OpenSession<CR>
-nmap <leader>ss :SaveSession<CR>
-nmap <leader>sc :CloseSession<CR>
-nmap <Leader>sd :DeleteSession<CR>
-nmap <Leader>sr :RestartVim<CR>
-nmap <Leader>sv :ViewSession<CR>
-
-" }}}
-
 " Wildfire {{{
 
 let g:wildfire_objects = {
