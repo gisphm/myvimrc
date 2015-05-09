@@ -27,8 +27,6 @@ NeoBundle 'idanarye/vim-merginal'
 NeoBundle 'int3/vim-extradite'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'mhinz/vim-signify'
-NeoBundle 'mattn/webapi-vim'
-NeoBundle 'mattn/gist-vim'
 NeoBundle 'tomtom/tcomment_vim'
 if executable('ctags')
     NeoBundle 'majutsushi/tagbar'

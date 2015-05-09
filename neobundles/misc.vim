@@ -20,14 +20,6 @@
 
 " Misc {{{
 
-NeoBundleLazy 'fatih/vim-go', {
-            \ 'filetypes' : 'go',
-            \ }
-NeoBundleLazy 'rhysd/unite-go-import.vim', {
-            \ 'autoload' : {
-            \     'unite_sources' : 'go/import',
-            \   }
-            \ }
 NeoBundleLazy 'elzr/vim-json', {
             \ 'filetypes' : 'json',
             \ }
@@ -36,7 +28,6 @@ NeoBundle 'dbext.vim'
 NeoBundle 'bootleq/LargeFile'
 NeoBundle 's3rvac/AutoFenc'
 NeoBundle 'antoyo/vim-licenses'
-NeoBundle 'luochen1990/rainbow'
 NeoBundleLazy 'chrisbra/csv.vim', {
             \ 'filetypes' : 'csv',
             \ }
