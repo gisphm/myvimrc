@@ -18,28 +18,6 @@
 "
 " }}}
 
-" Writing {{{
-
-let g:pencil#wrapModeDefault = 'soft'
-augroup writingPlugins
-    autocmd!
-    autocmd Filetype markdown call pencil#init()
-                \ | call lexical#init()
-                \ | call litecorrect#init()
-                \ | call textobj#quote#init()
-                \ | call textobj#sentence#init()
-    autocmd FileType textile call pencil#init()
-                \ | call lexical#init()
-                \ | call litecorrect#init()
-                \ | call textobj#quote#init()
-                \ | call textobj#sentence#init()
-    autocmd FileType text call pencil#init({ 'wrap': 'hard' })
-                \ | call lexical#init({ 'spell': '0' })
-                \ | call textobj#quote#init({ 'educate': 0 })
-augroup END
-
-" }}}
-
 " Markdown {{{
 
 augroup MarkdownFiles
@@ -61,22 +39,5 @@ let g:markdown_fenced_languages = [
             \ 'xml',
             \ 'vim',
             \ ]
-
-" }}}
-
-" Wordy {{{
-
-let g:wordy#ring = [
-            \ 'weak',
-            \ ['being', 'passive-voice', ],
-            \ 'business-jargon',
-            \ 'weasel',
-            \ 'puffery',
-            \ ['problematic', 'redundant', ],
-            \ ['colloquial', 'idiomatic', 'similies', ],
-            \ 'art-jargon',
-            \ ['contractions', 'opinion', 'vague-time', 'said-synonyms', ],
-            \ ]
-nnoremap <silent> K :NextWordy<CR>
 
 " }}}

@@ -2,6 +2,7 @@
 n.n.n / 2015-05-09
 ==================
 
+  * as a coder, I don't do creative writing...
   * added colorcolumn at column 80
   * fix error when opening markdown files
   * update ChangeLog
