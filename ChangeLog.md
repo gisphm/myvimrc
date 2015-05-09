@@ -2,6 +2,7 @@
 n.n.n / 2015-05-09
 ==================
 
+  * update something
   * remove some plugins
   * remove session and vim-over
   * as a coder, I don't do creative writing...
