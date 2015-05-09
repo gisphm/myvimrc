@@ -4,12 +4,12 @@
 + 此配置目前希望是有助于rails开发（自己个人在学习着）
 
 ## 配置文件列表
-+ __vimrc__             主配置文件，包含[neobundle][4]的初始化和对以下两个文件夹的引用
-+ __neobundles/__       插件列表文件所在文件夹，包含所有安装的插件，按照[spf13-vim][1]进行分组
-+ __settings/__    插件配置文件夹，包含已安装插件的一些配置与vim的基本配置，与`neobundles`的分组对应
-+ __install.sh__ 用来辅助安装的文件，生成`tmp`文件夹和克隆`neobundle.vim`。
++ __vimrc__ 主配置文件，包含[neobundle][4]的初始化和对以下两个文件夹的引用
++ __neobundles/__ 插件列表文件所在文件夹，包含所有安装的插件
++ __settings/__ 插件配置文件夹，包含已安装插件的一些配置与vim的基本配置，与`neobundles`的分组对应
++ __install.sh__ 用来辅助安装的文件，生成`tmp`文件夹和克隆`neobundle.vim`
 + __bundle__ 包含在git的忽略文件里，所有安装的插件都在这个文件夹里
-+ __tmp__ 包含在git的忽略文件里，包括vim的`swap` `undo` `view` `backup` `session`文件夹
++ __tmp__ 包含在git的忽略文件里，包括vim的`swap` `undo` `view` `backup`文件夹
 
 ## things todo
 1. ✓ replace nerdtree with vimfiler

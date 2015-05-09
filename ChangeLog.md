@@ -2,6 +2,7 @@
 n.n.n / 2015-05-09
 ==================
 
+  * update README
   * update something
   * remove some plugins
   * remove session and vim-over
