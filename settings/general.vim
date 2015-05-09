@@ -130,6 +130,20 @@ let g:indent_guides_auto_colors           = 1
 
 " Airline {{{
 
+let g:airline#extensions#tabline#enabled = 0
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#branch#format = 1
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#csv#enabled = 1
+let g:airline#extensions#hunks#enabled = 1
+let g:airline#extensions#hunks#non_zero_only = 1
+let g:airline#extensions#whitespace#enabled = 1
+let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing' ]
+let g:airline#extensions#whitespace#trailing_format = 'trailing[%s]'
+let g:airline#extensions#whitespace#mixed_indent_format = 'mixed[%s]'
+let g:airline#extensions#whitespace#symbol = 'Ξ'
+let g:airline#extensions#quickfix#quickfix_text = 'Qf'
 function! AirlineThemePatch(palette)
     if g:airline_theme == 'badwolf'
         for colors in values(a:palette.inactive)
