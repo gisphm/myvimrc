@@ -2,6 +2,11 @@
 n.n.n / 2015-05-09
 ==================
 
+  * update ChangeLog
+
+v0.10 / 2015-05-09
+==================
+
   * added diff-enhanced
   * format some settings
   * update settings
