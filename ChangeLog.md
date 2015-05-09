@@ -2,6 +2,7 @@
 n.n.n / 2015-05-09
 ==================
 
+  * fix error when opening markdown files
   * update ChangeLog
 
 v0.10 / 2015-05-09
