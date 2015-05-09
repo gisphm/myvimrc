@@ -167,3 +167,10 @@ let g:airline_symbols.readonly = ''
 nnoremap <Leader>ar :AirlineRefresh<CR>
 
 " }}}
+
+" DiffChar {{{
+
+let g:DiffColors = 100
+let g:DiffUpdate = 1
+
+" }}}

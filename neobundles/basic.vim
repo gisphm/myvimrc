@@ -74,6 +74,7 @@ NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'xolox/vim-misc'
 NeoBundle 'xolox/vim-session'
 NeoBundle 'roman/golden-ratio'
+NeoBundle 'diffchar.vim'
 NeoBundle 'kshenoy/vim-signature'
 
 " }}}
