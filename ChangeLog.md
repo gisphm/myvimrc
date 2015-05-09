@@ -2,6 +2,7 @@
 n.n.n / 2015-05-09
 ==================
 
+  * added diff-enhanced
   * format some settings
   * update settings
   * update writing settings

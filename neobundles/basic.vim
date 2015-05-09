@@ -75,6 +75,7 @@ NeoBundle 'xolox/vim-misc'
 NeoBundle 'xolox/vim-session'
 NeoBundle 'roman/golden-ratio'
 NeoBundle 'diffchar.vim'
+NeoBundle 'chrisbra/vim-diff-enhanced'
 NeoBundle 'kshenoy/vim-signature'
 
 " }}}
