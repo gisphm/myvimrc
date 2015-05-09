@@ -29,7 +29,9 @@ set mousehide               " Hide the mouse cursor while typing
 scriptencoding utf-8
 
 if has('clipboard')
-    if has('unnamedplus')  " When possible use + register for copy-paste
+    if exists('$TMUX')
+        set clipboard=
+    elseif has('unnamedplus')  " When possible use + register for copy-paste
         set clipboard=unnamed,unnamedplus
     else         " On mac and Windows, use * register for copy-paste
         set clipboard=unnamed
@@ -43,7 +45,10 @@ set shortmess+=filmnrxoOtT          " Abbrev. of messages (avoids 'hit enter')
 set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
 set virtualedit=onemore             " Allow for cursor beyond last character
 set history=1000                    " Store a ton of history (default is 20)
+set timeoutlen=300
 set ttimeoutlen=50
+set linebreak
+let &showbreak='↪ '
 set spell                           " Spell checking on
 set hidden                          " Allow buffer switching without saving
 set iskeyword-=.                    " '.' is an end of word designator
@@ -76,6 +81,13 @@ set viewdir=~/.vim/tmp/view/
 " Resolve performance problems
 " clear match command gracefully
 autocmd BufWinLeave * call clearmatches()
+
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow
+elseif executable('ack')
+    set grepprg=ack\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow\ $*
+endif
+set grepformat=%f:%l:%c:%m
 
 " }}}
 
@@ -110,6 +122,11 @@ if has('statusline')
     set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 endif
 
+if has('conceal')
+    set conceallevel=1
+    set listchars+=conceal:Δ
+endif
+
 set backspace=indent,eol,start  " Backspace for dummies
 set linespace=0                 " No extra spaces between rows
 set number                      " Line numbers on
@@ -127,6 +144,9 @@ set scrolloff=3                 " Minimum lines to keep above and below cursor
 set foldenable                  " Auto fold code
 set list
 set listchars=tab:➪\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+set noerrorbells
+set novisualbell
+set t_vb=
 
 " }}}
 

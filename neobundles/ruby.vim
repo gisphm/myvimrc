@@ -21,7 +21,7 @@
 " Ruby {{{
 
 NeoBundleLazy 'vim-ruby/vim-ruby', {
-            \ 'filetypes' : 'ruby',
+            \ 'filetypes' : ['markdown','ruby'],
             \ }
 NeoBundleLazy 'tpope/vim-rails', {
             \ 'filetypes' : 'ruby',
@@ -36,9 +36,6 @@ NeoBundleLazy 'tpope/vim-rake', {
             \ 'filetypes' : 'ruby',
             \ }
 NeoBundleLazy 'tpope/vim-bundler', {
-            \ 'filetypes' : 'ruby',
-            \ }
-NeoBundleLazy 'osyo-manga/vim-monster', {
             \ 'filetypes' : 'ruby',
             \ }
 

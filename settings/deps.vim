@@ -29,21 +29,59 @@ nnoremap <Leader>nl :NeoBundleUpdatesLog<CR>
 
 " Unite.vim {{{
 
-call unite#custom#source('file,file/new,buffer,file_rec', 'matchers', 'matcher_fuzzy')
-call unite#custom#profile('files', 'filters', 'sorter_rank')
+call unite#custom#source(
+            \ 'buffer,file_rec,file_rec/async,file_rec/git',
+            \ 'matchers',
+            \ ['converter_relative_word',
+            \  'matcher_fuzzy',
+            \  'matcher_project_ignore_files']
+            \ )
+call unite#custom#source(
+            \ 'file_mru',
+            \ 'mathers',
+            \ ['matcher_project_files',
+            \  'matcher_fuzzy',
+            \  'matcher_hide_hidden_files',
+            \  'matcher_hide_current_file']
+            \ )
+call unite#custom#source(
+            \ 'file_rec,file_rec/async,file_rec/git,file_mru',
+            \ 'converters',
+            \ ['converter_file_directory']
+            \ )
+call unite#filters#sorter_default#use(['sorter_rank'])
+
+let default_context = {
+            \ 'vertical' : 0,
+            \ 'short_source_names' : 1,
+            \ }
+call unite#custom#profile('default', 'context', default_context)
 let g:unite_prompt                        = '» '
 let g:unite_split_rule                    = 'botright'
 if executable('ag')
     let g:unite_source_grep_command       = 'ag'
-    let g:unite_source_grep_default_opts  = '--nocolor --nogroup -S -C4'
+    let g:unite_source_grep_default_opts  =
+                \ '-i --line-numbers --nocolor --nogroup --hidden --ignore' .
+                \ '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
     let g:unite_source_grep_recursive_opt = ''
 elseif executable('pt')
     let g:unite_source_grep_command       = 'pt'
     let g:unite_source_grep_default_opts  = '--nogroup --nocolor'
     let g:unite_source_grep_recursive_opt = ''
     let g:unite_source_grep_encoding      = 'utf-8'
+elseif executable('ack')
+    let g:unite_source_grep_command = 'ack'
+    let g:unite_source_grep_default_opts = '-i --no-heading --no-color -a'
+    let g:unite_source_grep_recursive_opt = ''
+elseif executable('ack-grep')
+    let g:unite_source_grep_command = 'ack-grep'
+    let g:unite_source_grep_default_opts = '-i --no-heading --no-color -a'
+    let g:unite_source_grep_recursive_opt = ''
 endif
+
 let g:unite_source_history_yank_enable = 1
+let g:unite_source_rec_max_cache_files = -1
+
 nnoremap <silent> <Leader>m :Unite -buffer-name=recent -winheight=10 file_mru<cr>
 nnoremap <Leader>b :Unite -buffer-name=buffers -winheight=10 buffer<cr>
 nnoremap <Leader>p :<C-u>Unite -winheight=10 -buffer-name=file file_rec/async<cr>
@@ -52,6 +90,9 @@ nnoremap <Space>s :<C-u>Unite -winheight=10 -buffer-name=buffers -quick-match bu
 nnoremap <leader>y :<C-u>Unite -winheight=10 -buffer-name=yank history/yank<cr>
 nnoremap <Space>u :<C-u>Unite -winheight=10 -buffer-name=outline outline<CR>
 nnoremap <Space>g :Unite -winheight=10 -buffer-name=goimport go/import<CR>
+nnoremap <silent> <Space>t :NeoCompleteIncludeMakeCache<CR>
+            \ :UniteWithCursorWord -immediately -sync
+            \ -default-action=context_split tag/include<CR>
 
 " }}}
 
@@ -70,11 +111,33 @@ let g:vimfiler_file_icon               = "✎"
 let g:vimfiler_max_directories_history = 100
 let g:vimfiler_ignore_pattern          = '\%(\.hg\|\.svn\|\.git\)$'
 
+let g:vimfiler_enable_clipboard = 0
+call vimfiler#custom#profile('default', 'context', {
+            \ 'safe' : 0,
+            \ 'auto_expand' : 1,
+            \ 'parent' : 0,
+            \ })
+
+function! s:vimfiler_my_settings() abort
+    nnoremap <silent><buffer> J
+                \ <C-u>:Unite -buffer-name=files -default-action=lcd directory mru<CR>
+    nmap <buffer> p <Plug>(vimfiler_quick_look)
+    nmap <buffer> <Tab> <Plug>(vimfiler_switch_to_other_window)
+    nnoremap <silent><buffer><expr> v
+                \ vimfiler#do_switch_action('vsplite')
+    nnoremap <silent><buffer><expr> s
+                \ vimfiler#do_switch_action('split')
+endfunction
+augroup VimFilerSetting
+    autocmd!
+    autocmd FileType vimfiler call s:vimfiler_my_settings()
+augroup END
+
 " }}}
 
 " Ctags {{{
 
-set tags=./tags;/,~/.vimtags,./gems.tags
+set tags=tags,./tags;/,~/.vimtags,gems.tags,./gems.tags
 
 " Make tags placed in .git/tags file available in all levels of a repository
 let gitroot = substitute(system('git rev-parse --show-toplevel'), '[\n\r]', '', 'g')

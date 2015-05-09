@@ -21,28 +21,28 @@
 " Javascript {{{
 
 NeoBundleLazy 'pangloss/vim-javascript', {
-            \ 'filetypes' : 'javascript',
+            \ 'autoload' : { 'filetypes' : ['javascript'] },
             \ }
 NeoBundleLazy 'briancollins/vim-jst', {
-            \ 'filetypes' : 'javascript',
+            \ 'autoload' : { 'filetypes' : ['javascript'] },
             \ }
 NeoBundleLazy 'kchmck/vim-coffee-script', {
-            \ 'filetypes' : 'javascript',
+            \ 'autoload' : { 'filetypes' : ['javascript'] },
             \ }
 NeoBundleLazy 'marijnh/tern_for_vim', {
-            \ 'filetypes' : 'javascript',
+            \ 'autoload' : { 'filetypes' : ['javascript'] },
             \ }
 NeoBundleLazy 'Shutnik/jshint2.vim', {
-            \ 'filetypes' : 'javascript',
+            \ 'autoload' : { 'filetypes' : ['javascript'] },
             \ }
 NeoBundleLazy 'othree/yajs.vim', {
-            \ 'filetypes' : 'javascript',
+            \ 'autoload' : { 'filetypes' : ['javascript'] },
             \ }
 NeoBundleLazy 'othree/javascript-libraries-syntax.vim', {
-            \ 'filetypes' : 'javascript',
+            \ 'autoload' : { 'filetypes' : ['javascript'] },
             \ }
 NeoBundleLazy 'othree/jspc.vim', {
-            \ 'filetypes' : 'javascript',
+            \ 'autoload' : { 'filetypes' : ['javascript'] },
             \ }
 
 " }}}
