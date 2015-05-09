@@ -2,6 +2,7 @@
 n.n.n / 2015-05-09
 ==================
 
+  * added ctags location in tagbar
   * remove matchit
   * update README
   * update something
