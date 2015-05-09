@@ -2,6 +2,7 @@
 n.n.n / 2015-05-09
 ==================
 
+  * added colorcolumn at column 80
   * fix error when opening markdown files
   * update ChangeLog
 
