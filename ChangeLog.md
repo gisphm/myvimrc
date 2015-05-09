@@ -2,6 +2,7 @@
 n.n.n / 2015-05-09
 ==================
 
+  * format some settings
   * update settings
   * update writing settings
   * added diffchar.vim for better diff mode
