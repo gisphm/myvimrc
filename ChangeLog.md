@@ -1,7 +1,8 @@
 
-n.n.n / 2015-05-09
+n.n.n / 2015-05-10
 ==================
 
+  * added Requirements
   * added ctags location in tagbar
   * remove matchit
   * update README
