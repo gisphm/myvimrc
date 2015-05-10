@@ -35,7 +35,7 @@
 6. fix issues met in use regularly
 
 ## 几点说明
-+ 使用该配置前有些工作需要做，请参考[Requirements][docs/Requirements.md]
++ 使用该配置前有些工作需要做，请参考[Requirements](docs/Requirements.md)
 + 之所以用[neobundle][4]而不是[vundle][3]，纯粹是因为当时凑巧`vundle`用不了，各种无奈下只好用了`neobundle`
 
     > 1. `neobundle`的使用过程基本平滑，没有出现问题
