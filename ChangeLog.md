@@ -2,6 +2,7 @@
 n.n.n / 2015-05-10
 ==================
 
+  * ready for mapping documentation
   * update Requirements
   * update Requirements
   * update README
