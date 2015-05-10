@@ -28,8 +28,8 @@ VIMRUNTIMEDIR=$prefix/share/vim/vim74 make && make install
 >> sudo pacman -S vim
 >
 > ubuntu
->> sudo apt-get install vim
->> sudo apt-get build-dep vim（从源码编译需要的一些软件包，_推荐_）
+>> 1. sudo apt-get install vim
+>> 2. sudo apt-get build-dep vim（从源码编译需要的一些软件包，_推荐_）
 
 ## 第三方软件
 ### `the_silver_searcher`
