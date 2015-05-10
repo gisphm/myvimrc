@@ -2,6 +2,7 @@
 n.n.n / 2015-05-10
 ==================
 
+  * update Requirements
   * update README
   * added Requirements
   * added ctags location in tagbar

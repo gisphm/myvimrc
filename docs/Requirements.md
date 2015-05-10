@@ -26,6 +26,7 @@ VIMRUNTIMEDIR=$prefix/share/vim/vim74 make && make install
 我只在`archlinux`和`ubuntu vivid`上测试过，因此也只给出这两个系统的一些东西。
 > archlinux
 >> sudo pacman -S vim
+>
 > ubuntu
 >> sudo apt-get install vim
 >> sudo apt-get build-dep vim（从源码编译需要的一些软件包，_推荐_）
