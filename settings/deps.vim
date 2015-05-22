@@ -88,8 +88,8 @@ nnoremap <Leader>p :<C-u>Unite -winheight=10 -buffer-name=file file_rec/async<cr
 nnoremap <Space>/ :<C-u>Unite -winheight=10 -buffer-name=search grep:.<CR>
 nnoremap <Space>s :<C-u>Unite -winheight=10 -buffer-name=buffers -quick-match buffer<cr>
 nnoremap <leader>y :<C-u>Unite -winheight=10 -buffer-name=yank history/yank<cr>
-nnoremap <Space>u :<C-u>Unite -winheight=10 -buffer-name=outline outline<CR>
-nnoremap <Space>g :Unite -winheight=10 -buffer-name=goimport go/import<CR>
+nnoremap <Space>uo :<C-u>Unite -winheight=10 -buffer-name=outline outline<CR>
+nnoremap <Space>ut :<C-u>Unite -winheight=10 -buffer-name=tabpages tab<CR>
 nnoremap <silent> <Space>t :NeoCompleteIncludeMakeCache<CR>
             \ :UniteWithCursorWord -immediately -sync
             \ -default-action=context_split tag/include<CR>
