@@ -22,6 +22,11 @@
 
 4. ✓ split plugins list
 4. ✓ split plugins settings
+4. fix rubycomplete issue
+    > well, this could be difficult.
+    > neocomplete says the omnicomplete of ruby provided by other plugins or vim
+    > has something wrong, and if it crashes, users should contact other plugins'
+    > maintainers or contributors rather than neocomplete's author.
 4. ~~documentation of snippets(especially rails)~~
 
     > 1. This is impossible for me...
