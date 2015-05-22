@@ -2,6 +2,7 @@
 n.n.n / 2015-05-22
 ==================
 
+  * updated tabline settings in airline
   * updated README
   * updated some settings
   * updated settings
