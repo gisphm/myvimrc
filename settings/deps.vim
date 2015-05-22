@@ -61,8 +61,8 @@ let g:unite_split_rule                    = 'botright'
 if executable('ag')
     let g:unite_source_grep_command       = 'ag'
     let g:unite_source_grep_default_opts  =
-                \ '-i --line-numbers --nocolor --nogroup --hidden --ignore' .
-                \ '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+                \ '-i --line-numbers --nocolor --nogroup --hidden ' .
+                \ '--ignore ''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
     let g:unite_source_grep_recursive_opt = ''
 elseif executable('pt')
     let g:unite_source_grep_command       = 'pt'
@@ -83,13 +83,13 @@ let g:unite_source_history_yank_enable = 1
 let g:unite_source_rec_max_cache_files = -1
 
 nnoremap <silent> <Leader>m :Unite -buffer-name=recent -winheight=10 file_mru<cr>
-nnoremap <Leader>b :Unite -buffer-name=buffers -winheight=10 buffer<cr>
-nnoremap <Leader>p :<C-u>Unite -winheight=10 -buffer-name=file file_rec/async<cr>
-nnoremap <Space>/ :<C-u>Unite -winheight=10 -buffer-name=search grep:.<CR>
-nnoremap <Space>s :<C-u>Unite -winheight=10 -buffer-name=buffers -quick-match buffer<cr>
-nnoremap <leader>y :<C-u>Unite -winheight=10 -buffer-name=yank history/yank<cr>
-nnoremap <Space>uo :<C-u>Unite -winheight=10 -buffer-name=outline outline<CR>
-nnoremap <Space>ut :<C-u>Unite -winheight=10 -buffer-name=tabpages tab<CR>
+nnoremap <silent> <Leader>b :Unite -buffer-name=buffers -winheight=10 buffer<cr>
+nnoremap <silent> <C-p> :<C-u>Unite -winheight=10 -buffer-name=file file_rec/async<cr>
+nnoremap <silent> <Space>/ :<C-u>Unite -winheight=10 -buffer-name=search grep:.<CR>
+nnoremap <silent> <Space>s :<C-u>Unite -winheight=10 -buffer-name=buffers -quick-match buffer<cr>
+nnoremap <silent> <leader>y :<C-u>Unite -winheight=10 -buffer-name=yank history/yank<cr>
+nnoremap <silent> <Space>uo :<C-u>Unite -winheight=10 -buffer-name=outline outline<CR>
+nnoremap <silent> <Space>ut :<C-u>Unite -winheight=10 -buffer-name=tabpages tab<CR>
 nnoremap <silent> <Space>t :NeoCompleteIncludeMakeCache<CR>
             \ :UniteWithCursorWord -immediately -sync
             \ -default-action=context_split tag/include<CR>
