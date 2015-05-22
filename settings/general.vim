@@ -113,7 +113,7 @@ let g:indent_guides_auto_colors           = 1
 
 " Airline {{{
 
-let g:airline#extensions#tabline#enabled                = 0
+let g:airline#extensions#tabline#enabled                = 1
 let g:airline#extensions#branch#enabled                 = 1
 let g:airline#extensions#branch#format                  = 1
 let g:airline#extensions#syntastic#enabled              = 1

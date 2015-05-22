@@ -1,7 +1,8 @@
 
-n.n.n / 2015-05-10
+n.n.n / 2015-05-22
 ==================
 
+  * updated settings
   * ready for mapping documentation
   * update Requirements
   * update Requirements
