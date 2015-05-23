@@ -1,7 +1,8 @@
 
-Develop / 2015-05-22
+Develop / 2015-05-23
 ==================
 
+  * updated airline settings
   * updated ChangeLog
   * updated unite plugin settings
   * updated tabline settings in airline
