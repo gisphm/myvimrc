@@ -2,6 +2,7 @@
 Develop / 2015-05-23
 ==================
 
+  * updated some mappings
   * updated airline settings
   * updated ChangeLog
   * updated unite plugin settings

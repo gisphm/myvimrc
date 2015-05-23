@@ -74,6 +74,13 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list            = 1
 let g:syntastic_check_on_open            = 1
 let g:syntastic_check_on_wq              = 0
+let g:syntastic_loc_list_height          = 5
+nnoremap <silent> <Space>st :SyntasticToggleMode<CR>
+nnoremap <Space>sc :SyntasticCheck<CR>
+nnoremap <Space>si :SyntasticInfo<CR>
+nnoremap <Space>se :Errors<CR>
+nnoremap <Space>sr :SyntasticReset<CR>
+nnoremap <Space>ss :SyntasticSetLoclist<CR>
 
 " }}}
 
@@ -97,8 +104,8 @@ highlight DiffChange        cterm=bold ctermbg=none ctermfg=227
 highlight SignifySignAdd    cterm=bold ctermbg=237  ctermfg=119
 highlight SignifySignDelete cterm=bold ctermbg=237  ctermfg=167
 highlight SignifySignChange cterm=bold ctermbg=237  ctermfg=227
-nnoremap <silent> <leader>gg :SignifyToggle<CR>
-nmap <Leader>gj <Plug>(signify-next-hunk)
-nmap <Leader>gk <Plug>(signify-prev-hunk)
+nnoremap <silent> <Space>gg :SignifyToggle<CR>
+nmap <Space>gj <Plug>(signify-next-hunk)
+nmap <Space>gk <Plug>(signify-prev-hunk)
 
 " }}}
