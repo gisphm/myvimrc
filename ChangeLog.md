@@ -1,7 +1,8 @@
 
-Develop / 2015-05-23
+Develop / 2015-05-24
 ==================
 
+  * added easymotion mappings
   * update javascript settings
   * updated some mappings
   * updated airline settings
