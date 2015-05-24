@@ -2,6 +2,11 @@
 Develop / 2015-05-24
 ==================
 
+  * updated ChangeLog
+
+v1.0 / 2015-05-24
+=================
+
   * update Mappings doc
   * updated Mappings doc
   * added signify mappings and updated Mappings docs
