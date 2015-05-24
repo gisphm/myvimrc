@@ -20,7 +20,9 @@
 
 " TagBar {{{
 
-nnoremap <silent> <leader>tt :TagbarToggle<CR>
+nnoremap <silent> <Leader>tt :TagbarToggle<CR>
+nnoremap <silent> <Leader>to :TagbarOpen<CR>
+nnoremap <silent> <Leader>tc :TagbarOpenAutoClose<CR>
 let g:tagbar_ctags_bin = "/home/vagrant/tools/ctags/bin/ctags"
 let g:tagbar_width = 30
 let g:tagbar_type_css = {
@@ -46,17 +48,17 @@ let g:tagbar_type_ruby = {
 
 " Fugitive {{{
 
-nnoremap <silent> <leader>gs :Gstatus<CR>
-nnoremap <silent> <leader>gd :Gdiff<CR>
-nnoremap <silent> <leader>gc :Gcommit<CR>
-nnoremap <silent> <leader>gb :Gblame<CR>
-nnoremap <silent> <leader>gl :Glog<CR>
-nnoremap <silent> <leader>gp :Git push<CR>
-nnoremap <silent> <leader>gr :Gread<CR>
-nnoremap <silent> <leader>gw :Gwrite<CR>
-nnoremap <silent> <leader>ge :Gedit<CR>
+nnoremap <silent> <Leader>gs :Gstatus<CR>
+nnoremap <silent> <Leader>gd :Gdiff<CR>
+nnoremap <silent> <Leader>gc :Gcommit<CR>
+nnoremap <silent> <Leader>gb :Gblame<CR>
+nnoremap <silent> <Leader>gl :Glog<CR>
+nnoremap <silent> <Leader>gp :Git push<CR>
+nnoremap <silent> <Leader>gr :Gread<CR>
+nnoremap <silent> <Leader>gw :Gwrite<CR>
+nnoremap <silent> <Leader>ge :Gedit<CR>
 " Mnemonic _i_nteractive
-nnoremap <silent> <leader>gi :Git add -p %<CR>
+nnoremap <silent> <Leader>gi :Git add -p %<CR>
 
 " }}}
 
