@@ -216,3 +216,12 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
 " }}}
+
+" Golden-Ratio {{{
+
+let g:golden_ratio_wrap_ignored = 1
+let g:golden_ratio_exclude_nonmodifiable = 1
+nnoremap <Space>rr <Plug>(golden_ratio_resize)
+nnoremap <Space>rt <Plug>(golden_ratio_toggle)
+
+" }}}

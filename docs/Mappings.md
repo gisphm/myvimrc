@@ -5,8 +5,8 @@
 
 ## 基本映射
 1. 在这份配置中，`leader`键是分号`;`，`localleader`键是下划线`_`。
-1. `jk` 在插件模式中按下，可退出到正常模式。
-1. 在正常模式中，`j`被映射成`gj`，`k`被映射成`gk`，
+1. `jk` 在`insert`模式中按下，可退出到`normal`模式。
+1. 在`normal`模式中，`j`被映射成`gj`，`k`被映射成`gk`，
 这个做法是为了更好地在一段多行文字进行浏览。
 1. 0、$、^、<HOME>和<END>各自的映射基本不变。
 1. 一些有用的编辑映射
@@ -137,3 +137,7 @@
     > `<Leader>_a`       :: `:TCommentAs <QUERY COMMENT TYPE>`
     > `<Leader>_n`       :: `:TCommentAs &filetype <QUERY COUNT>`
     > `<Leader>_s`       :: `:TCommentAs &filetype_<QUERY COMMENT SUBTYPE>`
+
+## Golden-Ratio
+1. `<Space>rr <Plug>(golden_ratio_resize)`
+2. `<Space>rt <Plug>(golden_ratio_toggle)`
