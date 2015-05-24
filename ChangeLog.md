@@ -2,6 +2,7 @@
 Develop / 2015-05-24
 ==================
 
+  * updated mapping doc and airline setting
   * added golden_ratio settings
   * updated README
   * updated ChangeLog

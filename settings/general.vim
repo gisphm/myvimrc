@@ -116,6 +116,8 @@ let g:indent_guides_auto_colors           = 1
 
 " Airline {{{
 
+let g:airline_exclude_preview                      = 0
+
 " tabline
 let g:airline#extensions#tabline#enabled           = 1
 let g:airline#extensions#tabline#show_buffers      = 0
