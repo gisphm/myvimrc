@@ -2,6 +2,7 @@
 Develop / 2015-05-24
 ==================
 
+  * update Mappings doc
   * updated Mappings doc
   * added signify mappings and updated Mappings docs
   * added easymotion mappings
