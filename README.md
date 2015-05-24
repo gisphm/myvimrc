@@ -4,12 +4,12 @@
 + 此配置目前希望是有助于rails开发（自己个人在学习着）
 
 ## 配置文件列表
-+ __vimrc__             主配置文件，包含[neobundle][4]的初始化和对以下两个文件夹的引用
-+ __neobundles/__       插件列表文件所在文件夹，包含所有安装的插件，按照[spf13-vim][1]进行分组
-+ __settings/__    插件配置文件夹，包含已安装插件的一些配置与vim的基本配置，与`neobundles`的分组对应
-+ __install.sh__ 用来辅助安装的文件，生成`tmp`文件夹和克隆`neobundle.vim`。
++ __vimrc__ 主配置文件，包含[neobundle][4]的初始化和对以下两个文件夹的引用
++ __neobundles/__ 插件列表文件所在文件夹，包含所有安装的插件
++ __settings/__ 插件配置文件夹，包含已安装插件的一些配置与vim的基本配置，与`neobundles`的分组对应
++ __install.sh__ 用来辅助安装的文件，生成`tmp`文件夹和克隆`neobundle.vim`
 + __bundle__ 包含在git的忽略文件里，所有安装的插件都在这个文件夹里
-+ __tmp__ 包含在git的忽略文件里，包括vim的`swap` `undo` `view` `backup` `session`文件夹
++ __tmp__ 包含在git的忽略文件里，包括vim的`swap` `undo` `view` `backup`文件夹
 
 ## things todo
 1. ✓ replace nerdtree with vimfiler
@@ -22,6 +22,11 @@
 
 4. ✓ split plugins list
 4. ✓ split plugins settings
+4. fix rubycomplete issue
+    > well, this could be difficult.
+    > neocomplete says the omnicomplete of ruby provided by other plugins or vim
+    > has something wrong, and if it crashes, users should contact other plugins'
+    > maintainers or contributors rather than neocomplete's author.
 4. ~~documentation of snippets(especially rails)~~
 
     > 1. This is impossible for me...
@@ -35,17 +40,18 @@
 6. fix issues met in use regularly
 
 ## 几点说明
-+ 之所以用[neobundle][4]而不是[vundle][3]，纯粹是因为当时凑巧`vundle`用不了，各种无奈下只好用了`neobundle`。
++ 使用该配置前有些工作需要做，请参考[Requirements](docs/Requirements.md)
++ 之所以用[neobundle][4]而不是[vundle][3]，纯粹是因为当时凑巧`vundle`用不了，各种无奈下只好用了`neobundle`
 
-    > 1. `neobundle`的使用过程基本平滑，没有出现问题。
-    > 2. `neobundle`对插件的各种“花式”写法体现了插件调用的灵活性，大大提高vim的启动和运行速度。
-    > 3. `neobundle`唯一不爽的是没有跟`vundle`一样的直观的插件列表。
+    > 1. `neobundle`的使用过程基本平滑，没有出现问题
+    > 2. `neobundle`对插件的各种“花式”写法体现了插件调用的灵活性，大大提高vim的启动和运行速度
+    > 3. `neobundle`唯一不爽的是没有跟`vundle`一样的直观的插件列表
 
 + 目前此配置还在向着`1.0`版本进行着，我所期待的`1.0`主要是有以下几点：
 
     >
-    > 1. 插件基本齐全，多没关系，后面的版本可以慢慢删。但也不能多到插件映射打架。
-    > 2. 至少对其中的一些配置写点文档，不然就算是我也难以记住这n多的快捷键。
+    > 1. 插件基本齐全，多没关系，后面的版本可以慢慢删。但也不能多到插件映射打架
+    > 2. 至少对其中的一些配置写点文档，不然就算是我也难以记住这n多的快捷键
     >
     > 目前第1点基本算是修修补补一路搞得差不多了，
     > 第2点目前还没有想好到底要怎么来实现，

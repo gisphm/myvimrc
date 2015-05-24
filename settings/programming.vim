@@ -20,7 +20,11 @@
 
 " TagBar {{{
 
-nnoremap <silent> <leader>tt :TagbarToggle<CR>
+nnoremap <silent> <Leader>tt :TagbarToggle<CR>
+nnoremap <silent> <Leader>to :TagbarOpen<CR>
+nnoremap <silent> <Leader>tc :TagbarOpenAutoClose<CR>
+let g:tagbar_ctags_bin = "/home/vagrant/tools/ctags/bin/ctags"
+let g:tagbar_width = 30
 let g:tagbar_type_css = {
             \ 'ctagstype' : 'Css',
             \ 'kinds'     : [
@@ -44,17 +48,17 @@ let g:tagbar_type_ruby = {
 
 " Fugitive {{{
 
-nnoremap <silent> <leader>gs :Gstatus<CR>
-nnoremap <silent> <leader>gd :Gdiff<CR>
-nnoremap <silent> <leader>gc :Gcommit<CR>
-nnoremap <silent> <leader>gb :Gblame<CR>
-nnoremap <silent> <leader>gl :Glog<CR>
-nnoremap <silent> <leader>gp :Git push<CR>
-nnoremap <silent> <leader>gr :Gread<CR>
-nnoremap <silent> <leader>gw :Gwrite<CR>
-nnoremap <silent> <leader>ge :Gedit<CR>
+nnoremap <silent> <Leader>gs :Gstatus<CR>
+nnoremap <silent> <Leader>gd :Gdiff<CR>
+nnoremap <silent> <Leader>gc :Gcommit<CR>
+nnoremap <silent> <Leader>gb :Gblame<CR>
+nnoremap <silent> <Leader>gl :Glog<CR>
+nnoremap <silent> <Leader>gp :Git push<CR>
+nnoremap <silent> <Leader>gr :Gread<CR>
+nnoremap <silent> <Leader>gw :Gwrite<CR>
+nnoremap <silent> <Leader>ge :Gedit<CR>
 " Mnemonic _i_nteractive
-nnoremap <silent> <leader>gi :Git add -p %<CR>
+nnoremap <silent> <Leader>gi :Git add -p %<CR>
 
 " }}}
 
@@ -72,11 +76,19 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list            = 1
 let g:syntastic_check_on_open            = 1
 let g:syntastic_check_on_wq              = 0
+let g:syntastic_loc_list_height          = 5
+nnoremap <silent> <Space>st :SyntasticToggleMode<CR>
+nnoremap <Space>sc :SyntasticCheck<CR>
+nnoremap <Space>si :SyntasticInfo<CR>
+nnoremap <Space>se :Errors<CR>
+nnoremap <Space>sr :SyntasticReset<CR>
+nnoremap <Space>ss :SyntasticSetLoclist<CR>
 
 " }}}
 
 " Signify {{{
 
+let g:signify_disable_by_default     = 0
 let g:signify_vcs_list               = ['git']
 let g:signify_cursorhold_insert      = 1
 let g:signify_cursorhold_normal      = 1
@@ -95,8 +107,10 @@ highlight DiffChange        cterm=bold ctermbg=none ctermfg=227
 highlight SignifySignAdd    cterm=bold ctermbg=237  ctermfg=119
 highlight SignifySignDelete cterm=bold ctermbg=237  ctermfg=167
 highlight SignifySignChange cterm=bold ctermbg=237  ctermfg=227
-nnoremap <silent> <leader>gg :SignifyToggle<CR>
-nmap <Leader>gj <Plug>(signify-next-hunk)
-nmap <Leader>gk <Plug>(signify-prev-hunk)
+nnoremap <silent> <Space>gg :SignifyToggle<CR>
+nnoremap <silent> <Space>gr :SignifyRefresh<CR>
+nnoremap <silent> <Space>gh :SignifyToggleHighlight<CR>
+nmap <Space>gj <Plug>(signify-next-hunk)
+nmap <Space>gk <Plug>(signify-prev-hunk)
 
 " }}}

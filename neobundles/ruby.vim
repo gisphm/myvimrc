@@ -21,10 +21,10 @@
 " Ruby {{{
 
 NeoBundleLazy 'vim-ruby/vim-ruby', {
-            \ 'filetypes' : ['markdown','ruby'],
+            \ 'filetypes' : ['markdown','ruby','eruby'],
             \ }
 NeoBundleLazy 'tpope/vim-rails', {
-            \ 'filetypes' : 'ruby',
+            \ 'filetypes' : ['ruby','eruby'],
             \ }
 NeoBundleLazy 'ecomba/vim-ruby-refactoring', {
             \ 'filetypes' : 'ruby',

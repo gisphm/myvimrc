@@ -1,5 +1,37 @@
 
-n.n.n / 2015-05-09
+Develop / 2015-05-24
+==================
+
+  * update Mappings doc
+  * updated Mappings doc
+  * added signify mappings and updated Mappings docs
+  * added easymotion mappings
+  * update javascript settings
+  * updated some mappings
+  * updated airline settings
+  * updated ChangeLog
+  * updated unite plugin settings
+  * updated tabline settings in airline
+  * updated README
+  * updated some settings
+  * updated settings
+  * ready for mapping documentation
+  * update Requirements
+  * update Requirements
+  * update README
+  * added Requirements
+  * added ctags location in tagbar
+  * remove matchit
+  * update README
+  * update something
+  * remove some plugins
+  * remove session and vim-over
+  * as a coder, I don't do creative writing...
+  * added colorcolumn at column 80
+  * fix error when opening markdown files
+  * update ChangeLog
+
+v0.10 / 2015-05-09
 ==================
 
   * added diff-enhanced

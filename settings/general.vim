@@ -39,38 +39,21 @@ let g:AutoPairsMultilineClose = 0
 " Tabularize {{{
 
 nmap <Leader>a& :Tabularize /&<CR>
-vmap <Leader>a& :Tabularize /&<CR>
 nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
-vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
 nmap <Leader>a=> :Tabularize /=><CR>
-vmap <Leader>a=> :Tabularize /=><CR>
 nmap <Leader>a: :Tabularize /:<CR>
-vmap <Leader>a: :Tabularize /:<CR>
 nmap <Leader>a:: :Tabularize /:\zs<CR>
-vmap <Leader>a:: :Tabularize /:\zs<CR>
 nmap <Leader>a, :Tabularize /,<CR>
-vmap <Leader>a, :Tabularize /,<CR>
 nmap <Leader>a,, :Tabularize /,\zs<CR>
-vmap <Leader>a,, :Tabularize /,\zs<CR>
 nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+vmap <Leader>a& :Tabularize /&<CR>
+vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+vmap <Leader>a=> :Tabularize /=><CR>
+vmap <Leader>a: :Tabularize /:<CR>
+vmap <Leader>a:: :Tabularize /:\zs<CR>
+vmap <Leader>a, :Tabularize /,<CR>
+vmap <Leader>a,, :Tabularize /,\zs<CR>
 vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-
-" }}}
-
-" Session {{{
-
-set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
-let g:session_autoload          = "no"
-let g:session_directory         = "~/.vim/tmp/sessions/"
-let g:session_lock_directory    = "~/.vim/tmp/lock/"
-let g:session_autosave          = "yes"
-let g:session_autosave_periodic = 1
-nmap <Leader>so :OpenSession<CR>
-nmap <leader>ss :SaveSession<CR>
-nmap <leader>sc :CloseSession<CR>
-nmap <Leader>sd :DeleteSession<CR>
-nmap <Leader>sr :RestartVim<CR>
-nmap <Leader>sv :ViewSession<CR>
 
 " }}}
 
@@ -85,7 +68,10 @@ let g:wildfire_objects = {
 
 " UndoTree {{{
 
-nnoremap <Leader>u :UndotreeToggle<CR>
+nnoremap <Leader>ut :UndotreeToggle<CR>
+nnoremap <Leader>uf :UndotreeFocus<CR>
+nnoremap <Leader>uh :UndotreeHide<CR>
+nnoremap <Leader>us :UndotreeShow<CR>
 " If undotree is opened, it is likely one wants to interact with it.
 let g:undotree_SetFocusWhenToggle = 1
 
@@ -130,7 +116,24 @@ let g:indent_guides_auto_colors           = 1
 
 " Airline {{{
 
-let g:airline#extensions#tabline#enabled                = 0
+" tabline
+let g:airline#extensions#tabline#enabled           = 1
+let g:airline#extensions#tabline#show_buffers      = 0
+let g:airline#extensions#tabline#tab_nr_type       = 2
+let g:airline#extensions#tabline#buffer_idx_mode   = 0
+let g:airline#extensions#tabline#fnametruncate     = 1
+let g:airline#extensions#tabline#tab_min_count     = 2
+let g:airline#extensions#tabline#buffer_min_count  = 2
+let g:airline#extensions#tabline#formatter         = 'unique_tail_improved'
+let g:airline#extensions#tabline#fnamemod          = ':t'
+let g:airline#extensions#tabline#left_sep          = ''
+let g:airline#extensions#tabline#left_alt_sep      = ''
+let g:airline#extensions#tabline#right_sep         = ''
+let g:airline#extensions#tabline#right_alt_sep     = ''
+let g:airline#extensions#tabline#show_tab_type     = 1
+let g:airline#extensions#tabline#show_close_button = 0
+
+" branch and other extensions
 let g:airline#extensions#branch#enabled                 = 1
 let g:airline#extensions#branch#format                  = 1
 let g:airline#extensions#syntastic#enabled              = 1
@@ -144,6 +147,9 @@ let g:airline#extensions#whitespace#trailing_format     = 'trailing[%s]'
 let g:airline#extensions#whitespace#mixed_indent_format = 'mixed[%s]'
 let g:airline#extensions#whitespace#symbol              = 'Ξ'
 let g:airline#extensions#quickfix#quickfix_text         = 'Qf'
+let g:airline#extensions#eclim#enabled                  = 0
+
+" Statusline theme
 function! AirlineThemePatch(palette)
     if g:airline_theme == 'badwolf'
         for colors in values(a:palette.inactive)
@@ -152,8 +158,8 @@ function! AirlineThemePatch(palette)
     endif
 endfunction
 let g:airline_theme           = 'badwolf'
-let g:airline_powerline_fonts = 0
-let g:airline_mode_map = {
+let g:airline_powerline_fonts = 1
+let g:airline_mode_map        = {
             \ '__' : '-',
             \ 'n'  : 'N',
             \ 'i'  : 'I',
@@ -166,10 +172,12 @@ let g:airline_mode_map = {
             \ 'S'  : 'S',
             \ '' : 'S',
             \ }
+
+" Symbols
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
-let g:airline_symbols.linenr     = '␤'
+let g:airline_symbols.linenr     = ''
 let g:airline_symbols.paste      = 'ρ'
 let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_left_sep           = ''
@@ -178,7 +186,10 @@ let g:airline_right_sep          = ''
 let g:airline_right_alt_sep      = ''
 let g:airline_symbols.branch     = ''
 let g:airline_symbols.readonly   = ''
+
+" Manually refresh airline when airline doesn't refresh automatically
 nnoremap <Leader>ar :AirlineRefresh<CR>
+nnoremap <Leader>at :AirlineToggle<CR>
 
 " }}}
 
@@ -186,5 +197,22 @@ nnoremap <Leader>ar :AirlineRefresh<CR>
 
 let g:DiffColors = 100
 let g:DiffUpdate = 1
+
+" }}}
+
+" EasyMotion {{{
+
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-s2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 
 " }}}

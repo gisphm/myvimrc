@@ -20,7 +20,7 @@
 
 " NeoBundle {{{
 
-nnoremap <leader>nu :NeoBundleUpdate<CR>
+nnoremap <Leader>nu :NeoBundleUpdate<CR>
 nnoremap <Leader>ni :NeoBundleInstall<CR>
 nnoremap <Leader>nc :NeoBundleClean<CR>
 nnoremap <Leader>nl :NeoBundleUpdatesLog<CR>
@@ -58,11 +58,13 @@ let default_context = {
 call unite#custom#profile('default', 'context', default_context)
 let g:unite_prompt                        = '» '
 let g:unite_split_rule                    = 'botright'
+
+" Unite's search command order
 if executable('ag')
     let g:unite_source_grep_command       = 'ag'
     let g:unite_source_grep_default_opts  =
-                \ '-i --line-numbers --nocolor --nogroup --hidden --ignore' .
-                \ '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+                \ '-i --line-numbers --nocolor --nogroup --hidden ' .
+                \ '--ignore ''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
     let g:unite_source_grep_recursive_opt = ''
 elseif executable('pt')
     let g:unite_source_grep_command       = 'pt'
@@ -70,26 +72,26 @@ elseif executable('pt')
     let g:unite_source_grep_recursive_opt = ''
     let g:unite_source_grep_encoding      = 'utf-8'
 elseif executable('ack')
-    let g:unite_source_grep_command = 'ack'
-    let g:unite_source_grep_default_opts = '-i --no-heading --no-color -a'
+    let g:unite_source_grep_command       = 'ack'
+    let g:unite_source_grep_default_opts  = '-i --no-heading --no-color -a'
     let g:unite_source_grep_recursive_opt = ''
 elseif executable('ack-grep')
-    let g:unite_source_grep_command = 'ack-grep'
-    let g:unite_source_grep_default_opts = '-i --no-heading --no-color -a'
+    let g:unite_source_grep_command       = 'ack-grep'
+    let g:unite_source_grep_default_opts  = '-i --no-heading --no-color -a'
     let g:unite_source_grep_recursive_opt = ''
 endif
 
-let g:unite_source_history_yank_enable = 1
-let g:unite_source_rec_max_cache_files = -1
+let g:unite_source_history_yank_enable    = 1
+let g:unite_source_rec_max_cache_files    = -1
 
 nnoremap <silent> <Leader>m :Unite -buffer-name=recent -winheight=10 file_mru<cr>
-nnoremap <Leader>b :Unite -buffer-name=buffers -winheight=10 buffer<cr>
-nnoremap <Leader>p :<C-u>Unite -winheight=10 -buffer-name=file file_rec/async<cr>
-nnoremap <Space>/ :<C-u>Unite -winheight=10 -buffer-name=search grep:.<CR>
-nnoremap <Space>s :<C-u>Unite -winheight=10 -buffer-name=buffers -quick-match buffer<cr>
-nnoremap <leader>y :<C-u>Unite -winheight=10 -buffer-name=yank history/yank<cr>
-nnoremap <Space>u :<C-u>Unite -winheight=10 -buffer-name=outline outline<CR>
-nnoremap <Space>g :Unite -winheight=10 -buffer-name=goimport go/import<CR>
+nnoremap <silent> <Leader>b :Unite -buffer-name=buffers -winheight=10 buffer<cr>
+nnoremap <silent> <C-p> :<C-u>Unite -winheight=10 -buffer-name=file file_rec/async<cr>
+nnoremap <silent> <Space>/ :<C-u>Unite -winheight=10 -buffer-name=search grep:.<CR>
+nnoremap <silent> <Space>b :<C-u>Unite -winheight=10 -buffer-name=buffers -quick-match buffer<cr>
+nnoremap <silent> <Leader>y :<C-u>Unite -winheight=10 -buffer-name=yank history/yank<cr>
+nnoremap <silent> <Space>uo :<C-u>Unite -winheight=10 -buffer-name=outline outline<CR>
+nnoremap <silent> <Space>ut :<C-u>Unite -winheight=10 -buffer-name=tabpages tab<CR>
 nnoremap <silent> <Space>t :NeoCompleteIncludeMakeCache<CR>
             \ :UniteWithCursorWord -immediately -sync
             \ -default-action=context_split tag/include<CR>
