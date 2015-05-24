@@ -20,7 +20,7 @@
 
 " NeoBundle {{{
 
-nnoremap <leader>nu :NeoBundleUpdate<CR>
+nnoremap <Leader>nu :NeoBundleUpdate<CR>
 nnoremap <Leader>ni :NeoBundleInstall<CR>
 nnoremap <Leader>nc :NeoBundleClean<CR>
 nnoremap <Leader>nl :NeoBundleUpdatesLog<CR>
@@ -89,7 +89,7 @@ nnoremap <silent> <Leader>b :Unite -buffer-name=buffers -winheight=10 buffer<cr>
 nnoremap <silent> <C-p> :<C-u>Unite -winheight=10 -buffer-name=file file_rec/async<cr>
 nnoremap <silent> <Space>/ :<C-u>Unite -winheight=10 -buffer-name=search grep:.<CR>
 nnoremap <silent> <Space>b :<C-u>Unite -winheight=10 -buffer-name=buffers -quick-match buffer<cr>
-nnoremap <silent> <leader>y :<C-u>Unite -winheight=10 -buffer-name=yank history/yank<cr>
+nnoremap <silent> <Leader>y :<C-u>Unite -winheight=10 -buffer-name=yank history/yank<cr>
 nnoremap <silent> <Space>uo :<C-u>Unite -winheight=10 -buffer-name=outline outline<CR>
 nnoremap <silent> <Space>ut :<C-u>Unite -winheight=10 -buffer-name=tabpages tab<CR>
 nnoremap <silent> <Space>t :NeoCompleteIncludeMakeCache<CR>

@@ -39,20 +39,20 @@ let g:AutoPairsMultilineClose = 0
 " Tabularize {{{
 
 nmap <Leader>a& :Tabularize /&<CR>
-vmap <Leader>a& :Tabularize /&<CR>
 nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
-vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
 nmap <Leader>a=> :Tabularize /=><CR>
-vmap <Leader>a=> :Tabularize /=><CR>
 nmap <Leader>a: :Tabularize /:<CR>
-vmap <Leader>a: :Tabularize /:<CR>
 nmap <Leader>a:: :Tabularize /:\zs<CR>
-vmap <Leader>a:: :Tabularize /:\zs<CR>
 nmap <Leader>a, :Tabularize /,<CR>
-vmap <Leader>a, :Tabularize /,<CR>
 nmap <Leader>a,, :Tabularize /,\zs<CR>
-vmap <Leader>a,, :Tabularize /,\zs<CR>
 nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+vmap <Leader>a& :Tabularize /&<CR>
+vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+vmap <Leader>a=> :Tabularize /=><CR>
+vmap <Leader>a: :Tabularize /:<CR>
+vmap <Leader>a:: :Tabularize /:\zs<CR>
+vmap <Leader>a, :Tabularize /,<CR>
+vmap <Leader>a,, :Tabularize /,\zs<CR>
 vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 
 " }}}
@@ -68,7 +68,10 @@ let g:wildfire_objects = {
 
 " UndoTree {{{
 
-nnoremap <Leader>u :UndotreeToggle<CR>
+nnoremap <Leader>ut :UndotreeToggle<CR>
+nnoremap <Leader>uf :UndotreeFocus<CR>
+nnoremap <Leader>uh :UndotreeHide<CR>
+nnoremap <Leader>us :UndotreeShow<CR>
 " If undotree is opened, it is likely one wants to interact with it.
 let g:undotree_SetFocusWhenToggle = 1
 
@@ -186,6 +189,7 @@ let g:airline_symbols.readonly   = ''
 
 " Manually refresh airline when airline doesn't refresh automatically
 nnoremap <Leader>ar :AirlineRefresh<CR>
+nnoremap <Leader>at :AirlineToggle<CR>
 
 " }}}
 
