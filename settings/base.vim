@@ -23,36 +23,37 @@
 set shell=/bin/sh
 set background=dark
 filetype plugin on
-syntax on                   " Syntax highlighting
-set mouse=a                 " Automatically enable mouse usage
-set mousehide               " Hide the mouse cursor while typing
+syntax on
 scriptencoding utf-8
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,utf-16le,cp2512,iso-8859-15,latin1
 
 if has('clipboard')
     if exists('$TMUX')
         set clipboard=
-    elseif has('unnamedplus')  " When possible use + register for copy-paste
+    elseif has('unnamedplus')
         set clipboard=unnamed,unnamedplus
-    else         " On mac and Windows, use * register for copy-paste
+    else
         set clipboard=unnamed
     endif
 endif
 
 autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 
-set autowrite                       " Automatically write a file when leaving a modified buffer
-set shortmess+=filmnrxoOtT          " Abbrev. of messages (avoids 'hit enter')
-set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
-set virtualedit=onemore             " Allow for cursor beyond last character
-set history=1000                    " Store a ton of history (default is 20)
+set autowrite
+set shortmess+=filmnrxoOtT
+set viewoptions=folds,options,cursor,unix,slash
+set virtualedit=onemore
+set history=1000
 set ttimeoutlen=50
 set linebreak
 let &showbreak='↪ '
-set spell                           " Spell checking on
-set hidden                          " Allow buffer switching without saving
-set iskeyword-=.                    " '.' is an end of word designator
-set iskeyword-=#                    " '#' is an end of word designator
-set iskeyword-=-                    " '-' is an end of word designator
+set spell
+set hidden
+set iskeyword-=.
+set iskeyword-=#
+set iskeyword-=-
 
 au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 
@@ -61,16 +62,12 @@ augroup resCur
     autocmd BufWinEnter * call ResCur()
 augroup END
 
-set backup                  " Backups are nice ...
+set backup
 if has('persistent_undo')
-    set undofile                " So is persistent undo ...
-    set undolevels=1000         " Maximum number of changes that can be undone
-    set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
+    set undofile
+    set undolevels=1000
+    set undoreload=10000
 endif
-
-let g:skipview_files = [
-            \ '\[example pattern\]'
-            \ ]
 
 set dir=~/.vim/tmp/swap/
 set backupdir=~/.vim/tmp/backup/
@@ -100,13 +97,13 @@ set cursorline cursorcolumn
 
 set colorcolumn=80
 
-highlight clear SignColumn      " SignColumn should match background
-highlight clear LineNr          " Current line number row will have same background color in relative mode
+highlight clear SignColumn
+highlight clear LineNr
 
 if has('cmdline_info')
-    set ruler                   " Show the ruler
-    set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
-    set showcmd                 " Show partial commands in status line and
+    set ruler
+    set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
+    set showcmd
 endif
 
 if has('statusline')
@@ -114,14 +111,14 @@ if has('statusline')
 
     if !filereadable("~/.vim/bundle/vim-airline/README.md")
         " Broken down into easily includeable segments
-        set statusline=%<%f\                     " Filename
-        set statusline+=%w%h%m%r                 " Options
+        set statusline=%<%f\
+        set statusline+=%w%h%m%r
         if filereadable(expand('~/.vim/bundle/vim-fugitive/README.markdown'))
-            set statusline+=%{fugitive#statusline()} " Git Hotness
+            set statusline+=%{fugitive#statusline()}
         endif
-        set statusline+=\ [%{&ff}/%Y]            " Filetype
-        set statusline+=\ [%{getcwd()}]          " Current dir
-        set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+        set statusline+=\ [%{&ff}/%Y]
+        set statusline+=\ [%{getcwd()}]
+        set statusline+=%=%-14.(%l,%c%V%)\ %p%%
     endif
 endif
 
@@ -130,7 +127,7 @@ if has('conceal')
     set listchars+=conceal:Δ
 endif
 
-set backspace=indent,eol,start  " Backspace for dummies
+set backspace=indent,eol,start
 set linespace=0                 " No extra spaces between rows
 set number                      " Line numbers on
 set showmatch                   " Show matching brackets/parenthesis
@@ -142,11 +139,11 @@ set smartcase                   " Case sensitive when uc present
 set wildmenu                    " Show list instead of just completing
 set wildmode=list:longest,full  " Command <Tab> completion, list matches, then longest common part, then all.
 set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
-set scrolljump=5                " Lines to scroll when cursor leaves screen
-set scrolloff=3                 " Minimum lines to keep above and below cursor
-set foldenable                  " Auto fold code
+set scrolljump=5
+set scrolloff=3
+set foldenable
 set list
-set listchars=tab:➪\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+set listchars=tab:➪\ ,trail:•,extends:#,nbsp:.
 set noerrorbells
 set novisualbell
 set t_vb=
@@ -165,7 +162,7 @@ set nojoinspaces
 set splitright
 set splitbelow
 set pastetoggle=<F12>
-autocmd FileType puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
+autocmd FileType puppet,ruby,yml set expandtab shiftwidth=2 softtabstop=2
 autocmd BufNewFile,BufRead *.coffee set filetype=coffee
 autocmd FileType * autocmd BufWritePre <buffer> call Preserve("%s/\\s\\+$//e")
 
