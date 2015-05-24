@@ -86,6 +86,7 @@ nnoremap <Space>ss :SyntasticSetLoclist<CR>
 
 " Signify {{{
 
+let g:signify_disable_by_default     = 0
 let g:signify_vcs_list               = ['git']
 let g:signify_cursorhold_insert      = 1
 let g:signify_cursorhold_normal      = 1
@@ -105,6 +106,8 @@ highlight SignifySignAdd    cterm=bold ctermbg=237  ctermfg=119
 highlight SignifySignDelete cterm=bold ctermbg=237  ctermfg=167
 highlight SignifySignChange cterm=bold ctermbg=237  ctermfg=227
 nnoremap <silent> <Space>gg :SignifyToggle<CR>
+nnoremap <silent> <Space>gr :SignifyRefresh<CR>
+nnoremap <silent> <Space>gh :SignifyToggleHighlight<CR>
 nmap <Space>gj <Plug>(signify-next-hunk)
 nmap <Space>gk <Plug>(signify-prev-hunk)
 
