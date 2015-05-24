@@ -2,6 +2,7 @@
 Develop / 2015-05-24
 ==================
 
+  * updated README
   * updated ChangeLog
 
 v1.0 / 2015-05-24

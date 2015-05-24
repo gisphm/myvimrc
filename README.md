@@ -13,7 +13,9 @@
 
 ## things todo
 1. ✓ replace nerdtree with vimfiler
+
 2. ✓ fix arrow key and esc mapping error
+
 3. ~~complete install.sh~~
 
     > 1. After executing `install.sh`, the basic plugin `neobundle` has been installed.
@@ -21,12 +23,18 @@
     > 3. So, in some way, this `install.sh` is complete.
 
 4. ✓ split plugins list
+
 4. ✓ split plugins settings
+
 4. fix rubycomplete issue
+
     > well, this could be difficult.
-    > neocomplete says the omnicomplete of ruby provided by other plugins or vim
-    > has something wrong, and if it crashes, users should contact other plugins'
+    > `neocomplete` says the `omnicomplete` of ruby provided by other plugins or vim
+    > has something wrong. If `neocomplete` crashes, users should contact other plugins'
     > maintainers or contributors rather than neocomplete's author.
+
+4. write some mappings of `unite.vim` acting as `ctrlp.vim`
+
 4. ~~documentation of snippets(especially rails)~~
 
     > 1. This is impossible for me...
@@ -41,21 +49,24 @@
 
 ## 几点说明
 + 使用该配置前有些工作需要做，请参考[Requirements](docs/Requirements.md)
-+ 之所以用[neobundle][4]而不是[vundle][3]，纯粹是因为当时凑巧`vundle`用不了，各种无奈下只好用了`neobundle`
+
++ 之所以用[neobundle][4]而不是[vundle][3]，纯粹是因为当时凑巧`vundle`用不了，
+    各种无奈下只好用了`neobundle`
 
     > 1. `neobundle`的使用过程基本平滑，没有出现问题
     > 2. `neobundle`对插件的各种“花式”写法体现了插件调用的灵活性，大大提高vim的启动和运行速度
     > 3. `neobundle`唯一不爽的是没有跟`vundle`一样的直观的插件列表
 
-+ 目前此配置还在向着`1.0`版本进行着，我所期待的`1.0`主要是有以下几点：
++ ✓ ~~目前此配置还在向着`1.0`版本进行着，我所期待的`1.0`主要是有以下几点：~~
 
+    > ~~1. 插件基本齐全，多没关系，后面的版本可以慢慢删。但也不能多到插件映射打架~~
+    > ~~2. 至少对其中的一些配置写点文档，不然就算是我也难以记住这n多的快捷键~~
     >
-    > 1. 插件基本齐全，多没关系，后面的版本可以慢慢删。但也不能多到插件映射打架
-    > 2. 至少对其中的一些配置写点文档，不然就算是我也难以记住这n多的快捷键
-    >
-    > 目前第1点基本算是修修补补一路搞得差不多了，
-    > 第2点目前还没有想好到底要怎么来实现，
-    > 现在的打算是~~先把`snippets`的文档搞一搞，再~~把一些常用的操作映射写一写。
+    > ~~目前第1点基本算是修修补补一路搞得差不多了，~~
+    > ~~第2点目前还没有想好到底要怎么来实现，~~
+    > ~~现在的打算是先把`snippets`的文档搞一搞，再把一些常用的操作映射写一写。~~
+
++ 接下来的目标暂时还没有，只是随时修补、改进
 
 + 这个配置的整个过程用到了`git-flow-avh`的工作流模型，基本的分支流程可以在`network`图中看到。
 
