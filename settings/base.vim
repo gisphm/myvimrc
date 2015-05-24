@@ -95,6 +95,11 @@ au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
 set cursorline cursorcolumn
 
+set listchars=tab:➪Þ,trail:•,extends:#,nbsp:.,eol:¶
+if has('conceal')
+    set listchars+=conceal:Δ
+endif
+
 set colorcolumn=80
 
 highlight clear SignColumn
@@ -109,7 +114,7 @@ endif
 if has('statusline')
     set laststatus=2
 
-    if !filereadable("~/.vim/bundle/vim-airline/README.md")
+    if !filereadable(expand("~/.vim/bundle/vim-airline/README.md"))
         " Broken down into easily includeable segments
         set statusline=%<%f\
         set statusline+=%w%h%m%r
@@ -120,11 +125,6 @@ if has('statusline')
         set statusline+=\ [%{getcwd()}]
         set statusline+=%=%-14.(%l,%c%V%)\ %p%%
     endif
-endif
-
-if has('conceal')
-    set conceallevel=1
-    set listchars+=conceal:Δ
 endif
 
 set backspace=indent,eol,start
@@ -143,7 +143,6 @@ set scrolljump=5
 set scrolloff=3
 set foldenable
 set list
-set listchars=tab:➪\ ,trail:•,extends:#,nbsp:.
 set noerrorbells
 set novisualbell
 set t_vb=
