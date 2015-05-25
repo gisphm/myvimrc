@@ -2,6 +2,7 @@
 Develop / 2015-05-25
 ==================
 
+  * fix markdown link error in README
   * updated Mappings and README
   * updated Mappings markdown layout
   * update README
