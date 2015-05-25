@@ -2,6 +2,7 @@
 Develop / 2015-05-25
 ==================
 
+  * updated Mappings and README
   * updated Mappings markdown layout
   * update README
   * updated base and airline settings
