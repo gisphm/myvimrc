@@ -26,7 +26,7 @@ NeoBundleLazy 'vim-ruby/vim-ruby', {
 NeoBundleLazy 'tpope/vim-rails', {
             \ 'filetypes' : ['ruby','eruby'],
             \ }
-NeoBundleLazy 'ecomba/vim-ruby-refactoring', {
+NeoBundleLazy 'killphi/vim-ruby-refactoring', {
             \ 'filetypes' : 'ruby',
             \ }
 NeoBundleLazy 'tpope/vim-endwise', {
