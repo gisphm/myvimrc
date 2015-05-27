@@ -2,6 +2,7 @@
 Develop / 2015-05-27
 ==================
 
+  * added gitignore.vim
   * update settings
   * added tern complete for javascript files
   * updated neocomplete settings

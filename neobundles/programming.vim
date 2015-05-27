@@ -22,6 +22,9 @@
 
 NeoBundle 'tpope/vim-git'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'gisphm/gitignore.vim', {
+            \ 'filetypes' : 'gitignore',
+            \ }
 NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'idanarye/vim-merginal'
 NeoBundle 'int3/vim-extradite'
