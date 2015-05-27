@@ -1,7 +1,8 @@
 
-Develop / 2015-05-26
+Develop / 2015-05-27
 ==================
 
+  * updated neocomplete settings
   * changed ruby-refactor source repo
   * update some showing errors in Mappings doc
   * fix markdown link error in README
