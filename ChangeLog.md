@@ -2,6 +2,7 @@
 Develop / 2015-05-27
 ==================
 
+  * updated gitignore.vim repo's branch
   * updated vim-gitignore url
   * added gitignore.vim
   * update settings
