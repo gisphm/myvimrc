@@ -2,6 +2,7 @@
 Develop / 2015-05-27
 ==================
 
+  * updated vim-gitignore url
   * added gitignore.vim
   * update settings
   * added tern complete for javascript files
