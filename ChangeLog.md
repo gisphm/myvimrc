@@ -2,6 +2,7 @@
 Develop / 2015-05-27
 ==================
 
+  * added tern complete for javascript files
   * updated neocomplete settings
   * changed ruby-refactor source repo
   * update some showing errors in Mappings doc
