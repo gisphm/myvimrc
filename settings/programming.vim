@@ -72,11 +72,19 @@ noremap <silent> <Space>f :Autoformat<CR>
 
 let g:syntastic_error_symbol             = '✗'
 let g:syntastic_warning_symbol           = '⚠'
+let g:syntastic_auto_jump                = 1
+let g:syntastic_enable_signs             = 1
+let g:syntastic_enable_highlighting      = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list            = 1
 let g:syntastic_check_on_open            = 1
 let g:syntastic_check_on_wq              = 0
 let g:syntastic_loc_list_height          = 5
+let g:syntastic_mode_map                 = {
+            \ 'mode' : 'active',
+            \ 'active_filetypes' : ['ruby', 'javascript', 'html', 'eruby'],
+            \ 'passive_filetypes' : []
+            \ }
 nnoremap <silent> <Space>st :SyntasticToggleMode<CR>
 nnoremap <Space>sc :SyntasticCheck<CR>
 nnoremap <Space>si :SyntasticInfo<CR>
