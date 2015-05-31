@@ -56,7 +56,9 @@ NeoBundle 'Shougo/unite-outline'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-haystack'
-NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'gisphm/auto-pairs', {
+            \ 'rev' : 'develop'
+            \ }
 NeoBundle 'kristijanhusak/vim-multiple-cursors'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'flazz/vim-colorschemes'
