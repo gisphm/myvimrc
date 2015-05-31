@@ -33,6 +33,14 @@ endif
 
 let g:AutoPairsMapSpace       = 0
 let g:AutoPairsMultilineClose = 0
+let g:AutoPairs = {
+            \ '(' : ')',
+            \ '[' : ']',
+            \ '{' : '}',
+            \ "'" : "'",
+            \ '"' : '"'
+            \ }
+let g:AutoPairsShortcutToggle = '<Space>pp'
 
 " }}}
 

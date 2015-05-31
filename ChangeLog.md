@@ -2,6 +2,7 @@
 Develop / 2015-05-31
 ==================
 
+  * updated auto-pairs settings
   * replaced auto-pairs' repo
   * added snip_author for license snippets
   * updated gitignore.vim repo's branch
