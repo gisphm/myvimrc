@@ -167,6 +167,8 @@ endif
 
 set completeopt-=preview
 
+let g:snips_author = "gisphm <phmfk@hotmail.com>"
+
 " }}}
 
 " Functions {{{
