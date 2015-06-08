@@ -40,7 +40,6 @@ let g:AutoPairs = {
             \ "'" : "'",
             \ '"' : '"'
             \ }
-let g:AutoPairsShortcutToggle = '<Space>pp'
 
 " }}}
 
