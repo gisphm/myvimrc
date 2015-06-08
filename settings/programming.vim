@@ -23,7 +23,6 @@
 nnoremap <silent> <Leader>tt :TagbarToggle<CR>
 nnoremap <silent> <Leader>to :TagbarOpen<CR>
 nnoremap <silent> <Leader>tc :TagbarOpenAutoClose<CR>
-let g:tagbar_ctags_bin = "/home/vagrant/tools/ctags/bin/ctags"
 let g:tagbar_width = 30
 let g:tagbar_type_css = {
             \ 'ctagstype' : 'Css',
