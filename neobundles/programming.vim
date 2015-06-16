@@ -26,6 +26,10 @@ NeoBundle 'gisphm/vim-gitignore', {
             \ 'rev' : 'develop',
             \ 'filetypes' : 'gitignore',
             \ }
+NeoBundle 'gisphm/vim-hgignore', {
+            \ 'rev' : 'develop',
+            \ 'filetypes' : 'hgignore',
+            \ }
 NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'idanarye/vim-merginal'
 NeoBundle 'int3/vim-extradite'

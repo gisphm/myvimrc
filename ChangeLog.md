@@ -1,7 +1,8 @@
 
-Develop / 2015-05-31
+Develop / 2015-06-16
 ==================
 
+  * added hgignore
   * updated auto-pairs settings
   * replaced auto-pairs' repo
   * added snip_author for license snippets
