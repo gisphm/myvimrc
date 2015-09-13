@@ -1,7 +1,32 @@
 
-Develop / 2015-05-24
-==================
+Develop / 2015-09-13
+====================
 
+  * update ChangeLog and remove patch
+  * remove some lazy neobundle commands
+  * added hgignore
+  * remove autopairs shortcut toggle
+  * added noselect and noinsert patch
+  * updated auto-pairs settings
+  * replaced auto-pairs' repo
+  * added snip_author for license snippets
+  * updated gitignore.vim repo's branch
+  * updated vim-gitignore url
+  * added gitignore.vim
+  * update settings
+  * added tern complete for javascript files
+  * updated neocomplete settings
+  * changed ruby-refactor source repo
+  * update some showing errors in Mappings doc
+  * fix markdown link error in README
+  * updated Mappings and README
+  * updated Mappings markdown layout
+  * update README
+  * updated base and airline settings
+  * updated base configurations
+  * updated mapping doc and airline setting
+  * added golden_ratio settings
+  * updated README
   * updated ChangeLog
 
 v1.0 / 2015-05-24

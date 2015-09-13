@@ -60,8 +60,13 @@ let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#auto_completion_start_length      = 2
 let g:neocomplete#manual_completion_start_length    = 0
 let g:neocomplete#min_keyword_length                = 3
+let g:neocomplete#enable_auto_select                = 0
+let g:neocomplete#enable_refresh_always             = 0
+let g:neocomplete#enable_cursor_hold_i              = 0
+let g:neocomplete#enable_omni_fallback              = 1
+let g:neocomplete#enable_auto_close_preview         = 1
 
-let g:neocomplete#enable_complete_select = 1
+let g:neocomplete#enable_complete_select            = 1
 try
     let completeopt_save = &completeopt
     set completeopt+=noinsert,noselect
@@ -70,12 +75,6 @@ catch
 finally
     let &completeopt = completeopt_save
 endtry
-
-let g:neocomplete#enable_auto_select = 0
-let g:neocomplete#enable_refresh_always = 0
-let g:neocomplete#enable_cursor_hold_i = 0
-let g:neocomplete#enable_omni_fallback = 1
-let g:neocomplete#enable_auto_close_preview = 1
 
 let g:neocomplete#sources#dictionary#dictionaries = {
             \ 'default' : '',
@@ -88,22 +87,28 @@ let g:neocomplete#disable_auto_select_buffer_name_pattern =
 if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
 endif
-let g:neocomplete#keyword_patterns._ = '\h\w*'
+let g:neocomplete#keyword_patterns._   = '\h\w*'
 let g:neocomplete#keyword_patterns.rst =
             \ '\$\$\?\w*\|[[:alpha:]_.\\/~-][[:alnum:]_.\\/~-]*\|\d\+\%(\.\d\+\)\+'
 
 if !exists('g:neocomplete#sources#omni#input_patterns')
-    let g:neocomplete#sources#omni#input_patterns = {}
+    let g:neocomplete#sources#omni#input_patterns     = {}
 endif
-let g:neocomplete#sources#omni#input_patterns.c    = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocomplete#sources#omni#input_patterns.cpp  = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-let g:neocomplete#sources#omni#input_patterns.ruby = ''
+let g:neocomplete#sources#omni#input_patterns.c       = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplete#sources#omni#input_patterns.cpp     = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.ruby    = '[^. *\t]\.\h\w*\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.eruby   = '[^. *\t]\.\h\w*\|\h\w*::'
+
+if !exists('g:neocomplete#sources#omni#functions')
+    let g:neocomplete#sources#omni#functions          = {}
+endif
+let g:neocomplete#sources#omni#functions.ruby         = 'rubycomplete#Complete'
+let g:neocomplete#sources#omni#functions.eruby        = 'rubycomplete#Complete'
 
 if !exists('g:neocomplete#force_omni_input_patterns')
-    let g:neocomplete#force_omni_input_patterns = {}
+    let g:neocomplete#force_omni_input_patterns       = {}
 endif
-let g:neocomplete#force_omni_input_patterns.ruby =
-            \ '[^. *\t]\.\w*\|\h\w*::'
+let g:neocomplete#force_omni_input_patterns.ruby      = '[^. *\t]\.\w*\|\h\w*::'
 
 let g:neocomplete#sources#vim#complete_functions = {
             \ 'Unite' : 'unite#complete_source',
@@ -161,6 +166,8 @@ if has('conceal')
 endif
 
 set completeopt-=preview
+
+let g:snips_author = "gisphm <phmfk@hotmail.com>"
 
 " }}}
 

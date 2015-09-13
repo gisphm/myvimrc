@@ -53,3 +53,12 @@ let g:javascript_conceal_static     = "•"
 let g:javascript_conceal_super      = "Ω"
 
 " }}}
+
+" Tern {{{
+
+augroup tern_au
+    autocmd!
+    autocmd FileType javascript setlocal omnifunc=tern#Complete
+augroup END
+
+" }}}

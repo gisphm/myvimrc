@@ -33,6 +33,13 @@ endif
 
 let g:AutoPairsMapSpace       = 0
 let g:AutoPairsMultilineClose = 0
+let g:AutoPairs = {
+            \ '(' : ')',
+            \ '[' : ']',
+            \ '{' : '}',
+            \ "'" : "'",
+            \ '"' : '"'
+            \ }
 
 " }}}
 
@@ -116,6 +123,8 @@ let g:indent_guides_auto_colors           = 1
 
 " Airline {{{
 
+let g:airline_exclude_preview                      = 0
+
 " tabline
 let g:airline#extensions#tabline#enabled           = 1
 let g:airline#extensions#tabline#show_buffers      = 0
@@ -175,15 +184,15 @@ let g:airline_mode_map        = {
 
 " Symbols
 if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
+    let g:airline_symbols        = {}
 endif
-let g:airline_symbols.linenr     = ''
-let g:airline_symbols.paste      = 'ρ'
-let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_left_sep           = ''
 let g:airline_left_alt_sep       = ''
 let g:airline_right_sep          = ''
 let g:airline_right_alt_sep      = ''
+let g:airline_symbols.linenr     = ''
+let g:airline_symbols.paste      = 'ρ'
+let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_symbols.branch     = ''
 let g:airline_symbols.readonly   = ''
 
@@ -214,5 +223,14 @@ let g:EasyMotion_smartcase = 1
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+
+" }}}
+
+" Golden-Ratio {{{
+
+let g:golden_ratio_wrap_ignored = 1
+let g:golden_ratio_exclude_nonmodifiable = 1
+nnoremap <Space>rr <Plug>(golden_ratio_resize)
+nnoremap <Space>rt <Plug>(golden_ratio_toggle)
 
 " }}}

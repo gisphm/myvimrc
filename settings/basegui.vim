@@ -21,6 +21,8 @@
 " General {{{
 
 if has('gui_running')
+    set mouse=a
+    set mousehide
     " Disable toolbar and scrollbars
     set guioptions-=T
     set guioptions-=r
