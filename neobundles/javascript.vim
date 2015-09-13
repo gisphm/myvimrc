@@ -20,9 +20,6 @@
 
 " Javascript {{{
 
-NeoBundleLazy 'pangloss/vim-javascript', {
-            \ 'autoload' : { 'filetypes' : ['javascript'] },
-            \ }
 NeoBundleLazy 'briancollins/vim-jst', {
             \ 'autoload' : { 'filetypes' : ['javascript'] },
             \ }
@@ -44,5 +41,7 @@ NeoBundleLazy 'othree/javascript-libraries-syntax.vim', {
 NeoBundleLazy 'othree/jspc.vim', {
             \ 'autoload' : { 'filetypes' : ['javascript'] },
             \ }
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'moll/vim-node'
 
 " }}}
