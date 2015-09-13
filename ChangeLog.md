@@ -2,6 +2,11 @@
 Develop / 2015-09-13
 ====================
 
+
+
+v1.1 / 2015-09-13
+=================
+
   * update ChangeLog and remove patch
   * remove some lazy neobundle commands
   * added hgignore
