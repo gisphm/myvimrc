@@ -1,8 +1,12 @@
 
-Develop / 2015-06-16
-==================
+Develop / 2015-09-13
+====================
 
+  * update ChangeLog and remove patch
+  * remove some lazy neobundle commands
   * added hgignore
+  * remove autopairs shortcut toggle
+  * added noselect and noinsert patch
   * updated auto-pairs settings
   * replaced auto-pairs' repo
   * added snip_author for license snippets
