@@ -21,8 +21,8 @@
 " Misc {{{
 
 NeoBundle 'elzr/vim-json'
+NeoBundle 'tpope/vim-jdaddy'
 NeoBundle 'othree/xml.vim'
-NeoBundle 'dbext.vim'
 NeoBundle 'bootleq/LargeFile'
 NeoBundle 's3rvac/AutoFenc'
 NeoBundle 'antoyo/vim-licenses'
