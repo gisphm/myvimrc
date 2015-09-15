@@ -20,9 +20,10 @@
 
 " Snippets & AutoComplete {{{
 
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'honza/vim-snippets'
 NeoBundle 'Shougo/neocomplete.vim', {
+            \ 'insert' : 1
+            \ }
+NeoBundle 'kana/vim-smartchr', {
             \ 'insert' : 1
             \ }
 NeoBundle 'Shougo/neosnippet.vim', {
@@ -30,8 +31,7 @@ NeoBundle 'Shougo/neosnippet.vim', {
             \     'neosnippet', 'neosnippet/user', 'neosnippet/runtime'
             \ ],
             \ }
-NeoBundle 'kana/vim-smartchr', {
-            \ 'insert' : 1
-            \ }
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'honza/vim-snippets'
 
 " }}}

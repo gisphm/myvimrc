@@ -24,5 +24,9 @@ NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'vimwiki/vimwiki', {
             \ 'rev' : 'dev',
             \ }
+NeoBundleLazy 'cespare/vim-toml', {
+            \ 'filetypes' : 'toml',
+            \ }
+NeoBundle 'reedes/vim-wordy'
 
 " }}}

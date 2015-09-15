@@ -35,7 +35,7 @@
 即在NeoComplete和Snippets的选择中，tab替代了c-n，S-tab替代了c-p
 1. `<Space>` 在处于补全状态时，若有补全项被选中时，
 空格键直接把补全项补上并关闭补全弹出框，若无补全项被选中，则直接关闭补全弹出框。
-1. `<C-k>` 展开Snippets
+1. `<C-k>` 展开Snippets，展开后，`<tab>`键作`Snippets`中跳转用。
 
 ## Unite
 1. `<Leader>b` buffer列表

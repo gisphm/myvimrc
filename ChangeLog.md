@@ -2,6 +2,7 @@
 Develop / 2015-09-15
 ====================
 
+  * update docs and plugins' orders
   * update README
   * revert neosnippet key mappings and update README
   * add smartchr plugin and its setting

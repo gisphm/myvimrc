@@ -20,6 +20,8 @@
 
 " Ruby {{{
 
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'tpope/vim-rails'
 NeoBundleLazy 'killphi/vim-ruby-refactoring', {
             \ 'filetypes' : 'ruby',
             \ }
@@ -32,7 +34,5 @@ NeoBundleLazy 'tpope/vim-rake', {
 NeoBundleLazy 'tpope/vim-bundler', {
             \ 'filetypes' : 'ruby',
             \ }
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'vim-ruby/vim-ruby'
 
 " }}}

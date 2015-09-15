@@ -21,17 +21,13 @@
 " CSS {{{
 
 NeoBundle 'ap/vim-css-color'
+NeoBundle 'JulesWang/css.vim'
+NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundleLazy 'groenewege/vim-less', {
             \ 'filetypes' : 'less',
             \ }
-NeoBundleLazy 'JulesWang/css.vim', {
-            \ 'filetypes' : ['html', 'css'],
-            \ }
 NeoBundleLazy 'cakebaker/scss-syntax.vim', {
             \ 'filetypes' : 'scss',
-            \ }
-NeoBundleLazy 'hail2u/vim-css3-syntax', {
-            \ 'filetypes' : ['html', 'css'],
             \ }
 
 " }}}
