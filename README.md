@@ -26,16 +26,18 @@
 
 4. ✓ split plugins settings
 
-4. fix rubycomplete issue
+4. ✓ fix rubycomplete issue
 
-    > well, this could be difficult.
-    > `neocomplete` says the `omnicomplete` of ruby provided by other plugins or vim
-    > has something wrong. If `neocomplete` crashes, users should contact other plugins'
-    > maintainers or contributors rather than neocomplete's author.
+    > ~~ well, this could be difficult.~~
+    > ~~`neocomplete` says the `omnicomplete` of ruby provided by other plugins or vim~~
+    > ~~has something wrong. If `neocomplete` crashes, users should contact other plugins'~~
+    > ~~maintainers or contributors rather than neocomplete's author.~~
+
+    > It seems that `vim-ruby` has fix this issue. What a great job!
 
 4. ✓ write some mappings of `unite.vim` acting as `ctrlp.vim`
 
-4. clean up neosnippets mappings
+4. ✓ clean up neosnippets mappings
     > those mappings are too complicated and most of them seem to be useless.
 
 4. ~~documentation of snippets(especially rails)~~

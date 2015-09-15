@@ -2,6 +2,7 @@
 Develop / 2015-09-15
 ====================
 
+  * revert neosnippet key mappings and update README
   * add smartchr plugin and its setting
   * update neocomplete and unite settings
   * remove dbext and hgignore, add jdaddy
