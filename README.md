@@ -33,7 +33,10 @@
     > has something wrong. If `neocomplete` crashes, users should contact other plugins'
     > maintainers or contributors rather than neocomplete's author.
 
-4. write some mappings of `unite.vim` acting as `ctrlp.vim`
+4. ✓ write some mappings of `unite.vim` acting as `ctrlp.vim`
+
+4. clean up neosnippets mappings
+    > those mappings are too complicated and most of them seem to be useless.
 
 4. ~~documentation of snippets(especially rails)~~
 

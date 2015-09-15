@@ -29,6 +29,7 @@ nnoremap <Leader>nl :NeoBundleUpdatesLog<CR>
 
 " Unite.vim {{{
 
+let g:unite_enable_auto_select = 0
 call unite#custom#source(
             \ 'buffer,file_rec,file_rec/async,file_rec/git',
             \ 'matchers',
@@ -48,6 +49,11 @@ call unite#custom#source(
             \ 'file_rec,file_rec/async,file_rec/git,file_mru',
             \ 'converters',
             \ ['converter_file_directory']
+            \ )
+call unite#custom#source(
+            \ 'line_migemo',
+            \ 'matchers',
+            \ 'matcher_migemo'
             \ )
 call unite#filters#sorter_default#use(['sorter_rank'])
 
@@ -84,14 +90,23 @@ endif
 let g:unite_source_history_yank_enable    = 1
 let g:unite_source_rec_max_cache_files    = -1
 
+" search recent files
 nnoremap <silent> <Leader>m :Unite -buffer-name=recent -winheight=10 file_mru<cr>
+" buffers in vim
 nnoremap <silent> <Leader>b :Unite -buffer-name=buffers -winheight=10 buffer<cr>
+" Ctrl-P
 nnoremap <silent> <C-p> :<C-u>Unite -winheight=10 -buffer-name=file file_rec/async<cr>
+" search
 nnoremap <silent> <Space>/ :<C-u>Unite -winheight=10 -buffer-name=search grep:.<CR>
+" quick search between buffers
 nnoremap <silent> <Space>b :<C-u>Unite -winheight=10 -buffer-name=buffers -quick-match buffer<cr>
+" look into yank history
 nnoremap <silent> <Leader>y :<C-u>Unite -winheight=10 -buffer-name=yank history/yank<cr>
+" unite outline like tagbar
 nnoremap <silent> <Space>uo :<C-u>Unite -winheight=10 -buffer-name=outline outline<CR>
+" tab pages
 nnoremap <silent> <Space>ut :<C-u>Unite -winheight=10 -buffer-name=tabpages tab<CR>
+" call NeoCompleteIncludeMakeCache
 nnoremap <silent> <Space>t :NeoCompleteIncludeMakeCache<CR>
             \ :UniteWithCursorWord -immediately -sync
             \ -default-action=context_split tag/include<CR>
@@ -129,6 +144,10 @@ function! s:vimfiler_my_settings() abort
                 \ vimfiler#do_switch_action('vsplite')
     nnoremap <silent><buffer><expr> s
                 \ vimfiler#do_switch_action('split')
+    if !empty(unite#get_filters('matcher_migemo'))
+        nnoremap <silent><buffer><expr> / line('$') > 10000 ? 'g/' :
+                    \ ":\<C-u>Unite -buffer-name=search -start-insert line_migemo\<CR>"
+    endif
 endfunction
 augroup VimFilerSetting
     autocmd!
