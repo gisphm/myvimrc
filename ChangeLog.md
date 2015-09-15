@@ -1,8 +1,10 @@
 
-Develop / 2015-09-13
+Develop / 2015-09-15
 ====================
 
-
+  * add smartchr plugin and its setting
+  * update neocomplete and unite settings
+  * remove dbext and hgignore, add jdaddy
 
 v1.1 / 2015-09-13
 =================

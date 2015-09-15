@@ -26,10 +26,12 @@ NeoBundle 'Shougo/neocomplete.vim', {
             \ 'insert' : 1
             \ }
 NeoBundle 'Shougo/neosnippet.vim', {
-            \ 'filetypes' : 'snippet',
             \ 'unite_sources' : [
             \     'neosnippet', 'neosnippet/user', 'neosnippet/runtime'
             \ ],
+            \ }
+NeoBundle 'kana/vim-smartchr', {
+            \ 'insert' : 1
             \ }
 
 " }}}
