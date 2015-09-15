@@ -142,12 +142,6 @@ let g:snips_author = "gisphm <phmfk@hotmail.com>"
 
 " smartchr {{{
 
-inoremap <expr> , smartchr#one_of(',', ',')
-" Smart =.
-inoremap <expr> =
-            \ search('\(&\<bar><bar>\<bar>+\<bar>-\<bar>/\<bar>>\<bar><\) \%#', 'bcn')? '<bs>='
-            \ : search('\(*\<bar>!\)\%#', 'bcn') ? '= '
-            \ : smartchr#one_of(' = ', '=', ' == ')
 augroup MySmartchrAutoCmd
     autocmd!
     autocmd Filetype c,cpp inoremap <buffer> <expr> .
@@ -155,9 +149,9 @@ augroup MySmartchrAutoCmd
     autocmd Filetype vim inoremap <buffer> <expr> .
                 \ smartchr#loop('.', ' . ', '..', '...')
     autocmd Filetype lisp inoremap <buffer> <expr> = =
-    autocmd Filetype eruby
-                \ inoremap <buffer> <expr> > smartchr#loop('>', '%>')
-                \ | inoremap <buffer> <expr> < smartchr#loop('<', '<%=')
+    autocmd Filetype eruby inoremap <buffer> <expr> > smartchr#loop('>', '%>')
+    autocmd Filetype eruby inoremap <buffer> <expr> < smartchr#loop('<', '<%=')
+    autocmd Filetype ruby inoremap <buffer><expr> > smartchr#one_of('>', ' ->')
 augroup END
 
 " }}}

@@ -1,7 +1,8 @@
 
-Develop / 2015-09-15
+Develop / 2015-09-16
 ====================
 
+  * remove some confs of smartchr
   * update docs and plugins' orders
   * update README
   * revert neosnippet key mappings and update README
