@@ -1,7 +1,8 @@
 
-Develop / 2015-09-16
+Develop / 2015-09-18
 ====================
 
+  * replace tabular with easy-align
   * remove some confs of smartchr
   * update docs and plugins' orders
   * update README
