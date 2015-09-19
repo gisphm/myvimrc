@@ -1,7 +1,8 @@
 
-Develop / 2015-09-18
+Develop / 2015-09-19
 ====================
 
+  * added vim-i18n
   * replace tabular with easy-align
   * remove some confs of smartchr
   * update docs and plugins' orders
