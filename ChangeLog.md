@@ -2,6 +2,7 @@
 Develop / 2015-09-28
 ====================
 
+  * update plugins
   * vim startup too slow, lazy some plugins
   * added vim-i18n
   * replace tabular with easy-align

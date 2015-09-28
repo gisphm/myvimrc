@@ -60,7 +60,7 @@ NeoBundle 'gisphm/auto-pairs', {
             \ 'rev' : 'develop'
             \ }
 NeoBundle 'kristijanhusak/vim-multiple-cursors'
-NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'easymotion/vim-easymotion'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'mbbill/undotree'
 NeoBundle 'nathanaelkane/vim-indent-guides'
