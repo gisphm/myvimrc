@@ -41,7 +41,11 @@ NeoBundleLazy 'othree/javascript-libraries-syntax.vim', {
 NeoBundleLazy 'othree/jspc.vim', {
             \ 'autoload' : { 'filetypes' : ['javascript'] },
             \ }
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'moll/vim-node'
+NeoBundleLazy 'pangloss/vim-javascript', {
+            \ 'autoload' : { 'filetypes' : ['javascript', 'html', 'css'] },
+            \ }
+NeoBundleLazy 'moll/vim-node', {
+            \ 'autoload' : { 'filetypes' : ['javascript', 'html', 'css'] },
+            \ }
 
 " }}}

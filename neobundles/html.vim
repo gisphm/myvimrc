@@ -20,7 +20,9 @@
 
 " HTML {{{
 
-NeoBundle 'othree/html5.vim'
+NeoBundle 'othree/html5.vim', {
+            \ 'filetypes' : ['html', 'eruby', 'javascript', 'css'],
+            \ }
 NeoBundleLazy 'amirh/HTML-AutoCloseTag', {
             \ 'filetypes' : ['html', 'eruby'],
             \ }

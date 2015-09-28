@@ -20,7 +20,9 @@
 
 " Misc {{{
 
-NeoBundle 'elzr/vim-json'
+NeoBundleLazy 'elzr/vim-json', {
+            \ 'autoload' : { 'filetypes' : 'json' },
+            \ }
 NeoBundle 'tpope/vim-jdaddy'
 NeoBundle 'othree/xml.vim'
 NeoBundle 'bootleq/LargeFile'

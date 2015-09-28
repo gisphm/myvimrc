@@ -1,7 +1,8 @@
 
-Develop / 2015-09-19
+Develop / 2015-09-28
 ====================
 
+  * vim startup too slow, lazy some plugins
   * added vim-i18n
   * replace tabular with easy-align
   * remove some confs of smartchr
