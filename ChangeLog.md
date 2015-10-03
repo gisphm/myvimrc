@@ -1,7 +1,8 @@
 
-Develop / 2015-09-28
+Develop / 2015-10-03
 ====================
 
+  * update listchars
   * update plugins
   * vim startup too slow, lazy some plugins
   * added vim-i18n
