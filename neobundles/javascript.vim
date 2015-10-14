@@ -28,6 +28,7 @@ NeoBundleLazy 'kchmck/vim-coffee-script', {
             \ }
 NeoBundleLazy 'marijnh/tern_for_vim', {
             \ 'autoload' : { 'filetypes' : ['javascript'] },
+            \ 'build' : 'npm install',
             \ }
 NeoBundleLazy 'Shutnik/jshint2.vim', {
             \ 'autoload' : { 'filetypes' : ['javascript'] },

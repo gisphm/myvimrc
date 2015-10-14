@@ -23,6 +23,7 @@
 NeoBundle 'MarcWeber/vim-addon-mw-utils'
 NeoBundle 'tomtom/tlib_vim'
 NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'Shougo/neoinclude.vim'
 NeoBundle 'Shougo/context_filetype.vim'
 NeoBundle 'Shougo/vimproc.vim', {
             \ 'build' : {

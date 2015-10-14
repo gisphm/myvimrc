@@ -72,19 +72,7 @@ if executable('ag')
                 \ '-i --line-numbers --nocolor --nogroup --hidden ' .
                 \ '--ignore ''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
     let g:unite_source_grep_recursive_opt = ''
-elseif executable('pt')
-    let g:unite_source_grep_command       = 'pt'
-    let g:unite_source_grep_default_opts  = '--nogroup --nocolor'
-    let g:unite_source_grep_recursive_opt = ''
-    let g:unite_source_grep_encoding      = 'utf-8'
-elseif executable('ack')
-    let g:unite_source_grep_command       = 'ack'
-    let g:unite_source_grep_default_opts  = '-i --no-heading --no-color -a'
-    let g:unite_source_grep_recursive_opt = ''
-elseif executable('ack-grep')
-    let g:unite_source_grep_command       = 'ack-grep'
-    let g:unite_source_grep_default_opts  = '-i --no-heading --no-color -a'
-    let g:unite_source_grep_recursive_opt = ''
+    let g:unite_source_rec_async_command = ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', '']
 endif
 
 let g:unite_source_history_yank_enable    = 1
