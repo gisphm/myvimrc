@@ -21,7 +21,7 @@
 " Misc {{{
 
 NeoBundleLazy 'elzr/vim-json', {
-            \ 'autoload' : { 'filetypes' : 'json' },
+            \ 'autoload' : { 'filetypes' : ['json'] },
             \ }
 NeoBundle 'tpope/vim-jdaddy'
 NeoBundle 'othree/xml.vim'
@@ -31,6 +31,10 @@ NeoBundle 'antoyo/vim-licenses'
 NeoBundle 'itchyny/calendar.vim'
 NeoBundleLazy 'chrisbra/csv.vim', {
             \ 'filetypes' : 'csv',
+            \ }
+NeoBundleLazy 'gisphm/vim-gitignore', {
+            \ 'rev' : 'develop',
+            \ 'autoload' : { 'filetypes' : ['gitignore'] },
             \ }
 
 " }}}

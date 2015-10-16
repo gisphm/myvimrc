@@ -2,6 +2,7 @@
 Develop / 2015-10-16
 ====================
 
+  * update gitignore
   * replace airline with powerline
   * use ag for unite.vim only
   * update listchars
