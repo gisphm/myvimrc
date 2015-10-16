@@ -2,6 +2,7 @@
 Develop / 2015-10-17
 ====================
 
+  * changed viminfo location
   * update cpp format to llvm
   * added signify to lightline
   * update settings for youcompleteme

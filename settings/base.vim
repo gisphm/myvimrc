@@ -74,6 +74,7 @@ set dir=~/.vim/tmp/swap/
 set backupdir=~/.vim/tmp/backup/
 set undodir=~/.vim/tmp/undo/
 set viewdir=~/.vim/tmp/view/
+set viminfo+=n$HOME/.vim/tmp/viminfo
 
 " Resolve performance problems
 " clear match command gracefully
