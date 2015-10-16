@@ -1,7 +1,9 @@
 
-Develop / 2015-10-03
+Develop / 2015-10-16
 ====================
 
+  * replace airline with powerline
+  * use ag for unite.vim only
   * update listchars
   * update plugins
   * vim startup too slow, lazy some plugins

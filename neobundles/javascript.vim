@@ -28,7 +28,15 @@ NeoBundleLazy 'kchmck/vim-coffee-script', {
             \ }
 NeoBundleLazy 'marijnh/tern_for_vim', {
             \ 'autoload' : { 'filetypes' : ['javascript'] },
-            \ 'build' : 'npm install',
+            \ 'build' : {
+            \     'linux' : 'npm install --update',
+            \   },
+            \ }
+NeoBundleLazy 'bigfish/vim-js-context-coloring', {
+            \ 'autoload' : { 'filetypes' : ['javascript'] },
+            \ 'build' : {
+            \     'linux' : 'npm install --update',
+            \   },
             \ }
 NeoBundleLazy 'Shutnik/jshint2.vim', {
             \ 'autoload' : { 'filetypes' : ['javascript'] },
@@ -47,6 +55,9 @@ NeoBundleLazy 'pangloss/vim-javascript', {
             \ }
 NeoBundleLazy 'moll/vim-node', {
             \ 'autoload' : { 'filetypes' : ['javascript', 'html', 'css'] },
+            \ }
+NeoBundleLazy 'heavenshell/vim-jsdoc', {
+            \ 'autoload' : { 'filetypes' : ['Javascript', 'html', 'css'] },
             \ }
 
 " }}}

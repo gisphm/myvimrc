@@ -107,84 +107,10 @@ let g:indent_guides_auto_colors           = 1
 
 " }}}
 
-" Airline {{{
+" Powerline {{{
 
-let g:airline_exclude_preview                      = 0
-
-" tabline
-let g:airline#extensions#tabline#enabled           = 1
-let g:airline#extensions#tabline#show_buffers      = 0
-let g:airline#extensions#tabline#tab_nr_type       = 2
-let g:airline#extensions#tabline#buffer_idx_mode   = 0
-let g:airline#extensions#tabline#fnametruncate     = 1
-let g:airline#extensions#tabline#tab_min_count     = 2
-let g:airline#extensions#tabline#buffer_min_count  = 2
-let g:airline#extensions#tabline#formatter         = 'unique_tail_improved'
-let g:airline#extensions#tabline#fnamemod          = ':t'
-let g:airline#extensions#tabline#left_sep          = ''
-let g:airline#extensions#tabline#left_alt_sep      = ''
-let g:airline#extensions#tabline#right_sep         = ''
-let g:airline#extensions#tabline#right_alt_sep     = ''
-let g:airline#extensions#tabline#show_tab_type     = 1
-let g:airline#extensions#tabline#show_close_button = 0
-
-" branch and other extensions
-let g:airline#extensions#branch#enabled                 = 1
-let g:airline#extensions#branch#format                  = 1
-let g:airline#extensions#syntastic#enabled              = 1
-let g:airline#extensions#tagbar#enabled                 = 1
-let g:airline#extensions#csv#enabled                    = 1
-let g:airline#extensions#hunks#enabled                  = 1
-let g:airline#extensions#hunks#non_zero_only            = 1
-let g:airline#extensions#whitespace#enabled             = 1
-let g:airline#extensions#whitespace#checks              = [ 'indent', 'trailing' ]
-let g:airline#extensions#whitespace#trailing_format     = 'trailing[%s]'
-let g:airline#extensions#whitespace#mixed_indent_format = 'mixed[%s]'
-let g:airline#extensions#whitespace#symbol              = 'Ξ'
-let g:airline#extensions#quickfix#quickfix_text         = 'Qf'
-let g:airline#extensions#eclim#enabled                  = 0
-
-" Statusline theme
-function! AirlineThemePatch(palette)
-    if g:airline_theme == 'badwolf'
-        for colors in values(a:palette.inactive)
-            let colors[3] = 245
-        endfor
-    endif
-endfunction
-let g:airline_theme           = 'badwolf'
-let g:airline_powerline_fonts = 1
-let g:airline_mode_map        = {
-            \ '__' : '-',
-            \ 'n'  : 'N',
-            \ 'i'  : 'I',
-            \ 'R'  : 'R',
-            \ 'c'  : 'C',
-            \ 'v'  : 'V',
-            \ 'V'  : 'V',
-            \ '' : 'V',
-            \ 's'  : 'S',
-            \ 'S'  : 'S',
-            \ '' : 'S',
-            \ }
-
-" Symbols
-if !exists('g:airline_symbols')
-    let g:airline_symbols        = {}
-endif
-let g:airline_left_sep           = ''
-let g:airline_left_alt_sep       = ''
-let g:airline_right_sep          = ''
-let g:airline_right_alt_sep      = ''
-let g:airline_symbols.linenr     = ''
-let g:airline_symbols.paste      = 'ρ'
-let g:airline_symbols.whitespace = 'Ξ'
-let g:airline_symbols.branch     = ''
-let g:airline_symbols.readonly   = ''
-
-" Manually refresh airline when airline doesn't refresh automatically
-nnoremap <Leader>ar :AirlineRefresh<CR>
-nnoremap <Leader>at :AirlineToggle<CR>
+let g:powerline_pycmd  = "py"
+let g:powerline_pyeval = "pyeval"
 
 " }}}
 
