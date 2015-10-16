@@ -63,6 +63,7 @@ nnoremap <silent> <Leader>gi :Git add -p %<CR>
 
 " Autoformat {{{
 
+    let g:formatdef_clangformat = "'clang-format -lines='.a:firstline.':'.a:lastline.' --assume-filename='.bufname('%').' -style=\"llvm\"'"
 noremap <silent> <Space>f :Autoformat<CR>
 
 " }}}
