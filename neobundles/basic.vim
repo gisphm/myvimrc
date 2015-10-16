@@ -67,9 +67,6 @@ NeoBundle 'mbbill/undotree'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'vim-scripts/restore_view.vim'
 NeoBundle 'tpope/vim-abolish.git'
-NeoBundle 'powerline/powerline', {
-            \ 'rtp' : 'powerline/bindings/vim'
-            \ }
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-indent'
 NeoBundle 'gcmt/wildfire.vim'
@@ -79,5 +76,6 @@ NeoBundle 'roman/golden-ratio'
 NeoBundle 'diffchar.vim'
 NeoBundle 'chrisbra/vim-diff-enhanced'
 NeoBundle 'kshenoy/vim-signature'
+NeoBundle 'itchyny/lightline.vim'
 
 " }}}
