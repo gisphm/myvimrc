@@ -1,7 +1,8 @@
 
-Develop / 2015-10-16
+Develop / 2015-10-17
 ====================
 
+  * replace neocomplete with youcompleteme
   * replace powerline with lightline
   * update gitignore
   * replace airline with powerline
