@@ -2,6 +2,7 @@
 Develop / 2015-10-17
 ====================
 
+  * added vim-tmux for tmux highlight
   * changed viminfo location
   * update cpp format to llvm
   * added signify to lightline
