@@ -25,7 +25,7 @@ NeoBundle 'kana/vim-smartchr', {
             \ }
 NeoBundle 'Valloric/YouCompleteMe', {
             \ 'build' : {
-            \     'linux' : 'python2 install.py --clang-completer --system-libclang',
+            \     'linux' : 'python2 install.py --clang-completer --system-libclang --system-boost',
             \   },
             \ 'insert' : 1
             \ }

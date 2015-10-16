@@ -2,6 +2,7 @@
 Develop / 2015-10-17
 ====================
 
+  * update settings for youcompleteme
   * replace neocomplete with youcompleteme
   * replace powerline with lightline
   * update gitignore
