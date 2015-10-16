@@ -112,13 +112,14 @@ let g:indent_guides_auto_colors           = 1
 let g:lightline = {
             \ 'colorscheme': 'solarized',
             \ 'active': {
-            \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ], ],
+            \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'signify', 'filename' ], ],
             \   'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
             \ },
             \ 'component_function': {
             \   'fugitive': 'LightLineFugitive',
             \   'readonly': 'LightLineReadonly',
             \   'modified': 'LightLineModified',
+            \   'signify' : 'LightLineSignify',
             \   'filename': 'LightLineFilename',
             \   'fileformat': 'LightLineFileformat',
             \   'filetype': 'LightLineFiletype',
@@ -162,6 +163,27 @@ function! LightLineFugitive()
     return ''
 endfunction
 
+function! LightLineSignify()
+    let symbols = ['+', '-', '~']
+    let [added, modified, removed] = sy#repo#get_stats()
+    let stats = [added, removed, modified]  " reorder
+    let hunkline = ''
+
+    for i in range(3)
+        if stats[i] > 0
+            let hunkline .= printf('%s%s ', symbols[i], stats[i])
+        else
+            let hunkline .= ''
+        endif
+    endfor
+
+    if !empty(hunkline)
+        let hunkline = printf('%s', hunkline[:-2])
+    endif
+
+    return hunkline
+endfunction
+
 function! LightLineFileformat()
     return winwidth(0) > 70 ? &fileformat : ''
 endfunction
@@ -191,14 +213,15 @@ function! TagbarStatusFunc(current, sort, fname, ...) abort
     return lightline#statusline(0)
 endfunction
 
-augroup AutoSyntastic
-    autocmd!
-    autocmd BufWritePost * call s:syntastic()
-augroup END
 function! s:syntastic()
     SyntasticCheck
     call lightline#update()
 endfunction
+
+augroup AutoSyntastic
+    autocmd!
+    autocmd BufWritePost * call s:syntastic()
+augroup END
 
 let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
