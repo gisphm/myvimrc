@@ -2,6 +2,7 @@
 Unreleased / 2015-10-17
 =======================
 
+  * [Changed] rename ChangeLog to History
   * [Removed] CHANGELOG
   * update listchars
   * added CHANGELOG generate by github_changelog_generator
