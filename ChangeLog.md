@@ -1,6 +1,35 @@
 
-Develop / 2015-09-13
+Develop / 2015-10-17
 ====================
+
+  * update README and Mappings
+  * added mappings for ycm
+  * update lightline settings
+  * added vim-tmux for tmux highlight
+  * changed viminfo location
+  * update cpp format to llvm
+  * added signify to lightline
+  * update settings for youcompleteme
+  * replace neocomplete with youcompleteme
+  * replace powerline with lightline
+  * update gitignore
+  * replace airline with powerline
+  * use ag for unite.vim only
+  * update listchars
+  * update plugins
+  * vim startup too slow, lazy some plugins
+  * added vim-i18n
+  * replace tabular with easy-align
+  * remove some confs of smartchr
+  * update docs and plugins' orders
+  * update README
+  * revert neosnippet key mappings and update README
+  * add smartchr plugin and its setting
+  * update neocomplete and unite settings
+  * remove dbext and hgignore, add jdaddy
+
+v1.1 / 2015-09-13
+=================
 
   * update ChangeLog and remove patch
   * remove some lazy neobundle commands

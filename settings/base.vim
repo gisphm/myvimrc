@@ -74,6 +74,7 @@ set dir=~/.vim/tmp/swap/
 set backupdir=~/.vim/tmp/backup/
 set undodir=~/.vim/tmp/undo/
 set viewdir=~/.vim/tmp/view/
+set viminfo+=n$HOME/.vim/tmp/viminfo
 
 " Resolve performance problems
 " clear match command gracefully
@@ -96,7 +97,7 @@ au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
 set cursorline cursorcolumn
 
-set listchars=tab:➪Þ,trail:•,extends:#,nbsp:.,eol:¶
+set listchars=tab:>-,trail:·
 if has('conceal')
     set listchars+=conceal:Δ
 endif
@@ -114,18 +115,6 @@ endif
 
 if has('statusline')
     set laststatus=2
-
-    if !filereadable(expand("~/.vim/bundle/vim-airline/README.md"))
-        " Broken down into easily includeable segments
-        set statusline=%<%f\
-        set statusline+=%w%h%m%r
-        if filereadable(expand('~/.vim/bundle/vim-fugitive/README.markdown'))
-            set statusline+=%{fugitive#statusline()}
-        endif
-        set statusline+=\ [%{&ff}/%Y]
-        set statusline+=\ [%{getcwd()}]
-        set statusline+=%=%-14.(%l,%c%V%)\ %p%%
-    endif
 endif
 
 set backspace=indent,eol,start

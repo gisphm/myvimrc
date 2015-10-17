@@ -23,6 +23,7 @@
 NeoBundle 'MarcWeber/vim-addon-mw-utils'
 NeoBundle 'tomtom/tlib_vim'
 NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'Shougo/neoinclude.vim'
 NeoBundle 'Shougo/context_filetype.vim'
 NeoBundle 'Shougo/vimproc.vim', {
             \ 'build' : {
@@ -60,21 +61,21 @@ NeoBundle 'gisphm/auto-pairs', {
             \ 'rev' : 'develop'
             \ }
 NeoBundle 'kristijanhusak/vim-multiple-cursors'
-NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'easymotion/vim-easymotion'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'mbbill/undotree'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'vim-scripts/restore_view.vim'
 NeoBundle 'tpope/vim-abolish.git'
-NeoBundle 'bling/vim-airline'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-indent'
 NeoBundle 'gcmt/wildfire.vim'
-NeoBundle 'godlygeek/tabular'
+NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'roman/golden-ratio'
 NeoBundle 'diffchar.vim'
 NeoBundle 'chrisbra/vim-diff-enhanced'
 NeoBundle 'kshenoy/vim-signature'
+NeoBundle 'itchyny/lightline.vim'
 
 " }}}

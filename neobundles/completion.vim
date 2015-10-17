@@ -20,16 +20,16 @@
 
 " Snippets & AutoComplete {{{
 
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'honza/vim-snippets'
-NeoBundle 'Shougo/neocomplete.vim', {
+NeoBundle 'kana/vim-smartchr', {
             \ 'insert' : 1
             \ }
-NeoBundle 'Shougo/neosnippet.vim', {
-            \ 'filetypes' : 'snippet',
-            \ 'unite_sources' : [
-            \     'neosnippet', 'neosnippet/user', 'neosnippet/runtime'
-            \ ],
+NeoBundle 'Valloric/YouCompleteMe', {
+            \ 'build' : {
+            \     'linux' : 'python2 install.py --clang-completer --system-libclang --system-boost',
+            \   },
+            \ 'insert' : 1
             \ }
+NeoBundle 'SirVer/ultisnips'
+NeoBundle 'honza/vim-snippets'
 
 " }}}

@@ -28,3 +28,10 @@ autocmd FileType ruby,eruby let g:rubycomplete_include_object       = 1
 autocmd FileType ruby,eruby let g:rubycomplete_include_object_space = 1
 
 " }}}
+
+" vim-i18n {{{
+
+vmap <Leader>ts :call I18nTranslateString()<CR>
+vmap <Leader>td :call I18nDisplayTranslation()<CR>
+
+" }}}

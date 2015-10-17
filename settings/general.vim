@@ -43,24 +43,10 @@ let g:AutoPairs = {
 
 " }}}
 
-" Tabularize {{{
+" EasyAlign {{{
 
-nmap <Leader>a& :Tabularize /&<CR>
-nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
-nmap <Leader>a=> :Tabularize /=><CR>
-nmap <Leader>a: :Tabularize /:<CR>
-nmap <Leader>a:: :Tabularize /:\zs<CR>
-nmap <Leader>a, :Tabularize /,<CR>
-nmap <Leader>a,, :Tabularize /,\zs<CR>
-nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-vmap <Leader>a& :Tabularize /&<CR>
-vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
-vmap <Leader>a=> :Tabularize /=><CR>
-vmap <Leader>a: :Tabularize /:<CR>
-vmap <Leader>a:: :Tabularize /:\zs<CR>
-vmap <Leader>a, :Tabularize /,<CR>
-vmap <Leader>a,, :Tabularize /,\zs<CR>
-vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+vmap <Enter> <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 " }}}
 
@@ -121,84 +107,125 @@ let g:indent_guides_auto_colors           = 1
 
 " }}}
 
-" Airline {{{
+" Lightline {{{
 
-let g:airline_exclude_preview                      = 0
-
-" tabline
-let g:airline#extensions#tabline#enabled           = 1
-let g:airline#extensions#tabline#show_buffers      = 0
-let g:airline#extensions#tabline#tab_nr_type       = 2
-let g:airline#extensions#tabline#buffer_idx_mode   = 0
-let g:airline#extensions#tabline#fnametruncate     = 1
-let g:airline#extensions#tabline#tab_min_count     = 2
-let g:airline#extensions#tabline#buffer_min_count  = 2
-let g:airline#extensions#tabline#formatter         = 'unique_tail_improved'
-let g:airline#extensions#tabline#fnamemod          = ':t'
-let g:airline#extensions#tabline#left_sep          = ''
-let g:airline#extensions#tabline#left_alt_sep      = ''
-let g:airline#extensions#tabline#right_sep         = ''
-let g:airline#extensions#tabline#right_alt_sep     = ''
-let g:airline#extensions#tabline#show_tab_type     = 1
-let g:airline#extensions#tabline#show_close_button = 0
-
-" branch and other extensions
-let g:airline#extensions#branch#enabled                 = 1
-let g:airline#extensions#branch#format                  = 1
-let g:airline#extensions#syntastic#enabled              = 1
-let g:airline#extensions#tagbar#enabled                 = 1
-let g:airline#extensions#csv#enabled                    = 1
-let g:airline#extensions#hunks#enabled                  = 1
-let g:airline#extensions#hunks#non_zero_only            = 1
-let g:airline#extensions#whitespace#enabled             = 1
-let g:airline#extensions#whitespace#checks              = [ 'indent', 'trailing' ]
-let g:airline#extensions#whitespace#trailing_format     = 'trailing[%s]'
-let g:airline#extensions#whitespace#mixed_indent_format = 'mixed[%s]'
-let g:airline#extensions#whitespace#symbol              = 'Ξ'
-let g:airline#extensions#quickfix#quickfix_text         = 'Qf'
-let g:airline#extensions#eclim#enabled                  = 0
-
-" Statusline theme
-function! AirlineThemePatch(palette)
-    if g:airline_theme == 'badwolf'
-        for colors in values(a:palette.inactive)
-            let colors[3] = 245
-        endfor
-    endif
-endfunction
-let g:airline_theme           = 'badwolf'
-let g:airline_powerline_fonts = 1
-let g:airline_mode_map        = {
-            \ '__' : '-',
-            \ 'n'  : 'N',
-            \ 'i'  : 'I',
-            \ 'R'  : 'R',
-            \ 'c'  : 'C',
-            \ 'v'  : 'V',
-            \ 'V'  : 'V',
-            \ '' : 'V',
-            \ 's'  : 'S',
-            \ 'S'  : 'S',
-            \ '' : 'S',
+let g:lightline = {
+            \ 'colorscheme': 'solarized',
+            \ 'active': {
+            \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'signify', 'filename' ], ],
+            \   'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+            \ },
+            \ 'component_function': {
+            \   'fugitive': 'LightLineFugitive',
+            \   'readonly': 'LightLineReadonly',
+            \   'modified': 'LightLineModified',
+            \   'signify' : 'LightLineSignify',
+            \   'filename': 'LightLineFilename',
+            \   'fileformat': 'LightLineFileformat',
+            \   'filetype': 'LightLineFiletype',
+            \   'fileencoding': 'LightLineFileencoding',
+            \   'mode': 'LightLineMode'
+            \ },
+            \ 'component_expand': {
+            \   'syntastic': 'SyntasticStatuslineFlag',
+            \ },
+            \ 'component_type': {
+            \   'syntastic': 'error',
+            \ },
+            \ 'separator': { 'left': '⮀', 'right': '⮂' },
+            \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
             \ }
 
-" Symbols
-if !exists('g:airline_symbols')
-    let g:airline_symbols        = {}
-endif
-let g:airline_left_sep           = ''
-let g:airline_left_alt_sep       = ''
-let g:airline_right_sep          = ''
-let g:airline_right_alt_sep      = ''
-let g:airline_symbols.linenr     = ''
-let g:airline_symbols.paste      = 'ρ'
-let g:airline_symbols.whitespace = 'Ξ'
-let g:airline_symbols.branch     = ''
-let g:airline_symbols.readonly   = ''
+function! LightLineModified()
+    return &ft =~ 'help\|vimfiler\|undotree' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
 
-" Manually refresh airline when airline doesn't refresh automatically
-nnoremap <Leader>ar :AirlineRefresh<CR>
-nnoremap <Leader>at :AirlineToggle<CR>
+function! LightLineReadonly()
+    return &readonly || !&modifiable ? '⭤' : ''
+endfunction
+
+function! LightLineFilename()
+    let fname = expand('%:t')
+    return fname == '__Tagbar__' ? g:lightline.fname :
+                \ fname =~ 'undotree' ? '' :
+                \ &ft == 'vimfiler' ? vimfiler#get_status_string() :
+                \ &ft == 'unite' ? unite#get_status_string() :
+                \ ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+                \ ('' != fname ? fname : '[No Name]') .
+                \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+endfunction
+
+function! LightLineFugitive()
+    if &ft !~? 'Tagbar\|vimfiler\|undotree' && exists("*fugitive#head")
+        let _ = fugitive#head()
+        return strlen(_) ? '⭠ '._ : ''
+    endif
+    return ''
+endfunction
+
+function! LightLineSignify()
+    let symbols = ['+', '-', '~']
+    let [added, modified, removed] = sy#repo#get_stats()
+    let stats = [added, removed, modified]  " reorder
+    let hunkline = ''
+
+    for i in range(3)
+        if stats[i] > 0
+            let hunkline .= printf('%s%s ', symbols[i], stats[i])
+        else
+            let hunkline .= ''
+        endif
+    endfor
+
+    if !empty(hunkline)
+        let hunkline = printf('%s', hunkline[:-2])
+    endif
+
+    return hunkline
+endfunction
+
+function! LightLineFileformat()
+    return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! LightLineFiletype()
+    return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : '') : ''
+endfunction
+
+function! LightLineFileencoding()
+    return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+endfunction
+
+function! LightLineMode()
+    let fname = expand('%:t')
+    return fname == '__Tagbar__' ? 'Tagbar' :
+                \ fname =~ 'undotree' ? 'UndoTree' :
+                \ fname =~ 'diffpanel' ? 'Undo Diff' :
+                \ &ft == 'unite' ? 'Unite' :
+                \ &ft == 'vimfiler' ? 'VimFiler' :
+                \ winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+
+let g:tagbar_status_func = 'TagbarStatusFunc'
+
+function! TagbarStatusFunc(current, sort, fname, ...) abort
+    let g:lightline.fname = a:fname
+    return lightline#statusline(0)
+endfunction
+
+function! s:syntastic()
+    SyntasticCheck
+    call lightline#update()
+endfunction
+
+augroup AutoSyntastic
+    autocmd!
+    autocmd BufWritePost * call s:syntastic()
+augroup END
+
+let g:unite_force_overwrite_statusline = 0
+let g:vimfiler_force_overwrite_statusline = 0
+let g:vimshell_force_overwrite_statusline = 0
 
 " }}}
 

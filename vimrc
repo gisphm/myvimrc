@@ -18,7 +18,7 @@
 "
 " }}}
 
-" NeoBundle {{{
+" NeoBundle Initialization {{{
 
 if !1 | finish | endif
 
@@ -46,7 +46,7 @@ NeoBundleCheck
 
 " }}}
 
-" Configurations {{{
+" Load Configurations {{{
 
 let bundlesettings = '~/.vim/settings/'
 for eachsetting in split(globpath(bundlesettings, '*.vim'), '\n')

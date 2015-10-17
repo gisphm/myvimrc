@@ -20,14 +20,24 @@
 
 " Misc {{{
 
-NeoBundle 'elzr/vim-json'
+NeoBundleLazy 'elzr/vim-json', {
+            \ 'autoload' : { 'filetypes' : ['json'] },
+            \ }
+NeoBundle 'tpope/vim-jdaddy'
 NeoBundle 'othree/xml.vim'
-NeoBundle 'dbext.vim'
 NeoBundle 'bootleq/LargeFile'
 NeoBundle 's3rvac/AutoFenc'
 NeoBundle 'antoyo/vim-licenses'
+NeoBundle 'itchyny/calendar.vim'
 NeoBundleLazy 'chrisbra/csv.vim', {
             \ 'filetypes' : 'csv',
+            \ }
+NeoBundleLazy 'gisphm/vim-gitignore', {
+            \ 'rev' : 'develop',
+            \ 'autoload' : { 'filetypes' : ['gitignore'] },
+            \ }
+NeoBundleLazy 'tmux-plugins/vim-tmux', {
+            \ 'autoload' : { 'filetypes' : ['tmux'] },
             \ }
 
 " }}}

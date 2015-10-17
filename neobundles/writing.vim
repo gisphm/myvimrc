@@ -20,9 +20,15 @@
 
 " Writing {{{
 
-NeoBundle 'plasticboy/vim-markdown'
+NeoBundleLazy 'plasticboy/vim-markdown', {
+            \ 'filetypes' : 'markdown',
+            \ }
 NeoBundle 'vimwiki/vimwiki', {
             \ 'rev' : 'dev',
             \ }
+NeoBundleLazy 'cespare/vim-toml', {
+            \ 'filetypes' : 'toml',
+            \ }
+NeoBundle 'reedes/vim-wordy'
 
 " }}}

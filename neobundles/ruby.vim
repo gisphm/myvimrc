@@ -20,19 +20,22 @@
 
 " Ruby {{{
 
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'tpope/vim-rails'
+NeoBundleLazy 'stefanoverna/vim-i18n', {
+            \ 'filetypes' : ['ruby','eruby'],
+            \ }
 NeoBundleLazy 'killphi/vim-ruby-refactoring', {
-            \ 'filetypes' : 'ruby',
+            \ 'filetypes' : ['ruby','eruby'],
             \ }
 NeoBundleLazy 'tpope/vim-endwise', {
-            \ 'filetypes' : 'ruby',
+            \ 'filetypes' : ['ruby','eruby'],
             \ }
 NeoBundleLazy 'tpope/vim-rake', {
-            \ 'filetypes' : 'ruby',
+            \ 'filetypes' : ['ruby','eruby'],
             \ }
 NeoBundleLazy 'tpope/vim-bundler', {
-            \ 'filetypes' : 'ruby',
+            \ 'filetypes' : ['ruby','eruby'],
             \ }
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'vim-ruby/vim-ruby'
 
 " }}}

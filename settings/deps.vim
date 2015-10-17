@@ -29,6 +29,7 @@ nnoremap <Leader>nl :NeoBundleUpdatesLog<CR>
 
 " Unite.vim {{{
 
+let g:unite_enable_auto_select = 0
 call unite#custom#source(
             \ 'buffer,file_rec,file_rec/async,file_rec/git',
             \ 'matchers',
@@ -49,6 +50,11 @@ call unite#custom#source(
             \ 'converters',
             \ ['converter_file_directory']
             \ )
+call unite#custom#source(
+            \ 'line_migemo',
+            \ 'matchers',
+            \ 'matcher_migemo'
+            \ )
 call unite#filters#sorter_default#use(['sorter_rank'])
 
 let default_context = {
@@ -66,35 +72,28 @@ if executable('ag')
                 \ '-i --line-numbers --nocolor --nogroup --hidden ' .
                 \ '--ignore ''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
     let g:unite_source_grep_recursive_opt = ''
-elseif executable('pt')
-    let g:unite_source_grep_command       = 'pt'
-    let g:unite_source_grep_default_opts  = '--nogroup --nocolor'
-    let g:unite_source_grep_recursive_opt = ''
-    let g:unite_source_grep_encoding      = 'utf-8'
-elseif executable('ack')
-    let g:unite_source_grep_command       = 'ack'
-    let g:unite_source_grep_default_opts  = '-i --no-heading --no-color -a'
-    let g:unite_source_grep_recursive_opt = ''
-elseif executable('ack-grep')
-    let g:unite_source_grep_command       = 'ack-grep'
-    let g:unite_source_grep_default_opts  = '-i --no-heading --no-color -a'
-    let g:unite_source_grep_recursive_opt = ''
+    let g:unite_source_rec_async_command = ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', '']
 endif
 
 let g:unite_source_history_yank_enable    = 1
 let g:unite_source_rec_max_cache_files    = -1
 
+" search recent files
 nnoremap <silent> <Leader>m :Unite -buffer-name=recent -winheight=10 file_mru<cr>
+" buffers in vim
 nnoremap <silent> <Leader>b :Unite -buffer-name=buffers -winheight=10 buffer<cr>
+" Ctrl-P
 nnoremap <silent> <C-p> :<C-u>Unite -winheight=10 -buffer-name=file file_rec/async<cr>
+" search
 nnoremap <silent> <Space>/ :<C-u>Unite -winheight=10 -buffer-name=search grep:.<CR>
+" quick search between buffers
 nnoremap <silent> <Space>b :<C-u>Unite -winheight=10 -buffer-name=buffers -quick-match buffer<cr>
+" look into yank history
 nnoremap <silent> <Leader>y :<C-u>Unite -winheight=10 -buffer-name=yank history/yank<cr>
+" unite outline like tagbar
 nnoremap <silent> <Space>uo :<C-u>Unite -winheight=10 -buffer-name=outline outline<CR>
+" tab pages
 nnoremap <silent> <Space>ut :<C-u>Unite -winheight=10 -buffer-name=tabpages tab<CR>
-nnoremap <silent> <Space>t :NeoCompleteIncludeMakeCache<CR>
-            \ :UniteWithCursorWord -immediately -sync
-            \ -default-action=context_split tag/include<CR>
 
 " }}}
 
@@ -129,6 +128,10 @@ function! s:vimfiler_my_settings() abort
                 \ vimfiler#do_switch_action('vsplite')
     nnoremap <silent><buffer><expr> s
                 \ vimfiler#do_switch_action('split')
+    if !empty(unite#get_filters('matcher_migemo'))
+        nnoremap <silent><buffer><expr> / line('$') > 10000 ? 'g/' :
+                    \ ":\<C-u>Unite -buffer-name=search -start-insert line_migemo\<CR>"
+    endif
 endfunction
 augroup VimFilerSetting
     autocmd!
