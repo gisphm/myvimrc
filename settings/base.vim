@@ -97,7 +97,7 @@ au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
 set cursorline cursorcolumn
 
-set listchars=tab:>-,trail:·
+set listchars=tab:➪Þ,trail:•,extends:#,nbsp:.,eol:¶
 if has('conceal')
     set listchars+=conceal:Δ
 endif
