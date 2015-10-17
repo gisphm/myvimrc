@@ -30,12 +30,16 @@
 1. `<Leader>nc :NeoBundleClean`
 1. `<Leader>ni :NeoBundleInstall`
 
-## NeoComplete和NeoSnippets
-1. `<tab> CleverTab()` 这个tab键在这里扮演重要角色，类似`supertab`的功能。
-即在NeoComplete和Snippets的选择中，tab替代了c-n，S-tab替代了c-p
-1. `<Space>` 在处于补全状态时，若有补全项被选中时，
-空格键直接把补全项补上并关闭补全弹出框，若无补全项被选中，则直接关闭补全弹出框。
-1. `<C-k>` 展开Snippets，展开后，`<tab>`键作`Snippets`中跳转用。
+## YouCompleteMe
+1. `<Space>t` :YcmCompleter GoTo
+1. `<Space>tc` :YcmCompleter GoToDeclaration
+1. `<Space>tf` :YcmCompleter GoToDefinition
+1. `<Space>ti` :YcmCompleter GoToImprecise
+
+## Ultisnips
+1. `<C-k>` ExpandTrigger
+1. `<space>kf` JumpForwardTrigger
+1. `<space>kb` JumpBackwardTrigger
 
 ## Unite
 1. `<Leader>b` buffer列表

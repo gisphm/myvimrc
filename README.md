@@ -40,6 +40,9 @@
 4. ✓ clean up neosnippets mappings
     > those mappings are too complicated and most of them seem to be useless.
 
+4. ✓ replace neocomplete with youcompleteme
+    > Just another trying for completion.
+
 4. documentation of snippets(especially rails)
 
     > ~~1. This is impossible for me...~~
