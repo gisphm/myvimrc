@@ -1,7 +1,8 @@
 
-Develop / 2015-10-17
-====================
+Unreleased / 2015-10-17
+=======================
 
+  * [Removed] CHANGELOG
   * update listchars
   * added CHANGELOG generate by github_changelog_generator
   * update README
