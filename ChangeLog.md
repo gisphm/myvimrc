@@ -2,6 +2,7 @@
 Develop / 2015-10-17
 ====================
 
+  * added mappings for ycm
   * update lightline settings
   * added vim-tmux for tmux highlight
   * changed viminfo location
