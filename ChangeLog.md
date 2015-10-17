@@ -3,6 +3,7 @@ Develop / 2015-10-17
 ====================
 
   * update README
+  * update README
   * update README and Requirements docs
 
 v1.2 / 2015-10-17
