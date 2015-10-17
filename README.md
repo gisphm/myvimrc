@@ -3,6 +3,7 @@
 + 去掉了些自己不用的插件，也替换了一些，算是个性化了不少。
 + 此配置目前希望是有助于rails开发（自己个人在学习着）
 
+
 ## 配置文件列表
 + __vimrc__ 主配置文件，包含[neobundle][4]的初始化和对以下两个文件夹的引用
 + __neobundles/__ 插件列表文件所在文件夹，包含所有安装的插件
@@ -10,6 +11,7 @@
 + __install.sh__ 用来辅助安装的文件，生成`tmp`文件夹和克隆`neobundle.vim`
 + __bundle__ 包含在git的忽略文件里，所有安装的插件都在这个文件夹里
 + __tmp__ 包含在git的忽略文件里，包括vim的`swap` `undo` `view` `backup`文件夹
+
 
 ## things todo
 1. ✓ replace nerdtree with vimfiler
@@ -53,11 +55,14 @@
     > But I am not sure when I will complete it.
     > Just try!
 
+4. (optional) plugins as groups that can be enabled or disabled
+
 5. use less plugins as possible
 
     > This could be difficult for me now. I will try my best.
 
 6. fix issues met in use regularly
+
 
 ## 几点说明
 + 使用该配置前有些工作需要做，请参考[Requirements](docs/Requirements.md)
@@ -84,12 +89,14 @@
 
 + 这个配置的整个过程用到了`git-flow-avh`的工作流模型，基本的分支流程可以在`network`图中看到。
 
+
 ## 几点事项
-1. 这个配置只打算在linux上（目前是在archlinux）进行使用。
+1. 这个配置只在 Linux 上（目前是在 ArchLinux）进行使用。
 2. 这个配置并不完善，许多地方会有问题。
-3. 感谢 __Bram Moolenaar__ 和其他vim的维护者们创造了如此多彩的编辑器。
-3. 感谢 __Steve Francia__ 在github上分享了这么有用的配置。
+3. 感谢 __Bram Moolenaar__ 和其他 Vim 的维护者们创造了如此多彩的编辑器。
+3. 感谢 __Steve Francia__ 在 GitHub 上分享了这么有用的[配置][1]。
 5. 感谢所有插件的作者与维护者们，你们共同创造了vim社区的现在。
+
 
 ## 许可证
 > Copyright 2015 gisphm <phmfk@hotmail.com>
@@ -108,5 +115,5 @@
 
 [1]: https://github.com/spf13/spf13-vim.git
 [2]: https://github.com/gisphm/myneovimrc.git
-[3]: https://github.com/gmarik/Vundle.vim.git
+[3]: https://github.com/VundleVim/Vundle.vim.git
 [4]: https://github.com/Shougo/neobundle.vim.git
