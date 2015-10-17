@@ -94,10 +94,6 @@ nnoremap <silent> <Leader>y :<C-u>Unite -winheight=10 -buffer-name=yank history/
 nnoremap <silent> <Space>uo :<C-u>Unite -winheight=10 -buffer-name=outline outline<CR>
 " tab pages
 nnoremap <silent> <Space>ut :<C-u>Unite -winheight=10 -buffer-name=tabpages tab<CR>
-" call NeoCompleteIncludeMakeCache
-nnoremap <silent> <Space>t :NeoCompleteIncludeMakeCache<CR>
-            \ :UniteWithCursorWord -immediately -sync
-            \ -default-action=context_split tag/include<CR>
 
 " }}}
 

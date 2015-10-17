@@ -97,7 +97,10 @@ let g:ycm_filetype_blacklist = {
 let g:ycm_filetype_specific_completion_to_disable = {
             \ }
 
-inoremap <leader>; <C-x><C-o>
+noremap <space>tc :YcmCompleter GoToDeclaration<CR>
+noremap <space>tf :YcmCompleter GoToDefinition<CR>
+noremap <space>t :YcmCompleter GoTo<CR>
+noremap <space>ti :YcmCompleter GoToImprecise<CR>
 
 " }}}
 
