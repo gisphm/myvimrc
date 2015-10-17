@@ -27,4 +27,6 @@ augroup END
 au BufRead,BufNewFile *.scss set filetype=scss.css
 autocmd FileType scss set iskeyword+=-
 
+let g:colorizer_nomap = 1
+
 " }}}

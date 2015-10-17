@@ -20,9 +20,9 @@
 
 " CSS {{{
 
-NeoBundle 'ap/vim-css-color'
 NeoBundle 'JulesWang/css.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'lilydjwg/colorizer'
 NeoBundleLazy 'groenewege/vim-less', {
             \ 'filetypes' : 'less',
             \ }

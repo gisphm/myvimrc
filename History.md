@@ -2,6 +2,7 @@
 Unreleased / 2015-10-17
 =======================
 
+  * [Changed] replace css-color with colorizer
   * [Changed] update README
   * [Changed] update something
   * [Changed] rename ChangeLog to History
