@@ -2,6 +2,7 @@
 Develop / 2015-10-17
 ====================
 
+  * added CHANGELOG generate by github_changelog_generator
   * update README
   * update README
   * update README and Requirements docs
