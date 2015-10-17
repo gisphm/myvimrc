@@ -45,6 +45,8 @@
 4. ✓ replace neocomplete with youcompleteme
     > Just another trying for completion.
 
+4. create own colorscheme for lightline
+
 4. documentation of snippets(especially rails)
 
     > ~~1. This is impossible for me...~~
