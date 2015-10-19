@@ -1,7 +1,8 @@
 
-Unreleased / 2015-10-17
+Unreleased / 2015-10-20
 =======================
 
+  * [Changed] update vim-gitignore url
   * [Changed] replace css-color with colorizer
   * [Changed] update README
   * [Changed] update something
