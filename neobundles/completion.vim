@@ -23,13 +23,15 @@
 NeoBundle 'kana/vim-smartchr', {
             \ 'insert' : 1
             \ }
-NeoBundle 'Valloric/YouCompleteMe', {
-            \ 'build' : {
-            \     'linux' : 'python2 install.py --clang-completer --system-libclang --system-boost',
-            \   },
+NeoBundle 'Shougo/neocomplete.vim', {
             \ 'insert' : 1
             \ }
-NeoBundle 'SirVer/ultisnips'
+NeoBundle 'Shougo/neosnippet.vim', {
+            \ 'unite_sources' : [
+            \     'neosnippet', 'neosnippet/user', 'neosnippet/runtime'
+            \ ],
+            \ }
+NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'honza/vim-snippets'
 
 " }}}

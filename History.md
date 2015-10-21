@@ -1,7 +1,8 @@
 
-Unreleased / 2015-10-20
+Unreleased / 2015-10-21
 =======================
 
+  * [Changed] revert back to neocomplete
   * [Changed] update vim-gitignore url
   * [Changed] replace css-color with colorizer
   * [Changed] update README
