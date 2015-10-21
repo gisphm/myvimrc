@@ -31,6 +31,7 @@ NeoBundle 'tomtom/tcomment_vim'
 if executable('ctags')
     NeoBundle 'majutsushi/tagbar'
 endif
+NeoBundle 'tsukkee/unite-tag'
 NeoBundle 'Chiel92/vim-autoformat'
 NeoBundle 'tpope/vim-projectionist'
 
