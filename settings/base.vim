@@ -167,8 +167,7 @@ augroup FileAutoCmd
     autocmd BufNewFile,BufRead Rakefile set foldmethod=syntax foldnestmax=1
     au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
     autocmd FileType gitcommit,qfreplace setlocal nofoldenable
-    autocmd BufRead,BufNewFile *.mkd,*.markdown,*.md,*.mdown,*.mkdn
-                \ setlocal filetype=mkd autoindent formatoptions=tcroqn2 comments=n:>
+    autocmd FileType help set number
 augroup END
 
 " }}}

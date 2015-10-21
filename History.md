@@ -2,6 +2,7 @@
 Unreleased / 2015-10-22
 =======================
 
+  * [Changed] add PanGu
   * [Changed] update README
   * [Changed] update unite.vim settings
   * [Changed] update filetype dectect

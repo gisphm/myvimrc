@@ -12,9 +12,9 @@
 1. 一些有用的编辑映射
 
    > 1. `<Leader>ew :e %%`
-   > 2. `<Leader>es :sp %%` 在横分离的窗体中打开文件%
-   > 3. `<Leader>ev :vsp %%` 在竖分离的窗体中打开文件%
-   > 4. `<Leader>et :tabe %%` 在新的tabpage中编辑文件%
+   > 2. `<Leader>es :sp %%` 在横分离的窗体中打开文件 %
+   > 3. `<Leader>ev :vsp %%` 在竖分离的窗体中打开文件 %
+   > 4. `<Leader>et :tabe %%` 在新的 tabpage 中编辑文件 %
 
 1. `_$` 去除行末空白
 1. `<Leader>f(number)` 折叠级别
@@ -30,23 +30,19 @@
 1. `<Leader>nc :NeoBundleClean`
 1. `<Leader>ni :NeoBundleInstall`
 
-## YouCompleteMe
-1. `<Space>t` :YcmCompleter GoTo
-1. `<Space>tc` :YcmCompleter GoToDeclaration
-1. `<Space>tf` :YcmCompleter GoToDefinition
-1. `<Space>ti` :YcmCompleter GoToImprecise
-
-## Ultisnips
-1. `<C-k>` ExpandTrigger
-1. `<space>kf` JumpForwardTrigger
-1. `<space>kb` JumpBackwardTrigger
+## NeoComplete 和 NeoSnippets
+1. `<tab> CleverTab()` 这个 tab 键在这里扮演重要角色，类似`supertab`的功能。
+即在 NeoComplete 和 Snippets 的选择中，tab 替代了 c-n，S-tab 替代了 c-p
+1. `<Space>` 在处于补全状态时，若有补全项被选中时，
+空格键直接把补全项补上并关闭补全弹出框，若无补全项被选中，则直接关闭补全弹出框。
+1. `<C-k>` 展开 Snippets，展开后，`<tab>`键作`Snippets`中跳转用。
 
 ## Unite
-1. `<Leader>b` buffer列表
+1. `<Leader>b` buffer 列表
 1. `<Space>/` 正则搜索
-1. `<Space>ut` tabpage列表
-1. `<Space>uo` 大纲列表（类似于tagbar）
-1. `<Leader>y` yank历史（vim的内部复制历史列表）
+1. `<Space>ut` tabpage 列表
+1. `<Space>uo` 大纲列表（类似于 tagbar）
+1. `<Leader>y` yank 历史（vim 的内部复制历史列表）
 
 ## JSHint2
 1. `<Space>jh :JSHint`
@@ -109,8 +105,8 @@
 
 ## Vim-Surround
 1. `cs{label1}{label2}` 把{label1}改成{label2}
-2. `ds({label})` 删除包围的符号({label})
-1. `cst{label}` 把一行的WORD用{label}全包围
+2. `ds({label})` 删除包围的符号 ({label})
+1. `cst{label}` 把一行的 WORD 用{label}全包围
 1. `ys{text-object}{label}` 给{text-object}加上{label}
 1. `label`的一些说明
 
@@ -130,7 +126,7 @@
     > 5. `g>c` 行注释
     > 6. `g>b` 块注释
 
-1. Visual模式注释
+1. Visual 模式注释
 
     > 1. `gc`
     > 2. `g>`

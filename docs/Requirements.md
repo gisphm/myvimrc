@@ -7,7 +7,7 @@
 需要`lua`和`ruby`及`python`支持。
 
 ### 从源码编译
-下载[vim的源码][1]，然后进行编译，编译的参数大体如下，请合适取用：
+下载 [vim 的源码][1]，然后进行编译，编译的参数大体如下，请合适取用：
 ```shell
 ./configure \
     --enable-rubyinterp=yes \
@@ -33,12 +33,12 @@ VIMRUNTIMEDIR=$prefix/share/vim/vim74 make && make install
 
 ## 第三方软件
 ### `the_silver_searcher`
-推荐从源码安装，直接克隆[GitHub 上的仓库][2]，然后运行`./build.sh`。
+推荐从源码安装，直接克隆 [GitHub 上的仓库][2]，然后运行`./build.sh`。
 
 ### `ctags`
 软件包管理系统有这个软件的，直接安装就好了。
 
-但我推荐使用[GitHub 上的这个版本][3]，原因是这个版本的 ctags 更新比较多，
+但我推荐使用 [GitHub 上的这个版本][3]，原因是这个版本的 ctags 更新比较多，
 对一些语言有更好的支持。从源码编译这个软件也是相当简单的事情，
 
 ```shell

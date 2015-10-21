@@ -28,5 +28,12 @@ NeoBundleLazy 'cespare/vim-toml', {
             \ 'filetypes' : 'toml',
             \ }
 NeoBundle 'reedes/vim-wordy'
+NeoBundleLazy 'hotoo/pangu.vim', {
+            \ 'autoload' : {
+            \   'filetypes' : [
+            \     'markdown', 'text', 'wiki', 'cnx'
+            \     ]
+            \   }
+            \ }
 
 " }}}
