@@ -56,8 +56,6 @@ set iskeyword-=.
 set iskeyword-=#
 set iskeyword-=-
 
-au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
-
 augroup resCur
     autocmd!
     autocmd BufWinEnter * call ResCur()
@@ -82,8 +80,6 @@ autocmd BufWinLeave * call clearmatches()
 
 if executable('ag')
     set grepprg=ag\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow
-elseif executable('ack')
-    set grepprg=ack\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow\ $*
 endif
 set grepformat=%f:%l:%c:%m
 
@@ -142,7 +138,7 @@ set t_vb=
 " Formatting {{{
 
 set wrap
-set autoindent
+set autoindent smartindent
 set shiftwidth=4
 set expandtab
 set tabstop=4
@@ -151,9 +147,17 @@ set nojoinspaces
 set splitright
 set splitbelow
 set pastetoggle=<F12>
-autocmd FileType puppet,ruby,yml set expandtab shiftwidth=2 softtabstop=2
-autocmd BufNewFile,BufRead *.coffee set filetype=coffee
-autocmd FileType * autocmd BufWritePre <buffer> call Preserve("%s/\\s\\+$//e")
+augroup FileAutoCmd
+    autocmd!
+    autocmd FileType puppet,ruby,yml set expandtab shiftwidth=2 softtabstop=2
+    autocmd BufNewFile,BufRead *.coffee set filetype=coffee
+    autocmd FileType * autocmd BufWritePre <buffer> call Preserve("%s/\\s\\+$//e")
+    autocmd BufNewFile,BufRead Rakefile set foldmethod=syntax foldnestmax=1
+    au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
+    autocmd FileType gitcommit,qfreplace setlocal nofoldenable
+    autocmd BufRead,BufNewFile *.mkd,*.markdown,*.md,*.mdown,*.mkdn
+                \ setlocal filetype=mkd autoindent formatoptions=tcroqn2 comments=n:>
+augroup END
 
 " }}}
 
