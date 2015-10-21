@@ -23,7 +23,7 @@
 augroup MarkdownFiles
     autocmd!
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*}
-                \ setlocal filetype=mkd autoindent formatoptions=tcroqn2 comments=n:>
+                \ setlocal filetype=markdown autoindent formatoptions=tcroqn2 comments=n:>
 augroup END
 let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1
