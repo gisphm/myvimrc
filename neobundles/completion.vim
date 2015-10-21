@@ -27,9 +27,13 @@ NeoBundle 'Shougo/neocomplete.vim', {
             \ 'insert' : 1
             \ }
 NeoBundle 'Shougo/neosnippet.vim', {
+            \ 'insert' : 1,
+            \ 'depends' : [
+            \     'Shougo/neosnippet-snippets', 'Shougo/context_filetype.vim'
+            \   ],
             \ 'unite_sources' : [
             \     'neosnippet', 'neosnippet/user', 'neosnippet/runtime'
-            \ ],
+            \   ],
             \ }
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'honza/vim-snippets'

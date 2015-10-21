@@ -131,11 +131,6 @@ endif
 let g:neocomplete#force_omni_input_patterns.ruby  = '[^. *\t]\.\w*\|\h\w*::\w*'
 let g:neocomplete#force_omni_input_patterns.eruby = '[^. *\t]\.\w*\|\h\w*::\w*'
 
-let g:neocomplete#sources#vim#complete_functions = {
-            \ 'Unite' : 'unite#complete_source',
-            \ 'VimFiler' : 'vimfiler#complete',
-            \ }
-
 " }}}2
 
 " Same FileTypes {{{2
@@ -155,6 +150,10 @@ if !exists('g:neocomplete#sources')
 endif
 let g:neocomplete#sources._ = ['buffer']
 let g:neocomplete#sources.ruby = ['buffer', 'dictionary']
+let g:neocomplete#sources#vim#complete_functions = {
+            \ 'Unite' : 'unite#complete_source',
+            \ 'VimFiler' : 'vimfiler#complete',
+            \ }
 
 " }}}2
 
@@ -162,10 +161,6 @@ call neocomplete#custom#source('look', 'min_patter_length', 4)
 
 " Mappings {{{2
 
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-imap <silent><expr><C-k> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : (pumvisible() ? "\<C-e>" : "<Plug>(neosnippet_expand_or_jump)")
-smap <TAB> <Right><Plug>(neosnippet_jump_or_expand)
 inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><c-l> neocomplete#complete_common_string()
 
@@ -207,7 +202,6 @@ endfunction
 " neosnippet {{{
 
 let g:neosnippet#snippets_directory = '~/.vim/bundle/vim-snippets/snippets'
-let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#scope_aliases = {}
 let g:neosnippet#scope_aliases['ruby'] = 'ruby,rails'
 let g:neosnippet#scope_aliases['eruby'] = 'eruby,html,ruby,rails'
@@ -217,5 +211,10 @@ if has('conceal')
 endif
 
 let g:snips_author = "gisphm <phmfk@hotmail.com>"
+
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+imap <silent><expr><C-k> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : (pumvisible() ? "\<C-e>" : "<Plug>(neosnippet_expand_or_jump)")
+smap <TAB> <Right><Plug>(neosnippet_jump_or_expand)
 
 " }}}

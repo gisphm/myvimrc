@@ -2,6 +2,7 @@
 Unreleased / 2015-10-22
 =======================
 
+  * [Added] add gitcommit for personal use
   * [Fixed] markdwon filetype error
   * [Changed] add PanGu
   * [Changed] update README
