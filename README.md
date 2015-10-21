@@ -42,8 +42,9 @@
 4. ✓ clean up neosnippets mappings
     > those mappings are too complicated and most of them seem to be useless.
 
-4. ✓ replace neocomplete with youcompleteme
-    > Just another trying for completion.
+4. ~~ ✓ replace neocomplete with youcompleteme~~
+    > ~~Just another trying for completion.~~
+    > I just cannot stand the slow speed when trying to open tiny files.
 
 4. create own colorscheme for lightline
 
