@@ -2,6 +2,8 @@
 Unreleased / 2015-10-22
 =======================
 
+  * [Changed] update unite.vim mappings
+  * [Changed] update unite.vim mappings
   * [Added] add gitcommit for personal use
   * [Fixed] markdwon filetype error
   * [Changed] add PanGu

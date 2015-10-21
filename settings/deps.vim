@@ -95,25 +95,27 @@ nnoremap <silent> [unite]c
 nnoremap <silent> [unite]b
             \ :<C-u>UniteWithBufferDir -buffer-name=files buffer bookmark file<CR>
 nnoremap <silent> [unite]y
-            \ :<C-u>Unite -winheight=10 -buffer-name=yank history/yank<CR>
+            \ :<C-u>Unite -auto-resize -buffer-name=yank history/yank<CR>
 nnoremap <silent> [unite]m
-            \ :<C-u>Unite -buffer-name=recent -winheight=10 file_mru<CR>
+            \ :<C-u>Unite -auto-resize -buffer-name=recent file_mru<CR>
 nnoremap <silent> [unite]q
-            \ :<C-u>Unite -winheight=10 -buffer-name=buffers -quick-match buffer<CR>
+            \ :<C-u>Unite -auto-resize -buffer-name=buffers -quick-match buffer<CR>
 nnoremap <silent> [unite]o
-            \ :<C-u>Unite -winheight=10 -buffer-name=outline outline<CR>
+            \ :<C-u>Unite -auto-resize -buffer-name=outline outline<CR>
 nnoremap <silent> [unite]p
-            \ :<C-u>Unite -winheight=10 -buffer-name=tabpages tab<CR>
-nnoremap <silent> [unite]/
-            \ :<C-u>Unite -winheight=10 -buffer-name=search grep:.<CR>
+            \ :<C-u>Unite -auto-resize -buffer-name=tabpages tab<CR>
+nnoremap <silent> [unite]n
+            \ :<C-u>Unite -auto-resize -buffer-name=search grep:.<CR>
+nnoremap <silent> [unite]t
+            \ :<C-u>UniteWithCursorWord -immediately tag/include<CR>
+nnoremap <silent> [unite]j
+            \ :<C-u>Unite -auto-resize -buffer-name=jump jump<CR>
 nnoremap <silent> [unite]s
             \ :<C-u>Unite -buffer-name=files -no-split
             \ jump_point file_point buffer_tab
             \ file_rec:! file file/new <CR>
-autocmd BufEnter *
-            \     if empty(&buftype)
-            \|        nnoremap <silent> [unite]t :<C-u>UniteWithCursorWord -immediately tag<CR>
-            \|    endif
+nnoremap <silent> <C-p>
+            \ :<C-u>Unite -auto-resize -buffer-name=search file_rec/async<CR>
 
 nnoremap <silent> <Space>n :UniteNext<CR>
 nnoremap <silent> <Space>p :UnitePrevious<CR>
