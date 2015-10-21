@@ -15,6 +15,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+[[ -d ~/.vim/tmp/ ]] && rm -rf ~/.vim/tmp
+
 mkdir -p ~/.vim/bundle
 mkdir -p ~/.vim/tmp/backup
 mkdir -p ~/.vim/tmp/swap

@@ -74,6 +74,18 @@ set undodir=~/.vim/tmp/undo/
 set viewdir=~/.vim/tmp/view/
 set viminfo+=n$HOME/.vim/tmp/viminfo
 
+" Ctags {{{2
+
+set tags=tags,./tags;/,~/.vimtags,gems.tags,./gems.tags
+
+" Make tags placed in .git/tags file available in all levels of a repository
+let gitroot = substitute(system('git rev-parse --show-toplevel'), '[\n\r]', '', 'g')
+if gitroot != ''
+    let &tags = &tags . ',' . gitroot . '/.git/tags'
+endif
+
+" }}}2
+
 " Resolve performance problems
 " clear match command gracefully
 autocmd BufWinLeave * call clearmatches()

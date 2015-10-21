@@ -1,7 +1,8 @@
 
-Unreleased / 2015-10-21
+Unreleased / 2015-10-22
 =======================
 
+  * [Changed] update unite.vim settings
   * [Changed] update filetype dectect
   * [Changed] revert back to neocomplete
   * [Changed] update vim-gitignore url

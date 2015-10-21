@@ -49,6 +49,7 @@ NeoBundle 'Shougo/vimfiler.vim', {
             \ 'explorer' : 1,
             \ }
 NeoBundle 'Shougo/unite-outline'
+NeoBundle 'Shougo/unite-help'
 
 " }}}
 
