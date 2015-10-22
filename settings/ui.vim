@@ -39,13 +39,20 @@ let g:indent_guides_auto_colors           = 1
 
 " Lightline {{{
 
-let g:lightline = {
-            \ 'colorscheme': 'solarized',
-            \ 'active': {
+let g:lightline                    = {}
+let g:lightline.colorscheme        = 'solarized'
+let g:lightline.active             = {
             \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'signify', 'filename' ], ],
             \   'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
-            \ },
-            \ 'component_function': {
+            \ }
+let g:lightline.inactive           = {
+            \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'signify', 'filename' ], ],
+            \   'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+            \ }
+let g:lightline.component          = {
+            \   'lineinfo': ' %3l:%-2v',
+            \ }
+let g:lightline.component_function = {
             \   'fugitive': 'LightLineFugitive',
             \   'readonly': 'LightLineReadonly',
             \   'modified': 'LightLineModified',
@@ -55,15 +62,28 @@ let g:lightline = {
             \   'filetype': 'LightLineFiletype',
             \   'fileencoding': 'LightLineFileencoding',
             \   'mode': 'LightLineMode'
-            \ },
-            \ 'component_expand': {
+            \ }
+let g:lightline.component_expand   = {
             \   'syntastic': 'SyntasticStatuslineFlag',
-            \ },
-            \ 'component_type': {
+            \ }
+let g:lightline.component_type     = {
             \   'syntastic': 'error',
-            \ },
-            \ 'separator': { 'left': '⮀', 'right': '⮂' },
-            \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+            \ }
+let g:lightline.separator          = { 'left': '⮀', 'right': '⮂' }
+let g:lightline.subseparator       = { 'left': '⮁', 'right': '⮃' }
+let g:lightline.mode_map           = {
+            \ '__' : '-',
+            \ 'n'  : 'N',
+            \ 'i'  : 'I',
+            \ 'R'  : 'R',
+            \ 'c'  : 'C',
+            \ 'v'  : 'V',
+            \ 's'  : 'S',
+            \ 'V' : 'V-LINE',
+            \ "\<C-v>": 'V-BLOCK',
+            \ 'S' : 'S-LINE',
+            \ "\<C-s>": 'S-BLOCK',
+            \ '?': '      '
             \ }
 
 function! LightLineModified()

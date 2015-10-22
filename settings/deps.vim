@@ -116,9 +116,12 @@ nnoremap <silent> [unite]s
             \ file_rec:! file file/new <CR>
 nnoremap <silent> <C-p>
             \ :<C-u>Unite -auto-resize -buffer-name=search file_rec/async<CR>
+nnoremap <silent> <Leader>b
+            \ :<C-u>Unite -auto-resize -buffer-name=buffers buffer<CR>
 
 nnoremap <silent> <Space>n :UniteNext<CR>
 nnoremap <silent> <Space>p :UnitePrevious<CR>
+nnoremap <silent> <Leader>d :UniteClose<CR>
 
 " }}}2
 
@@ -187,6 +190,7 @@ call vimfiler#custom#profile('default', 'context', {
             \ 'safe' : 0,
             \ 'auto_expand' : 1,
             \ 'parent' : 0,
+            \ 'explorer' : 1
             \ })
 
 function! s:vimfiler_my_settings() abort

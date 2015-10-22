@@ -2,6 +2,7 @@
 Unreleased / 2015-10-22
 =======================
 
+  * [Changed] update unite and lightline settings
   * [Changed] update unite.vim mappings
   * [Changed] update unite.vim mappings
   * [Added] add gitcommit for personal use
