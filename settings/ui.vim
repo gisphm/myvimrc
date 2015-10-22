@@ -106,7 +106,7 @@ function! LightLineFilename()
 endfunction
 
 function! LightLineFugitive()
-    if &ft !~? 'Tagbar\|vimfiler\|undotree' && exists("*fugitive#head")
+    if &ft !~? 'help\|Tagbar\|vimfiler\|undotree' && exists("*fugitive#head")
         let _ = fugitive#head()
         return strlen(_) ? '⭠ '._ : ''
     endif
