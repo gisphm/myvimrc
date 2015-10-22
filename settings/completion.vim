@@ -20,7 +20,7 @@
 
 " OmniComplete {{{
 
-set completeopt=menuone,preview,noinsert,noselect
+set completeopt=menuone,preview,noselect,noinsert
 if has("autocmd") && exists("+omnifunc")
     autocmd Filetype *
                 \ if &omnifunc == "" |
@@ -147,11 +147,6 @@ let g:neocomplete#same_filetypes._ = '_'
 
 " Sources {{{2
 
-if !exists('g:neocomplete#sources')
-    let g:neocomplete#sources = {}
-endif
-let g:neocomplete#sources._ = ['buffer']
-let g:neocomplete#sources.ruby = ['buffer', 'dictionary']
 let g:neocomplete#sources#vim#complete_functions = {
             \ 'Unite' : 'unite#complete_source',
             \ 'VimFiler' : 'vimfiler#complete',
@@ -206,18 +201,13 @@ endfunction
 
 " neosnippet {{{
 
-let g:neosnippet#snippets_directory            = '~/.vim/bundle/vim-snippets/snippets'
-let g:neosnippet#enable_snipmate_compatibility = 1
-let g:neosnippet#enable_word_boundary          = 1
-let g:neosnippet#scope_aliases                 = {}
-let g:neosnippet#scope_aliases['ruby']         = 'ruby,rails'
-let g:neosnippet#scope_aliases['eruby']        = 'eruby,html,ruby,rails'
+let g:neosnippet#expand_word_boundary  = 1
+let g:neosnippet#scope_aliases         = {}
+let g:neosnippet#scope_aliases['ruby'] = 'ruby,rails'
 
 if has('conceal')
     set conceallevel=2 concealcursor=niv
 endif
-
-let g:snips_author = "gisphm <phmfk@hotmail.com>"
 
 inoremap <silent> (( <C-r>=neosnippet#anonymous('\left(${1}\right)${0}')<CR>
 
