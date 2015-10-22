@@ -2,6 +2,7 @@
 Unreleased / 2015-10-22
 =======================
 
+  * [Added] add one todo item
   * [Fixed] update README
   * [Changed] update lightline settings
   * [Changed] remove fugitive mode in help files

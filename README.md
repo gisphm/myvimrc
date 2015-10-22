@@ -48,6 +48,8 @@
 
 4. create own colorscheme for lightline
 
+4. add necessary snippets from [vim-snippets][5] repo
+
 4. documentation of snippets(especially rails)
 
     > ~~1. This is impossible for me...~~
@@ -120,3 +122,4 @@
 [2]: https://github.com/gisphm/myneovimrc.git
 [3]: https://github.com/VundleVim/Vundle.vim.git
 [4]: https://github.com/Shougo/neobundle.vim.git
+[5]: https://github.com/honza/vim-snippets
