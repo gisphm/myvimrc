@@ -48,7 +48,8 @@
 
 4. create own colorscheme for lightline
 
-4. add necessary snippets from [vim-snippets][5] repo
+4. ✓ add necessary snippets from [vim-snippets][5] repo
+    > well, the convert script has been written and still has room to optimize.
 
 4. documentation of snippets(especially rails)
 
