@@ -42,12 +42,26 @@ let g:indent_guides_auto_colors           = 1
 let g:lightline                    = {}
 let g:lightline.colorscheme        = 'solarized'
 let g:lightline.active             = {
-            \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'signify', 'filename' ], ],
-            \   'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+            \   'left': [
+            \     [ 'mode', 'paste' ],
+            \     [ 'fugitive', 'signify', 'filename' ],
+            \   ],
+            \   'right': [
+            \     [ 'syntastic', 'trailingspace', 'mixindent', 'lineinfo' ],
+            \     [ 'percent' ],
+            \     [ 'fileformat', 'fileencoding', 'filetype' ]
+            \   ]
             \ }
 let g:lightline.inactive           = {
-            \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'signify', 'filename' ], ],
-            \   'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+            \   'left': [
+            \     [ 'mode', 'paste' ],
+            \     [ 'fugitive', 'signify', 'filename' ],
+            \   ],
+            \   'right': [
+            \     [ 'syntastic', 'trailingspace', 'lineinfo' ],
+            \     [ 'longcheck', 'mixindent', 'percent' ],
+            \     [ 'fileformat', 'fileencoding', 'filetype' ]
+            \   ]
             \ }
 let g:lightline.component          = {
             \   'lineinfo': ' %3l:%-2v',
@@ -61,13 +75,19 @@ let g:lightline.component_function = {
             \   'fileformat': 'LightLineFileformat',
             \   'filetype': 'LightLineFiletype',
             \   'fileencoding': 'LightLineFileencoding',
-            \   'mode': 'LightLineMode'
+            \   'mode': 'LightLineMode',
+            \   'mixindent': 'LightlineMixIndent',
+            \   'trailingspace': 'LightlineTrailingSpace',
+            \   'longcheck': 'LightlineLong'
             \ }
 let g:lightline.component_expand   = {
             \   'syntastic': 'SyntasticStatuslineFlag',
             \ }
 let g:lightline.component_type     = {
             \   'syntastic': 'error',
+            \   'trailingspace': 'warning',
+            \   'mixindent': 'warning',
+            \   'longcheck': 'warning',
             \ }
 let g:lightline.separator          = { 'left': '⮀', 'right': '⮂' }
 let g:lightline.subseparator       = { 'left': '⮁', 'right': '⮃' }
@@ -155,6 +175,54 @@ function! LightLineMode()
                 \ &ft == 'vimfiler' ? 'VimFiler' :
                 \ winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
+
+function! LightlineMixIndent() abort
+    if !exists("b:mixindent_warning")
+        let b:mixindent_warning = ''
+        " reference vim-airline
+        " allow certain number spaces after tabs
+        " let t_s_t = '(^\t* +\t\s*\S)'
+        " let t_l_s = '(^\t+ {' . &ts . ',}' . '\S)'
+        " let line = search('\v' . t_s_t . '|' t_l_s, 'nw')
+        " allow spaces after tabs
+        " let line = search('\v(^\t* +\t\s*\S)', 'nw')
+        " all spaces or tabs
+        let line = search('\v(^\t+ +)|(^ +\t+)', 'nw')
+        if line != 0
+            let b:mixindent_warning .= printf('mixed[%s]', line)
+        endif
+    endif
+    return b:mixindent_warning
+endfunction
+
+function! LightlineTrailingSpace() abort
+    if !exists("b:trailingspace_warning")
+        let b:trailingspace_warning = ''
+        let line = search('\s\+$', 'nw')
+        if line != 0
+            let b:trailingspace_warning .= printf('trail[%s]', line)
+        endif
+    endif
+    return b:trailingspace_warning
+endfunction
+
+function! LightlineLong() abort
+    if !exists("b:long_warning")
+        let b:long_warning = ''
+        let line = search('\%>'.&tw.'v.\+', 'nw')
+        if line != 0
+            let b:long_warning .= printf('long[%s]', line)
+        endif
+    endif
+    return b:long_warning
+endfunction
+
+augroup IndentSpace
+    autocmd!
+    autocmd CursorHold,BufWritePost * unlet! b:mixindent_warning
+    autocmd CursorHold,BufWritePost * unlet! b:long_warning
+    autocmd CursorHold,BufWritePost * unlet! b:trailingspace_warning
+augroup END
 
 let g:tagbar_status_func = 'TagbarStatusFunc'
 

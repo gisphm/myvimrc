@@ -2,6 +2,7 @@
 Unreleased / 2015-10-22
 =======================
 
+  * [Changed] update lightline settings
   * [Changed] remove fugitive mode in help files
   * [Changed] update neosnippets settings
   * [Changed] update neocomplete.vim settings
