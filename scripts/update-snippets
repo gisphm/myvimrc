@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+build_dir=~/.vim/build
+src_dir=~/.vim/build/snippets
+snippets_dir=~/.vim/neosnippets
+list_file=~/.vim/scripts/snippets_list
+snippets_list=($(cat $list_file))
+
+[[ -d $build_dir ]] && rm -rf $build_dir
+
+mkdir -p $build_dir
+
+git clone --depth=1 https://github.com/honza/vim-snippets $build_dir
+
+cd $src_dir
+
+find . -maxdepth 2 -type f -name "*.snippets" | while read FNAME; do mv "$FNAME" "${FNAME//.snippets/.snip}"; done
+
+cd $src_dir
+
+cat $list_file | xargs mv -t $snippets_dir
+
+cp -r coffee $snippets_dir
+cp -r javascript $snippets_dir
+
+cd $neosnippets
+
+# find . -name '*.snip' -exec sed -i 's/\t/   /g' '{}' \;
+find . -name '*.snip' -exec bash -c 'expand -t 4 "$0" > /tmp/e && mv /tmp/e "$0"' '{}' \;
+
+cd
+
+rm -rf $build_dir

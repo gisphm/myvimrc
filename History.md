@@ -1,7 +1,8 @@
 
-Unreleased / 2015-10-22
+Unreleased / 2015-10-23
 =======================
 
+  * [Added] add more snippets for neosnippets
   * [Added] add one todo item
   * [Fixed] update README
   * [Changed] update lightline settings

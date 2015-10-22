@@ -38,6 +38,5 @@ NeoBundle 'Shougo/neosnippet.vim', {
             \   ],
             \ }
 NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'honza/vim-snippets'
 
 " }}}
