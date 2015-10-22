@@ -26,6 +26,8 @@ NeoBundle 'kana/vim-smartchr', {
 NeoBundle 'Shougo/neocomplete.vim', {
             \ 'insert' : 1
             \ }
+NeoBundle 'Shougo/neco-syntax'
+NeoBundle 'Shougo/neco-vim'
 NeoBundle 'Shougo/neosnippet.vim', {
             \ 'insert' : 1,
             \ 'depends' : [

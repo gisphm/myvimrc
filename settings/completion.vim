@@ -20,7 +20,7 @@
 
 " OmniComplete {{{
 
-set completeopt=menuone,noinsert,noselect
+set completeopt=menuone,preview,noinsert,noselect
 if has("autocmd") && exists("+omnifunc")
     autocmd Filetype *
                 \ if &omnifunc == "" |
@@ -66,9 +66,9 @@ augroup END
 
 let g:neocomplete#enable_at_startup              = 1
 let g:neocomplete#disable_auto_complete          = 0
-let g:neocomplete#enable_insert_char_pre         = 0
-let g:neocomplete#enable_smart_case              = 1
-let g:neocomplete#enable_camel_case              = 1
+let g:neocomplete#enable_smart_case              = 0
+let g:neocomplete#enable_ignore_case             = 1
+let g:neocomplete#enable_camel_case              = 0
 let g:neocomplete#enable_auto_delimiter          = 1
 let g:neocomplete#enable_fuzzy_completion        = 1
 let g:neocomplete#max_list                       = 15
@@ -77,14 +77,12 @@ let g:neocomplete#min_keyword_length             = 3
 let g:neocomplete#auto_completion_start_length   = 2
 let g:neocomplete#manual_completion_start_length = 0
 let g:neocomplete#enable_auto_select             = 0
-let g:neocomplete#enable_refresh_always          = 0
+let g:neocomplete#enable_refresh_always          = 1
 let g:neocomplete#enable_cursor_hold_i           = 0
 let g:neocomplete#enable_omni_fallback           = 1
 let g:neocomplete#enable_auto_close_preview      = 1
 let g:neocomplete#enable_multibyte_completion    = 1
 let g:neocomplete#use_vimproc                    = 1
-
-" }}}2
 
 let g:neocomplete#sources#dictionary#dictionaries = {
             \ 'default' : '',
@@ -93,6 +91,10 @@ let g:neocomplete#sources#dictionary#dictionaries = {
 
 let g:neocomplete#disable_auto_select_buffer_name_pattern =
             \ '\[Command Line\]'
+
+call neocomplete#custom#source('look', 'min_patter_length', 4)
+
+" }}}2
 
 " Keyword  {{{2
 
@@ -157,9 +159,12 @@ let g:neocomplete#sources#vim#complete_functions = {
 
 " }}}2
 
-call neocomplete#custom#source('look', 'min_patter_length', 4)
-
 " Mappings {{{2
+
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+imap <expr><silent><C-k> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : (pumvisible() ? "\<C-e>" : "<Plug>(neosnippet_expand_or_jump)")
+smap <silent><TAB> <Right><Plug>(neosnippet_jump_or_expand)
 
 inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><c-l> neocomplete#complete_common_string()
@@ -201,10 +206,12 @@ endfunction
 
 " neosnippet {{{
 
-let g:neosnippet#snippets_directory = '~/.vim/bundle/vim-snippets/snippets'
-let g:neosnippet#scope_aliases = {}
-let g:neosnippet#scope_aliases['ruby'] = 'ruby,rails'
-let g:neosnippet#scope_aliases['eruby'] = 'eruby,html,ruby,rails'
+let g:neosnippet#snippets_directory            = '~/.vim/bundle/vim-snippets/snippets'
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#enable_word_boundary          = 1
+let g:neosnippet#scope_aliases                 = {}
+let g:neosnippet#scope_aliases['ruby']         = 'ruby,rails'
+let g:neosnippet#scope_aliases['eruby']        = 'eruby,html,ruby,rails'
 
 if has('conceal')
     set conceallevel=2 concealcursor=niv
@@ -212,9 +219,6 @@ endif
 
 let g:snips_author = "gisphm <phmfk@hotmail.com>"
 
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-imap <silent><expr><C-k> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : (pumvisible() ? "\<C-e>" : "<Plug>(neosnippet_expand_or_jump)")
-smap <TAB> <Right><Plug>(neosnippet_jump_or_expand)
+inoremap <silent> (( <C-r>=neosnippet#anonymous('\left(${1}\right)${0}')<CR>
 
 " }}}
