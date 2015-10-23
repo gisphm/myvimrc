@@ -47,7 +47,7 @@ let g:lightline.active             = {
             \     [ 'fugitive', 'signify', 'filename' ],
             \   ],
             \   'right': [
-            \     [ 'syntastic', 'trailingspace', 'mixindent', 'lineinfo' ],
+            \     [ 'syntastic', 'spacecheck', 'lineinfo' ],
             \     [ 'percent' ],
             \     [ 'fileformat', 'fileencoding', 'filetype' ]
             \   ]
@@ -58,8 +58,8 @@ let g:lightline.inactive           = {
             \     [ 'fugitive', 'signify', 'filename' ],
             \   ],
             \   'right': [
-            \     [ 'syntastic', 'trailingspace', 'lineinfo' ],
-            \     [ 'longcheck', 'mixindent', 'percent' ],
+            \     [ 'syntastic', 'spacecheck', 'lineinfo' ],
+            \     [ 'percent' ],
             \     [ 'fileformat', 'fileencoding', 'filetype' ]
             \   ]
             \ }
@@ -76,18 +76,14 @@ let g:lightline.component_function = {
             \   'filetype': 'LightLineFiletype',
             \   'fileencoding': 'LightLineFileencoding',
             \   'mode': 'LightLineMode',
-            \   'mixindent': 'LightlineMixIndent',
-            \   'trailingspace': 'LightlineTrailingSpace',
-            \   'longcheck': 'LightlineLong'
+            \   'spacecheck': 'LightlineSpaceCheck'
             \ }
 let g:lightline.component_expand   = {
             \   'syntastic': 'SyntasticStatuslineFlag',
             \ }
 let g:lightline.component_type     = {
             \   'syntastic': 'error',
-            \   'trailingspace': 'warning',
-            \   'mixindent': 'warning',
-            \   'longcheck': 'warning',
+            \   'spacecheck': 'warning',
             \ }
 let g:lightline.separator          = { 'left': '⮀', 'right': '⮂' }
 let g:lightline.subseparator       = { 'left': '⮁', 'right': '⮃' }
@@ -176,9 +172,10 @@ function! LightLineMode()
                 \ winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 
-function! LightlineMixIndent() abort
-    if !exists("b:mixindent_warning")
-        let b:mixindent_warning = ''
+function! LightlineSpaceCheck() abort
+    if !exists("b:spacecheck_warning")
+        let b:spacecheck_warning = ''
+
         " reference vim-airline
         " allow certain number spaces after tabs
         " let t_s_t = '(^\t* +\t\s*\S)'
@@ -187,34 +184,22 @@ function! LightlineMixIndent() abort
         " allow spaces after tabs
         " let line = search('\v(^\t* +\t\s*\S)', 'nw')
         " all spaces or tabs
-        let line = search('\v(^\t+ +)|(^ +\t+)', 'nw')
-        if line != 0
-            let b:mixindent_warning .= printf('mixed[%s]', line)
+        let indent = search('\v(^\t+ +)|(^ +\t+)', 'nw')
+        if indent != 0
+            let b:spacecheck_warning .= printf('mixed[%s]', indent)
         endif
-    endif
-    return b:mixindent_warning
-endfunction
 
-function! LightlineTrailingSpace() abort
-    if !exists("b:trailingspace_warning")
-        let b:trailingspace_warning = ''
-        let line = search('\s\+$', 'nw')
-        if line != 0
-            let b:trailingspace_warning .= printf('trail[%s]', line)
+        let space = search('\s\+$', 'nw')
+        if space != 0
+            let b:spacecheck_warning .= printf('trail[%s]', space)
         endif
-    endif
-    return b:trailingspace_warning
-endfunction
 
-function! LightlineLong() abort
-    if !exists("b:long_warning")
-        let b:long_warning = ''
-        let line = search('\%>'.&tw.'v.\+', 'nw')
-        if line != 0
-            let b:long_warning .= printf('long[%s]', line)
+        let long = search('\%>'.&tw.'v.\+', 'nw')
+        if long != 0
+            let b:spacecheck_warning .= printf('long[%s]', long)
         endif
     endif
-    return b:long_warning
+    return b:spacecheck_warning
 endfunction
 
 augroup IndentSpace
