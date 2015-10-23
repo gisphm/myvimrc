@@ -2,6 +2,7 @@
 Unreleased / 2015-10-23
 =======================
 
+  * [Added] update some settings
   * [Changed] update README
   * [Added] add more snippets for neosnippets
   * [Added] add one todo item

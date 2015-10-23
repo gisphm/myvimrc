@@ -203,7 +203,7 @@ endfunction
 
 let g:neosnippet#expand_word_boundary  = 1
 let g:neosnippet#scope_aliases         = {}
-let g:neosnippet#scope_aliases['ruby'] = 'ruby,rails'
+let g:neosnippet#scope_aliases['ruby'] = 'ruby,rails,gemfile'
 
 if has('conceal')
     set conceallevel=2 concealcursor=niv
