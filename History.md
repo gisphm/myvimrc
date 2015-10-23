@@ -2,6 +2,11 @@
 Unreleased / 2015-10-23
 =======================
 
+  * [Fixed] unlet b:spacecheck_warning in augroup
+
+v1.3 / 2015-10-23
+=================
+
   * [Changed] update easy-align mapping
   * [Added] post-commit for auto-generating History.md
   * [Added] add abbr to some snippets
