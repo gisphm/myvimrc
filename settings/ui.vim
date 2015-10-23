@@ -202,11 +202,9 @@ function! LightlineSpaceCheck() abort
     return b:spacecheck_warning
 endfunction
 
-augroup IndentSpace
+augroup SpaceCheck
     autocmd!
-    autocmd CursorHold,BufWritePost * unlet! b:mixindent_warning
-    autocmd CursorHold,BufWritePost * unlet! b:long_warning
-    autocmd CursorHold,BufWritePost * unlet! b:trailingspace_warning
+    autocmd CursorHold,BufWritePost * unlet! b:spacecheck_warning
 augroup END
 
 let g:tagbar_status_func = 'TagbarStatusFunc'
