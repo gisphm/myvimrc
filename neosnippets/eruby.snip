@@ -1,0 +1,184 @@
+# .erb and .rhmtl files
+
+# Includes html.snippets
+
+# Rails *****************************
+snippet rc
+abbr    code
+    <% ${0} %>
+snippet rce
+abbr    equal
+    <%= ${1} %>
+snippet %
+abbr    code
+    <% ${0} %>
+snippet =
+abbr    equal
+    <%= ${1} %>
+snippet end
+abbr    end
+    <% end %>
+snippet ead
+abbr    each...end
+    <% ${1}.each do |${2}| %>
+        ${0}
+    <% end %>
+snippet for
+abbr    for...end
+    <% for ${2:item} in ${1} %>
+        ${0}
+    <% end %>
+snippet rp
+abbr    render
+    <%= render partial: '${0:item}' %>
+snippet rpl
+abbr    render locals
+    <%= render partial: '${1:item}', locals: { :${2:name} => '${3:value}'${0} } %>
+snippet rps
+abbr    render status
+    <%= render partial: '${1:item}', status: ${0:500} %>
+snippet rpc
+abbr    render collection
+    <%= render partial: '${1:item}', collection: ${0:items} %>
+snippet lia
+abbr    link action
+    <%= link_to '${1:link text...}', action: '${0:index}' %>
+snippet liai
+abbr    link action id
+    <%= link_to '${1:link text...}', action: '${2:edit}', id: ${0:@item} %>
+snippet lic
+abbr    link controller
+    <%= link_to '${1:link text...}', controller: '${0:items}' %>
+snippet lica
+abbr    link controller action
+    <%= link_to '${1:link text...}', controller: '${2:items}', action: '${0:index}' %>
+snippet licai
+abbr    link controller action id
+    <%= link_to '${1:link text...}', controller: '${2:items}', action: '${3:edit}', id: ${0:@item} %>
+snippet yield
+abbr    yield
+    <%= yield ${1::content_symbol} %>
+snippet conf
+abbr    content_for
+    <% content_for :${1:head} do %>
+        ${0}
+    <% end %>
+snippet cs
+abbr    collection_select
+    <%= collection_select <+object+>, <+method+>, <+collection+>, <+value_method+>, <+text_method+><+, <+[options]+>, <+[html_options]+>+> %>
+snippet ct
+abbr    content_tag
+    <%= content_tag '${1:DIV}', ${2:content}${0:,options} %>
+snippet ff
+abbr    form_for
+    <%= form_for @${1:model} do |f| %>
+        ${0}
+    <% end %>
+snippet ffi
+abbr    input
+    <%= ${1:f}.input :${0:attribute} %>
+snippet ffcb
+abbr    check_box
+    <%= ${1:f}.check_box :${0:attribute} %>
+snippet ffe
+abbr    error_messages form
+    <% error_messages_for :${1:model} %>
+
+    <%= form_for @${2:model} do |f| %>
+        ${0}
+    <% end %>
+snippet ffff
+abbr    file_field
+    <%= ${1:f}.file_field :${0:attribute} %>
+snippet ffhf
+abbr    hidden_field
+    <%= ${1:f}.hidden_field :${0:attribute} %>
+snippet ffl
+abbr    label
+    <%= ${1:f}.label :${2:attribute}, '${0:$2}' %>
+snippet ffpf
+abbr    password_field
+    <%= ${1:f}.password_field :${0:attribute} %>
+snippet ffrb
+abbr    radio_button
+    <%= ${1:f}.radio_button :${2:attribute}, :${0:tag_value} %>
+snippet ffs
+abbr    submit
+    <%= ${1:f}.submit "${0:submit}" %>
+snippet ffta
+abbr    text_area
+    <%= ${1:f}.text_area :${0:attribute} %>
+snippet fftf
+abbr    text_field
+    <%= ${1:f}.text_field :${0:attribute} %>
+snippet fields
+abbr    fields_for
+    <%= fields_for :${1:model}, @$1 do |${2:f}| %>
+        ${0}
+    <% end %>
+snippet i18
+abbr    I18n
+    I18n.t('${1:type.key}')
+snippet it
+abbr    image_tag
+    <%= image_tag "${1}"${0} %>
+snippet jit
+abbr    javascript_include_tag
+    <%= javascript_include_tag ${0::all} %>
+snippet jsit
+abbr    javascript_include_tag
+    <%= javascript_include_tag "${0}" %>
+snippet lim
+abbr    link model
+    <%= link_to ${1:model}.${2:name}, ${3:$1}_path(${0:$1}) %>
+snippet linp
+abbr    link
+    <%= link_to "${1:Link text...}", ${2:parent}_${3:child}_path(${4:@$2}, ${0:@$3}) %>
+snippet linpp
+abbr    link path
+    <%= link_to "${1:Link text...}", ${2:parent}_${3:child}_path(${0:@$2}) %>
+snippet lip
+abbr    link model path
+    <%= link_to "${1:Link text...}", ${2:model}_path(${0:@$2}) %>
+snippet lipp
+abbr    link models path
+    <%= link_to "${1:Link text...}", ${0:model}s_path %>
+snippet lt
+abbr    link name dest
+    <%= link_to "${1:name}", ${0:dest} %>
+snippet ntc
+abbr    number_to_currency
+    <%= number_to_currency(${1}) %>
+snippet ofcfs
+abbr    options_from_collection_for_select
+    <%= options_from_collection_for_select ${1:collection}, ${2:value_method}, ${3:text_method}, ${0:selected_value} %>
+snippet ofs
+abbr    options_for_select
+    <%= options_for_select ${1:collection}, ${2:value_method} %>
+snippet rf
+abbr    render file
+    <%= render file: "${1:file}"${0} %>
+snippet rt
+abbr    render template
+    <%= render template: "${1:file}"${0} %>
+snippet slt
+abbr    stylesheet_link_tag cache
+    <%= stylesheet_link_tag ${1::all}, cache: ${0:true} %>
+snippet sslt
+abbr    stylesheet_link_tag
+    <%= stylesheet_link_tag "${0}" %>
+snippet if
+abbr    if...end
+    <% if ${1} %>
+        ${0}
+    <% end %>
+snippet ife
+abbr    if...else...end
+    <% if ${1} %>
+        ${2}
+    <% else %>
+        ${0}
+    <% end %>
+snippet pry
+abbr    pry
+    <% require 'pry'; binding.pry %>

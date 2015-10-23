@@ -29,7 +29,8 @@ nnoremap <Leader>nl :NeoBundleUpdatesLog<CR>
 
 " Unite.vim {{{
 
-let g:unite_enable_auto_select = 0
+" custom call {{{2
+
 call unite#custom#source(
             \ 'buffer,file_rec,file_rec/async,file_rec/git',
             \ 'matchers',
@@ -50,50 +51,122 @@ call unite#custom#source(
             \ 'converters',
             \ ['converter_file_directory']
             \ )
-call unite#custom#source(
-            \ 'line_migemo',
-            \ 'matchers',
-            \ 'matcher_migemo'
-            \ )
+
 call unite#filters#sorter_default#use(['sorter_rank'])
 
-let default_context = {
-            \ 'vertical' : 0,
+call unite#custom#profile('default', 'context', {
+            \ 'start_insert' : 1,
+            \ 'winheight' : 10,
+            \ 'direction' : 'botright',
             \ 'short_source_names' : 1,
-            \ }
-call unite#custom#profile('default', 'context', default_context)
-let g:unite_prompt                        = '» '
-let g:unite_split_rule                    = 'botright'
+            \})
 
-" Unite's search command order
+" }}}2
+
+" unite common {{{2
+
+let g:unite_enable_auto_select            = 0
+let g:unite_prompt                        = '» '
+let g:unite_source_history_yank_enable    = 1
+let g:unite_source_rec_max_cache_files    = -1
 if executable('ag')
     let g:unite_source_grep_command       = 'ag'
     let g:unite_source_grep_default_opts  =
                 \ '-i --line-numbers --nocolor --nogroup --hidden ' .
                 \ '--ignore ''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
     let g:unite_source_grep_recursive_opt = ''
-    let g:unite_source_rec_async_command = ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', '']
+    let g:unite_source_rec_async_command  =
+                \ ['ag', '--follow', '--nocolor', '--nogroup',
+                \  '--hidden', '-g', '']
 endif
 
-let g:unite_source_history_yank_enable    = 1
-let g:unite_source_rec_max_cache_files    = -1
+" }}}2
 
-" search recent files
-nnoremap <silent> <Leader>m :Unite -buffer-name=recent -winheight=10 file_mru<cr>
-" buffers in vim
-nnoremap <silent> <Leader>b :Unite -buffer-name=buffers -winheight=10 buffer<cr>
-" Ctrl-P
-nnoremap <silent> <C-p> :<C-u>Unite -winheight=10 -buffer-name=file file_rec/async<cr>
-" search
-nnoremap <silent> <Space>/ :<C-u>Unite -winheight=10 -buffer-name=search grep:.<CR>
-" quick search between buffers
-nnoremap <silent> <Space>b :<C-u>Unite -winheight=10 -buffer-name=buffers -quick-match buffer<cr>
-" look into yank history
-nnoremap <silent> <Leader>y :<C-u>Unite -winheight=10 -buffer-name=yank history/yank<cr>
-" unite outline like tagbar
-nnoremap <silent> <Space>uo :<C-u>Unite -winheight=10 -buffer-name=outline outline<CR>
-" tab pages
-nnoremap <silent> <Space>ut :<C-u>Unite -winheight=10 -buffer-name=tabpages tab<CR>
+" normal mappings {{{2
+
+nnoremap [unite] <Nop>
+nmap <Space>u [unite]
+
+nnoremap [unite]f :<C-u>Unite source<CR>
+nnoremap <silent> [unite]r
+            \ :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> [unite]c
+            \ :<C-u>UniteWithCurrentDir -buffer-name=files buffer bookmark file<CR>
+nnoremap <silent> [unite]b
+            \ :<C-u>UniteWithBufferDir -buffer-name=files buffer bookmark file<CR>
+nnoremap <silent> [unite]y
+            \ :<C-u>Unite -auto-resize -buffer-name=yank history/yank<CR>
+nnoremap <silent> [unite]m
+            \ :<C-u>Unite -auto-resize -buffer-name=recent file_mru<CR>
+nnoremap <silent> [unite]q
+            \ :<C-u>Unite -auto-resize -buffer-name=buffers -quick-match buffer<CR>
+nnoremap <silent> [unite]o
+            \ :<C-u>Unite -auto-resize -buffer-name=outline outline<CR>
+nnoremap <silent> [unite]p
+            \ :<C-u>Unite -auto-resize -buffer-name=tabpages tab<CR>
+nnoremap <silent> [unite]n
+            \ :<C-u>Unite -auto-resize -buffer-name=search grep:.<CR>
+nnoremap <silent> [unite]t
+            \ :<C-u>UniteWithCursorWord -immediately tag/include<CR>
+nnoremap <silent> [unite]j
+            \ :<C-u>Unite -auto-resize -buffer-name=jump jump<CR>
+nnoremap <silent> [unite]s
+            \ :<C-u>Unite -buffer-name=files -no-split
+            \ jump_point file_point buffer_tab
+            \ file_rec:! file file/new <CR>
+nnoremap <silent> <C-p>
+            \ :<C-u>Unite -auto-resize -buffer-name=search file_rec/async<CR>
+nnoremap <silent> <Leader>b
+            \ :<C-u>Unite -auto-resize -buffer-name=buffers buffer<CR>
+
+nnoremap <silent> <Space>n :UniteNext<CR>
+nnoremap <silent> <Space>p :UnitePrevious<CR>
+nnoremap <silent> <Leader>d :UniteClose<CR>
+
+" }}}2
+
+" unite function {{{2
+
+autocmd FileType unite call s:unite_my_settings()
+function! s:unite_my_settings()"
+    " Overwrite settings.
+
+    imap <buffer> jj      <Plug>(unite_insert_leave)
+    "imap <buffer> <C-w>     <Plug>(unite_delete_backward_path)
+
+    imap <buffer><expr> j unite#smart_map('j', '')
+    imap <buffer> <TAB>   <Plug>(unite_select_next_line)
+    imap <buffer> <C-w>     <Plug>(unite_delete_backward_path)
+    imap <buffer> '     <Plug>(unite_quick_match_default_action)
+    nmap <buffer> '     <Plug>(unite_quick_match_default_action)
+    imap <buffer><expr> x
+                \ unite#smart_map('x', "\<Plug>(unite_quick_match_jump)")
+    nmap <buffer> x     <Plug>(unite_quick_match_jump)
+    nmap <buffer> <C-z>     <Plug>(unite_toggle_transpose_window)
+    imap <buffer> <C-z>     <Plug>(unite_toggle_transpose_window)
+    nmap <buffer> <C-j>     <Plug>(unite_toggle_auto_preview)
+    nmap <buffer> <C-r>     <Plug>(unite_narrowing_input_history)
+    imap <buffer> <C-r>     <Plug>(unite_narrowing_input_history)
+    nnoremap <silent><buffer><expr> l
+                \ unite#smart_map('l', unite#do_action('default'))
+
+    let unite = unite#get_current_unite()
+    if unite.profile_name ==# 'search'
+        nnoremap <silent><buffer><expr> r     unite#do_action('replace')
+    else
+        nnoremap <silent><buffer><expr> r     unite#do_action('rename')
+    endif
+
+    nnoremap <silent><buffer><expr> cd     unite#do_action('lcd')
+    nnoremap <buffer><expr> S      unite#mappings#set_current_filters(
+                \ empty(unite#mappings#get_current_filters()) ?
+                \ ['sorter_reverse'] : [])
+
+    " Runs "split" action by <C-s>.
+    imap <silent><buffer><expr> <C-s>     unite#do_action('split')
+endfunction
+
+" }}}2
 
 " }}}
 
@@ -117,6 +190,7 @@ call vimfiler#custom#profile('default', 'context', {
             \ 'safe' : 0,
             \ 'auto_expand' : 1,
             \ 'parent' : 0,
+            \ 'explorer' : 1
             \ })
 
 function! s:vimfiler_my_settings() abort
@@ -137,17 +211,5 @@ augroup VimFilerSetting
     autocmd!
     autocmd FileType vimfiler call s:vimfiler_my_settings()
 augroup END
-
-" }}}
-
-" Ctags {{{
-
-set tags=tags,./tags;/,~/.vimtags,gems.tags,./gems.tags
-
-" Make tags placed in .git/tags file available in all levels of a repository
-let gitroot = substitute(system('git rev-parse --show-toplevel'), '[\n\r]', '', 'g')
-if gitroot != ''
-    let &tags = &tags . ',' . gitroot . '/.git/tags'
-endif
 
 " }}}

@@ -1,6 +1,44 @@
 
-Develop / 2015-10-17
-====================
+Unreleased / 2015-10-23
+=======================
+
+  * [Changed] update easy-align mapping
+  * [Added] post-commit for auto-generating History.md
+  * [Added] add abbr to some snippets
+  * [Changed] refactor space check in lightline
+  * [Added] update some settings
+  * [Changed] update README
+  * [Added] add more snippets for neosnippets
+  * [Added] add one todo item
+  * [Fixed] update README
+  * [Changed] update lightline settings
+  * [Changed] remove fugitive mode in help files
+  * [Changed] update neosnippets settings
+  * [Changed] update neocomplete.vim settings
+  * [Changed] update unite and lightline settings
+  * [Changed] update unite.vim mappings
+  * [Changed] update unite.vim mappings
+  * [Added] add gitcommit for personal use
+  * [Fixed] markdwon filetype error
+  * [Changed] add PanGu
+  * [Changed] update README
+  * [Changed] update unite.vim settings
+  * [Changed] update filetype dectect
+  * [Changed] revert back to neocomplete
+  * [Changed] update vim-gitignore url
+  * [Changed] replace css-color with colorizer
+  * [Changed] update README
+  * [Changed] update something
+  * [Changed] rename ChangeLog to History
+  * [Removed] CHANGELOG
+  * update listchars
+  * added CHANGELOG generate by github_changelog_generator
+  * update README
+  * update README
+  * update README and Requirements docs
+
+v1.2 / 2015-10-17
+=================
 
   * update README and Mappings
   * added mappings for ycm

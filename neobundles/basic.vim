@@ -35,6 +35,7 @@ NeoBundle 'Shougo/unite.vim', {
             \    'name' : 'Unite',
             \    'complete' : 'customlist, unite#complete_source'
             \ }],
+            \ 'depends' : ['Shougo/neomru.vim'],
             \ }
 NeoBundle 'Shougo/vimfiler.vim', {
             \ 'commands' : [
@@ -49,6 +50,7 @@ NeoBundle 'Shougo/vimfiler.vim', {
             \ 'explorer' : 1,
             \ }
 NeoBundle 'Shougo/unite-outline'
+NeoBundle 'Shougo/unite-help'
 
 " }}}
 

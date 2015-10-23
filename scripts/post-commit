@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# reference MartinSeeler/auto-changelog-hook on github
+
+git changes
+
+res=$(git status --porcelain | grep History.md | wc -l)
+if [ "$res" -gt 0 ]; then
+    git cam
+    echo "Populated Changelog in History.md"
+fi

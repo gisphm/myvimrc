@@ -1,15 +1,17 @@
-# 我的vim配置
-+ fork自[spf13-vim][1]，一个相当有影响力的好配置。
+# 我的 vim 配置
++ fork 自 [spf13-vim][1]，一个相当有影响力的好配置。
 + 去掉了些自己不用的插件，也替换了一些，算是个性化了不少。
-+ 此配置目前希望是有助于rails开发（自己个人在学习着）
++ 此配置目前希望是有助于`Ruby on Rails`开发
+
 
 ## 配置文件列表
-+ __vimrc__ 主配置文件，包含[neobundle][4]的初始化和对以下两个文件夹的引用
-+ __neobundles/__ 插件列表文件所在文件夹，包含所有安装的插件
-+ __settings/__ 插件配置文件夹，包含已安装插件的一些配置与vim的基本配置，与`neobundles`的分组对应
-+ __install.sh__ 用来辅助安装的文件，生成`tmp`文件夹和克隆`neobundle.vim`
-+ __bundle__ 包含在git的忽略文件里，所有安装的插件都在这个文件夹里
-+ __tmp__ 包含在git的忽略文件里，包括vim的`swap` `undo` `view` `backup`文件夹
++ __vimrc__ 主配置文件 -- [neobundle][4] 的初始化
++ __neobundles/__ 插件列表文件夹 -- 所有安装的插件
++ __settings/__ 插件配置文件夹 -- 已安装插件的一些配置与 vim 的基本配置，与`neobundles`的分组对应
++ __install.sh__ 辅助安装的文件 -- 生成`tmp`文件夹和克隆`neobundle.vim`
++ __bundle__ 插件的安装文件夹
++ __tmp__ vim 的`swap` `undo` `view` `backup`等目录所在的文件夹
+
 
 ## things todo
 1. ✓ replace nerdtree with vimfiler
@@ -40,8 +42,21 @@
 4. ✓ clean up neosnippets mappings
     > those mappings are too complicated and most of them seem to be useless.
 
-4. ✓ replace neocomplete with youcompleteme
-    > Just another trying for completion.
+4. ~~✓ replace neocomplete with youcompleteme~~
+    > ~~Just another trying for completion.~~
+    > I just cannot stand the slow speed when trying to open tiny files.
+
+4. create own colorscheme for lightline
+
+4. ✓ add necessary snippets from [vim-snippets][5] repo
+    > well, the convert script has been written and still has room to optimize.
+
+4. add `abbr` to each snippet of snippets in neosnippets directory
+    > 1. `neosnippets` has a option `abbr` in snippets which should show what snippet
+    >    is about and what snippet is going to expand. It is composed of some words
+    >    used in snippet or other words related to the purpose of snippet.
+    > 2. This is difficult for manually adding `abbr`. Maybe it is easier to accomplish
+    >    with executing shell script and few manually adding operations.
 
 4. documentation of snippets(especially rails)
 
@@ -53,43 +68,48 @@
     > But I am not sure when I will complete it.
     > Just try!
 
+4. (optional) plugins as groups that can be enabled or disabled
+
 5. use less plugins as possible
 
     > This could be difficult for me now. I will try my best.
 
 6. fix issues met in use regularly
 
-## 几点说明
-+ 使用该配置前有些工作需要做，请参考[Requirements](docs/Requirements.md)
 
-+ 之所以用[neobundle][4]而不是[vundle][3]，纯粹是因为当时凑巧`vundle`用不了，
+## 几点说明
++ 使用该配置前有些工作需要做，请参考 [Requirements](docs/Requirements.md)
+
++ 之所以用 [neobundle][4] 而不是 [vundle][3]，纯粹是因为当时凑巧`vundle`用不了，
     各种无奈下只好用了`neobundle`
 
     > 1. `neobundle`的使用过程基本平滑，没有出现问题
-    > 2. `neobundle`对插件的各种“花式”写法体现了插件调用的灵活性，大大提高vim的启动和运行速度
+    > 2. `neobundle`对插件的各种“花式”写法体现了插件调用的灵活性，大大提高 vim 的启动和运行速度
     > 3. `neobundle`唯一不爽的是没有跟`vundle`一样的直观的插件列表
 
 + ✓ ~~目前此配置还在向着`1.0`版本进行着，我所期待的`1.0`主要是有以下几点：~~
 
     > ~~1. 插件基本齐全，多没关系，后面的版本可以慢慢删。但也不能多到插件映射打架~~
-    > ~~2. 至少对其中的一些配置写点文档，不然就算是我也难以记住这n多的快捷键~~
+    > ~~2. 至少对其中的一些配置写点文档，不然就算是我也难以记住这 n 多的快捷键~~
     >
-    > ~~目前第1点基本算是修修补补一路搞得差不多了，~~
-    > ~~第2点目前还没有想好到底要怎么来实现，~~
+    > ~~目前第 1 点基本算是修修补补一路搞得差不多了，~~
+    > ~~第 2 点目前还没有想好到底要怎么来实现，~~
     > ~~现在的打算是先把`snippets`的文档搞一搞，再把一些常用的操作映射写一写。~~
 
-+ 一些键盘映射可参考文档[Mappings](docs/Mappings.md)
++ 一些键盘映射可参考文档 [Mappings](docs/Mappings.md)
 
 + 接下来的目标暂时还没有，只是随时修补、改进
 
 + 这个配置的整个过程用到了`git-flow-avh`的工作流模型，基本的分支流程可以在`network`图中看到。
 
+
 ## 几点事项
-1. 这个配置只打算在linux上（目前是在archlinux）进行使用。
+1. 这个配置只在 Linux 上（目前是在 ArchLinux）进行使用。
 2. 这个配置并不完善，许多地方会有问题。
-3. 感谢 __Bram Moolenaar__ 和其他vim的维护者们创造了如此多彩的编辑器。
-3. 感谢 __Steve Francia__ 在github上分享了这么有用的配置。
-5. 感谢所有插件的作者与维护者们，你们共同创造了vim社区的现在。
+3. 感谢 __Bram Moolenaar__ 和其他 Vim 的维护者们创造了如此多彩的编辑器。
+3. 感谢 __Steve Francia__ 在 GitHub 上分享了这么有用的[配置][1]。
+5. 感谢所有插件的作者与维护者们，你们共同创造了 vim 社区的现在。
+
 
 ## 许可证
 > Copyright 2015 gisphm <phmfk@hotmail.com>
@@ -108,5 +128,6 @@
 
 [1]: https://github.com/spf13/spf13-vim.git
 [2]: https://github.com/gisphm/myneovimrc.git
-[3]: https://github.com/gmarik/Vundle.vim.git
+[3]: https://github.com/VundleVim/Vundle.vim.git
 [4]: https://github.com/Shougo/neobundle.vim.git
+[5]: https://github.com/honza/vim-snippets

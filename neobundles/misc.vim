@@ -33,7 +33,6 @@ NeoBundleLazy 'chrisbra/csv.vim', {
             \ 'filetypes' : 'csv',
             \ }
 NeoBundleLazy 'gisphm/vim-gitignore', {
-            \ 'rev' : 'develop',
             \ 'autoload' : { 'filetypes' : ['gitignore'] },
             \ }
 NeoBundleLazy 'tmux-plugins/vim-tmux', {

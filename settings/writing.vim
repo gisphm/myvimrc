@@ -22,7 +22,8 @@
 
 augroup MarkdownFiles
     autocmd!
-    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*}
+                \ setlocal filetype=markdown autoindent formatoptions=tcroqn2 comments=n:>
 augroup END
 let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1
@@ -39,5 +40,14 @@ let g:markdown_fenced_languages = [
             \ 'xml',
             \ 'vim',
             \ ]
+
+" }}}
+
+" Pangu {{{
+
+augroup PanguFormat
+    autocmd!
+    autocmd BufWritePre *.{md,mdwn,mkd,mkdn,mark*},*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
+augroup END
 
 " }}}

@@ -27,7 +27,7 @@ NeoBundleLazy 'amirh/HTML-AutoCloseTag', {
             \ 'filetypes' : ['html', 'eruby'],
             \ }
 NeoBundleLazy 'tpope/vim-haml', {
-            \ 'filetypes' : 'haml',
+            \ 'filetypes' : ['haml'],
             \ }
 NeoBundleLazy 'mattn/emmet-vim', {
             \ 'filetypes' : ['html', 'eruby', 'css', 'xml', 'javascript'],

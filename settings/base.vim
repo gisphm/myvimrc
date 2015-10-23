@@ -49,14 +49,12 @@ set virtualedit=onemore
 set history=1000
 set ttimeoutlen=50
 set linebreak
-let &showbreak='↪ '
+let &showbreak='↪'
 set spell
 set hidden
 set iskeyword-=.
 set iskeyword-=#
 set iskeyword-=-
-
-au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 
 augroup resCur
     autocmd!
@@ -76,14 +74,24 @@ set undodir=~/.vim/tmp/undo/
 set viewdir=~/.vim/tmp/view/
 set viminfo+=n$HOME/.vim/tmp/viminfo
 
+" Ctags {{{2
+
+set tags=tags,./tags;/,~/.vimtags,gems.tags,./gems.tags
+
+" Make tags placed in .git/tags file available in all levels of a repository
+let gitroot = substitute(system('git rev-parse --show-toplevel'), '[\n\r]', '', 'g')
+if gitroot != ''
+    let &tags = &tags . ',' . gitroot . '/.git/tags'
+endif
+
+" }}}2
+
 " Resolve performance problems
 " clear match command gracefully
 autocmd BufWinLeave * call clearmatches()
 
 if executable('ag')
     set grepprg=ag\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow
-elseif executable('ack')
-    set grepprg=ack\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow\ $*
 endif
 set grepformat=%f:%l:%c:%m
 
@@ -97,7 +105,7 @@ au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
 set cursorline cursorcolumn
 
-set listchars=tab:>-,trail:·
+set listchars=tab:➪Þ,trail:•,extends:#,nbsp:.,eol:¶
 if has('conceal')
     set listchars+=conceal:Δ
 endif
@@ -123,11 +131,11 @@ set number                      " Line numbers on
 set showmatch                   " Show matching brackets/parenthesis
 set incsearch                   " Find as you type search
 set hlsearch                    " Highlight search terms
-set winminheight=0              " Windows can be 0 line high
-set ignorecase                  " Case insensitive search
-set smartcase                   " Case sensitive when uc present
+set winminheight=0
+set ignorecase
+set smartcase
 set wildmenu                    " Show list instead of just completing
-set wildmode=list:longest,full  " Command <Tab> completion, list matches, then longest common part, then all.
+set wildmode=list:longest,full
 set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
 set scrolljump=5
 set scrolloff=3
@@ -142,7 +150,7 @@ set t_vb=
 " Formatting {{{
 
 set wrap
-set autoindent
+set autoindent smartindent
 set shiftwidth=4
 set expandtab
 set tabstop=4
@@ -151,9 +159,16 @@ set nojoinspaces
 set splitright
 set splitbelow
 set pastetoggle=<F12>
-autocmd FileType puppet,ruby,yml set expandtab shiftwidth=2 softtabstop=2
-autocmd BufNewFile,BufRead *.coffee set filetype=coffee
-autocmd FileType * autocmd BufWritePre <buffer> call Preserve("%s/\\s\\+$//e")
+augroup FileAutoCmd
+    autocmd!
+    autocmd FileType puppet,ruby,yml set expandtab shiftwidth=2 softtabstop=2
+    autocmd BufNewFile,BufRead *.coffee set filetype=coffee
+    autocmd FileType * autocmd BufWritePre <buffer> call Preserve("%s/\\s\\+$//e")
+    autocmd BufNewFile,BufRead Rakefile set foldmethod=syntax foldnestmax=1
+    au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
+    autocmd FileType gitcommit,qfreplace setlocal nofoldenable
+    autocmd FileType help set number
+augroup END
 
 " }}}
 
