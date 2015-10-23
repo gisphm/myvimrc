@@ -34,7 +34,7 @@ let g:AutoPairs = {
 
 " EasyAlign {{{
 
-vmap <Enter> <Plug>(EasyAlign)
+vmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " }}}
