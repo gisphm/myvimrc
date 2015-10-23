@@ -59,9 +59,6 @@ NeoBundle 'Shougo/unite-help'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-haystack'
-NeoBundle 'gisphm/auto-pairs', {
-            \ 'rev' : 'develop'
-            \ }
 NeoBundle 'kristijanhusak/vim-multiple-cursors'
 NeoBundle 'easymotion/vim-easymotion'
 NeoBundle 'flazz/vim-colorschemes'
@@ -73,11 +70,11 @@ NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-indent'
 NeoBundle 'gcmt/wildfire.vim'
 NeoBundle 'junegunn/vim-easy-align'
-NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'roman/golden-ratio'
 NeoBundle 'diffchar.vim'
 NeoBundle 'chrisbra/vim-diff-enhanced'
 NeoBundle 'kshenoy/vim-signature'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'cohama/lexima.vim'
 
 " }}}

@@ -2,7 +2,7 @@
 Unreleased / 2015-10-23
 =======================
 
-
+  * [Changed] use lexima as auto-close plugin
 
 vspacecheck / 2015-10-23
 ========================
