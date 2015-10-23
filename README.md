@@ -51,6 +51,13 @@
 4. ✓ add necessary snippets from [vim-snippets][5] repo
     > well, the convert script has been written and still has room to optimize.
 
+4. add `abbr` to each snippet of snippets in neosnippets directory
+    > 1. `neosnippets` has a option `abbr` in snippets which should show what snippet
+    >    is about and what snippet is going to expand. It is composed of some words
+    >    used in snippet or other words related to the purpose of snippet.
+    > 2. This is difficult for manually adding `abbr`. Maybe it is easier to accomplish
+    >    with executing shell script and few manually adding operations.
+
 4. documentation of snippets(especially rails)
 
     > ~~1. This is impossible for me...~~

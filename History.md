@@ -2,6 +2,7 @@
 Unreleased / 2015-10-23
 =======================
 
+  * [Added] add abbr to some snippets
   * [Changed] refactor space check in lightline
   * [Added] update some settings
   * [Changed] update README
