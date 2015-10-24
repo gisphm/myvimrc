@@ -77,6 +77,8 @@ NeoBundle 'diffchar.vim'
 NeoBundle 'chrisbra/vim-diff-enhanced'
 NeoBundle 'kshenoy/vim-signature'
 NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'cohama/lexima.vim'
+NeoBundle 'gisphm/auto-pairs'
+NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'tpope/vim-endwise'
 
 " }}}

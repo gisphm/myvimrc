@@ -18,9 +18,18 @@
 "
 " }}}
 
-" Lexima {{{
+" AutoPairs {{{
 
-let g:lexima_enable_space_rules = 0
+let g:AutoPairsFlyMode        = 0
+let g:AutoPairsMapSpace       = 0
+let g:AutoPairsMultilineClose = 0
+let g:AutoPairs = {
+            \ '(' : ')',
+            \ '[' : ']',
+            \ '{' : '}',
+            \ "'" : "'",
+            \ '"' : '"',
+            \ }
 
 " }}}
 
