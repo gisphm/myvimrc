@@ -15,11 +15,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-[[ -d ~/.vim/tmp/ ]] && rm -rf ~/.vim/tmp
-
+mkdir -p ~/.vim/session
 mkdir -p ~/.vim/bundle
 mkdir -p ~/.vim/tmp/backup
 mkdir -p ~/.vim/tmp/swap
 mkdir -p ~/.vim/tmp/undo
 mkdir -p ~/.vim/tmp/view
+
 [[ -d ~/.vim/bundle/neobundle.vim/ ]] || git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim

@@ -2,6 +2,7 @@
 Unreleased / 2015-10-24
 =======================
 
+  * [Added] simple but nice startify.vim
   * [Changed] revert back to auto-pairs
   * [Added] more plugins for neocomplete
   * [Changed] use lexima as auto-close plugin

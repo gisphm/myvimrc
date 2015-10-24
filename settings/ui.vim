@@ -35,6 +35,9 @@ let g:indent_guides_guide_size            = 1
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors           = 1
 
+let g:indent_guides_exclude_filetypes     =
+            \ ['help', 'vimfiler', 'startify', 'unite']
+
 " }}}
 
 " Lightline {{{
@@ -122,7 +125,7 @@ function! LightLineFilename()
 endfunction
 
 function! LightLineFugitive()
-    if &ft !~? 'help\|Tagbar\|vimfiler\|undotree' && exists("*fugitive#head")
+    if &ft !~? 'help\|Tagbar\|startify' && exists("*fugitive#head")
         let _ = fugitive#head()
         return strlen(_) ? '⭠ '._ : ''
     endif
@@ -173,6 +176,9 @@ function! LightLineMode()
 endfunction
 
 function! LightlineSpaceCheck() abort
+    if &filetype =~ 'Startify\|help\|unite\|vimfiler\|tagbar\|diff\|undotree'
+        return ''
+    endif
     if !exists("b:spacecheck_warning")
         let b:spacecheck_warning = ''
 
@@ -194,10 +200,10 @@ function! LightlineSpaceCheck() abort
             let b:spacecheck_warning .= printf('trail[%s]', space)
         endif
 
-        let long = search('\%>'.&tw.'v.\+', 'nw')
-        if long != 0
-            let b:spacecheck_warning .= printf('long[%s]', long)
-        endif
+        " let long = search('\%>'.&tw.'v.\+', 'nw')
+        " if long != 0
+        "     let b:spacecheck_warning .= printf('long[%s]', long)
+        " endif
     endif
     return b:spacecheck_warning
 endfunction
@@ -235,5 +241,44 @@ let g:golden_ratio_wrap_ignored = 1
 let g:golden_ratio_exclude_nonmodifiable = 1
 nnoremap <Space>rr <Plug>(golden_ratio_resize)
 nnoremap <Space>rt <Plug>(golden_ratio_toggle)
+
+" }}}
+
+" Startify {{{
+
+let g:startify_session_dir = '~/.vim/session'
+let g:startify_list_order = [
+            \ ['MRU'], 'files',
+            \ ['MRU DIR'], 'dir',
+            \ ['Sessions'], 'sessions',
+            \ ['Bookmarks'], 'bookmarks',
+            \ ]
+let g:startify_relative_path = 0
+let g:startify_files_number = 8
+let g:startify_session_persistence = 0
+let g:startify_session_autoload = 0
+let g:startify_session_delete_buffers =1
+let g:startify_change_to_dir = 0
+let g:startify_enable_special = 0
+let g:startify_enable_unsafe = 0
+
+let g:startify_skiplist = [
+            \ 'COMMIT_EDITMSG',
+            \ 'bundle/.*/doc',
+            \ '$VIMRUNTIME/',
+            \ ]
+
+function! s:center_header(lines) abort
+    let longest_line = max(map(copy(a:lines), 'len(v:val)'))
+    let centered_line = map(copy(a:lines), 'repeat(" ", (&columns / 2) - (longest_line / 2)) . v:val')
+    return centered_line
+endfunction
+
+if executable('fortune') || executable('cowsay')
+    let g:startify_custom_header =
+                \ s:center_header(split(system('fortune | cowthink'), '\n'))
+endif
+
+autocmd FileType startify set colorcolumn= nocursorline nocursorcolumn nospell
 
 " }}}
