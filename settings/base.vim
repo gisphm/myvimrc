@@ -28,6 +28,7 @@ scriptencoding utf-8
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,utf-16le,cp2512,iso-8859-15,latin1
+set sessionoptions=blank,buffers,curdir,folds,help,options,resize,slash,tabpages,unix,winpos,winsize
 
 if has('clipboard')
     if exists('$TMUX')
@@ -74,6 +75,15 @@ set undodir=~/.vim/tmp/undo/
 set viewdir=~/.vim/tmp/view/
 set viminfo+=n$HOME/.vim/tmp/viminfo
 
+" Resolve performance problems
+" clear match command gracefully
+autocmd BufWinLeave * call clearmatches()
+
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow
+endif
+set grepformat=%f:%l:%c:%m
+
 " Ctags {{{2
 
 set tags=tags,./tags;/,~/.vimtags,gems.tags,./gems.tags
@@ -85,15 +95,6 @@ if gitroot != ''
 endif
 
 " }}}2
-
-" Resolve performance problems
-" clear match command gracefully
-autocmd BufWinLeave * call clearmatches()
-
-if executable('ag')
-    set grepprg=ag\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow
-endif
-set grepformat=%f:%l:%c:%m
 
 " }}}
 

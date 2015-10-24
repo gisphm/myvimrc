@@ -1,4 +1,7 @@
 # 我的 vim 配置
+
+![My Vim](docs/startup.png)
+
 + fork 自 [spf13-vim][1]，一个相当有影响力的好配置。
 + 去掉了些自己不用的插件，也替换了一些，算是个性化了不少。
 + 此配置目前希望是有助于`Ruby on Rails`开发

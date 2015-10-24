@@ -2,6 +2,7 @@
 Unreleased / 2015-10-25
 =======================
 
+  * [Added] add screenshot of my vim
   * [Added] session management
   * [Added] vim-zsh and unicode.vim plugins
   * [Added] simple but nice startify.vim
