@@ -111,3 +111,18 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
 " }}}
+
+" Session {{{
+
+let g:session_directory         = '~/.vim/session'
+let g:session_lock_directory    = '~/.vim/lock'
+let g:session_autosave          = 'yes'
+let g:session_autoload          = 'no'
+let g:session_autosave_to       = '~/.vim/session/autosave.vim'
+let g:session_autosave_periodic = 0.5
+let g:session_autosave_silent   = 1
+let g:session_persist_colors    = 1
+let g:session_command_alias     = 1
+let g:session_menu              = 0
+
+" }}}

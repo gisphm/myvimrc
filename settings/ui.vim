@@ -246,27 +246,35 @@ nnoremap <Space>rt <Plug>(golden_ratio_toggle)
 
 " Startify {{{
 
-let g:startify_session_dir = '~/.vim/session'
-let g:startify_list_order = [
-            \ ['MRU'], 'files',
-            \ ['MRU DIR'], 'dir',
-            \ ['Sessions'], 'sessions',
-            \ ['Bookmarks'], 'bookmarks',
-            \ ]
+" Common {{{2
+
 let g:startify_relative_path = 0
-let g:startify_files_number = 8
+let g:startify_files_number = 5
 let g:startify_session_persistence = 0
 let g:startify_session_autoload = 0
 let g:startify_session_delete_buffers =1
-let g:startify_change_to_dir = 0
+let g:startify_change_to_dir = 1
+let g:startify_change_to_vcs_root = 1
 let g:startify_enable_special = 0
 let g:startify_enable_unsafe = 0
+let g:startify_session_dir = '~/.vim/session'
+let g:startify_list_order = [
+            \ ['MRU'], 'files',
+            \ ['Sessions'], 'sessions',
+            \ ]
 
 let g:startify_skiplist = [
             \ 'COMMIT_EDITMSG',
             \ 'bundle/.*/doc',
-            \ '$VIMRUNTIME/',
+            \ '^/tmp',
+            \ '/home/vagrant/tools',
             \ ]
+autocmd FileType startify
+            \ set colorcolumn= cursorline nocursorcolumn nospell textwidth=80
+
+" }}}2
+
+" Custom Header and Footer {{{2
 
 function! s:center_header(lines) abort
     let longest_line = max(map(copy(a:lines), 'len(v:val)'))
@@ -274,11 +282,184 @@ function! s:center_header(lines) abort
     return centered_line
 endfunction
 
-if executable('fortune') || executable('cowsay')
-    let g:startify_custom_header =
-                \ s:center_header(split(system('fortune | cowthink'), '\n'))
+function! RandomVim() abort
+    return str2nr(matchstr(reltimestr(reltime()), '\v\.@<=\d+')[1:])
+endfunction
+
+" function! RandomSystem() abort
+"     return system('echo $RANDOM')
+" endfunction
+
+function! RandomHeader() abort
+    return RandomVim() % 6
+endfunction
+
+" header images {{{3
+
+let ghost_head = [
+            \ '███████████████████████████',
+            \ '███████▀▀▀░░░░░░░▀▀▀███████',
+            \ '████▀░░░░░░░░░░░░░░░░░▀████',
+            \ '███│░░░░░░░░░░░░░░░░░░░│███',
+            \ '██▌│░░░░░░░░░░░░░░░░░░░│▐██',
+            \ '██░└┐░░░░░░░░░░░░░░░░░┌┘░██',
+            \ '██░░└┐░░░░░░░░░░░░░░░┌┘░░██',
+            \ '██░░┌┘▄▄▄▄▄░░░░░▄▄▄▄▄└┐░░██',
+            \ '██▌░│██████▌░░░▐██████│░▐██',
+            \ '███░│▐███▀▀░░▄░░▀▀███▌│░███',
+            \ '██▀─┘░░░░░░░▐█▌░░░░░░░└─▀██',
+            \ '██▄░░░▄▄▄▓░░▀█▀░░▓▄▄▄░░░▄██',
+            \ '████▄─┘██▌░░░░░░░▐██└─▄████',
+            \ '█████░░▐█─┬┬┬┬┬┬┬─█▌░░█████',
+            \ '████▌░░░▀┬┼┼┼┼┼┼┼┬▀░░░▐████',
+            \ '█████▄░░░└┴┴┴┴┴┴┴┘░░░▄█████',
+            \ '███████▄░░░░░░░░░░░▄███████',
+            \ '██████████▄▄▄▄▄▄▄██████████',
+            \ '███████████████████████████',
+            \ ]
+
+let mud_horse = [
+            \ '   ┌─┐       ┌─┐',
+            \ '┌──┘ ┴───────┘ ┴──┐',
+            \ '│                 │',
+            \ '│       ───       │',
+            \ '│  ─┬┘       └┬─  │',
+            \ '│                 │',
+            \ '│       ─┴─       │',
+            \ '│                 │',
+            \ '└───┐         ┌───┘',
+            \ '    │         │',
+            \ '    │         │',
+            \ '    │         │',
+            \ '    │         └──────────────┐',
+            \ '    │                        │',
+            \ '    │                        ├─┐',
+            \ '    │                        ┌─┘',
+            \ '    │                        │',
+            \ '    └─┐  ┐  ┌───────┬──┐  ┌──┘',
+            \ '      │ ─┤ ─┤       │ ─┤ ─┤',
+            \ '      └──┴──┘       └──┴──┘',
+            \ '          神兽保佑',
+            \ '          代码无BUG!',
+            \ ]
+
+let fuck_bug = [
+            \ '  █████▒█    ██  ▄████▄   ██ ▄█▀       ██████╗ ██╗   ██╗ ██████╗',
+            \ '▓██   ▒ ██  ▓██▒▒██▀ ▀█   ██▄█▒        ██╔══██╗██║   ██║██╔════╝',
+            \ '▒████ ░▓██  ▒██░▒▓█    ▄ ▓███▄░        ██████╔╝██║   ██║██║  ███╗',
+            \ '░▓█▒  ░▓▓█  ░██░▒▓▓▄ ▄██▒▓██ █▄        ██╔══██╗██║   ██║██║   ██║',
+            \ '░▒█░   ▒▒█████▓ ▒ ▓███▀ ░▒██▒ █▄       ██████╔╝╚██████╔╝╚██████╔╝',
+            \ ' ▒ ░   ░▒▓▒ ▒ ▒ ░ ░▒ ▒  ░▒ ▒▒ ▓▒       ╚═════╝  ╚═════╝  ╚═════╝',
+            \ ' ░     ░░▒░ ░ ░   ░  ▒   ░ ░▒ ▒░',
+            \ ' ░ ░    ░░░ ░ ░ ░        ░ ░░ ░',
+            \ '          ░     ░ ░      ░  ░',
+            \ '                ░',
+            \ ]
+
+let mud_horse_2 = [
+            \ ' ┏┓   ┏┓+ +',
+            \ '┏┛┻━━━┛┻┓ + +',
+            \ '┃       ┃',
+            \ '┃   ━   ┃ ++ + + +',
+            \ '████━████ +',
+            \ '┃       ┃ +',
+            \ '┃   ┻   ┃',
+            \ '┃       ┃ + +',
+            \ '┗━┓   ┏━┛',
+            \ '  ┃   ┃',
+            \ '  ┃   ┃ + + + +',
+            \ '  ┃   ┃    Codes are far away from bugs with the animal protecting',
+            \ '  ┃   ┃ +        神兽保佑, 代码无 bug',
+            \ '  ┃   ┃  ',
+            \ '  ┃   ┃  +',
+            \ '  ┃   ┗━━━┓ + +',
+            \ '  ┃       ┣┓',
+            \ '  ┃       ┏┛',
+            \ '  ┗┓┓┏━┳┓┏┛ + + + +',
+            \ '   ┃┫┫ ┃┫┫',
+            \ '   ┗┻┛ ┗┻┛+ + + +',
+            \ ]
+
+let mud_horse_3 = [
+            \ ' ┏┓   ┏┓',
+            \ '┏┛┻━━━┛┻┓',
+            \ '┃       ┃',
+            \ '┃   ━   ┃',
+            \ '┃ ┳┛ ┗┳ ┃',
+            \ '┃       ┃',
+            \ '┃   ┻   ┃',
+            \ '┃       ┃',
+            \ '┗━┓   ┏━┛Codes are far away from bugs with the animal protecting',
+            \ '  ┃   ┃    神兽保佑, 代码无 bug',
+            \ '  ┃   ┃',
+            \ '  ┃   ┗━━━┓',
+            \ '  ┃       ┣┓',
+            \ '  ┃       ┏┛',
+            \ '  ┗┓┓┏━┳┓┏┛',
+            \ '   ┃┫┫ ┃┫┫',
+            \ '   ┗┻┛ ┗┻┛',
+            \ ]
+
+let mud_horse_1 = [
+            \ ' ┏┓   ┏┓',
+            \ '┏┛┻━━━┛┻┓',
+            \ '┃       ┃',
+            \ '┃   ━   ┃',
+            \ '┃＞   ＜┃',
+            \ '┃       ┃',
+            \ '┃ . ⌒ ..┃',
+            \ '┃       ┃',
+            \ '┗━┓   ┏━┛',
+            \ '  ┃   ┃ Codes are far away from bugs with the animal protecting',
+            \ '  ┃   ┃    神兽保佑, 代码无 bug',
+            \ '  ┃   ┃',
+            \ '  ┃   ┗━━━┓',
+            \ '  ┃       ┣┓',
+            \ '  ┃       ┏┛',
+            \ '  ┗┓┓┏━┳┓┏┛',
+            \ '   ┃┫┫ ┃┫┫',
+            \ '   ┗┻┛ ┗┻┛',
+            \ ]
+
+" }}}3
+
+let headerIndex=RandomHeader()
+
+if headerIndex == 0
+    if executable('fortune') && executable('cowthink')
+        let custom_header = split(system('fortune -s | cowthink'), '\n')
+    else
+        let custom_header = ghost_head
+    endif
+elseif headerIndex == 1
+    let custom_header = mud_horse
+elseif headerIndex == 2
+    let custom_header = mud_horse_1
+elseif headerIndex == 3
+    let custom_header = mud_horse_2
+elseif headerIndex == 4
+    let custom_header = mud_horse_3
+elseif headerIndex == 5
+    let custom_header = fuck_bug
 endif
 
-autocmd FileType startify set colorcolumn= nocursorline nocursorcolumn nospell
+let g:startify_custom_header = s:center_header(custom_header)
+
+let g:startify_custom_footer =["", "", strftime('        %A %Y-%m-%d')]
+
+" }}}2
+
+" Highlights {{{2
+
+hi StartifyBracket ctermfg=240
+hi StartifyFile    ctermfg=147
+hi StartifyFooter  ctermfg=240
+hi StartifyHeader  ctermfg=114
+hi StartifyNumber  ctermfg=215
+hi StartifyPath    ctermfg=245
+hi StartifySlash   ctermfg=240
+hi StartifySpecial ctermfg=240
+
+" }}}2
 
 " }}}
