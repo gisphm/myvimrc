@@ -276,24 +276,6 @@ autocmd FileType startify
 
 " Custom Header and Footer {{{2
 
-function! s:center_header(lines) abort
-    let longest_line = max(map(copy(a:lines), 'len(v:val)'))
-    let centered_line = map(copy(a:lines), 'repeat(" ", (&columns / 2) - (longest_line / 2)) . v:val')
-    return centered_line
-endfunction
-
-function! RandomVim() abort
-    return str2nr(matchstr(reltimestr(reltime()), '\v\.@<=\d+')[1:])
-endfunction
-
-" function! RandomSystem() abort
-"     return system('echo $RANDOM')
-" endfunction
-
-function! RandomHeader() abort
-    return RandomVim() % 6
-endfunction
-
 " header images {{{3
 
 let ghost_head = [
@@ -423,6 +405,24 @@ let mud_horse_1 = [
 
 " }}}3
 
+function! s:center_header(lines) abort
+    let longest_line = max(map(copy(a:lines), 'len(v:val)'))
+    let centered_line = map(copy(a:lines), 'repeat(" ", (&columns / 2) - (longest_line / 2)) . v:val')
+    return centered_line
+endfunction
+
+function! RandomVim() abort
+    return str2nr(matchstr(reltimestr(reltime()), '\v\.@<=\d+')[1:])
+endfunction
+
+" function! RandomSystem() abort
+"     return system('echo $RANDOM')
+" endfunction
+
+function! RandomHeader() abort
+    return RandomVim() % 6
+endfunction
+
 let headerIndex=RandomHeader()
 
 if headerIndex == 0
@@ -439,7 +439,7 @@ elseif headerIndex == 3
     let custom_header = mud_horse_2
 elseif headerIndex == 4
     let custom_header = mud_horse_3
-elseif headerIndex == 5
+else
     let custom_header = fuck_bug
 endif
 
