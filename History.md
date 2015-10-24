@@ -1,7 +1,8 @@
 
-Unreleased / 2015-10-24
+Unreleased / 2015-10-25
 =======================
 
+  * [Added] vim-zsh and unicode.vim plugins
   * [Added] simple but nice startify.vim
   * [Changed] revert back to auto-pairs
   * [Added] more plugins for neocomplete
