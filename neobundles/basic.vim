@@ -51,6 +51,8 @@ NeoBundle 'Shougo/vimfiler.vim', {
             \ }
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'Shougo/unite-help'
+NeoBundle 'Shougo/neoyank.vim'
+NeoBundle 'ujihisa/neco-look'
 
 " }}}
 

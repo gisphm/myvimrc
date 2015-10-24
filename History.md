@@ -1,7 +1,8 @@
 
-Unreleased / 2015-10-23
+Unreleased / 2015-10-24
 =======================
 
+  * [Added] more plugins for neocomplete
   * [Changed] use lexima as auto-close plugin
 
 vspacecheck / 2015-10-23
