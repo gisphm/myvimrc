@@ -158,6 +158,9 @@ function! LightLineFileformat()
 endfunction
 
 function! LightLineFiletype()
+    if &filetype =~ 'Startify\|help\|unite\|vimfiler\|tagbar\|undotree'
+        return ''
+    endif
     return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : '') : ''
 endfunction
 

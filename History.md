@@ -1,7 +1,8 @@
 
-Unreleased / 2015-10-25
+Unreleased / 2015-10-26
 =======================
 
+  * [Changed] update ui and completion settings
   * [Changed] use unite-sesion
   * [Changed] replace set with setlocal
   * [Changed] replace vim-session with vim-prosession
