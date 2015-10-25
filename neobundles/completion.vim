@@ -38,6 +38,7 @@ NeoBundle 'Shougo/neosnippet.vim', {
             \   ],
             \ }
 NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'gisphm/vim-snippets-neosnippet'
 
 NeoBundle 'chrisbra/unicode.vim', {
             \ 'build' : {

@@ -51,13 +51,16 @@ NeoBundleLazy 'othree/jspc.vim', {
             \ 'autoload' : { 'filetypes' : ['javascript'] },
             \ }
 NeoBundleLazy 'pangloss/vim-javascript', {
-            \ 'autoload' : { 'filetypes' : ['javascript', 'html', 'css'] },
+            \ 'autoload' : { 'filetypes' : ['javascript', 'html'] },
             \ }
 NeoBundleLazy 'moll/vim-node', {
-            \ 'autoload' : { 'filetypes' : ['javascript', 'html', 'css'] },
+            \ 'autoload' : { 'filetypes' : ['javascript', 'html'] },
             \ }
 NeoBundleLazy 'heavenshell/vim-jsdoc', {
-            \ 'autoload' : { 'filetypes' : ['Javascript', 'html', 'css'] },
+            \ 'autoload' : { 'filetypes' : ['javascript', 'html'] },
+            \ }
+NeoBundleLazy 'mxw/vim-jsx', {
+            \ 'autoload' : { 'filetypes' : ['javascript', 'html', 'jsx']}
             \ }
 
 " }}}
