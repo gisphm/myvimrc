@@ -51,17 +51,17 @@ let g:lightline.active             = {
             \   ],
             \   'right': [
             \     [ 'syntastic', 'spacecheck', 'lineinfo' ],
-            \     [ 'percent' ],
+            \     [ 'percent', 'wordcount' ],
             \     [ 'fileformat', 'fileencoding', 'filetype' ]
             \   ]
             \ }
 let g:lightline.inactive           = {
             \   'left': [
             \     [ 'mode', 'paste' ],
-            \     [ 'fugitive', 'signify', 'filename' ],
+            \     [ 'fugitive', 'filename' ],
             \   ],
             \   'right': [
-            \     [ 'syntastic', 'spacecheck', 'lineinfo' ],
+            \     [ 'syntastic', 'lineinfo' ],
             \     [ 'percent' ],
             \     [ 'fileformat', 'fileencoding', 'filetype' ]
             \   ]
@@ -79,7 +79,8 @@ let g:lightline.component_function = {
             \   'filetype': 'LightLineFiletype',
             \   'fileencoding': 'LightLineFileencoding',
             \   'mode': 'LightLineMode',
-            \   'spacecheck': 'LightlineSpaceCheck'
+            \   'spacecheck': 'LightlineSpaceCheck',
+            \   'wordcount': 'LightlineWordCount'
             \ }
 let g:lightline.component_expand   = {
             \   'syntastic': 'SyntasticStatuslineFlag',
@@ -154,17 +155,23 @@ function! LightLineSignify()
 endfunction
 
 function! LightLineFileformat()
+    if &filetype =~ 'gitcommit\|startify\|help\|unite\|vimfiler\|tagbar\|diff\|undotree'
+        return ''
+    endif
     return winwidth(0) > 70 ? &fileformat : ''
 endfunction
 
 function! LightLineFiletype()
-    if &filetype =~ 'Startify\|help\|unite\|vimfiler\|tagbar\|undotree'
+    if &filetype =~ 'gitcommit\|startify\|help\|unite\|vimfiler\|tagbar\|diff\|undotree'
         return ''
     endif
     return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : '') : ''
 endfunction
 
 function! LightLineFileencoding()
+    if &filetype =~ 'gitcommit\|startify\|help\|unite\|vimfiler\|tagbar\|diff\|undotree'
+        return ''
+    endif
     return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
 endfunction
 
@@ -179,7 +186,7 @@ function! LightLineMode()
 endfunction
 
 function! LightlineSpaceCheck() abort
-    if &filetype =~ 'Startify\|help\|unite\|vimfiler\|tagbar\|diff\|undotree'
+    if &filetype =~ 'gitcommit\|startify\|help\|unite\|vimfiler\|tagbar\|diff\|undotree'
         return ''
     endif
     if !exists("b:spacecheck_warning")
@@ -209,6 +216,19 @@ function! LightlineSpaceCheck() abort
         " endif
     endif
     return b:spacecheck_warning
+endfunction
+
+function! LightlineWordCount() abort
+    if &filetype =~ 'gitcommit\|startify\|help\|unite\|vimfiler\|tagbar\|diff\|undotree'
+        return ''
+    endif
+    let lnum = 1
+    let n = 0
+    while lnum <= line('$')
+        let n = n + len(split(getline(lnum)))
+        let lnum = lnum + 1
+    endwhile
+    return n
 endfunction
 
 augroup SpaceCheck

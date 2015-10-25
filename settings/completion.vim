@@ -181,7 +181,11 @@ function! CleverTab()
         " nothing to match on empty string
         return "\<Tab>"
     else
-        return neocomplete#start_manual_complete()
+        if neosnippet#jumpable()
+            return "\<Plug>(neosnippet_jump)"
+        else
+            return neocomplete#start_manual_complete()
+        endif
     endif
 endfunction
 
@@ -201,6 +205,7 @@ let g:neosnippet#scope_aliases['ruby'] = 'ruby,rails,gemfile'
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 imap <expr><silent><C-k> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : (pumvisible() ? "\<C-e>" : "<Plug>(neosnippet_expand_or_jump)")
+smap <Tab> <Plug>(neosnippet_jump)
 inoremap <silent> (( <C-r>=neosnippet#anonymous('\left(${1}\right)${0}')<CR>
 
 " }}}

@@ -49,6 +49,7 @@ set viewoptions=folds,options,cursor,unix,slash
 set virtualedit=onemore
 set history=1000
 set ttimeoutlen=50
+set updatetime=1000
 set linebreak
 let &showbreak='↪'
 set spell
