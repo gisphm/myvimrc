@@ -2,6 +2,7 @@
 Unreleased / 2015-10-25
 =======================
 
+  * [Changed] replace set with setlocal
   * [Changed] replace vim-session with vim-prosession
   * [Changed] replace neosnippets with my repo
   * [Changed] rearrange code in startify settings

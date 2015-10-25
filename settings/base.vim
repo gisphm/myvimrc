@@ -165,7 +165,7 @@ augroup FileAutoCmd
     autocmd FileType * autocmd BufWritePre <buffer> call Preserve("%s/\\s\\+$//e")
     autocmd BufNewFile,BufRead Rakefile set foldmethod=syntax foldnestmax=1
     au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
-    autocmd FileType gitcommit set tw=72 colorcolumn=72
+    autocmd FileType gitcommit setlocal tw=72 colorcolumn=72
     autocmd FileType gitcommit,qfreplace setlocal nofoldenable
     autocmd FileType help set number
 augroup END
