@@ -114,8 +114,11 @@ map <Leader>k <Plug>(easymotion-k)
 
 " Session {{{
 
-let g:prosession_dir         = '~/.vim/session/'
-let g:prosession_on_startup  =0
-let g:prosession_per_branch = 1
+let g:unite_source_session_enable_auto_save = 1
+let g:unite_source_session_path = '~/.vim/session'
+let g:unite_source_session_enable_beta_feature = 1
+
+nnoremap <Space>o :UniteSessionSave
+nnoremap <Leader>o :UniteSessionLoad
 
 " }}}

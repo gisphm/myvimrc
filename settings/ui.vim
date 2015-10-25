@@ -444,7 +444,10 @@ endif
 
 let g:startify_custom_header = s:center_header(custom_header)
 
-let g:startify_custom_footer =["", "", strftime('        %A %Y-%m-%d')]
+let g:startify_custom_footer =[
+            \ "", "", strftime('        %A %Y-%m-%d'),
+            \ "        Welcome to Vim World!"
+            \ ]
 
 " }}}2
 

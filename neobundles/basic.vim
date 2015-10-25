@@ -51,6 +51,7 @@ NeoBundle 'Shougo/vimfiler.vim', {
             \ }
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'Shougo/unite-help'
+NeoBundle 'Shougo/unite-session'
 NeoBundle 'Shougo/neoyank.vim'
 NeoBundle 'ujihisa/neco-look'
 NeoBundle 'chrisbra/vim-zsh'
@@ -77,10 +78,6 @@ NeoBundle 'kshenoy/vim-signature'
 NeoBundle 'gisphm/auto-pairs'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'tpope/vim-endwise'
-NeoBundle 'tpope/vim-obsession'
-NeoBundle 'dhruvasagar/vim-prosession', {
-            \ 'depends' : 'tpope/vim-obsession'
-            \ }
 
 " }}}
 
