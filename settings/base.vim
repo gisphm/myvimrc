@@ -49,7 +49,6 @@ set viewoptions=folds,options,cursor,unix,slash
 set virtualedit=onemore
 set history=1000
 set ttimeoutlen=50
-set updatetime=1000
 set linebreak
 let &showbreak='↪'
 set spell
@@ -84,6 +83,42 @@ if executable('ag')
     set grepprg=ag\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow
 endif
 set grepformat=%f:%l:%c:%m
+
+" RestoreView {{{2
+
+let s:skipview_files = [
+            \ 'gitcommit', 'startify', 'undotree',
+            \ 'unite', 'vimfiler', 'tagbar',
+            \ 'help', 'diffpanel'
+            \ ]
+
+function! MakeViewCheck()
+    if &l:diff | return 0 | endif
+    if &buftype != '' | return 0 | endif
+    if expand('%') =~ '\[.*\]' | return 0 | endif
+    if empty(glob(expand('%:p'))) | return 0 | endif
+    if &modifiable == 0 | return 0 | endif
+    if len($TEMP) && expand('%:p:h') == $TEMP | return 0 | endif
+    if len($TMP) && expand('%:p:h') == $TMP | return 0 | endif
+
+    let file_name = expand('%:p')
+    for ifiles in s:skipview_files
+        if file_name =~ ifiles
+            return 0
+        endif
+    endfor
+
+    return 1
+endfunction
+
+augroup AutoView
+    autocmd!
+    " Autosave & Load Views.
+    autocmd BufWritePre,BufWinLeave ?* if MakeViewCheck() | silent! mkview | endif
+    autocmd BufWinEnter ?* if MakeViewCheck() | silent! loadview | endif
+augroup END
+
+" }}}2
 
 " Ctags {{{2
 

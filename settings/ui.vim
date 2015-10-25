@@ -106,6 +106,8 @@ let g:lightline.mode_map           = {
             \ '?': '      '
             \ }
 
+let s:skip_filetypes = 'gitcommit\|startify\|help\|unite\|vimfiler\|tagbar\|diffpanel\|undotree'
+
 function! LightLineModified()
     return &ft =~ 'help\|vimfiler\|undotree' ? '' : &modified ? '+' : &modifiable ? '' : '-'
 endfunction
@@ -155,21 +157,21 @@ function! LightLineSignify()
 endfunction
 
 function! LightLineFileformat()
-    if &filetype =~ 'gitcommit\|startify\|help\|unite\|vimfiler\|tagbar\|diff\|undotree'
+    if &filetype =~ s:skip_filetypes
         return ''
     endif
     return winwidth(0) > 70 ? &fileformat : ''
 endfunction
 
 function! LightLineFiletype()
-    if &filetype =~ 'gitcommit\|startify\|help\|unite\|vimfiler\|tagbar\|diff\|undotree'
+    if &filetype =~ s:skip_filetypes
         return ''
     endif
     return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : '') : ''
 endfunction
 
 function! LightLineFileencoding()
-    if &filetype =~ 'gitcommit\|startify\|help\|unite\|vimfiler\|tagbar\|diff\|undotree'
+    if &filetype =~ s:skip_filetypes
         return ''
     endif
     return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
@@ -186,55 +188,50 @@ function! LightLineMode()
 endfunction
 
 function! LightlineSpaceCheck() abort
-    if &filetype =~ 'gitcommit\|startify\|help\|unite\|vimfiler\|tagbar\|diff\|undotree'
+    if &filetype =~ s:skip_filetypes
         return ''
     endif
-    if !exists("b:spacecheck_warning")
-        let b:spacecheck_warning = ''
+    let spacecheck_warning = ''
 
-        " reference vim-airline
-        " allow certain number spaces after tabs
-        " let t_s_t = '(^\t* +\t\s*\S)'
-        " let t_l_s = '(^\t+ {' . &ts . ',}' . '\S)'
-        " let line = search('\v' . t_s_t . '|' t_l_s, 'nw')
-        " allow spaces after tabs
-        " let line = search('\v(^\t* +\t\s*\S)', 'nw')
-        " all spaces or tabs
-        let indent = search('\v(^\t+ +)|(^ +\t+)', 'nw')
-        if indent != 0
-            let b:spacecheck_warning .= printf('mixed[%s]', indent)
-        endif
-
-        let space = search('\s\+$', 'nw')
-        if space != 0
-            let b:spacecheck_warning .= printf('trail[%s]', space)
-        endif
-
-        " let long = search('\%>'.&tw.'v.\+', 'nw')
-        " if long != 0
-        "     let b:spacecheck_warning .= printf('long[%s]', long)
-        " endif
+    " reference vim-airline
+    " allow certain number spaces after tabs
+    " let t_s_t = '(^\t* +\t\s*\S)'
+    " let t_l_s = '(^\t+ {' . &ts . ',}' . '\S)'
+    " let line = search('\v' . t_s_t . '|' t_l_s, 'nw')
+    " allow spaces after tabs
+    " let line = search('\v(^\t* +\t\s*\S)', 'nw')
+    " all spaces or tabs
+    let indent = search('\v(^\t+ +)|(^ +\t+)', 'nw')
+    if indent != 0
+        let spacecheck_warning .= printf('mixed[%s]', indent)
     endif
-    return b:spacecheck_warning
+
+    let space = search('\s\+$', 'nw')
+    if space != 0
+        let spacecheck_warning .= printf('trail[%s]', space)
+    endif
+
+    " let long = search('\%>'.&tw.'v.\+', 'nw')
+    " if long != 0
+    "     let spacecheck_warning .= printf('long[%s]', long)
+    " endif
+    return spacecheck_warning
 endfunction
 
 function! LightlineWordCount() abort
-    if &filetype =~ 'gitcommit\|startify\|help\|unite\|vimfiler\|tagbar\|diff\|undotree'
+    if &filetype =~ s:skip_filetypes
         return ''
     endif
-    let lnum = 1
-    let n = 0
-    while lnum <= line('$')
-        let n = n + len(split(getline(lnum)))
-        let lnum = lnum + 1
-    endwhile
+    let old_status = v:statusmsg
+    execute "silent normal g\<C-g>"
+    if mode() ==# 'v' || mode() ==# 'V'
+        let n = str2nr(split(v:statusmsg)[7])
+    else
+        let n = str2nr(split(v:statusmsg)[11])
+    endif
+    let v:statusmsg = old_status
     return n
 endfunction
-
-augroup SpaceCheck
-    autocmd!
-    autocmd CursorHold,BufWritePost * unlet! b:spacecheck_warning
-augroup END
 
 let g:tagbar_status_func = 'TagbarStatusFunc'
 
