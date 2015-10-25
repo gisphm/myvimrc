@@ -77,9 +77,9 @@ NeoBundle 'kshenoy/vim-signature'
 NeoBundle 'gisphm/auto-pairs'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'tpope/vim-endwise'
-NeoBundle 'xolox/vim-misc'
-NeoBundle 'xolox/vim-session', {
-            \ 'depends' : ['xolox/vim-misc'],
+NeoBundle 'tpope/vim-obsession'
+NeoBundle 'dhruvasagar/vim-prosession', {
+            \ 'depends' : 'tpope/vim-obsession'
             \ }
 
 " }}}

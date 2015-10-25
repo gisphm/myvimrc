@@ -101,31 +101,9 @@ endif
 " Vim UI {{{
 
 set showmode
-
-au WinLeave * set nocursorline nocursorcolumn
-au WinEnter * set cursorline cursorcolumn
 set cursorline cursorcolumn
-
 set listchars=tab:➪Þ,trail:•,extends:#,nbsp:.,eol:¶
-if has('conceal')
-    set listchars+=conceal:Δ
-endif
-
 set colorcolumn=80
-
-highlight clear SignColumn
-highlight clear LineNr
-
-if has('cmdline_info')
-    set ruler
-    set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
-    set showcmd
-endif
-
-if has('statusline')
-    set laststatus=2
-endif
-
 set backspace=indent,eol,start
 set linespace=0                 " No extra spaces between rows
 set number                      " Line numbers on
@@ -145,6 +123,26 @@ set list
 set noerrorbells
 set novisualbell
 set t_vb=
+
+
+au WinLeave * set nocursorline nocursorcolumn
+au WinEnter * set cursorline cursorcolumn
+highlight clear SignColumn
+highlight clear LineNr
+
+if has('conceal')
+    set listchars+=conceal:Δ conceallevel=2 concealcursor=niv
+endif
+
+if has('cmdline_info')
+    set ruler
+    set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
+    set showcmd
+endif
+
+if has('statusline')
+    set laststatus=2
+endif
 
 " }}}
 
@@ -167,6 +165,7 @@ augroup FileAutoCmd
     autocmd FileType * autocmd BufWritePre <buffer> call Preserve("%s/\\s\\+$//e")
     autocmd BufNewFile,BufRead Rakefile set foldmethod=syntax foldnestmax=1
     au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
+    autocmd FileType gitcommit set tw=72 colorcolumn=72
     autocmd FileType gitcommit,qfreplace setlocal nofoldenable
     autocmd FileType help set number
 augroup END

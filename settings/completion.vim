@@ -156,11 +156,6 @@ let g:neocomplete#sources#vim#complete_functions = {
 
 " Mappings {{{2
 
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-imap <expr><silent><C-k> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : (pumvisible() ? "\<C-e>" : "<Plug>(neosnippet_expand_or_jump)")
-smap <silent><TAB> <Right><Plug>(neosnippet_jump_or_expand)
-
 inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><c-l> neocomplete#complete_common_string()
 
@@ -201,14 +196,17 @@ endfunction
 
 " neosnippet {{{
 
+let g:snips_author                     = "gisphm"
+let g:snips_email                      = "phmfk@hotmail.com"
+let g:snips_github                     = "https://github.com/gisphm"
 let g:neosnippet#expand_word_boundary  = 1
 let g:neosnippet#scope_aliases         = {}
 let g:neosnippet#scope_aliases['ruby'] = 'ruby,rails,gemfile'
 
-if has('conceal')
-    set conceallevel=2 concealcursor=niv
-endif
-
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+imap <expr><silent><C-k> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : (pumvisible() ? "\<C-e>" : "<Plug>(neosnippet_expand_or_jump)")
+smap <silent><TAB> <Right><Plug>(neosnippet_jump_or_expand)
 inoremap <silent> (( <C-r>=neosnippet#anonymous('\left(${1}\right)${0}')<CR>
 
 " }}}

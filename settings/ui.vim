@@ -248,22 +248,21 @@ nnoremap <Space>rt <Plug>(golden_ratio_toggle)
 
 " Common {{{2
 
-let g:startify_relative_path = 0
-let g:startify_files_number = 5
-let g:startify_session_persistence = 0
-let g:startify_session_autoload = 0
-let g:startify_session_delete_buffers =1
-let g:startify_change_to_dir = 1
-let g:startify_change_to_vcs_root = 1
-let g:startify_enable_special = 0
-let g:startify_enable_unsafe = 0
-let g:startify_session_dir = '~/.vim/session'
-let g:startify_list_order = [
+let g:startify_relative_path          = 0
+let g:startify_files_number           = 5
+let g:startify_session_persistence    = 0
+let g:startify_session_autoload       = 0
+let g:startify_session_delete_buffers = 1
+let g:startify_change_to_dir          = 1
+let g:startify_change_to_vcs_root     = 1
+let g:startify_enable_special         = 1
+let g:startify_enable_unsafe          = 0
+let g:startify_session_dir            = '~/.vim/session'
+let g:startify_list_order             = [
             \ ['MRU'], 'files',
             \ ['Sessions'], 'sessions',
             \ ]
-
-let g:startify_skiplist = [
+let g:startify_skiplist               = [
             \ 'COMMIT_EDITMSG',
             \ 'bundle/.*/doc',
             \ '^/tmp',
