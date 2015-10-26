@@ -1,7 +1,8 @@
 
-Unreleased / 2015-10-26
+Unreleased / 2015-10-27
 =======================
 
+  * [Changed] prefix for functions and variables
   * [Changed] update wordcount function
   * [Changed] update wordcount function
   * [Changed] update base and ui settings

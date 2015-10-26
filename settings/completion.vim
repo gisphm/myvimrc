@@ -156,22 +156,14 @@ let g:neocomplete#sources#vim#complete_functions = {
 
 " Mappings {{{2
 
-inoremap <expr><C-g> neocomplete#undo_completion()
-inoremap <expr><c-l> neocomplete#complete_common_string()
-
-" use space bar to close completion
-inoremap <expr><Space> pumvisible()? neocomplete#close_popup() : "\<Space>"
-
-" <TAB>: completion.
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
-imap <expr> <Tab> CleverTab()
+inoremap <expr><C-g> neocomplete#undo_completion()
+inoremap <expr><c-l> neocomplete#complete_common_string()
+inoremap <expr><Space> pumvisible()? neocomplete#close_popup() : "\<Space>"
+imap <expr> <Tab> <SID>CleverTab()
 
-" }}}2
-
-" Functions {{{2
-
-function! CleverTab()
+function! s:CleverTab()
     if pumvisible()
         return "\<C-n>"
     endif

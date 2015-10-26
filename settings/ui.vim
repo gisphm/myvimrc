@@ -123,9 +123,9 @@ function! LightLineReadonly()
 endfunction
 
 function! LightLineFilename()
-    let fname = expand('%:t')
-    return fname == '__Tagbar__' ? g:lightline.fname :
-                \ fname =~ 'undotree' ? '' :
+    let l:fname = expand('%:t')
+    return l:fname == '__Tagbar__' ? g:lightline.fname :
+                \ l:fname =~ 'undotree' ? '' :
                 \ &ft == 'vimfiler' ? vimfiler#get_status_string() :
                 \ &ft == 'unite' ? unite#get_status_string() :
                 \ ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
@@ -149,14 +149,14 @@ function! LightLineSignify()
 
     for i in range(3)
         if stats[i] > 0
-            let l:hunkline .= printf('%s%s ', symbols[i], stats[i])
+            let l:hunkline .= printf('%s%s ', l:symbols[i], l:stats[i])
         else
             let l:hunkline .= ''
         endif
     endfor
 
     if !empty(l:hunkline)
-        let l:hunkline = printf('%s', hunkline[:-2])
+        let l:hunkline = printf('%s', l:hunkline[:-2])
     endif
 
     return l:hunkline
@@ -184,10 +184,10 @@ function! LightLineFileencoding()
 endfunction
 
 function! LightLineMode()
-    let fname = expand('%:t')
-    return fname == '__Tagbar__' ? 'Tagbar' :
-                \ fname =~ 'undotree' ? 'UndoTree' :
-                \ fname =~ 'diffpanel' ? 'Undo Diff' :
+    let l:fname = expand('%:t')
+    return l:fname == '__Tagbar__' ? 'Tagbar' :
+                \ l:fname =~ 'undotree' ? 'UndoTree' :
+                \ l:fname =~ 'diffpanel' ? 'Undo Diff' :
                 \ &ft == 'unite' ? 'Unite' :
                 \ &ft == 'vimfiler' ? 'VimFiler' :
                 \ winwidth(0) > 60 ? lightline#mode() : ''
@@ -318,7 +318,7 @@ autocmd FileType startify
 
 " header images {{{3
 
-let ghost_head = [
+let s:ghost_head = [
             \ '███████████████████████████',
             \ '███████▀▀▀░░░░░░░▀▀▀███████',
             \ '████▀░░░░░░░░░░░░░░░░░▀████',
@@ -340,7 +340,7 @@ let ghost_head = [
             \ '███████████████████████████',
             \ ]
 
-let mud_horse = [
+let s:mud_horse = [
             \ '   ┌─┐       ┌─┐',
             \ '┌──┘ ┴───────┘ ┴──┐',
             \ '│                 │',
@@ -365,7 +365,7 @@ let mud_horse = [
             \ '          代码无BUG!',
             \ ]
 
-let fuck_bug = [
+let s:fuck_bug = [
             \ '  █████▒█    ██  ▄████▄   ██ ▄█▀       ██████╗ ██╗   ██╗ ██████╗',
             \ '▓██   ▒ ██  ▓██▒▒██▀ ▀█   ██▄█▒        ██╔══██╗██║   ██║██╔════╝',
             \ '▒████ ░▓██  ▒██░▒▓█    ▄ ▓███▄░        ██████╔╝██║   ██║██║  ███╗',
@@ -378,7 +378,7 @@ let fuck_bug = [
             \ '                ░',
             \ ]
 
-let mud_horse_2 = [
+let s:mud_horse_2 = [
             \ ' ┏┓   ┏┓+ +',
             \ '┏┛┻━━━┛┻┓ + +',
             \ '┃       ┃',
@@ -402,7 +402,7 @@ let mud_horse_2 = [
             \ '   ┗┻┛ ┗┻┛+ + + +',
             \ ]
 
-let mud_horse_3 = [
+let s:mud_horse_3 = [
             \ ' ┏┓   ┏┓',
             \ '┏┛┻━━━┛┻┓',
             \ '┃       ┃',
@@ -422,7 +422,7 @@ let mud_horse_3 = [
             \ '   ┗┻┛ ┗┻┛',
             \ ]
 
-let mud_horse_1 = [
+let s:mud_horse_1 = [
             \ ' ┏┓   ┏┓',
             \ '┏┛┻━━━┛┻┓',
             \ '┃       ┃',
@@ -446,12 +446,12 @@ let mud_horse_1 = [
 " }}}3
 
 function! s:center_header(lines) abort
-    let longest_line = max(map(copy(a:lines), 'len(v:val)'))
-    let centered_line = map(copy(a:lines), 'repeat(" ", (&columns / 2) - (longest_line / 2)) . v:val')
-    return centered_line
+    let l:longest_line = max(map(copy(a:lines), 'len(v:val)'))
+    let l:centered_line = map(copy(a:lines), 'repeat(" ", (&columns / 2) - (l:longest_line / 2)) . v:val')
+    return l:centered_line
 endfunction
 
-function! RandomVim() abort
+function! s:RandomVim() abort
     return str2nr(matchstr(reltimestr(reltime()), '\v\.@<=\d+')[1:])
 endfunction
 
@@ -459,31 +459,30 @@ endfunction
 "     return system('echo $RANDOM')
 " endfunction
 
-function! RandomHeader() abort
-    return RandomVim() % 6
+function! s:RandomHeader() abort
+    let l:headerIndex=s:RandomVim() % 6
+
+    if l:headerIndex == 0
+        if executable('fortune') && executable('cowthink')
+            let l:custom_header = split(system('fortune -s | cowthink'), '\n')
+        else
+            let l:custom_header = s:ghost_head
+        endif
+    elseif l:headerIndex == 1
+        let l:custom_header = s:mud_horse
+    elseif l:headerIndex == 2
+        let l:custom_header = s:mud_horse_1
+    elseif l:headerIndex == 3
+        let l:custom_header = s:mud_horse_2
+    elseif l:headerIndex == 4
+        let l:custom_header = s:mud_horse_3
+    else
+        let l:custom_header = s:fuck_bug
+    endif
+    return s:center_header(l:custom_header)
 endfunction
 
-let headerIndex=RandomHeader()
-
-if headerIndex == 0
-    if executable('fortune') && executable('cowthink')
-        let custom_header = split(system('fortune -s | cowthink'), '\n')
-    else
-        let custom_header = ghost_head
-    endif
-elseif headerIndex == 1
-    let custom_header = mud_horse
-elseif headerIndex == 2
-    let custom_header = mud_horse_1
-elseif headerIndex == 3
-    let custom_header = mud_horse_2
-elseif headerIndex == 4
-    let custom_header = mud_horse_3
-else
-    let custom_header = fuck_bug
-endif
-
-let g:startify_custom_header = s:center_header(custom_header)
+let g:startify_custom_header = s:RandomHeader()
 
 let g:startify_custom_footer =[
             \ "", "", strftime('        %A %Y-%m-%d'),
