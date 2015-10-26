@@ -203,7 +203,7 @@ augroup FileAutoCmd
     au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
     autocmd FileType gitcommit setlocal tw=72 colorcolumn=72
     autocmd FileType gitcommit,qfreplace setlocal nofoldenable
-    autocmd FileType help set number
+    autocmd FileType help setlocal number
 augroup END
 
 " }}}

@@ -42,6 +42,8 @@ let g:indent_guides_exclude_filetypes     =
 
 " Lightline {{{
 
+" Components {{{2
+
 let g:lightline                    = {}
 let g:lightline.colorscheme        = 'solarized'
 let g:lightline.active             = {
@@ -106,6 +108,10 @@ let g:lightline.mode_map           = {
             \ '?': '      '
             \ }
 
+" }}}2
+
+" Component Functions {{{2
+
 let s:skip_filetypes = 'gitcommit\|startify\|help\|unite\|vimfiler\|tagbar\|diffpanel\|undotree'
 
 function! LightLineModified()
@@ -136,24 +142,24 @@ function! LightLineFugitive()
 endfunction
 
 function! LightLineSignify()
-    let symbols = ['+', '-', '~']
+    let l:symbols = ['+', '-', '~']
     let [added, modified, removed] = sy#repo#get_stats()
-    let stats = [added, removed, modified]  " reorder
-    let hunkline = ''
+    let l:stats = [added, removed, modified]  " reorder
+    let l:hunkline = ''
 
     for i in range(3)
         if stats[i] > 0
-            let hunkline .= printf('%s%s ', symbols[i], stats[i])
+            let l:hunkline .= printf('%s%s ', symbols[i], stats[i])
         else
-            let hunkline .= ''
+            let l:hunkline .= ''
         endif
     endfor
 
-    if !empty(hunkline)
-        let hunkline = printf('%s', hunkline[:-2])
+    if !empty(l:hunkline)
+        let l:hunkline = printf('%s', hunkline[:-2])
     endif
 
-    return hunkline
+    return l:hunkline
 endfunction
 
 function! LightLineFileformat()
@@ -191,46 +197,60 @@ function! LightlineSpaceCheck() abort
     if &filetype =~ s:skip_filetypes
         return ''
     endif
-    let spacecheck_warning = ''
-
-    let indent = search('\v(^\t+ +)|(^ +\t+)', 'nw')
-    if indent != 0
-        let spacecheck_warning .= printf('mixed[%s]', indent)
+    let l:spacecheck_warning = ''
+    let l:indent = search('\v(^\t+ +)|(^ +\t+)', 'nw')
+    if l:indent != 0
+        let l:spacecheck_warning .= printf('mixed[%s]', l:indent)
     endif
-
-    let space = search('\s\+$', 'nw')
-    if space != 0
-        let spacecheck_warning .= printf('trail[%s]', space)
+    let l:space = search('\s\+$', 'nw')
+    if l:space != 0
+        let l:spacecheck_warning .= printf('trail[%s]', l:space)
     endif
-
-    return spacecheck_warning
+    return l:spacecheck_warning
 endfunction
 
 function! LightlineWordCount() abort
     if &filetype =~ s:skip_filetypes
         return ''
     endif
-    if !exists("b:word_count")
-        let b:word_count = ''
+    if !exists("s:word_count")
+        let s:word_count = ''
     endif
-    let old_count = b:word_count
-    if mode() ==# 'n'
-        let old_status = v:statusmsg
+
+    let l:current_mode = mode()
+    let l:old_count = s:word_count
+    if l:current_mode =~ '^n\|^v'
+        let l:old_status = v:statusmsg
         execute "silent normal g\<C-g>"
-        let b:word_count = str2nr(split(v:statusmsg)[11])
-        let v:statusmsg = old_status
-    elseif mode() ==# 'v' || mode() ==# 'V'
-        let old_status = v:statusmsg
-        execute "silent normal g\<C-g>"
-        let selected = str2nr(split(v:statusmsg)[5])
-        let word_count = str2nr(split(v:statusmsg)[7])
-        let b:word_count = printf('%s/%s', selected, word_count)
-        let v:statusmsg = old_status
+        let s:word_count = CountWord(v:statusmsg)
+        let v:statusmsg = l:old_status
     else
-        let b:word_count = old_count
+        let s:word_count = l:old_count
     endif
-    return b:word_count
+    return s:word_count
 endfunction
+
+function! CountWord(statusmsg) abort
+    let l:pattern = ".*\\d.*"
+    if a:statusmsg !~ l:pattern
+        return 0
+    endif
+    let l:string = ''
+    if a:statusmsg =~ 'words'
+        let l:string = matchstr(split(a:statusmsg), '\d\+', 0, 4)
+    elseif a:statusmsg =~ 'word'
+        let l:string = matchstr(split(a:statusmsg), '\d\+', 0, 6)
+    endif
+    if l:string =~ ';'
+        return strpart(l:string, 0, strlen(l:string) - 1)
+    else
+        return l:string
+    endif
+endfunction
+
+" }}}2
+
+" Others {{{2
 
 let g:tagbar_status_func = 'TagbarStatusFunc'
 
@@ -251,6 +271,8 @@ augroup END
 
 let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
+
+" }}}2
 
 " }}}
 
