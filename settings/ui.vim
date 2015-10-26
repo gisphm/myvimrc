@@ -193,14 +193,6 @@ function! LightlineSpaceCheck() abort
     endif
     let spacecheck_warning = ''
 
-    " reference vim-airline
-    " allow certain number spaces after tabs
-    " let t_s_t = '(^\t* +\t\s*\S)'
-    " let t_l_s = '(^\t+ {' . &ts . ',}' . '\S)'
-    " let line = search('\v' . t_s_t . '|' t_l_s, 'nw')
-    " allow spaces after tabs
-    " let line = search('\v(^\t* +\t\s*\S)', 'nw')
-    " all spaces or tabs
     let indent = search('\v(^\t+ +)|(^ +\t+)', 'nw')
     if indent != 0
         let spacecheck_warning .= printf('mixed[%s]', indent)
@@ -211,10 +203,6 @@ function! LightlineSpaceCheck() abort
         let spacecheck_warning .= printf('trail[%s]', space)
     endif
 
-    " let long = search('\%>'.&tw.'v.\+', 'nw')
-    " if long != 0
-    "     let spacecheck_warning .= printf('long[%s]', long)
-    " endif
     return spacecheck_warning
 endfunction
 
@@ -222,15 +210,26 @@ function! LightlineWordCount() abort
     if &filetype =~ s:skip_filetypes
         return ''
     endif
-    let old_status = v:statusmsg
-    execute "silent normal g\<C-g>"
-    if mode() ==# 'v' || mode() ==# 'V'
-        let n = str2nr(split(v:statusmsg)[7])
-    else
-        let n = str2nr(split(v:statusmsg)[11])
+    if !exists("b:word_count")
+        let b:word_count = ''
     endif
-    let v:statusmsg = old_status
-    return n
+    let old_count = b:word_count
+    if mode() ==# 'n'
+        let old_status = v:statusmsg
+        execute "silent normal g\<C-g>"
+        let b:word_count = str2nr(split(v:statusmsg)[11])
+        let v:statusmsg = old_status
+    elseif mode() ==# 'v' || mode() ==# 'V'
+        let old_status = v:statusmsg
+        execute "silent normal g\<C-g>"
+        let selected = str2nr(split(v:statusmsg)[5])
+        let word_count = str2nr(split(v:statusmsg)[7])
+        let b:word_count = printf('%s/%s', selected, word_count)
+        let v:statusmsg = old_status
+    else
+        let b:word_count = old_count
+    endif
+    return b:word_count
 endfunction
 
 let g:tagbar_status_func = 'TagbarStatusFunc'

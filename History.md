@@ -2,6 +2,7 @@
 Unreleased / 2015-10-26
 =======================
 
+  * [Changed] update wordcount function
   * [Changed] update base and ui settings
   * [Changed] completion, ui and markdown settings
   * [Changed] update ui and completion settings
