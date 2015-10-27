@@ -28,22 +28,22 @@
 
 
 ## things todo
-1. [x] replace nerdtree with vimfiler
+* [x] replace nerdtree with vimfiler
 
-2. [x] fix arrow key and esc mapping error
+* [x] fix arrow key and esc mapping error
 
-3. ~~complete install.sh~~
+* ~~complete install.sh~~
 
     > 1. After executing `[install.sh](scripts/install.sh)`, the basic plugin `neobundle` has been installed.
     > 2. When you open `vim`, `neobundle` will take care of all other plugins that need installing.
     > 2. Or, you can execute `vim +NeoBundleInstall +q +q` to install the rest plugins.
     > 3. So, in some way, this `[install.sh](scripts/install.sh)` is incomplete but enough to use.
 
-4. [x] split plugins list
+* [x] split plugins list
 
-4. [x] split plugins settings
+* [x] split plugins settings
 
-4. [x] fix rubycomplete issue
+* [x] fix rubycomplete issue
 
     > ~~well, this could be difficult.~~
     > ~~`neocomplete` says the `omnicomplete` of ruby provided by other plugins or vim~~
@@ -52,21 +52,21 @@
 
     > It seems that `vim-ruby` has fix this issue. What a great job!
 
-4. [x] write some mappings of `unite.vim` acting as `ctrlp.vim`
+* [x] write some mappings of `unite.vim` acting as `ctrlp.vim`
 
-4. [x] clean up neosnippets mappings
+* [x] clean up neosnippets mappings
     > those mappings are too complicated and most of them seem to be useless.
 
-4. ~~✓ replace neocomplete with youcompleteme~~
+* ~~✓ replace neocomplete with youcompleteme~~
     > ~~Just another trying for completion.~~
     > I just cannot stand the slow speed when trying to open tiny files.
 
-4. [ ] create own colorscheme for lightline
+* [ ] create own colorscheme for lightline
 
-4. ~~✓ add necessary snippets from [vim-snippets][5] repo~~
+* ~~✓ add necessary snippets from [vim-snippets][5] repo~~
     > ~~well, the convert script has been written and still has room to optimize.~~
 
-4. ~~add `abbr` to each snippet of snippets in neosnippets directory~~
+* ~~add `abbr` to each snippet of snippets in neosnippets directory~~
     > ~~1. `neosnippets` has a option `abbr` in snippets which should show what snippet
     >    is about and what snippet is going to expand. It is composed of some words
     >    used in snippet or other words related to the purpose of snippet.
@@ -75,7 +75,7 @@
 
     > Well, there is a new repo named `[vim-snippets-neosnippet][6]` aiming to provide this feature.
 
-4. [ ] documentation of snippets(especially rails)
+* [ ] documentation of snippets(especially rails)
 
     > ~~1. This is impossible for me...~~
     > ~~2. The snippets are too many... WTF ...~~
@@ -85,13 +85,13 @@
     > But I am not sure when I will complete it.
     > Just try!
 
-4. [ ] (optional) plugins as groups that can be enabled or disabled
+* [ ] plugins as groups that can be enabled or disabled (optional)
 
-5. [ ] use less plugins as possible
+* [ ] use less plugins as possible
 
     > This could be difficult for me now. I will try my best.
 
-6. [ ] fix issues met in use regularly
+* [ ] fix issues met in use regularly
 
 
 ## 几点说明
