@@ -2,6 +2,7 @@
 Unreleased / 2015-10-27
 =======================
 
+  * [Removed] delete cul and cuc for performance
   * [Changed] combine some settings together
   * [Changed] prefix for functions and variables
   * [Changed] update wordcount function

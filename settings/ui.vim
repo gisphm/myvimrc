@@ -310,7 +310,7 @@ let g:startify_skiplist               = [
             \ '/home/vagrant/tools',
             \ ]
 autocmd FileType startify
-            \ setlocal colorcolumn= cursorline nocursorcolumn nospell textwidth=80
+            \ setlocal colorcolumn= nospell
 
 " }}}2
 

@@ -140,23 +140,21 @@ set showmode
 set listchars=tab:➪Þ,trail:•,extends:#,nbsp:.,eol:¶
 set colorcolumn=80
 set backspace=indent,eol,start
-set linespace=0                 " No extra spaces between rows
-set number                      " Line numbers on
-set showmatch                   " Show matching brackets/parenthesis
+set linespace=0
+set number
+set showmatch
 set incsearch hlsearch
 set winminheight=0
 set ignorecase smartcase
-set wildmenu                    " Show list instead of just completing
+set wildmenu
 set wildmode=list:longest,full
-set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
+set whichwrap=b,s,h,l,<,>,[,]
 set scrolljump=5 scrolloff=3
 set foldenable
 set list
 set noerrorbells novisualbell
 set t_vb=
 
-au WinLeave * set nocursorline nocursorcolumn
-au WinEnter * set cursorline cursorcolumn
 highlight clear SignColumn
 highlight clear LineNr
 
@@ -192,7 +190,7 @@ augroup FileAutoCmd
     au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
     autocmd FileType gitcommit setlocal tw=72 colorcolumn=72
     autocmd FileType gitcommit,qfreplace setlocal nofoldenable
-    autocmd FileType help setlocal number nocursorline nocursorcolumn colorcolumn=
+    autocmd FileType help setlocal number colorcolumn=
 augroup END
 
 " }}}
