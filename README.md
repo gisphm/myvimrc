@@ -105,7 +105,7 @@
 
 + 之所以用 [neobundle][4] 而不是 [vundle][3]，纯粹是因为当时凑巧`vundle`用不了，
     各种无奈下只好用了`neobundle`
-    > 参看: [94b0d32078f76ba21120133a4f1c1297ee4865cb](https://github.com/gisphm/myvimrc/commit/94b0d32078f76ba21120133a4f1c1297ee4865cb)
+    > 0. [94b0d32078f76ba21120133a4f1c1297ee4865cb](https://github.com/gisphm/myvimrc/commit/94b0d32078f76ba21120133a4f1c1297ee4865cb)
     > 1. `neobundle`的使用过程基本平滑，没有出现问题
     > 2. `neobundle`对插件的各种“花式”写法体现了插件调用的灵活性，大大提高 vim 的启动和运行速度
     > 3. `neobundle`唯一不爽的是没有跟`vundle`一样的直观的插件列表
