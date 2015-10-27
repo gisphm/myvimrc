@@ -51,6 +51,10 @@ NeoBundle 'Shougo/vimfiler.vim', {
             \ }
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'Shougo/unite-help'
+NeoBundle 'Shougo/unite-session'
+NeoBundle 'Shougo/neoyank.vim'
+NeoBundle 'ujihisa/neco-look'
+NeoBundle 'chrisbra/vim-zsh'
 
 " }}}
 
@@ -59,25 +63,28 @@ NeoBundle 'Shougo/unite-help'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-haystack'
-NeoBundle 'gisphm/auto-pairs', {
-            \ 'rev' : 'develop'
-            \ }
 NeoBundle 'kristijanhusak/vim-multiple-cursors'
 NeoBundle 'easymotion/vim-easymotion'
-NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'mbbill/undotree'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'vim-scripts/restore_view.vim'
 NeoBundle 'tpope/vim-abolish.git'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-indent'
 NeoBundle 'gcmt/wildfire.vim'
-NeoBundle 'junegunn/vim-easy-align'
-NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'roman/golden-ratio'
 NeoBundle 'diffchar.vim'
 NeoBundle 'chrisbra/vim-diff-enhanced'
 NeoBundle 'kshenoy/vim-signature'
+NeoBundle 'gisphm/auto-pairs'
+NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'tpope/vim-endwise'
+
+" }}}
+
+" UI {{{
+
+NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'roman/golden-ratio'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'mhinz/vim-startify'
 
 " }}}

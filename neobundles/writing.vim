@@ -20,7 +20,10 @@
 
 " Writing {{{
 
+NeoBundle 'junegunn/vim-easy-align'
+NeoBundle 'godlygeek/tabular'
 NeoBundleLazy 'plasticboy/vim-markdown', {
+            \ 'depends' : ['godlygeek/tabular'],
             \ 'filetypes' : 'markdown',
             \ }
 NeoBundle 'vimwiki/vimwiki', 'dev'

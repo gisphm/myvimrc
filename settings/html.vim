@@ -20,50 +20,15 @@
 
 " emmet-vim {{{
 
-let g:user_emmet_settings = {
-            \ 'variables' : {
-            \   'lang' : 'en',
-            \ },
-            \ 'html' : {
-            \   'filters' : 'html',
-            \   'indentation' : ' ',
-            \   'expandos' : {
-            \     'ol': 'ol>li',
-            \       'list': 'ul>li*3',
-            \   },
-            \   'default_attributes': {
-            \     'a': {'href': ''},
-            \     'link': [{'rel': 'stylesheet'}, {'href': ''}],
-            \   },
-            \   'aliases': {
-            \     'bq': 'blockquote',
-            \     'obj': 'object',
-            \     'src': 'source',
-            \   },
-            \   'empty_elements': 'area,base,basefont,...,isindex,link,meta,...',
-            \   'block_elements': 'address,applet,blockquote,...,li,link,map,...',
-            \   'inline_elements': 'a,abbr,acronym,...',
-            \   'empty_element_suffix': ' />',
-            \ },
-            \ 'css' : {
-            \   'filters' : 'fc',
-            \ },
-            \ 'javascript' : {
-            \   'snippets' : {
-            \     'jq' : "\\$(function() {\n\t${cursor}${child}\n});",
-            \     'jq:each' : "\\$.each(arr, function(index, item)\n\t${child}\n});",
-            \     'fn' : "(function() {\n\t${cursor}\n})();",
-            \     'tm' : "setTimeout(function() {\n\t${cursor}\n}, 100);",
-            \   },
-            \ },
-            \ 'xml' : {
-            \   'extends' : 'html',
-            \ },
-            \ }
 let g:emmet_html5 = 1
 let g:user_emmet_install_global = 0
 let g:user_emmet_leader_key = '<Space>y'
-autocmd FileType html,css,eruby,xml,javascript EmmetInstall
+
+autocmd FileType html,css,eruby,xml,javascript,scss,jsx,less EmmetInstall
+
+let g:user_emmet_settings = webapi#json#decode(
+            \ join(readfile(expand('~/.vim/scripts/snippets.json')), "\n")
+            \ )
 
 " }}}
 

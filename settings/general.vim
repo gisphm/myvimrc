@@ -20,6 +20,7 @@
 
 " AutoPairs {{{
 
+let g:AutoPairsFlyMode        = 0
 let g:AutoPairsMapSpace       = 0
 let g:AutoPairsMultilineClose = 0
 let g:AutoPairs = {
@@ -27,15 +28,8 @@ let g:AutoPairs = {
             \ '[' : ']',
             \ '{' : '}',
             \ "'" : "'",
-            \ '"' : '"'
+            \ '"' : '"',
             \ }
-
-" }}}
-
-" EasyAlign {{{
-
-vmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
 
 " }}}
 
@@ -108,5 +102,16 @@ let g:EasyMotion_smartcase = 1
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+
+" }}}
+
+" Session {{{
+
+let g:unite_source_session_enable_auto_save = 1
+let g:unite_source_session_path = '~/.vim/session'
+let g:unite_source_session_enable_beta_feature = 1
+
+nnoremap <Space>o :UniteSessionSave
+nnoremap <Leader>o :UniteSessionLoad
 
 " }}}

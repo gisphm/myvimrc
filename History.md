@@ -1,6 +1,36 @@
 
-Unreleased / 2015-10-23
+Unreleased / 2015-10-27
 =======================
+
+  * [Changed] update README
+  * [Added] link to commit hash in markdown.snip
+  * [Changed] update settings and docs
+  * [Changed] rearrange README content
+  * [Changed] update README
+  * [Changed] update README
+  * [Removed] delete cul and cuc for performance
+  * [Changed] combine some settings together
+  * [Changed] prefix for functions and variables
+  * [Changed] update wordcount function
+  * [Changed] update wordcount function
+  * [Changed] update base and ui settings
+  * [Changed] completion, ui and markdown settings
+  * [Changed] update ui and completion settings
+  * [Changed] use unite-sesion
+  * [Changed] replace set with setlocal
+  * [Changed] replace vim-session with vim-prosession
+  * [Changed] replace neosnippets with my repo
+  * [Changed] rearrange code in startify settings
+  * [Added] add screenshot of my vim
+  * [Added] session management
+  * [Added] vim-zsh and unicode.vim plugins
+  * [Added] simple but nice startify.vim
+  * [Changed] revert back to auto-pairs
+  * [Added] more plugins for neocomplete
+  * [Changed] use lexima as auto-close plugin
+
+vspacecheck / 2015-10-23
+========================
 
   * [Fixed] unlet b:spacecheck_warning in augroup
 

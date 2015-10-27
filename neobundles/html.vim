@@ -30,7 +30,13 @@ NeoBundleLazy 'tpope/vim-haml', {
             \ 'filetypes' : ['haml'],
             \ }
 NeoBundleLazy 'mattn/emmet-vim', {
-            \ 'filetypes' : ['html', 'eruby', 'css', 'xml', 'javascript'],
+            \ 'filetypes' : ['html', 'eruby', 'css', 'xml', 'javascript', 'scss', 'less'],
+            \ }
+NeoBundle 'mattn/webapi-vim'
+NeoBundleLazy 'chrisgillis/vim-bootstrap3-snippets', {
+            \ 'autoload' : {
+            \     'filetypes' : ['html', 'eruby']
+            \   }
             \ }
 
 " }}}

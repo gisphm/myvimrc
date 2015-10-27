@@ -28,9 +28,6 @@ NeoBundleLazy 'stefanoverna/vim-i18n', {
 NeoBundleLazy 'killphi/vim-ruby-refactoring', {
             \ 'filetypes' : ['ruby','eruby'],
             \ }
-NeoBundleLazy 'tpope/vim-endwise', {
-            \ 'filetypes' : ['ruby','eruby'],
-            \ }
 NeoBundleLazy 'tpope/vim-rake', {
             \ 'filetypes' : ['ruby','eruby'],
             \ }

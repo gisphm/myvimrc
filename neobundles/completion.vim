@@ -38,5 +38,12 @@ NeoBundle 'Shougo/neosnippet.vim', {
             \   ],
             \ }
 NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'gisphm/vim-snippets-neosnippet'
+
+NeoBundle 'chrisbra/unicode.vim', {
+            \ 'build' : {
+            \     'linux' : 'mkdir -p autoload/unicode/ && wget -q http://www.unicode.org/Public/UNIDATA/UnicodeData.txt -O autoload/unicode/UnicodeData.txt',
+            \   },
+            \ }
 
 " }}}

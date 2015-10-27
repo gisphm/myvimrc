@@ -28,6 +28,7 @@ scriptencoding utf-8
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,utf-16le,cp2512,iso-8859-15,latin1
+set sessionoptions=blank,buffers,curdir,folds,help,options,resize,slash,tabpages,unix,winpos,winsize
 
 if has('clipboard')
     if exists('$TMUX')
@@ -58,7 +59,7 @@ set iskeyword-=-
 
 augroup resCur
     autocmd!
-    autocmd BufWinEnter * call ResCur()
+    autocmd BufWinEnter * call <SID>ResCur()
 augroup END
 
 set backup
@@ -74,6 +75,51 @@ set undodir=~/.vim/tmp/undo/
 set viewdir=~/.vim/tmp/view/
 set viminfo+=n$HOME/.vim/tmp/viminfo
 
+" Resolve performance problems
+" clear match command gracefully
+autocmd BufWinLeave * call clearmatches()
+
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow
+endif
+set grepformat=%f:%l:%c:%m
+
+" RestoreView {{{2
+
+let s:skipview_files = [
+            \ 'gitcommit', 'startify', 'undotree',
+            \ 'unite', 'vimfiler', 'tagbar',
+            \ 'help', 'diffpanel'
+            \ ]
+
+function! MakeViewCheck()
+    if &l:diff | return 0 | endif
+    if &buftype != '' | return 0 | endif
+    if expand('%') =~ '\[.*\]' | return 0 | endif
+    if empty(glob(expand('%:p'))) | return 0 | endif
+    if &modifiable == 0 | return 0 | endif
+    if len($TEMP) && expand('%:p:h') == $TEMP | return 0 | endif
+    if len($TMP) && expand('%:p:h') == $TMP | return 0 | endif
+
+    let file_name = expand('%:p')
+    for ifiles in s:skipview_files
+        if file_name =~ ifiles
+            return 0
+        endif
+    endfor
+
+    return 1
+endfunction
+
+augroup AutoView
+    autocmd!
+    " Autosave & Load Views.
+    autocmd BufWritePre,BufWinLeave ?* if MakeViewCheck() | silent! mkview | endif
+    autocmd BufWinEnter ?* if MakeViewCheck() | silent! loadview | endif
+augroup END
+
+" }}}2
+
 " Ctags {{{2
 
 set tags=tags,./tags;/,~/.vimtags,gems.tags,./gems.tags
@@ -86,34 +132,35 @@ endif
 
 " }}}2
 
-" Resolve performance problems
-" clear match command gracefully
-autocmd BufWinLeave * call clearmatches()
-
-if executable('ag')
-    set grepprg=ag\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow
-endif
-set grepformat=%f:%l:%c:%m
-
 " }}}
 
 " Vim UI {{{
 
 set showmode
-
-au WinLeave * set nocursorline nocursorcolumn
-au WinEnter * set cursorline cursorcolumn
-set cursorline cursorcolumn
-
 set listchars=tab:➪Þ,trail:•,extends:#,nbsp:.,eol:¶
-if has('conceal')
-    set listchars+=conceal:Δ
-endif
-
 set colorcolumn=80
+set backspace=indent,eol,start
+set linespace=0
+set number
+set showmatch
+set incsearch hlsearch
+set winminheight=0
+set ignorecase smartcase
+set wildmenu
+set wildmode=list:longest,full
+set whichwrap=b,s,h,l,<,>,[,]
+set scrolljump=5 scrolloff=3
+set foldenable
+set list
+set noerrorbells novisualbell
+set t_vb=
 
 highlight clear SignColumn
 highlight clear LineNr
+
+if has('conceal')
+    set listchars+=conceal:Δ conceallevel=2 concealcursor=niv
+endif
 
 if has('cmdline_info')
     set ruler
@@ -125,49 +172,25 @@ if has('statusline')
     set laststatus=2
 endif
 
-set backspace=indent,eol,start
-set linespace=0                 " No extra spaces between rows
-set number                      " Line numbers on
-set showmatch                   " Show matching brackets/parenthesis
-set incsearch                   " Find as you type search
-set hlsearch                    " Highlight search terms
-set winminheight=0
-set ignorecase
-set smartcase
-set wildmenu                    " Show list instead of just completing
-set wildmode=list:longest,full
-set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
-set scrolljump=5
-set scrolloff=3
-set foldenable
-set list
-set noerrorbells
-set novisualbell
-set t_vb=
-
 " }}}
 
 " Formatting {{{
 
 set wrap
 set autoindent smartindent
-set shiftwidth=4
-set expandtab
-set tabstop=4
-set softtabstop=4
+set expandtab shiftwidth=4 tabstop=4 softtabstop=4
 set nojoinspaces
-set splitright
-set splitbelow
-set pastetoggle=<F12>
+set splitright splitbelow
 augroup FileAutoCmd
     autocmd!
-    autocmd FileType puppet,ruby,yml set expandtab shiftwidth=2 softtabstop=2
+    autocmd FileType * autocmd BufWritePre <buffer> call <SID>Preserve("%s/\\s\\+$//e")
+    autocmd FileType puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
     autocmd BufNewFile,BufRead *.coffee set filetype=coffee
-    autocmd FileType * autocmd BufWritePre <buffer> call Preserve("%s/\\s\\+$//e")
-    autocmd BufNewFile,BufRead Rakefile set foldmethod=syntax foldnestmax=1
+    autocmd BufNewFile,BufRead Rakefile setlocal foldmethod=syntax foldnestmax=1
     au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
+    autocmd FileType gitcommit setlocal tw=72 colorcolumn=72
     autocmd FileType gitcommit,qfreplace setlocal nofoldenable
-    autocmd FileType help set number
+    autocmd FileType help setlocal number colorcolumn=
 augroup END
 
 " }}}
@@ -187,22 +210,22 @@ nnoremap k gk
 imap jk <ESC>
 
 " Map g* keys in Normal, Operator-pending, and Visual+select
-noremap $ :call WrapRelativeMotion("$")<CR>
-noremap <End> :call WrapRelativeMotion("$")<CR>
-noremap 0 :call WrapRelativeMotion("0")<CR>
-noremap <Home> :call WrapRelativeMotion("0")<CR>
-noremap ^ :call WrapRelativeMotion("^")<CR>
+noremap $ :call <SID>WrapRelativeMotion("$")<CR>
+noremap <End> :call <SID>WrapRelativeMotion("$")<CR>
+noremap 0 :call <SID>WrapRelativeMotion("0")<CR>
+noremap <Home> :call <SID>WrapRelativeMotion("0")<CR>
+noremap ^ :call <SID>WrapRelativeMotion("^")<CR>
 " Overwrite the operator pending $/<End> mappings from above
 " to force inclusive motion with :execute normal!
-onoremap $ v:call WrapRelativeMotion("$")<CR>
-onoremap <End> v:call WrapRelativeMotion("$")<CR>
+onoremap $ v:call <SID>WrapRelativeMotion("$")<CR>
+onoremap <End> v:call <SID>WrapRelativeMotion("$")<CR>
 " Overwrite the Visual+select mode mappings from above
 " to ensure the correct vis_sel flag is passed to function
-vnoremap $ :<C-U>call WrapRelativeMotion("$", 1)<CR>
-vnoremap <End> :<C-U>call WrapRelativeMotion("$", 1)<CR>
-vnoremap 0 :<C-U>call WrapRelativeMotion("0", 1)<CR>
-vnoremap <Home> :<C-U>call WrapRelativeMotion("0", 1)<CR>
-vnoremap ^ :<C-U>call WrapRelativeMotion("^", 1)<CR>
+vnoremap $ :<C-U>call <SID>WrapRelativeMotion("$", 1)<CR>
+vnoremap <End> :<C-U>call <SID>WrapRelativeMotion("$", 1)<CR>
+vnoremap 0 :<C-U>call <SID>WrapRelativeMotion("0", 1)<CR>
+vnoremap <Home> :<C-U>call <SID>WrapRelativeMotion("0", 1)<CR>
+vnoremap ^ :<C-U>call <SID>WrapRelativeMotion("^", 1)<CR>
 
 map <S-H> gT
 map <S-L> gt
@@ -296,7 +319,7 @@ nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 
 " Functions {{{
 
-function! Preserve(command)
+function! s:Preserve(command)
     let _s=@/
     let l=line(".")
     let c=col(".")
@@ -305,7 +328,7 @@ function! Preserve(command)
     call cursor(l,c)
 endfunction
 
-function! WrapRelativeMotion(key, ...)
+function! s:WrapRelativeMotion(key, ...)
     let vis_sel=""
     if a:0
         let vis_sel="gv"
@@ -317,7 +340,7 @@ function! WrapRelativeMotion(key, ...)
     endif
 endfunction
 
-function! ResCur()
+function! s:ResCur()
     if line("'\"") <= line("$")
         normal! g`"
         return 1
