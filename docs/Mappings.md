@@ -31,18 +31,33 @@
 1. `<Leader>ni :NeoBundleInstall`
 
 ## NeoComplete 和 NeoSnippets
-1. `<tab> CleverTab()` 这个 tab 键在这里扮演重要角色，类似`supertab`的功能。
+1. `<tab>` 这个 tab 键在这里扮演重要角色，有`supertab`的功能。
 即在 NeoComplete 和 Snippets 的选择中，tab 替代了 c-n，S-tab 替代了 c-p
 1. `<Space>` 在处于补全状态时，若有补全项被选中时，
 空格键直接把补全项补上并关闭补全弹出框，若无补全项被选中，则直接关闭补全弹出框。
 1. `<C-k>` 展开 Snippets，展开后，`<tab>`键作`Snippets`中跳转用。
 
 ## Unite
+1. __`<Space>u` [Unite]键__
+    * [Unite]r register
+    * [Unite]c 当前目录文件书签
+    * [Unite]b buffer 目录文件书签
+    * [Unite]y yank
+    * [Unite]m mru
+    * [Unite]q 快速搜索 buffer
+    * [Unite]o outline
+    * [Unite]p tagpages
+    * [Unite]n search
+    * [Unite]t tag
+    * [Unite]j jump
+    * [Unite]s jump through files and buffers
 1. `<Leader>b` buffer 列表
-1. `<Space>/` 正则搜索
-1. `<Space>ut` tabpage 列表
-1. `<Space>uo` 大纲列表（类似于 tagbar）
-1. `<Leader>y` yank 历史（vim 的内部复制历史列表）
+1. `<C-p>` Ctrl-P
+1. `<Space>n` UniteNext
+1. `<Space>p` UnitePrev
+1. `<Leader>d` UniteClose
+1. `<Space>o` UniteSessionSave
+1. `<Leader>o` UniteSessionLoad
 
 ## JSHint2
 1. `<Space>jh :JSHint`
@@ -64,6 +79,9 @@
 1. `<Leader>a, :Tabularize /,`
 1. `<Leader>a,, :Tabularize /,\zs`
 1. `<Leader>a<Bar> :Tabularize /<Bar>`
+
+## EasyAlign
+1. `ga` <Plug>(EasyAlign)
 
 ## EasyMotion
 1. `s <Plug>(easymotion-s2)` 搜索两个相邻字母

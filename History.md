@@ -2,6 +2,14 @@
 Unreleased / 2015-10-27
 =======================
 
+
+
+v1.4 / 2015-10-27
+=================
+
+  * [Changed] update README
+  * [Added] link to commit hash in markdown.snip
+  * [Changed] update settings and docs
   * [Changed] rearrange README content
   * [Changed] update README
   * [Changed] update README
