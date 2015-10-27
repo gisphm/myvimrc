@@ -2,6 +2,7 @@
 Unreleased / 2015-10-27
 =======================
 
+  * [Changed] update README
   * [Removed] delete cul and cuc for performance
   * [Changed] combine some settings together
   * [Changed] prefix for functions and variables

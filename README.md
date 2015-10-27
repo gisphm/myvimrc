@@ -2,36 +2,48 @@
 
 ![My Vim](docs/startup.png)
 
-+ fork 自 [spf13-vim][1]，一个相当有影响力的好配置。
-+ 去掉了些自己不用的插件，也替换了一些，算是个性化了不少。
-+ 此配置目前希望是有助于`Ruby on Rails`开发
++ 最初的配置来自自 [spf13-vim][1]，一个相当有影响力的好配置。
++ 创建自己配置的直接原因是 [spf13-vim][1] 在合并某次 pr 后让人用得不爽。
++ 创建配置的另一个原因是自己用 `Vim` 有一段时间了，是时候该自己定制一份专用配置。
++ 现在也还是在完善整个配置，插件增增减减，相应的配置也是如此。但相比最初的配置，个性化程度已经比较高了。
++ 此配置目前希望是有助于`Ruby on Rails`相关项目的开发。
 
 
-## 配置文件列表
+## 配置列表
 + __vimrc__ 主配置文件 -- [neobundle][4] 的初始化
+
 + __neobundles/__ 插件列表文件夹 -- 所有安装的插件
-+ __settings/__ 插件配置文件夹 -- 已安装插件的一些配置与 vim 的基本配置，与`neobundles`的分组对应
-+ __install.sh__ 辅助安装的文件 -- 生成`tmp`文件夹和克隆`neobundle.vim`
+
++ __settings/__ 插件配置文件夹 -- 已安装插件的一些配置与 Vim 的基本配置，与`neobundles`的分组对应
+
++ __scripts/__ 脚本文件文件夹 -- 包含两个文件
+    > 1. [install.sh](scripts/install.sh) -- 创建`tmp`目录、下载`neobundle`插件管理器
+    > 2. [post-commit](scripts/post-commit) -- 用于在提交时自动生成变更日志 [History.md](History.md) 的 hook 脚本
+
 + __bundle__ 插件的安装文件夹
+
 + __tmp__ vim 的`swap` `undo` `view` `backup`等目录所在的文件夹
+
++ __session__ vim 的`session`文件所在文件夹
 
 
 ## things todo
-1. ✓ replace nerdtree with vimfiler
+1. [x] replace nerdtree with vimfiler
 
-2. ✓ fix arrow key and esc mapping error
+2. [x] fix arrow key and esc mapping error
 
 3. ~~complete install.sh~~
 
-    > 1. After executing `install.sh`, the basic plugin `neobundle` has been installed.
+    > 1. After executing `[install.sh](scripts/install.sh)`, the basic plugin `neobundle` has been installed.
     > 2. When you open `vim`, `neobundle` will take care of all other plugins that need installing.
-    > 3. So, in some way, this `install.sh` is complete.
+    > 2. Or, you can execute `vim +NeoBundleInstall +q +q` to install the rest plugins.
+    > 3. So, in some way, this `[install.sh](scripts/install.sh)` is incomplete but enough to use.
 
-4. ✓ split plugins list
+4. [x] split plugins list
 
-4. ✓ split plugins settings
+4. [x] split plugins settings
 
-4. ✓ fix rubycomplete issue
+4. [x] fix rubycomplete issue
 
     > ~~well, this could be difficult.~~
     > ~~`neocomplete` says the `omnicomplete` of ruby provided by other plugins or vim~~
@@ -40,28 +52,30 @@
 
     > It seems that `vim-ruby` has fix this issue. What a great job!
 
-4. ✓ write some mappings of `unite.vim` acting as `ctrlp.vim`
+4. [x] write some mappings of `unite.vim` acting as `ctrlp.vim`
 
-4. ✓ clean up neosnippets mappings
+4. [x] clean up neosnippets mappings
     > those mappings are too complicated and most of them seem to be useless.
 
 4. ~~✓ replace neocomplete with youcompleteme~~
     > ~~Just another trying for completion.~~
     > I just cannot stand the slow speed when trying to open tiny files.
 
-4. create own colorscheme for lightline
+4. [ ] create own colorscheme for lightline
 
-4. ✓ add necessary snippets from [vim-snippets][5] repo
-    > well, the convert script has been written and still has room to optimize.
+4. ~~✓ add necessary snippets from [vim-snippets][5] repo~~
+    > ~~well, the convert script has been written and still has room to optimize.~~
 
-4. add `abbr` to each snippet of snippets in neosnippets directory
-    > 1. `neosnippets` has a option `abbr` in snippets which should show what snippet
+4. ~~add `abbr` to each snippet of snippets in neosnippets directory~~
+    > ~~1. `neosnippets` has a option `abbr` in snippets which should show what snippet
     >    is about and what snippet is going to expand. It is composed of some words
     >    used in snippet or other words related to the purpose of snippet.
     > 2. This is difficult for manually adding `abbr`. Maybe it is easier to accomplish
-    >    with executing shell script and few manually adding operations.
+    >    with executing a shell script.~~
 
-4. documentation of snippets(especially rails)
+    > Well, there is a new repo named `[vim-snippets-neosnippet][6]` aiming to provide this feature.
+
+4. [ ] documentation of snippets(especially rails)
 
     > ~~1. This is impossible for me...~~
     > ~~2. The snippets are too many... WTF ...~~
@@ -71,13 +85,13 @@
     > But I am not sure when I will complete it.
     > Just try!
 
-4. (optional) plugins as groups that can be enabled or disabled
+4. [ ] (optional) plugins as groups that can be enabled or disabled
 
-5. use less plugins as possible
+5. [ ] use less plugins as possible
 
     > This could be difficult for me now. I will try my best.
 
-6. fix issues met in use regularly
+6. [ ] fix issues met in use regularly
 
 
 ## 几点说明
@@ -103,7 +117,7 @@
 
 + 接下来的目标暂时还没有，只是随时修补、改进
 
-+ 这个配置的整个过程用到了`git-flow-avh`的工作流模型，基本的分支流程可以在`network`图中看到。
++ 这个配置的整个过程用了`[git-flow-avh][7]`，基本的分支流程可以在`network`图中看到。在此也向工具的作者 petervanderdoes 表达谢意。
 
 
 ## 几点事项
@@ -111,7 +125,7 @@
 2. 这个配置并不完善，许多地方会有问题。
 3. 感谢 __Bram Moolenaar__ 和其他 Vim 的维护者们创造了如此多彩的编辑器。
 3. 感谢 __Steve Francia__ 在 GitHub 上分享了这么有用的[配置][1]。
-5. 感谢所有插件的作者与维护者们，你们共同创造了 vim 社区的现在。
+5. 感谢所有插件及插件相关工具的作者与维护者们，你们共同创造了 Vim 与开源社区的现在。
 
 
 ## 许可证
@@ -134,3 +148,5 @@
 [3]: https://github.com/VundleVim/Vundle.vim.git
 [4]: https://github.com/Shougo/neobundle.vim.git
 [5]: https://github.com/honza/vim-snippets
+[6]: https://github.com/gisphm/vim-snippets-neosnippet.git
+[7]: https://github.com/petervanderdoes/gitflow-avh
