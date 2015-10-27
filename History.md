@@ -2,6 +2,7 @@
 Unreleased / 2015-10-27
 =======================
 
+  * [Changed] rearrange README content
   * [Changed] update README
   * [Changed] update README
   * [Removed] delete cul and cuc for performance

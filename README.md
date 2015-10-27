@@ -27,17 +27,10 @@
 + __session__ vim 的`session`文件所在文件夹
 
 
-## things todo
+## TODO List
 * [x] replace nerdtree with vimfiler
 
 * [x] fix arrow key and esc mapping error
-
-* ~~complete install.sh~~
-
-    > 1. After executing `[install.sh](scripts/install.sh)`, the basic plugin `neobundle` has been installed.
-    > 2. When you open `vim`, `neobundle` will take care of all other plugins that need installing.
-    > 2. Or, you can execute `vim +NeoBundleInstall +q +q` to install the rest plugins.
-    > 3. So, in some way, this `[install.sh](scripts/install.sh)` is incomplete but enough to use.
 
 * [x] split plugins list
 
@@ -57,23 +50,7 @@
 * [x] clean up neosnippets mappings
     > those mappings are too complicated and most of them seem to be useless.
 
-* ~~✓ replace neocomplete with youcompleteme~~
-    > ~~Just another trying for completion.~~
-    > I just cannot stand the slow speed when trying to open tiny files.
-
 * [ ] create own colorscheme for lightline
-
-* ~~✓ add necessary snippets from [vim-snippets][5] repo~~
-    > ~~well, the convert script has been written and still has room to optimize.~~
-
-* ~~add `abbr` to each snippet of snippets in neosnippets directory~~
-    > ~~1. `neosnippets` has a option `abbr` in snippets which should show what snippet
-    >    is about and what snippet is going to expand. It is composed of some words
-    >    used in snippet or other words related to the purpose of snippet.
-    > 2. This is difficult for manually adding `abbr`. Maybe it is easier to accomplish
-    >    with executing a shell script.~~
-
-    > Well, there is a new repo named `[vim-snippets-neosnippet][6]` aiming to provide this feature.
 
 * [ ] documentation of snippets(especially rails)
 
@@ -92,6 +69,29 @@
     > This could be difficult for me now. I will try my best.
 
 * [ ] fix issues met in use regularly
+
+* ~~complete install.sh~~
+
+    > 1. After executing [install.sh](scripts/install.sh), the basic plugin `neobundle` has been installed.
+    > 2. When you open `vim`, `neobundle` will take care of all other plugins that need installing.
+    > 2. Or, you can execute `vim +NeoBundleInstall +q +q` to install the rest plugins.
+    > 3. So, in some way, this [install.sh](scripts/install.sh) is incomplete but enough to use.
+
+* ~~✓ replace neocomplete with youcompleteme~~
+    > ~~Just another trying for completion.~~
+    > I just cannot stand the slow speed when trying to open tiny files.
+
+* ~~✓ add necessary snippets from [vim-snippets][5] repo~~
+    > ~~well, the convert script has been written and still has room to optimize.~~
+
+* ~~add `abbr` to each snippet of snippets in neosnippets directory~~
+    > ~~1. `neosnippets` has a option `abbr` in snippets which should show what snippet
+    >    is about and what snippet is going to expand. It is composed of some words
+    >    used in snippet or other words related to the purpose of snippet.
+    > 2. This is difficult for manually adding `abbr`. Maybe it is easier to accomplish
+    >    with executing a shell script.~~
+
+    > Well, there is a new repo named [vim-snippets-neosnippet][6] aiming to provide this feature.
 
 
 ## 几点说明
@@ -117,7 +117,7 @@
 
 + 接下来的目标暂时还没有，只是随时修补、改进
 
-+ 这个配置的整个过程用了`[git-flow-avh][7]`，基本的分支流程可以在`network`图中看到。在此也向工具的作者 petervanderdoes 表达谢意。
++ 这个配置的整个过程用了 [git-flow-avh][7]，基本的分支流程可以在`network`图中看到。在此也向工具的作者 petervanderdoes 表达谢意。
 
 
 ## 几点事项
