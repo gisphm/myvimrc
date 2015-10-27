@@ -33,13 +33,6 @@ let g:AutoPairs = {
 
 " }}}
 
-" EasyAlign {{{
-
-vmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
-
-" }}}
-
 " Wildfire {{{
 
 let g:wildfire_objects = {

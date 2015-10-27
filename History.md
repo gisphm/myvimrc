@@ -2,6 +2,7 @@
 Unreleased / 2015-10-27
 =======================
 
+  * [Changed] update settings and docs
   * [Changed] rearrange README content
   * [Changed] update README
   * [Changed] update README

@@ -87,3 +87,10 @@ if exists(":Tabularize")
 endif
 
 " }}}
+
+" EasyAlign {{{
+
+vmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
+" }}}
