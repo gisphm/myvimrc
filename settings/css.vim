@@ -23,9 +23,9 @@
 augroup VimCSS3Syntax
     autocmd!
     autocmd FileType css setlocal iskeyword+=-
+    autocmd FileType scss setlocal iskeyword+=-
+    au BufRead,BufNewFile *.scss setlocal filetype=scss.css
 augroup END
-au BufRead,BufNewFile *.scss set filetype=scss.css
-autocmd FileType scss set iskeyword+=-
 
 let g:colorizer_nomap = 1
 

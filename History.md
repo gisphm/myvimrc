@@ -1,8 +1,8 @@
 
-Unreleased / 2015-10-27
+Unreleased / 2015-10-28
 =======================
 
-
+  * [Changed] update some settings
 
 v1.4 / 2015-10-27
 =================

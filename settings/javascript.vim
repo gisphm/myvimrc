@@ -20,7 +20,7 @@
 
 " jshint2.vim {{{
 
-let jshint2_command = '/home/vagrant/tools/iojs/bin/jshint'
+let jshint2_command = '/home/vagrant/nodejs/bin/jshint'
 nnoremap <silent><Space>jh :JSHint<CR>
 nnoremap <silent><Space>jn :lnext<CR>
 nnoremap <silent><Space>jp :lprevious<CR>

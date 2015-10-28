@@ -127,7 +127,7 @@ nnoremap <silent> <Leader>d :UniteClose<CR>
 
 " unite function {{{2
 
-autocmd FileType unite call s:unite_my_settings()
+autocmd FileType unite call <SID>unite_my_settings()
 function! s:unite_my_settings()"
     " Overwrite settings.
 
