@@ -38,5 +38,6 @@ NeoBundleLazy 'gisphm/vim-gitignore', {
 NeoBundleLazy 'tmux-plugins/vim-tmux', {
             \ 'autoload' : { 'filetypes' : ['tmux'] },
             \ }
+NeoBundle 't9md/vim-smalls'
 
 " }}}

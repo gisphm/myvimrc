@@ -32,3 +32,11 @@ let g:licenses_authors_name           = 'gisphm <phmfk@hotmail.com>'
 let g:licenses_default_commands       = ['apache', 'unlicense', 'wtfpl']
 
 " }}}
+
+" Smalls {{{
+
+nmap f <Plug>(smalls)
+omap f <Plug>(smalls)
+xmap f <Plug>(smalls)
+
+" }}}

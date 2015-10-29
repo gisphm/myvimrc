@@ -269,7 +269,7 @@ augroup AutoSyntastic
     autocmd BufWritePost * call s:syntastic()
 augroup END
 
-let g:unite_force_overwrite_statusline = 0
+let g:unite_force_overwrite_statusline    = 0
 let g:vimfiler_force_overwrite_statusline = 0
 
 " }}}2
@@ -278,7 +278,7 @@ let g:vimfiler_force_overwrite_statusline = 0
 
 " Golden-Ratio {{{
 
-let g:golden_ratio_wrap_ignored = 1
+let g:golden_ratio_wrap_ignored          = 1
 let g:golden_ratio_exclude_nonmodifiable = 1
 nnoremap <Space>rr <Plug>(golden_ratio_resize)
 nnoremap <Space>rt <Plug>(golden_ratio_toggle)

@@ -1,7 +1,8 @@
 
-Unreleased / 2015-10-28
+Unreleased / 2015-10-30
 =======================
 
+  * [Added] vim-smalls for a try
   * [Changed] update some settings
 
 v1.4 / 2015-10-27
