@@ -81,6 +81,8 @@ autocmd BufWinLeave * call clearmatches()
 
 if executable('ag')
     set grepprg=ag\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow
+elseif executable('hw')
+    set grepprg=hw\ --no-group\ --no-color\ --follow-link
 endif
 set grepformat=%f:%l:%c:%m
 

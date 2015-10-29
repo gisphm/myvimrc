@@ -2,6 +2,7 @@
 Unreleased / 2015-10-30
 =======================
 
+  * [Added] hw as a candidate for unite and vimgrep
   * [Removed] unite_yank_enable according to doc
   * [Added] vim-smalls for a try
   * [Changed] update some settings
