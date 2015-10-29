@@ -67,7 +67,6 @@ call unite#custom#profile('default', 'context', {
 
 let g:unite_enable_auto_select            = 0
 let g:unite_prompt                        = '» '
-let g:unite_source_history_yank_enable    = 1
 let g:unite_source_rec_max_cache_files    = -1
 if executable('ag')
     let g:unite_source_grep_command       = 'ag'
