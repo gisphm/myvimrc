@@ -45,7 +45,7 @@ let g:indent_guides_exclude_filetypes     =
 " Components {{{2
 
 let g:lightline                    = {}
-let g:lightline.colorscheme        = 'solarized'
+let g:lightline.colorscheme        = 'phm'
 let g:lightline.active             = {
             \   'left': [
             \     [ 'mode', 'paste' ],

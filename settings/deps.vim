@@ -55,7 +55,7 @@ call unite#custom#source(
 call unite#filters#sorter_default#use(['sorter_rank'])
 
 call unite#custom#profile('default', 'context', {
-            \ 'start_insert' : 1,
+            \ 'start_insert' : 0,
             \ 'winheight' : 10,
             \ 'direction' : 'botright',
             \ 'short_source_names' : 1,
