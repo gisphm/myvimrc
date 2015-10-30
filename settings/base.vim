@@ -83,6 +83,8 @@ if executable('ag')
     set grepprg=ag\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow
 elseif executable('hw')
     set grepprg=hw\ --no-group\ --no-color\ --follow-link
+else
+    set grepprg=grep\ -rnH\ --exclude='.*.swp'\ --exclude='*~'\ --exclude=tags
 endif
 set grepformat=%f:%l:%c:%m
 
@@ -139,7 +141,7 @@ endif
 " Vim UI {{{
 
 set showmode
-set listchars=tab:➪Þ,trail:•,extends:#,nbsp:.,eol:¶
+set lazyredraw
 set colorcolumn=80
 set backspace=indent,eol,start
 set linespace=0
@@ -154,8 +156,16 @@ set whichwrap=b,s,h,l,<,>,[,]
 set scrolljump=5 scrolloff=3
 set foldenable
 set list
+set spell
+set spelllang=en_us
 set noerrorbells novisualbell
 set t_vb=
+if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
+    set listchars=tab:➪Þ,trail:•,extends:#,nbsp:.,eol:¶
+    let &fillchars="vert:\u259a,fold:\u00b7"
+else
+    set listchars=tab:>\,trail:-,extends:>,precedes:<
+endif
 
 highlight clear SignColumn
 highlight clear LineNr

@@ -18,7 +18,7 @@
 "
 " }}}
 
-" HTML {{{
+" Markup {{{
 
 NeoBundle 'othree/html5.vim', {
             \ 'filetypes' : ['html', 'eruby', 'javascript', 'css'],
@@ -38,5 +38,9 @@ NeoBundleLazy 'chrisgillis/vim-bootstrap3-snippets', {
             \     'filetypes' : ['html', 'eruby']
             \   }
             \ }
+NeoBundle 'Valloric/MatchTagAlways'
+NeoBundle 'sukima/xmledit'
+NeoBundle 'tpope/vim-ragtag'
+NeoBundle 'tpope/vim-unimpaired'
 
 " }}}
