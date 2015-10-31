@@ -2,6 +2,7 @@
 Unreleased / 2015-10-31
 =======================
 
+  * [Added] securemodelines for modeline parse
   * [Added] rainbow_parentheses
   * [Added] add some basic setting for vim
   * [Changed] use elzr's json instead
