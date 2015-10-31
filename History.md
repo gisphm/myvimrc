@@ -2,6 +2,7 @@
 Unreleased / 2015-10-31
 =======================
 
+  * [Changed] use elzr's json instead
   * [Added] polyglot -- collection of languages
   * [Added] more base settings and markup plugins
   * [Added] plan to create own lightline colorscheme
