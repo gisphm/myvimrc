@@ -161,7 +161,7 @@ set wildmenu
 set wildmode=list:longest,full
 set whichwrap=b,s,h,l,<,>,[,]
 set display=lastline,uhex
-set formatoptions+=amMj
+set formatoptions+=mMj
 set scrolljump=5 scrolloff=3
 set foldenable
 set list

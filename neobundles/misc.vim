@@ -44,6 +44,7 @@ NeoBundleLazy 'tmux-plugins/vim-tmux', {
             \ }
 NeoBundle 't9md/vim-smalls'
 NeoBundle 'sheerun/vim-polyglot'
+NeoBundle 'junegunn/rainbow_parentheses.vim'
 
 " }}}
 

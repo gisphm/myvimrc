@@ -46,3 +46,14 @@ xmap f <Plug>(smalls)
 let g:polyglot_disabled = [ 'javascript', 'json', 'markdown', 'ruby', 'tmux' ]
 
 " }}}
+
+" Rainbow Parentheses {{{
+
+let g:rainbow#max_level = 16
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['<', '>']]
+augroup Rainbow
+    autocmd!
+    autocmd FileType * RainbowParentheses
+augroup END
+
+" }}}
