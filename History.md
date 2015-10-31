@@ -2,6 +2,7 @@
 Unreleased / 2015-10-31
 =======================
 
+  * [Added] add some basic setting for vim
   * [Changed] use elzr's json instead
   * [Added] polyglot -- collection of languages
   * [Added] more base settings and markup plugins

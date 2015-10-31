@@ -20,7 +20,11 @@
 
 " General {{{
 
-set shell=/bin/sh
+if &shell =~# 'fish$'
+    set shell=/bin/bash
+else
+    set shell=/bin/sh
+endif
 set background=dark
 filetype plugin on
 syntax on
@@ -42,20 +46,23 @@ endif
 
 autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 
-set autowrite
+set autoread autowrite autowriteall
 set autochdir
 set shortmess+=filmnrxoOtT
 set viewoptions=folds,options,cursor,unix,slash
 set virtualedit=onemore
 set history=1000
 set ttimeoutlen=50
-set linebreak
-let &showbreak='↪'
 set spell
 set hidden
 set iskeyword-=.
 set iskeyword-=#
 set iskeyword-=-
+
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,.hg,*.gem
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.7z,*.lzma
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+set wildignore+=*.swp,*~,._*,*.bak*
 
 augroup resCur
     autocmd!
@@ -73,7 +80,7 @@ set dir=~/.vim/tmp/swap/
 set backupdir=~/.vim/tmp/backup/
 set undodir=~/.vim/tmp/undo/
 set viewdir=~/.vim/tmp/view/
-set viminfo+=n$HOME/.vim/tmp/viminfo
+set viminfo+=f1,n$HOME/.vim/tmp/viminfo viminfo^=!
 
 " Resolve performance problems
 " clear match command gracefully
@@ -140,7 +147,7 @@ endif
 
 " Vim UI {{{
 
-set showmode
+set noshowmode
 set lazyredraw
 set colorcolumn=80
 set backspace=indent,eol,start
@@ -153,6 +160,8 @@ set ignorecase smartcase
 set wildmenu
 set wildmode=list:longest,full
 set whichwrap=b,s,h,l,<,>,[,]
+set display=lastline,uhex
+set formatoptions+=amMj
 set scrolljump=5 scrolloff=3
 set foldenable
 set list
@@ -160,6 +169,8 @@ set spell
 set spelllang=en_us
 set noerrorbells novisualbell
 set t_vb=
+set wrap linebreak
+let &showbreak='↪ '
 if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
     set listchars=tab:➪Þ,trail:•,extends:#,nbsp:.,eol:¶
     let &fillchars="vert:\u259a,fold:\u00b7"
@@ -188,7 +199,6 @@ endif
 
 " Formatting {{{
 
-set wrap
 set autoindent smartindent
 set expandtab shiftwidth=4 tabstop=4 softtabstop=4
 set nojoinspaces
@@ -202,7 +212,7 @@ augroup FileAutoCmd
     au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
     autocmd FileType gitcommit setlocal tw=72 colorcolumn=72
     autocmd FileType gitcommit,qfreplace setlocal nofoldenable
-    autocmd FileType help setlocal number colorcolumn=
+    autocmd FileType help setlocal colorcolumn=
 augroup END
 
 " }}}
@@ -271,6 +281,10 @@ nmap <Leader>f9 :set foldlevel=9<CR>
 "UPPERCASE and lowsercase conversion
 nnoremap g^ gUiW
 nnoremap gv guiW
+
+" Auto center on matched string
+noremap n nzz
+noremap N Nzz
 
 "go to first and last char of line
 nnoremap H ^
