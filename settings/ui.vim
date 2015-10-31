@@ -166,14 +166,14 @@ function! LightLineFileformat()
     if &filetype =~ s:skip_filetypes
         return ''
     endif
-    return winwidth(0) > 70 ? &fileformat : ''
+    return winwidth(0) > 70 ? &fileformat . ' ' . WebDevIconsGetFileTypeSymbol() : ''
 endfunction
 
 function! LightLineFiletype()
     if &filetype =~ s:skip_filetypes
         return ''
     endif
-    return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : '') : ''
+    return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . '' . WebDevIconsGetFileTypeSymbol() : '') : ''
 endfunction
 
 function! LightLineFileencoding()
@@ -503,5 +503,23 @@ hi StartifySlash   ctermfg=240
 hi StartifySpecial ctermfg=240
 
 " }}}2
+
+" }}}
+
+" Devicons {{{
+
+let g:webdevicons_enable                                        = 1
+let g:webdevicons_enable_nerdtree                               = 0
+let g:webdevicons_enable_unite                                  = 1
+let g:webdevicons_enable_vimfiler                               = 1
+let g:webdevicons_enable_airline_tabline                        = 0
+let g:webdevicons_enable_airline_statusline                     = 0
+let g:webdevicons_enable_airline_statusline_fileformat_symbols  = 0
+let g:webdevicons_enable_ctrlp                                  = 0
+let g:webdevicons_enable_flagship_statusline                    = 0
+let g:webdevicons_enable_flagship_statusline_fileformat_symbols = 0
+let g:WebDevIconsUnicodeGlyphDoubleWidth                        = 0
+let g:WebDevIconsUnicodeDecorateFileNodes                       = 1
+let g:webdevicons_conceal_nerdtree_brackets                     = 0
 
 " }}}

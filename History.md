@@ -2,6 +2,7 @@
 Unreleased / 2015-10-31
 =======================
 
+  * [Added] devicons for fun icons
   * [Added] another emoji dictionary file
   * [Added] emoji dictionary for markdown files
   * [Added] securemodelines for modeline parse

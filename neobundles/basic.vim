@@ -78,13 +78,3 @@ NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'tpope/vim-endwise'
 
 " }}}
-
-" UI {{{
-
-NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'roman/golden-ratio'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'mhinz/vim-startify'
-
-" }}}
