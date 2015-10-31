@@ -20,11 +20,7 @@
 
 " Programming {{{
 
-NeoBundle 'tpope/vim-git'
-NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-dispatch'
-NeoBundle 'idanarye/vim-merginal'
-NeoBundle 'int3/vim-extradite'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'mhinz/vim-signify'
 NeoBundle 'tomtom/tcomment_vim'

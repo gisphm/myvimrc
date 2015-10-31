@@ -43,5 +43,14 @@ NeoBundleLazy 'tmux-plugins/vim-tmux', {
             \ 'autoload' : { 'filetypes' : ['tmux'] },
             \ }
 NeoBundle 't9md/vim-smalls'
+NeoBundle 'sheerun/vim-polyglot'
+
+" }}}
+
+" Git Staff {{{
+
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'idanarye/vim-merginal'
+NeoBundle 'int3/vim-extradite'
 
 " }}}

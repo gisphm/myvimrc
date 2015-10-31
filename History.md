@@ -2,6 +2,7 @@
 Unreleased / 2015-10-31
 =======================
 
+  * [Added] polyglot -- collection of languages
   * [Added] more base settings and markup plugins
   * [Added] plan to create own lightline colorscheme
   * [Added] hw as a candidate for unite and vimgrep

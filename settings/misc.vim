@@ -40,3 +40,9 @@ omap f <Plug>(smalls)
 xmap f <Plug>(smalls)
 
 " }}}
+
+" Ployglot {{{
+
+let g:polyglot_disabled = [ 'markdown', 'javascript', 'ruby', 'tmux' ]
+
+" }}}

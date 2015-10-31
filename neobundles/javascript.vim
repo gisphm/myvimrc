@@ -20,12 +20,6 @@
 
 " Javascript {{{
 
-NeoBundleLazy 'briancollins/vim-jst', {
-            \ 'autoload' : { 'filetypes' : ['javascript'] },
-            \ }
-NeoBundleLazy 'kchmck/vim-coffee-script', {
-            \ 'autoload' : { 'filetypes' : ['javascript','markdown'] },
-            \ }
 NeoBundleLazy 'marijnh/tern_for_vim', {
             \ 'autoload' : { 'filetypes' : ['javascript'] },
             \ 'build' : {
@@ -58,9 +52,6 @@ NeoBundleLazy 'moll/vim-node', {
             \ }
 NeoBundleLazy 'heavenshell/vim-jsdoc', {
             \ 'autoload' : { 'filetypes' : ['javascript', 'html'] },
-            \ }
-NeoBundleLazy 'mxw/vim-jsx', {
-            \ 'autoload' : { 'filetypes' : ['javascript', 'html', 'jsx']}
             \ }
 
 " }}}
