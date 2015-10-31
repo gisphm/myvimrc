@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+emoji_file=emoji.json
+emoji_dict=~/.vim/words/emoji_dict
+
+[[ -f "$emoji_dict" ]] && rm $emoji_dict
+
+cd ~/.vim/tmp/
+
+[[ -f "$emoji_file" ]] && rm $emoji_file
+
+wget https://github.com/github/gemoji/raw/master/db/emoji.json
+
+cat emoji.json | jq '.[].aliases[]' | sort > dict && sed -i 's/\"/\:/' dict && sed -i 's/\"/\:/' dict
+
+mv dict $emoji_dict
+
+cd
+
+exit

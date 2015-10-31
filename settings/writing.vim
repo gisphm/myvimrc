@@ -24,6 +24,7 @@ augroup MarkdownFiles
     autocmd!
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*}
                 \ setlocal filetype=markdown formatoptions=tcroqn2 comments=n:>
+    autocmd FileType markdown execute 'setlocal dict+=~/.vim/words/emoji_dict'
 augroup END
 let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1

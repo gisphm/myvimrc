@@ -2,6 +2,7 @@
 Unreleased / 2015-10-31
 =======================
 
+  * [Added] emoji dictionary for markdown files
   * [Added] securemodelines for modeline parse
   * [Added] rainbow_parentheses
   * [Added] add some basic setting for vim
