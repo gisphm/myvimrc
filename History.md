@@ -2,6 +2,7 @@
 Unreleased / 2015-11-01
 =======================
 
+  * [Removed] one mapping in vimfiler
   * [Fixed] improve base and ui settings
   * [Changed] update README
   * [Changed] mappings for neobundle

@@ -205,10 +205,6 @@ function! s:vimfiler_my_settings() abort
                 \ vimfiler#do_switch_action('vsplite')
     nnoremap <silent><buffer><expr> s
                 \ vimfiler#do_switch_action('split')
-    if !empty(unite#get_filters('matcher_migemo'))
-        nnoremap <silent><buffer><expr> / line('$') > 10000 ? 'g/' :
-                    \ ":\<C-u>Unite -buffer-name=search -start-insert line_migemo\<CR>"
-    endif
 endfunction
 augroup VimFilerSetting
     autocmd!
