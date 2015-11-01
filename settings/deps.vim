@@ -20,8 +20,8 @@
 
 " NeoBundle {{{
 
-nnoremap <Leader>nu :NeoBundleUpdate<CR>
-nnoremap <Leader>ni :NeoBundleInstall<CR>
+nnoremap <Leader>nu :Unite neobundle/update -log -wrap -auto-quit<CR>
+nnoremap <Leader>ni :Unite neobundle/install -auto-quit<CR>
 nnoremap <Leader>nc :NeoBundleClean<CR>
 nnoremap <Leader>nl :NeoBundleUpdatesLog<CR>
 

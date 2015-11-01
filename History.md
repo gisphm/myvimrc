@@ -1,7 +1,8 @@
 
-Unreleased / 2015-10-31
+Unreleased / 2015-11-01
 =======================
 
+  * [Changed] mappings for neobundle
   * [Added] devicons for fun icons
   * [Added] another emoji dictionary file
   * [Added] emoji dictionary for markdown files
