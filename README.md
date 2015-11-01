@@ -72,7 +72,8 @@
 
 * [ ] use less plugins as possible
 
-    > This could be difficult for me now. I will try my best.
+    > 1. This could be difficult for me now. I will try my best.
+    > 2. Make a plugin as a plugin collection, just as how polyglot has done.
 
 * [ ] fix issues met in use regularly
 

@@ -43,7 +43,7 @@ xmap f <Plug>(smalls)
 
 " Ployglot {{{
 
-let g:polyglot_disabled = [ 'javascript', 'json', 'markdown', 'ruby', 'tmux' ]
+let g:polyglot_disabled = [ 'javascript', 'json', 'markdown', 'tmux' ]
 
 " }}}
 

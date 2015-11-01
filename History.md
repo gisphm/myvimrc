@@ -2,6 +2,7 @@
 Unreleased / 2015-11-01
 =======================
 
+  * [Changed] update README
   * [Changed] mappings for neobundle
   * [Added] devicons for fun icons
   * [Added] another emoji dictionary file
