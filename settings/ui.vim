@@ -224,6 +224,9 @@ function! LightlineWordCount() abort
         execute "silent normal g\<C-g>"
         let s:word_count = CountWord(v:statusmsg)
         let v:statusmsg = l:old_status
+        if s:word_count == '0'
+            let s:word_count = ''
+        endif
     else
         let s:word_count = l:old_count
     endif

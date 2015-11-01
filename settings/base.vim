@@ -339,7 +339,7 @@ nnoremap <silent> <Leader>q gwip
 " fullscreen mode for GVIM and Terminal, need 'wmctrl' in you PATH
 map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
 
-nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
+nmap _$ :call <SID>Preserve("%s/\\s\\+$//e")<CR>
 
 " }}}
 
