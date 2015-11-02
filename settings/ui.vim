@@ -68,7 +68,6 @@ let g:lightline.inactive           = {
             \   ]
             \ }
 let g:lightline.component_function = {
-            \   'mode'         : 'LightLineMode',
             \   'percent'      : 'LightlinePercent',
             \   'lineinfo'     : 'LightlineLineinfo',
             \   'fugitive'     : 'LightLineFugitive',
@@ -132,6 +131,9 @@ function! LightLineFilename()
 endfunction
 
 function! LightLineFugitive()
+    if winwidth(0) < 50
+        return ''
+    endif
     if &ft !~? 'help\|Tagbar\|startify' && exists("*fugitive#head")
         let _ = fugitive#head()
         return strlen(_) ? '⭠ '._ : ''
@@ -140,6 +142,9 @@ function! LightLineFugitive()
 endfunction
 
 function! LightLineSignify()
+    if winwidth(0) < 50
+        return ''
+    endif
     let l:symbols = ['+', '-', '~']
     let [added, modified, removed] = sy#repo#get_stats()
     let l:stats = [added, removed, modified]  " reorder
@@ -161,10 +166,10 @@ function! LightLineSignify()
 endfunction
 
 function! LightLineFileformat()
-    if &filetype =~ s:skip_filetypes
+    if &filetype =~ s:skip_filetypes || winwidth(0) < 70
         return ''
     endif
-    return winwidth(0) > 70 ? &fileformat : ''
+    return &fileformat . '' . WebDevIconsGetFileFormatSymbol()
 endfunction
 
 function! LightLineFiletype()
@@ -172,32 +177,28 @@ function! LightLineFiletype()
 endfunction
 
 function! LightLineFileencoding()
-    if &filetype =~ s:skip_filetypes
+    if &filetype =~ s:skip_filetypes || winwidth(0) < 70
         return ''
     endif
-    return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
-endfunction
-
-function! LightLineMode()
-    return winwidth(0) > 60 ? lightline#mode() : ''
+    return strlen(&fenc) ? &fenc : &enc
 endfunction
 
 function! LightlineLineinfo() abort
-    if &filetype =~ s:skip_filetypes
+    if &filetype =~ s:skip_filetypes || winwidth(0) < 50
         return ''
     endif
     return printf(' %3s:%-2s', line('.'), col('.'))
 endfunction
 
 function! LightlinePercent() abort
-    if &filetype =~ s:skip_filetypes
+    if &filetype =~ s:skip_filetypes || winwidth(0) < 50
         return ''
     endif
     return printf('%5.1f%%', line('.')*100.0/line('$'))
 endfunction
 
 function! LightlineSpaceCheck() abort
-    if &filetype =~ s:skip_filetypes
+    if &filetype =~ s:skip_filetypes || winwidth(0) < 50
         return ''
     endif
     let l:spacecheck_warning = ''
@@ -213,7 +214,7 @@ function! LightlineSpaceCheck() abort
 endfunction
 
 function! LightlineWordCount() abort
-    if &filetype =~ s:skip_filetypes
+    if &filetype =~ s:skip_filetypes || winwidth(0) < 50
         return ''
     endif
     if !exists("s:word_count")
@@ -317,6 +318,7 @@ let g:startify_skiplist               = [
             \ ]
 autocmd FileType startify
             \ setlocal colorcolumn= nospell
+autocmd User Startified setlocal buftype=
 
 " }}}2
 

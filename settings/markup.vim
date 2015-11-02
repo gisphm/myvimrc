@@ -22,7 +22,6 @@
 
 let g:emmet_html5 = 1
 let g:user_emmet_install_global = 0
-let g:user_emmet_leader_key = '<Space>y'
 
 autocmd FileType html,css,eruby,xml,javascript,scss,jsx,less EmmetInstall
 

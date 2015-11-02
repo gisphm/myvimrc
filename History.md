@@ -2,6 +2,7 @@
 Unreleased / 2015-11-02
 =======================
 
+  * [Changed] improve lightline's display
   * [Changed] update emoji-dict script
   * [Changed] update settings
   * [Fixed] one dot in mud_horse
