@@ -29,29 +29,20 @@
 
 ## TODO List
 * [x] replace nerdtree with vimfiler
-    * [baa4ec](gisphm/myvimrc@baa4ec)
+    * [baa4ec](gisphm/myvimrc@baa4ecf)
 
 * [x] fix arrow key and esc mapping error
-    * [eed0cb](gisphm/myvimrc@eed0cb)
+    * [eed0cb](gisphm/myvimrc@eed0cb0)
 
 * [x] split plugins list
-    * [c4656b](gisphm/myvimrc@c4656b)
+    * [c4656b](gisphm/myvimrc@c4656b1)
 
 * [x] split plugins settings
-    * [294c0c](gisphm/myvimrc@294c0c)
-
-* [x] fix rubycomplete issue
-
-    > ~~well, this could be difficult.~~
-    > ~~`neocomplete` says the `omnicomplete` of ruby provided by other plugins or vim~~
-    > ~~has something wrong. If `neocomplete` crashes, users should contact other plugins'~~
-    > ~~maintainers or contributors rather than neocomplete's author.~~
-
-    > It seems that `vim-ruby` has fix this issue. What a great job!
+    * [294c0c](gisphm/myvimrc@294c0c7)
 
 * [x] write some mappings of `unite.vim` acting as `ctrlp.vim`
-    * [a59c85](gisphm/myvimrc@a59c85)
-    * [bb2115](gisphm/myvimrc@bb2115)
+    * [a59c85](gisphm/myvimrc@a59c85e)
+    * [bb2115](gisphm/myvimrc@bb21159)
 
 * [x] clean up neosnippets mappings
     > those mappings are too complicated and most of them seem to be useless.
@@ -105,6 +96,15 @@
 * ~~replace neocomplete with youcompleteme~~
     > ~~Just another trying for completion.~~
     > I just cannot stand the slow speed when trying to open tiny files.
+
+* ~~fix rubycomplete issue~~
+
+    > ~~well, this could be difficult.~~
+    > ~~`neocomplete` says the `omnicomplete` of ruby provided by other plugins or vim~~
+    > ~~has something wrong. If `neocomplete` crashes, users should contact other plugins'~~
+    > ~~maintainers or contributors rather than neocomplete's author.~~
+
+    > It seems that `vim-ruby` has fix this issue. What a great job!
 
 * ~~add necessary snippets from [vim-snippets][5] repo~~
     > ~~well, the convert script has been written and still has room to optimize.~~
