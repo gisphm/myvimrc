@@ -2,6 +2,7 @@
 Unreleased / 2015-11-02
 =======================
 
+  * [Fixed] still for the links in README
   * [Fixed] commit link in README
   * [Changed] update README and markdown.snip
   * [Changed] update README
