@@ -1,7 +1,8 @@
 
-Unreleased / 2015-11-01
+Unreleased / 2015-11-02
 =======================
 
+  * [Changed] update README
   * [Removed] one mapping in vimfiler
   * [Fixed] improve base and ui settings
   * [Changed] update README

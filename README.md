@@ -56,7 +56,23 @@
 * [x] clean up neosnippets mappings
     > those mappings are too complicated and most of them seem to be useless.
 
-* [ ] create own colorscheme for lightline
+* [ ] more customizations for lightline
+    [ ] customize statusline
+        [ ] trailing whitespace and mixed-indent
+            [x] copy and customize function from airline
+            [ ] fix issue that the component sometimes may showing wrong when text has multiple whitespace and indent warnings
+        [ ] wordcount using `v:statusmsg`
+            [x] complete when language is set as english
+            [ ] complete when language is set as chinese
+        [x] add hunk from signify function
+        [x] customize symbols for mode
+        [x] add devicons for filetype and fileformat
+    [ ] customize tabline
+        [ ] components layout for tabline
+        [ ] complete component function
+    [ ] create own colorscheme for lightline
+        [x] copy an existed colorscheme as a sample
+        [ ] modify the sample
 
 * [ ] documentation of snippets(especially rails)
 
@@ -84,11 +100,11 @@
     > 2. Or, you can execute `vim +NeoBundleInstall +q +q` to install the rest plugins.
     > 3. So, in some way, this [install.sh](scripts/install.sh) is incomplete but enough to use.
 
-* ~~✓ replace neocomplete with youcompleteme~~
+* ~~replace neocomplete with youcompleteme~~
     > ~~Just another trying for completion.~~
     > I just cannot stand the slow speed when trying to open tiny files.
 
-* ~~✓ add necessary snippets from [vim-snippets][5] repo~~
+* ~~add necessary snippets from [vim-snippets][5] repo~~
     > ~~well, the convert script has been written and still has room to optimize.~~
 
 * ~~add `abbr` to each snippet of snippets in neosnippets directory~~
