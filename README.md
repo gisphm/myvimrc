@@ -57,22 +57,22 @@
     > those mappings are too complicated and most of them seem to be useless.
 
 * [ ] more customizations for lightline
-    [ ] customize statusline
-        [ ] trailing whitespace and mixed-indent
-            [x] copy and customize function from airline
-            [ ] fix issue that the component sometimes may showing wrong when text has multiple whitespace and indent warnings
-        [ ] wordcount using `v:statusmsg`
-            [x] complete when language is set as english
-            [ ] complete when language is set as chinese
-        [x] add hunk from signify function
-        [x] customize symbols for mode
-        [x] add devicons for filetype and fileformat
-    [ ] customize tabline
-        [ ] components layout for tabline
-        [ ] complete component function
-    [ ] create own colorscheme for lightline
-        [x] copy an existed colorscheme as a sample
-        [ ] modify the sample
+    + [ ] customize statusline
+        + [ ] trailing whitespace and mixed-indent
+            - [x] copy and customize function from airline
+            - [ ] fix issue that the component sometimes may showing wrong when text has multiple whitespace and indent warnings
+        + [ ] wordcount using `v:statusmsg`
+            - [x] complete when language is set as english
+            - [ ] complete when language is set as chinese
+        - [x] add hunk from signify function
+        - [x] customize symbols for mode
+        - [x] add devicons for filetype and fileformat
+    + [ ] customize tabline
+        - [ ] components layout for tabline
+        - [ ] complete component function
+    + [ ] create own colorscheme for lightline
+        - [x] copy an existed colorscheme as a sample
+        - [ ] modify the sample
 
 * [ ] documentation of snippets(especially rails)
 
