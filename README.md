@@ -29,16 +29,16 @@
 
 ## TODO List
 * [x] replace nerdtree with vimfiler
-    * [baa4ecf3062f0d3883451bdabb2080ead39db51e](https://github.com/gisphm/myvimrc/commit/baa4ecf3062f0d3883451bdabb2080ead39db51e)
+    * [baa4ec](gisphm/myvimrc@baa4ec)
 
 * [x] fix arrow key and esc mapping error
-    * [eed0cb099cdf6051b32b8d28514c47b0f1a148eb](https://github.com/gisphm/myvimrc/commit/eed0cb099cdf6051b32b8d28514c47b0f1a148eb)
+    * [eed0cb](gisphm/myvimrc@eed0cb)
 
 * [x] split plugins list
-    * [c4656b10b61a40d37909d3aae4da8ae8580d37dd](https://github.com/gisphm/myvimrc/commit/c4656b10b61a40d37909d3aae4da8ae8580d37dd)
+    * [c4656b](gisphm/myvimrc@c4656b)
 
 * [x] split plugins settings
-    * [294c0c70f7179a236e39d088fcb0fd3300312ae1](https://github.com/gisphm/myvimrc/commit/294c0c70f7179a236e39d088fcb0fd3300312ae1)
+    * [294c0c](gisphm/myvimrc@294c0c)
 
 * [x] fix rubycomplete issue
 
@@ -50,8 +50,8 @@
     > It seems that `vim-ruby` has fix this issue. What a great job!
 
 * [x] write some mappings of `unite.vim` acting as `ctrlp.vim`
-    * [a59c85e605dcfaffc70ce17a74b6115e503c3c44](https://github.com/gisphm/myvimrc/commit/a59c85e605dcfaffc70ce17a74b6115e503c3c44)
-    * [bb211598c81344252fbf3dd90c4cbfbae57713c2](https://github.com/gisphm/myvimrc/commit/bb211598c81344252fbf3dd90c4cbfbae57713c2)
+    * [a59c85](gisphm/myvimrc@a59c85)
+    * [bb2115](gisphm/myvimrc@bb2115)
 
 * [x] clean up neosnippets mappings
     > those mappings are too complicated and most of them seem to be useless.
@@ -93,6 +93,8 @@
 
 * [ ] fix issues met in use regularly
 
+
+## Deprecated TODO
 * ~~complete install.sh~~
 
     > 1. After executing [install.sh](scripts/install.sh), the basic plugin `neobundle` has been installed.

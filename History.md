@@ -2,6 +2,7 @@
 Unreleased / 2015-11-02
 =======================
 
+  * [Changed] update README
   * [Fixed] issue of nested checkboxes in README
   * [Changed] update README
   * [Removed] one mapping in vimfiler
