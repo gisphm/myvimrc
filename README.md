@@ -29,20 +29,20 @@
 
 ## TODO List
 * [x] replace nerdtree with vimfiler
-    * [baa4ec](gisphm/myvimrc@baa4ecf)
+    * [baa4ec](gisphm/myvimrc@baa4ecf3062f0d3883451bdabb2080ead39db51e)
 
 * [x] fix arrow key and esc mapping error
-    * [eed0cb](gisphm/myvimrc@eed0cb0)
+    * [eed0cb](gisphm/myvimrc@eed0cb099cdf6051b32b8d28514c47b0f1a148eb)
 
 * [x] split plugins list
-    * [c4656b](gisphm/myvimrc@c4656b1)
+    * [c4656b](gisphm/myvimrc@c4656b10b61a40d37909d3aae4da8ae8580d37dd)
 
 * [x] split plugins settings
-    * [294c0c](gisphm/myvimrc@294c0c7)
+    * [294c0c](gisphm/myvimrc@294c0c70f7179a236e39d088fcb0fd3300312ae1)
 
 * [x] write some mappings of `unite.vim` acting as `ctrlp.vim`
-    * [a59c85](gisphm/myvimrc@a59c85e)
-    * [bb2115](gisphm/myvimrc@bb21159)
+    * [a59c85](gisphm/myvimrc@a59c85e605dcfaffc70ce17a74b6115e503c3c44)
+    * [bb2115](gisphm/myvimrc@bb211598c81344252fbf3dd90c4cbfbae57713c2)
 
 * [x] clean up neosnippets mappings
     > those mappings are too complicated and most of them seem to be useless.
@@ -124,7 +124,7 @@
 
 + 之所以用 [neobundle][4] 而不是 [vundle][3]，纯粹是因为当时凑巧`vundle`用不了，
     各种无奈下只好用了`neobundle`
-    > 0. [94b0d32078f76ba21120133a4f1c1297ee4865cb](https://github.com/gisphm/myvimrc/commit/94b0d32078f76ba21120133a4f1c1297ee4865cb)
+    > 0. [94b0d32](gisphm/myvimrc@94b0d32078f76ba21120133a4f1c1297ee4865cb)
     > 1. `neobundle`的使用过程基本平滑，没有出现问题
     > 2. `neobundle`对插件的各种“花式”写法体现了插件调用的灵活性，大大提高 vim 的启动和运行速度
     > 3. `neobundle`唯一不爽的是没有跟`vundle`一样的直观的插件列表
