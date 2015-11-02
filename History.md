@@ -2,6 +2,7 @@
 Unreleased / 2015-11-02
 =======================
 
+  * [Removed] all commit links removed
   * [Fixed] still...
   * [Fixed] still for the links in README
   * [Fixed] commit link in README
