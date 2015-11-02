@@ -95,3 +95,16 @@ vmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " }}}
+
+" Vimwiki {{{
+
+nnoremap <space>ww <Plug>VimwikiIndex
+nnoremap <space>wt <Plug>VimwikiTabIndex
+nnoremap <space>wi <Plug>VimwikiDiaryIndex
+nnoremap <space>ws <Plug>VimwikiUISelect
+nnoremap <space>wd <Plug>VimwikiMakeDiaryNote
+nnoremap <space>wn <Plug>VimwikiTabMakeDiaryNote
+nnoremap <space>wg <Plug>VimwikiDiaryGenerateLinks
+nnoremap <Space>wh <Plug>VimWiki2HTML
+
+" }}}

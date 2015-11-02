@@ -47,7 +47,7 @@ endif
 autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 
 set autoread autowrite autowriteall
-set autochdir
+set noautochdir
 set shortmess+=filmnrxoOtT
 set viewoptions=folds,options,cursor,unix,slash
 set virtualedit=onemore
@@ -220,12 +220,14 @@ augroup END
 " Key Mappings {{{
 
 let mapleader = ";"
-let maplocalleader = "_"
+let maplocalleader = ","
 
-map <C-J> <C-W>j<C-W>_
-map <C-K> <C-W>k<C-W>_
-map <C-L> <C-W>l<C-W>_
-map <C-H> <C-W>h<C-W>_
+nnoremap <Leader>w <C-W>
+
+map <LocalLeader>j <C-W>j<C-W>_
+map <LocalLeader>k <C-W>k<C-W>_
+map <LocalLeader>l <C-W>l<C-W>_
+map <LocalLeader>h <C-W>h<C-W>_
 
 nnoremap j gj
 nnoremap k gk
@@ -328,16 +330,8 @@ map <Leader>= <C-w>=
 " and ask which one to jump to
 nmap <Leader>ff [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
-" Easier horizontal scrolling
-map zl zL
-map zh zH
-
 " Easier formatting
 nnoremap <silent> <Leader>q gwip
-
-" FIXME: Revert this f70be548
-" fullscreen mode for GVIM and Terminal, need 'wmctrl' in you PATH
-map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
 
 nmap _$ :call <SID>Preserve("%s/\\s\\+$//e")<CR>
 

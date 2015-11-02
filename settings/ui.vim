@@ -53,8 +53,8 @@ let g:lightline.active             = {
             \   ],
             \   'right': [
             \     [ 'syntastic', 'spacecheck', 'lineinfo' ],
-            \     [ 'percent', 'wordcount' ],
-            \     [ 'fileformat', 'fileencoding', 'filetype' ]
+            \     [ 'filetype', 'percent', 'wordcount' ],
+            \     [ 'fileformat', 'fileencoding' ]
             \   ]
             \ }
 let g:lightline.inactive           = {
@@ -63,26 +63,24 @@ let g:lightline.inactive           = {
             \     [ 'fugitive', 'filename' ],
             \   ],
             \   'right': [
-            \     [ 'syntastic', 'lineinfo' ],
-            \     [ 'percent' ],
-            \     [ 'fileformat', 'fileencoding', 'filetype' ]
+            \     [ 'filetype', 'percent' ],
+            \     [ 'fileformat', 'fileencoding' ]
             \   ]
             \ }
-let g:lightline.component          = {
-            \   'lineinfo': ' %3l:%-2v',
-            \ }
 let g:lightline.component_function = {
-            \   'fugitive': 'LightLineFugitive',
-            \   'readonly': 'LightLineReadonly',
-            \   'modified': 'LightLineModified',
-            \   'signify' : 'LightLineSignify',
-            \   'filename': 'LightLineFilename',
-            \   'fileformat': 'LightLineFileformat',
-            \   'filetype': 'LightLineFiletype',
-            \   'fileencoding': 'LightLineFileencoding',
-            \   'mode': 'LightLineMode',
-            \   'spacecheck': 'LightlineSpaceCheck',
-            \   'wordcount': 'LightlineWordCount'
+            \   'mode'         : 'LightLineMode',
+            \   'percent'      : 'LightlinePercent',
+            \   'lineinfo'     : 'LightlineLineinfo',
+            \   'fugitive'     : 'LightLineFugitive',
+            \   'readonly'     : 'LightLineReadonly',
+            \   'modified'     : 'LightLineModified',
+            \   'signify'      : 'LightLineSignify',
+            \   'filename'     : 'LightLineFilename',
+            \   'fileformat'   : 'LightLineFileformat',
+            \   'filetype'     : 'LightLineFiletype',
+            \   'fileencoding' : 'LightLineFileencoding',
+            \   'spacecheck'   : 'LightlineSpaceCheck',
+            \   'wordcount'    : 'LightlineWordCount'
             \ }
 let g:lightline.component_expand   = {
             \   'syntastic': 'SyntasticStatuslineFlag',
@@ -112,7 +110,7 @@ let g:lightline.mode_map           = {
 
 " Component Functions {{{2
 
-let s:skip_filetypes = 'gitcommit\|startify\|help\|unite\|vimfiler\|tagbar\|diffpanel\|undotree'
+let s:skip_filetypes = 'startify\|help\|unite\|vimfiler\|tagbar\|diffpanel\|undotree'
 
 function! LightLineModified()
     return &ft =~ 'help\|vimfiler\|undotree' ? '' : &modified ? '+' : &modifiable ? '' : '-'
@@ -166,13 +164,10 @@ function! LightLineFileformat()
     if &filetype =~ s:skip_filetypes
         return ''
     endif
-    return winwidth(0) > 70 ? &fileformat . ' ' . WebDevIconsGetFileTypeSymbol() : ''
+    return winwidth(0) > 70 ? &fileformat : ''
 endfunction
 
 function! LightLineFiletype()
-    if &filetype =~ s:skip_filetypes
-        return ''
-    endif
     return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . '' . WebDevIconsGetFileTypeSymbol() : '') : ''
 endfunction
 
@@ -184,13 +179,21 @@ function! LightLineFileencoding()
 endfunction
 
 function! LightLineMode()
-    let l:fname = expand('%:t')
-    return l:fname == '__Tagbar__' ? 'Tagbar' :
-                \ l:fname =~ 'undotree' ? 'UndoTree' :
-                \ l:fname =~ 'diffpanel' ? 'Undo Diff' :
-                \ &ft == 'unite' ? 'Unite' :
-                \ &ft == 'vimfiler' ? 'VimFiler' :
-                \ winwidth(0) > 60 ? lightline#mode() : ''
+    return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+
+function! LightlineLineinfo() abort
+    if &filetype =~ s:skip_filetypes
+        return ''
+    endif
+    return printf(' %3s:%-2s', line('.'), col('.'))
+endfunction
+
+function! LightlinePercent() abort
+    if &filetype =~ s:skip_filetypes
+        return ''
+    endif
+    return printf('%5.1f%%', line('.')*100.0/line('$'))
 endfunction
 
 function! LightlineSpaceCheck() abort
@@ -283,8 +286,8 @@ let g:vimfiler_force_overwrite_statusline = 0
 
 let g:golden_ratio_wrap_ignored          = 1
 let g:golden_ratio_exclude_nonmodifiable = 1
-nnoremap <Space>rr <Plug>(golden_ratio_resize)
-nnoremap <Space>rt <Plug>(golden_ratio_toggle)
+nnoremap <Space>rr :GoldenRatioResize<CR>
+nnoremap <Space>rt :GoldenRatioToggle<CR>
 
 " }}}
 

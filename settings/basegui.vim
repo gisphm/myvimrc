@@ -39,6 +39,9 @@ if has('gui_running')
 
     " gui using solarized colorscheme
     colo solarized
+
+    " fullscreen mode for GVIM and Terminal, need 'wmctrl' in you PATH
+    map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
 endif
 
 " }}}
