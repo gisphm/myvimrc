@@ -432,7 +432,7 @@ let s:mud_horse_1 = [
             \ '┃   ━   ┃',
             \ '┃＞   ＜┃',
             \ '┃       ┃',
-            \ '┃ . ⌒ ..┃',
+            \ '┃.. ⌒ ..┃',
             \ '┃       ┃',
             \ '┗━┓   ┏━┛',
             \ '  ┃   ┃ Codes are far away from bugs with the animal protecting',

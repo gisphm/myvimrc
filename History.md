@@ -2,6 +2,7 @@
 Unreleased / 2015-11-02
 =======================
 
+  * [Fixed] one dot in mud_horse
   * [Removed] all commit links removed
   * [Fixed] still...
   * [Fixed] still for the links in README
