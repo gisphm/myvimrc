@@ -46,18 +46,6 @@ NeoBundleLazy 'gisphm/vim-gitignore', {
 NeoBundleLazy 'tmux-plugins/vim-tmux', {
             \ 'autoload' : { 'filetypes' : ['tmux'] },
             \ }
-NeoBundleLazy 'vim-perl/vim-perl', {
-            \ 'autoload' : { 'filetypes' : ['perl'] },
-            \ 'build' : {
-            \    'linux' : 'make clean && mkdir -p after/syntax && cp contrib/*.vim after/syntax',
-            \    }
-            \ }
-NeoBundleLazy 'StanAngeloff/php.vim', {
-            \ 'autoload' : { 'filetypes' : ['php'] },
-            \ }
-NeoBundleLazy 'rust-lang/rust.vim', {
-            \ 'autoload' : { 'filetypes' : ['rust'] },
-            \ }
 
 " }}}
 

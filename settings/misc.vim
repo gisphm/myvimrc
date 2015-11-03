@@ -43,17 +43,3 @@ augroup Rainbow
 augroup END
 
 " }}}
-
-" PHP {{{
-
-function! s:PhpSyntaxOverride() abort
-    hi! def link phpDocTags phpDefine
-    hi! def link phpDocParam phpType
-endfunction
-
-augroup phpSyntaxOverride
-    autocmd!
-    autocmd FileType php call <SID>PhpSyntaxOverride()
-augroup END
-
-" }}}

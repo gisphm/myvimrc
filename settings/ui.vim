@@ -110,11 +110,11 @@ let g:lightline.mode_map           = {
 
 " Component Functions {{{2
 
-let s:skip_filetypes = 'startify\|help\|unite\|vimfiler\|tagbar\|diffpanel\|undotree'
+let s:skip_filetypes = 'startify\|help\|unite\|vimfiler\|tagbar\|diff\|undotree'
 
 function! LightLineMode()
     let l:fname = expand('%:t')
-    if l:fname =~ 'Tagbar'
+    if &ft == 'tagbar'
         let l:mode = 'Tagbar'
     elseif &ft == 'undotree'
         let l:mode = 'Undo'
@@ -147,8 +147,8 @@ function! LightLineFilename()
         let l:display = unite#get_status_string()
     else
         let l:display = ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
-                \ ('' != fname ? fname : '[No Name]') .
-                \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+                    \ ('' != fname ? fname : '[No Name]') .
+                    \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
     endif
     return l:display . ' ' . WebDevIconsGetFileTypeSymbol()
 endfunction
@@ -207,21 +207,21 @@ function! LightLineFileencoding()
 endfunction
 
 function! LightLineLineinfo() abort
-    if &filetype =~ s:skip_filetypes || winwidth(0) < 50
+    if &filetype =~ s:skip_filetypes || winwidth(0) < 70
         return ''
     endif
     return printf(' %3s:%-2s', line('.'), col('.'))
 endfunction
 
 function! LightLinePercent() abort
-    if &filetype =~ s:skip_filetypes || winwidth(0) < 50 || s:word_count == ''
+    if &filetype =~ s:skip_filetypes || winwidth(0) < 70 || s:word_count == ''
         return ''
     endif
     return printf('%5.1f%%', line('.')*100.0/line('$'))
 endfunction
 
 function! LightLineSpaceCheck() abort
-    if &filetype =~ s:skip_filetypes || winwidth(0) < 50
+    if &filetype =~ s:skip_filetypes || winwidth(0) < 70
         return ''
     endif
     let l:spacecheck_warning = ''
@@ -237,45 +237,18 @@ function! LightLineSpaceCheck() abort
 endfunction
 
 function! LightLineWordCount() abort
-    if &filetype =~ s:skip_filetypes || winwidth(0) < 50
+    if &filetype =~ s:skip_filetypes || winwidth(0) < 70
         return ''
     endif
-    if !exists("s:word_count")
+    if !exists("s:word_count") || !exists("s:started_count")
         let s:word_count = ''
+        let s:started_count = 0
     endif
-
-    let l:current_mode = mode()
-    let l:old_count = s:word_count
-    if l:current_mode =~ '^n\|^v'
-        let l:old_status = v:statusmsg
-        execute "silent normal g\<C-g>"
-        let s:word_count = CountWord(v:statusmsg)
-        let v:statusmsg = l:old_status
-        if s:word_count == '0'
-            let s:word_count = ''
-        endif
-    else
-        let s:word_count = l:old_count
+    if (s:started_count == 0 || &modified) && mode() ==# 'n'
+        let s:word_count = matchstr(split(system('wc -w ' . expand('%'))), '\d\+')
+        let s:started_count = 1
     endif
     return s:word_count
-endfunction
-
-function! CountWord(statusmsg) abort
-    let l:pattern = ".*\\d.*"
-    if a:statusmsg !~ l:pattern
-        return 0
-    endif
-    let l:string = ''
-    if a:statusmsg =~ 'words'
-        let l:string = matchstr(split(a:statusmsg), '\d\+', 0, 4)
-    elseif a:statusmsg =~ 'word'
-        let l:string = matchstr(split(a:statusmsg), '\d\+', 0, 6)
-    endif
-    if l:string =~ ';'
-        return strpart(l:string, 0, strlen(l:string) - 1)
-    else
-        return l:string
-    endif
 endfunction
 
 " }}}2
@@ -330,6 +303,7 @@ let g:startify_skiplist               = [
             \ $HOME .'/.vim/tmp/',
             \ $HOME .'/tools/',
             \ '^/tmp/',
+            \ '/*.tags',
             \ ]
 autocmd FileType startify
             \ setlocal colorcolumn= nospell

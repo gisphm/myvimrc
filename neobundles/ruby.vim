@@ -25,16 +25,16 @@ NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-rake'
 NeoBundle 'tpope/vim-cucumber'
 NeoBundleLazy 'tpope/vim-bundler', {
-            \ 'filetypes' : ['ruby','eruby'],
+            \ 'filetypes' : ['ruby', 'eruby'],
             \ }
 NeoBundleLazy 'thoughtbot/vim-rspec', {
-            \ 'filetypes' : ['ruby','eruby'],
+            \ 'filetypes' : ['ruby', 'eruby'],
             \ }
 NeoBundleLazy 'stefanoverna/vim-i18n', {
-            \ 'filetypes' : ['ruby','eruby'],
+            \ 'filetypes' : ['ruby', 'eruby'],
             \ }
 NeoBundleLazy 'killphi/vim-ruby-refactoring', {
-            \ 'filetypes' : ['ruby','eruby'],
+            \ 'filetypes' : ['ruby', 'eruby'],
             \ }
 
 " }}}

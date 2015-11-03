@@ -1,7 +1,8 @@
 
-Unreleased / 2015-11-03
+Unreleased / 2015-11-04
 =======================
 
+  * [Added] more specific todo in README
   * [Added] google's searchindex
   * [Changed] lazy some plugins and update settings
   * [Changed] revert polyglot back to multiple plugins

@@ -41,6 +41,10 @@
 * [x] clean up neosnippets mappings
     > those mappings are too complicated and most of them seem to be useless.
 
+* [ ] use less plugins as possible, this should be considered at first
+    + [ ] combine some plugins together to `.vim` directory and update them through scripts
+    + [ ] delete some `useless`(only works for me) plugins
+
 * [ ] more customizations for lightline
     + [ ] customize statusline
         + [ ] trailing whitespace and mixed-indent
@@ -49,6 +53,8 @@
         + [ ] wordcount using `v:statusmsg`
             - [x] complete when language is set as english
             - [ ] complete when language is set as chinese
+        + [ ] a new wordcount way should be considered because using `v:statusmsg` is not always useful.
+            + [ ] use `wc` like tool
         - [x] add hunk from signify function
         - [x] customize symbols for mode
         - [x] add devicons for filetype and fileformat
@@ -59,22 +65,12 @@
         - [x] copy an existed colorscheme as a sample
         - [ ] modify the sample
 
-* [ ] documentation of snippets(especially rails)
+* [ ] documentation of snippets
+    + [ ] use them more often
+    + [ ] create own snippets cause the existed snippets sometimes do not work for me
 
-    > ~~1. This is impossible for me...~~
-    > ~~2. The snippets are too many... WTF ...~~
-    > ~~3. So... forget about it for now...~~
-
-    > I may have some time to complete it.
-    > But I am not sure when I will complete it.
-    > Just try!
-
-* [ ] plugins as groups that can be enabled or disabled (optional)
-
-* [ ] use less plugins as possible
-
-    > 1. This could be difficult for me now. I will try my best.
-    > 2. Make a plugin as a plugin collection, just as how polyglot has done.
+* [ ] group plugins (optional)
+    + [ ] at least two groups -- `system`(for root user) and `common`
 
 * [ ] fix issues met in use regularly
 
