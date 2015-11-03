@@ -21,13 +21,15 @@
 " Writing {{{
 
 NeoBundle 'junegunn/vim-easy-align'
-NeoBundle 'godlygeek/tabular'
-NeoBundleLazy 'plasticboy/vim-markdown', {
-            \ 'depends' : ['godlygeek/tabular'],
-            \ 'filetypes' : 'markdown',
-            \ }
 NeoBundle 'vimwiki/vimwiki', 'dev'
 NeoBundle 'reedes/vim-wordy'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'plasticboy/vim-markdown', {
+            \ 'depends' : ['godlygeek/tabular'],
+            \ }
+NeoBundleLazy 'cespare/vim-toml', {
+            \ 'filetypes' : 'toml',
+            \ }
 NeoBundleLazy 'hotoo/pangu.vim', {
             \ 'autoload' : {
             \   'filetypes' : [

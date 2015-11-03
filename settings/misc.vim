@@ -41,12 +41,6 @@ xmap f <Plug>(smalls)
 
 " }}}
 
-" Ployglot {{{
-
-let g:polyglot_disabled = [ 'javascript', 'json', 'markdown', 'tmux' ]
-
-" }}}
-
 " Rainbow Parentheses {{{
 
 let g:rainbow#max_level = 16
@@ -54,6 +48,20 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['<', '>']]
 augroup Rainbow
     autocmd!
     autocmd FileType * RainbowParentheses
+augroup END
+
+" }}}
+
+" PHP {{{
+
+function! s:PhpSyntaxOverride() abort
+    hi! def link phpDocTags phpDefine
+    hi! def link phpDocParam phpType
+endfunction
+
+augroup phpSyntaxOverride
+    autocmd!
+    autocmd FileType php call <SID>PhpSyntaxOverride()
 augroup END
 
 " }}}

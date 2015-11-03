@@ -1,7 +1,8 @@
 
-Unreleased / 2015-11-02
+Unreleased / 2015-11-03
 =======================
 
+  * [Changed] revert polyglot back to multiple plugins
   * [Changed] improve lightline's display
   * [Changed] update emoji-dict script
   * [Changed] update settings

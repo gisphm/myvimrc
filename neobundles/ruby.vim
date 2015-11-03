@@ -22,16 +22,14 @@
 
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-rake'
+NeoBundle 'tpope/vim-bundler'
+NeoBundle 'tpope/vim-cucumber'
+NeoBundle 'thoughtbot/vim-rspec'
 NeoBundleLazy 'stefanoverna/vim-i18n', {
             \ 'filetypes' : ['ruby','eruby'],
             \ }
 NeoBundleLazy 'killphi/vim-ruby-refactoring', {
-            \ 'filetypes' : ['ruby','eruby'],
-            \ }
-NeoBundleLazy 'tpope/vim-rake', {
-            \ 'filetypes' : ['ruby','eruby'],
-            \ }
-NeoBundleLazy 'tpope/vim-bundler', {
             \ 'filetypes' : ['ruby','eruby'],
             \ }
 

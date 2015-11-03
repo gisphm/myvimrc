@@ -18,21 +18,24 @@
 "
 " }}}
 
-" Misc {{{
-
-" json {{{2
+" json {{{
 
 NeoBundleLazy 'elzr/vim-json', {
             \ 'autoload' : { 'filetypes' : ['json'] },
             \ }
-NeoBundle 'tpope/vim-jdaddy'
+NeoBundleLazy 'tpope/vim-jdaddy', {
+            \ 'autoload' : { 'filetypes' : ['json'] },
+            \ }
 
-" }}}2
+" }}}
+
+" Misc {{{
 
 NeoBundle 'bootleq/LargeFile'
 NeoBundle 's3rvac/AutoFenc'
 NeoBundle 'antoyo/vim-licenses'
 NeoBundle 'itchyny/calendar.vim'
+NeoBundle 'junegunn/rainbow_parentheses.vim'
 NeoBundleLazy 'chrisbra/csv.vim', {
             \ 'filetypes' : 'csv',
             \ }
@@ -42,14 +45,24 @@ NeoBundleLazy 'gisphm/vim-gitignore', {
 NeoBundleLazy 'tmux-plugins/vim-tmux', {
             \ 'autoload' : { 'filetypes' : ['tmux'] },
             \ }
-NeoBundle 't9md/vim-smalls'
-NeoBundle 'sheerun/vim-polyglot'
-NeoBundle 'junegunn/rainbow_parentheses.vim'
+NeoBundleLazy 'vim-perl/vim-perl', {
+            \ 'autoload' : { 'filetypes' : ['perl'] },
+            \ 'build' : {
+            \    'linux' : 'make clean && mkdir -p after/syntax && cp contrib/*.vim after/syntax',
+            \    }
+            \ }
+NeoBundleLazy 'StanAngeloff/php.vim', {
+            \ 'autoload' : { 'filetypes' : ['php'] },
+            \ }
+NeoBundleLazy 'rust-lang/rust.vim', {
+            \ 'autoload' : { 'filetypes' : ['rust'] },
+            \ }
 
 " }}}
 
 " Git Staff {{{
 
+NeoBundle 'tpope/vim-git'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'idanarye/vim-merginal'
 NeoBundle 'int3/vim-extradite'

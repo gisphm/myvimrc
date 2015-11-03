@@ -312,9 +312,10 @@ let g:startify_list_order             = [
             \ ]
 let g:startify_skiplist               = [
             \ 'COMMIT_EDITMSG',
-            \ 'bundle/.*/doc',
-            \ '^/tmp',
-            \ '/home/vagrant/tools',
+            \ $HOME .'/.vim/bundle/',
+            \ $HOME .'/.vim/tmp/',
+            \ $HOME .'/tools/',
+            \ '^/tmp/',
             \ ]
 autocmd FileType startify
             \ setlocal colorcolumn= nospell
@@ -467,32 +468,43 @@ endfunction
 "     return system('echo $RANDOM')
 " endfunction
 
-function! s:RandomHeader() abort
-    let l:headerIndex=s:RandomVim() % 6
-
-    if l:headerIndex == 0
-        if executable('fortune') && executable('cowthink')
-            let l:custom_header = split(system('fortune -s | cowthink'), '\n')
-        else
-            let l:custom_header = s:ghost_head
-        endif
-    elseif l:headerIndex == 1
-        let l:custom_header = s:mud_horse
-    elseif l:headerIndex == 2
-        let l:custom_header = s:mud_horse_1
-    elseif l:headerIndex == 3
-        let l:custom_header = s:mud_horse_2
-    elseif l:headerIndex == 4
-        let l:custom_header = s:mud_horse_3
+function! s:RandomCustom() abort
+    let l:index = <SID>RandomVim() % 6
+    if l:index == 0
+        return s:ghost_head
+    elseif l:index == 1
+        return s:mud_horse
+    elseif l:index == 2
+        return s:mud_horse_1
+    elseif l:index == 3
+        return s:mud_horse_2
+    elseif l:index == 4
+        return s:mud_horse_3
     else
-        let l:custom_header = s:fuck_bug
+        return s:fuck_bug
     endif
-    return s:center_header(l:custom_header)
 endfunction
 
-let g:startify_custom_header = s:RandomHeader()
+function! s:RandomCow() abort
+    let l:index = <SID>RandomVim() % 2
+    if l:index == 0
+        return split(system('fortune -s | cowthink -f `ls /usr/share/cows/ | shuf -n 1`'), '\n')
+    else
+        return split(system('fortune -s | cowsay -f `ls /usr/share/cows/ | shuf -n 1`'), '\n')
+    endif
+endfunction
 
-let g:startify_custom_footer =[
+function! s:RandomHeader() abort
+    if executable('fortune') && executable('cowthink')
+        return <SID>center_header(<SID>RandomCow())
+    else
+        return <SID>center_header(<SID>RandomCustom())
+    endif
+endfunction
+
+let g:startify_custom_header = <SID>RandomHeader()
+
+let g:startify_custom_footer = [
             \ "", "", strftime('        %A %Y-%m-%d'),
             \ "        Welcome to Vim World!"
             \ ]

@@ -20,6 +20,16 @@
 
 " Javascript {{{
 
+NeoBundle 'othree/yajs.vim'
+NeoBundle 'othree/javascript-libraries-syntax.vim'
+NeoBundle 'othree/jspc.vim'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundleLazy 'briancollins/vim-jst', {
+            \ 'autoload' : { 'filetypes' : ['javascript'] },
+            \ }
+NeoBundleLazy 'kchmck/vim-coffee-script', {
+            \ 'autoload' : { 'filetypes' : ['javascript','markdown'] },
+            \ }
 NeoBundleLazy 'marijnh/tern_for_vim', {
             \ 'autoload' : { 'filetypes' : ['javascript'] },
             \ 'build' : {
@@ -35,23 +45,14 @@ NeoBundleLazy 'bigfish/vim-js-context-coloring', {
 NeoBundleLazy 'Shutnik/jshint2.vim', {
             \ 'autoload' : { 'filetypes' : ['javascript'] },
             \ }
-NeoBundleLazy 'othree/yajs.vim', {
-            \ 'autoload' : { 'filetypes' : ['javascript'] },
-            \ }
-NeoBundleLazy 'othree/javascript-libraries-syntax.vim', {
-            \ 'autoload' : { 'filetypes' : ['javascript'] },
-            \ }
-NeoBundleLazy 'othree/jspc.vim', {
-            \ 'autoload' : { 'filetypes' : ['javascript'] },
-            \ }
-NeoBundleLazy 'pangloss/vim-javascript', {
-            \ 'autoload' : { 'filetypes' : ['javascript', 'html'] },
-            \ }
 NeoBundleLazy 'moll/vim-node', {
             \ 'autoload' : { 'filetypes' : ['javascript', 'html'] },
             \ }
 NeoBundleLazy 'heavenshell/vim-jsdoc', {
             \ 'autoload' : { 'filetypes' : ['javascript', 'html'] },
+            \ }
+NeoBundleLazy 'mxw/vim-jsx', {
+            \ 'autoload' : { 'filetypes' : ['javascript', 'html', 'jsx']}
             \ }
 
 " }}}

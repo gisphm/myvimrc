@@ -20,6 +20,7 @@
 
 " Markup {{{
 
+NeoBundle 'othree/html5.vim'
 NeoBundleLazy 'amirh/HTML-AutoCloseTag', {
             \ 'filetypes' : ['html', 'eruby'],
             \ }
@@ -31,6 +32,9 @@ NeoBundleLazy 'chrisgillis/vim-bootstrap3-snippets', {
             \ 'autoload' : {
             \     'filetypes' : ['html', 'eruby']
             \   }
+            \ }
+NeoBundleLazy 'tpope/vim-haml', {
+            \ 'filetypes' : ['haml'],
             \ }
 NeoBundle 'Valloric/MatchTagAlways'
 NeoBundle 'sukima/xmledit'
