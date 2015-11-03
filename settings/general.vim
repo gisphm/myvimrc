@@ -44,12 +44,12 @@ let g:wildfire_objects = {
 
 " UndoTree {{{
 
+let g:undotree_SetFocusWhenToggle = 1
+let g:undotree_TreeNodeShape      = '▸'
 nnoremap <Leader>ut :UndotreeToggle<CR>
 nnoremap <Leader>uf :UndotreeFocus<CR>
 nnoremap <Leader>uh :UndotreeHide<CR>
 nnoremap <Leader>us :UndotreeShow<CR>
-" If undotree is opened, it is likely one wants to interact with it.
-let g:undotree_SetFocusWhenToggle = 1
 
 " }}}
 

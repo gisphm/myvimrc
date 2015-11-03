@@ -68,8 +68,9 @@ let g:lightline.inactive           = {
             \   ]
             \ }
 let g:lightline.component_function = {
-            \   'percent'      : 'LightlinePercent',
-            \   'lineinfo'     : 'LightlineLineinfo',
+            \   'mode'         : 'LightLineMode',
+            \   'percent'      : 'LightLinePercent',
+            \   'lineinfo'     : 'LightLineLineinfo',
             \   'fugitive'     : 'LightLineFugitive',
             \   'readonly'     : 'LightLineReadonly',
             \   'modified'     : 'LightLineModified',
@@ -78,31 +79,31 @@ let g:lightline.component_function = {
             \   'fileformat'   : 'LightLineFileformat',
             \   'filetype'     : 'LightLineFiletype',
             \   'fileencoding' : 'LightLineFileencoding',
-            \   'spacecheck'   : 'LightlineSpaceCheck',
-            \   'wordcount'    : 'LightlineWordCount'
+            \   'spacecheck'   : 'LightLineSpaceCheck',
+            \   'wordcount'    : 'LightLineWordCount'
             \ }
 let g:lightline.component_expand   = {
-            \   'syntastic': 'SyntasticStatuslineFlag',
+            \   'syntastic'    : 'SyntasticStatuslineFlag',
             \ }
 let g:lightline.component_type     = {
-            \   'syntastic': 'error',
-            \   'spacecheck': 'warning',
+            \   'syntastic'    : 'error',
+            \   'spacecheck'   : 'warning',
             \ }
 let g:lightline.separator          = { 'left': '⮀', 'right': '⮂' }
 let g:lightline.subseparator       = { 'left': '⮁', 'right': '⮃' }
 let g:lightline.mode_map           = {
-            \ '__' : '-',
-            \ 'n'  : 'N',
-            \ 'i'  : 'I',
-            \ 'R'  : 'R',
-            \ 'c'  : 'C',
-            \ 'v'  : 'V',
-            \ 's'  : 'S',
-            \ 'V' : 'V-LINE',
-            \ "\<C-v>": 'V-BLOCK',
-            \ 'S' : 'S-LINE',
-            \ "\<C-s>": 'S-BLOCK',
-            \ '?': '      '
+            \ '__'     : '-',
+            \ 'n'      : 'N',
+            \ 'i'      : 'I',
+            \ 'R'      : 'R',
+            \ 'c'      : 'C',
+            \ 'v'      : 'V',
+            \ 's'      : 'S',
+            \ 'V'      : 'V-LINE',
+            \ "\<C-v>" : 'V-BLOCK',
+            \ 'S'      : 'S-LINE',
+            \ "\<C-s>" : 'S-BLOCK',
+            \ '?'      : '      '
             \ }
 
 " }}}2
@@ -110,6 +111,24 @@ let g:lightline.mode_map           = {
 " Component Functions {{{2
 
 let s:skip_filetypes = 'startify\|help\|unite\|vimfiler\|tagbar\|diffpanel\|undotree'
+
+function! LightLineMode()
+    let l:fname = expand('%:t')
+    if l:fname =~ 'Tagbar'
+        let l:mode = 'Tagbar'
+    elseif &ft == 'undotree'
+        let l:mode = 'Undo'
+    elseif l:fname =~ 'diffpanel'
+        let l:mode = 'Diff'
+    elseif &ft == 'unite'
+        let l:mode = 'Unite'
+    elseif &ft == 'vimfiler'
+        let l:mode = 'VimFiler'
+    else
+        let l:mode = lightline#mode()
+    endif
+    return l:mode
+endfunction
 
 function! LightLineModified()
     return &ft =~ 'help\|vimfiler\|undotree' ? '' : &modified ? '+' : &modifiable ? '' : '-'
@@ -121,13 +140,17 @@ endfunction
 
 function! LightLineFilename()
     let l:fname = expand('%:t')
-    return l:fname == '__Tagbar__' ? g:lightline.fname :
-                \ l:fname =~ 'undotree' ? '' :
-                \ &ft == 'vimfiler' ? vimfiler#get_status_string() :
-                \ &ft == 'unite' ? unite#get_status_string() :
-                \ ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+    let l:display = ''
+    if &ft == 'vimfiler'
+        let l:display = vimfiler#get_status_string()
+    elseif &ft == 'unite'
+        let l:display = unite#get_status_string()
+    else
+        let l:display = ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
                 \ ('' != fname ? fname : '[No Name]') .
                 \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+    endif
+    return l:display . ' ' . WebDevIconsGetFileTypeSymbol()
 endfunction
 
 function! LightLineFugitive()
@@ -173,7 +196,7 @@ function! LightLineFileformat()
 endfunction
 
 function! LightLineFiletype()
-    return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . '' . WebDevIconsGetFileTypeSymbol() : '') : ''
+    return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : '') : ''
 endfunction
 
 function! LightLineFileencoding()
@@ -183,21 +206,21 @@ function! LightLineFileencoding()
     return strlen(&fenc) ? &fenc : &enc
 endfunction
 
-function! LightlineLineinfo() abort
+function! LightLineLineinfo() abort
     if &filetype =~ s:skip_filetypes || winwidth(0) < 50
         return ''
     endif
     return printf(' %3s:%-2s', line('.'), col('.'))
 endfunction
 
-function! LightlinePercent() abort
+function! LightLinePercent() abort
     if &filetype =~ s:skip_filetypes || winwidth(0) < 50
         return ''
     endif
     return printf('%5.1f%%', line('.')*100.0/line('$'))
 endfunction
 
-function! LightlineSpaceCheck() abort
+function! LightLineSpaceCheck() abort
     if &filetype =~ s:skip_filetypes || winwidth(0) < 50
         return ''
     endif
@@ -213,7 +236,7 @@ function! LightlineSpaceCheck() abort
     return l:spacecheck_warning
 endfunction
 
-function! LightlineWordCount() abort
+function! LightLineWordCount() abort
     if &filetype =~ s:skip_filetypes || winwidth(0) < 50
         return ''
     endif
@@ -280,15 +303,6 @@ let g:unite_force_overwrite_statusline    = 0
 let g:vimfiler_force_overwrite_statusline = 0
 
 " }}}2
-
-" }}}
-
-" Golden-Ratio {{{
-
-let g:golden_ratio_wrap_ignored          = 1
-let g:golden_ratio_exclude_nonmodifiable = 1
-nnoremap <Space>rr :GoldenRatioResize<CR>
-nnoremap <Space>rt :GoldenRatioToggle<CR>
 
 " }}}
 
