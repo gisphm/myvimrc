@@ -192,7 +192,7 @@ function! LightLineFileformat()
     if &filetype =~ s:skip_filetypes || winwidth(0) < 70
         return ''
     endif
-    return &fileformat . '' . WebDevIconsGetFileFormatSymbol()
+    return WebDevIconsGetFileFormatSymbol()
 endfunction
 
 function! LightLineFiletype()
@@ -214,7 +214,7 @@ function! LightLineLineinfo() abort
 endfunction
 
 function! LightLinePercent() abort
-    if &filetype =~ s:skip_filetypes || winwidth(0) < 50
+    if &filetype =~ s:skip_filetypes || winwidth(0) < 50 || s:word_count == ''
         return ''
     endif
     return printf('%5.1f%%', line('.')*100.0/line('$'))

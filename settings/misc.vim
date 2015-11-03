@@ -33,14 +33,6 @@ let g:licenses_default_commands       = ['apache', 'unlicense', 'wtfpl']
 
 " }}}
 
-" Smalls {{{
-
-nmap f <Plug>(smalls)
-omap f <Plug>(smalls)
-xmap f <Plug>(smalls)
-
-" }}}
-
 " Rainbow Parentheses {{{
 
 let g:rainbow#max_level = 16

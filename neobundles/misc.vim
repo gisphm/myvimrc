@@ -31,6 +31,7 @@ NeoBundleLazy 'tpope/vim-jdaddy', {
 
 " Misc {{{
 
+NeoBundle 'google/vim-searchindex'
 NeoBundle 'bootleq/LargeFile'
 NeoBundle 's3rvac/AutoFenc'
 NeoBundle 'antoyo/vim-licenses'
