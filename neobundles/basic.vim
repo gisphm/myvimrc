@@ -73,6 +73,10 @@ NeoBundle 'chrisbra/vim-diff-enhanced'
 NeoBundle 'kshenoy/vim-signature'
 NeoBundle 'gisphm/auto-pairs'
 NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'tpope/vim-endwise'
+NeoBundleLazy 'tpope/vim-endwise', {
+            \ 'autoload' : {
+            \    'filetypes' : ['ruby', 'vim', 'sh', 'c', 'cpp', 'bash', 'zsh']
+            \   }
+            \ }
 
 " }}}

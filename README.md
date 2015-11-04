@@ -50,9 +50,9 @@
         + [ ] trailing whitespace and mixed-indent
             - [x] copy and customize function from airline
             - [ ] fix issue that the component sometimes may showing wrong when text has multiple whitespace and indent warnings
-        + [ ] wordcount using `v:statusmsg`
-            - [x] complete when language is set as english
-            - [ ] complete when language is set as chinese
+        + [ ] wordcount status
+            - [x] using `sy#repo#get_stats()` to generate wordcount, only works for files under git control
+            - [ ] consider a new better way to generate wordcount
         + [ ] a new wordcount way should be considered because using `v:statusmsg` is not always useful.
             + [ ] use `wc` like tool
         - [x] add hunk from signify function

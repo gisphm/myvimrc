@@ -165,7 +165,7 @@ function! LightLineFugitive()
 endfunction
 
 function! LightLineSignify()
-    if winwidth(0) < 70
+    if winwidth(0) < 70 || !strlen(fugitive#head())
         return ''
     endif
     let l:symbols = ['+', '-', '~']
@@ -174,7 +174,7 @@ function! LightLineSignify()
     let l:hunkline = ''
 
     for i in range(3)
-        if stats[i] > 0
+        if l:stats[i] > 0
             let l:hunkline .= printf('%s%s ', l:symbols[i], l:stats[i])
         else
             let l:hunkline .= ''
@@ -233,18 +233,24 @@ function! LightLineSpaceCheck() abort
 endfunction
 
 function! LightLineWordCount() abort
-    if &filetype =~ s:skip_filetypes || winwidth(0) < 70
+    if &filetype =~ s:skip_filetypes || winwidth(0) < 70 || !strlen(fugitive#head())
         return ''
     endif
-    if !exists("s:word_count") || !exists("s:started_count")
+
+    if !exists("s:word_count") || !exists("s:old_stats") || !exists("s:started_count")
         let s:word_count = ''
+        let s:old_stats = [0, 0, 0]
         let s:started_count = 0
     endif
-    " TODO need to rewrite word count
-    if (s:started_count == 0 || &modified) && mode() ==# 'n'
+
+    if s:started_count == 0
         let s:word_count = matchstr(split(system('wc -w ' . expand('%'))), '\d\+')
         let s:started_count = 1
+    elseif s:old_stats !=? sy#repo#get_stats()
+        let s:old_stats = sy#repo#get_stats()
+        let s:word_count = matchstr(split(system('wc -w ' . expand('%'))), '\d\+')
     endif
+
     return s:word_count
 endfunction
 
