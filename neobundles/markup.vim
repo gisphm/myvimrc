@@ -20,14 +20,14 @@
 
 " Markup {{{
 
-NeoBundle 'othree/html5.vim'
+NeoBundle 'mattn/webapi-vim'
+NeoBundleLazy 'othree/html5.vim'
 NeoBundleLazy 'amirh/HTML-AutoCloseTag', {
             \ 'filetypes' : ['html', 'eruby'],
             \ }
 NeoBundleLazy 'mattn/emmet-vim', {
             \ 'filetypes' : ['html', 'eruby', 'css', 'xml', 'javascript', 'scss', 'less'],
             \ }
-NeoBundle 'mattn/webapi-vim'
 NeoBundleLazy 'chrisgillis/vim-bootstrap3-snippets', {
             \ 'autoload' : {
             \     'filetypes' : ['html', 'eruby']
@@ -36,9 +36,17 @@ NeoBundleLazy 'chrisgillis/vim-bootstrap3-snippets', {
 NeoBundleLazy 'tpope/vim-haml', {
             \ 'filetypes' : ['haml'],
             \ }
-NeoBundle 'Valloric/MatchTagAlways'
-NeoBundle 'sukima/xmledit'
-NeoBundle 'tpope/vim-ragtag'
-NeoBundle 'tpope/vim-unimpaired'
+NeoBundleLazy 'Valloric/MatchTagAlways', {
+            \ 'filetypes' : ['html', 'eruby', 'css', 'xml', 'javascript', 'scss', 'less'],
+            \ }
+NeoBundleLazy 'sukima/xmledit', {
+            \ 'filetypes' : ['html', 'eruby', 'css', 'xml', 'javascript', 'scss', 'less'],
+            \ }
+NeoBundleLazy 'tpope/vim-ragtag', {
+            \ 'filetypes' : ['html', 'eruby', 'css', 'xml', 'javascript', 'scss', 'less'],
+            \ }
+NeoBundleLazy 'tpope/vim-unimpaired', {
+            \ 'filetypes' : ['html', 'eruby', 'css', 'xml', 'javascript', 'scss', 'less'],
+            \ }
 
 " }}}

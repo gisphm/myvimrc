@@ -20,14 +20,17 @@
 
 " CSS {{{
 
-NeoBundle 'JulesWang/css.vim'
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'lilydjwg/colorizer'
+NeoBundleLazy 'JulesWang/css.vim', {
+            \ 'autoload' : { 'filetypes' : ['css', 'scss', 'less'] },
+            \ }
+NeoBundleLazy 'hail2u/vim-css3-syntax', {
+            \ 'autoload' : { 'filetypes' : ['css', 'scss', 'less'] },
+            \ }
 NeoBundleLazy 'groenewege/vim-less', {
-            \ 'filetypes' : 'less',
+            \ 'autoload' : { 'filetypes' : ['less'] },
             \ }
 NeoBundleLazy 'cakebaker/scss-syntax.vim', {
-            \ 'filetypes' : 'scss',
+            \ 'autoload' : { 'filetypes' : ['scss'] },
             \ }
 
 " }}}

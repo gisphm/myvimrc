@@ -20,15 +20,19 @@
 
 " Writing {{{
 
-NeoBundle 'junegunn/vim-easy-align'
-NeoBundle 'vimwiki/vimwiki', 'dev'
 NeoBundle 'reedes/vim-wordy'
+NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'godlygeek/tabular'
-NeoBundle 'plasticboy/vim-markdown', {
+NeoBundleLazy 'vimwiki/vimwiki', {
+            \ 'rev' : 'dev',
+            \ 'autoload' : { 'filetypes' : ['vimwiki'] },
+            \ }
+NeoBundleLazy 'plasticboy/vim-markdown', {
             \ 'depends' : ['godlygeek/tabular'],
+            \ 'autoload' : { 'filetypes' : ['markdown'] },
             \ }
 NeoBundleLazy 'cespare/vim-toml', {
-            \ 'filetypes' : 'toml',
+            \ 'autoload' : { 'filetypes' : ['toml'] },
             \ }
 NeoBundleLazy 'hotoo/pangu.vim', {
             \ 'autoload' : {

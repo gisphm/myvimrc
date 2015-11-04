@@ -53,7 +53,6 @@ set viewoptions=folds,options,cursor,unix,slash
 set virtualedit=onemore
 set history=1000
 set ttimeoutlen=50
-set spell
 set hidden
 set iskeyword-=.
 set iskeyword-=#
@@ -97,12 +96,6 @@ set grepformat=%f:%l:%c:%m
 
 " RestoreView {{{2
 
-let s:skipview_files = [
-            \ 'gitcommit', 'startify', 'undotree',
-            \ 'unite', 'vimfiler', 'tagbar',
-            \ 'help', 'diffpanel'
-            \ ]
-
 function! MakeViewCheck()
     if &l:diff | return 0 | endif
     if &buftype != '' | return 0 | endif
@@ -111,20 +104,13 @@ function! MakeViewCheck()
     if &modifiable == 0 | return 0 | endif
     if len($TEMP) && expand('%:p:h') == $TEMP | return 0 | endif
     if len($TMP) && expand('%:p:h') == $TMP | return 0 | endif
-
-    let file_name = expand('%:p')
-    for ifiles in s:skipview_files
-        if file_name =~ ifiles
-            return 0
-        endif
-    endfor
-
+    if &filetype =~ 'gitcommit\|unite\|log' | return 0 | endif
+    if &filetype == '' | return 0 | endif
     return 1
 endfunction
 
 augroup AutoView
     autocmd!
-    " Autosave & Load Views.
     autocmd BufWritePre,BufWinLeave ?* if MakeViewCheck() | silent! mkview | endif
     autocmd BufWinEnter ?* if MakeViewCheck() | silent! loadview | endif
 augroup END
@@ -133,7 +119,7 @@ augroup END
 
 " Ctags {{{2
 
-set tags=tags,./tags;/,~/.vimtags,gems.tags,./gems.tags
+set tags=tags,./tags;/,gems.tags,./gems.tags
 
 " Make tags placed in .git/tags file available in all levels of a repository
 let gitroot = substitute(system('git rev-parse --show-toplevel'), '[\n\r]', '', 'g')
@@ -165,7 +151,7 @@ set formatoptions+=mMj
 set scrolljump=5 scrolloff=3
 set foldenable
 set list
-set spell
+set nospell
 set spelllang=en_us
 set noerrorbells novisualbell
 set t_vb=
@@ -332,6 +318,8 @@ nmap <Leader>ff [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<C
 
 " Easier formatting
 nnoremap <silent> <Leader>q gwip
+
+set pastetoggle=<Leader>p
 
 nmap _$ :call <SID>Preserve("%s/\\s\\+$//e")<CR>
 

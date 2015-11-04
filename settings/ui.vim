@@ -154,10 +154,10 @@ function! LightLineFilename()
 endfunction
 
 function! LightLineFugitive()
-    if winwidth(0) < 50
+    if winwidth(0) < 70 || &ft == '' || &ft =~ s:skip_filetypes
         return ''
     endif
-    if &ft !~? 'help\|Tagbar\|startify' && exists("*fugitive#head")
+    if exists("*fugitive#head")
         let _ = fugitive#head()
         return strlen(_) ? '⭠ '._ : ''
     endif
@@ -165,7 +165,7 @@ function! LightLineFugitive()
 endfunction
 
 function! LightLineSignify()
-    if winwidth(0) < 50
+    if winwidth(0) < 70
         return ''
     endif
     let l:symbols = ['+', '-', '~']
@@ -214,7 +214,7 @@ function! LightLineLineinfo() abort
 endfunction
 
 function! LightLinePercent() abort
-    if &filetype =~ s:skip_filetypes || winwidth(0) < 70 || s:word_count == ''
+    if &filetype =~ s:skip_filetypes || winwidth(0) < 70
         return ''
     endif
     return printf('%5.1f%%', line('.')*100.0/line('$'))
@@ -225,10 +225,6 @@ function! LightLineSpaceCheck() abort
         return ''
     endif
     let l:spacecheck_warning = ''
-    let l:indent = search('\v(^\t+ +)|(^ +\t+)', 'nw')
-    if l:indent != 0
-        let l:spacecheck_warning .= printf('mixed[%s]', l:indent)
-    endif
     let l:space = search('\s\+$', 'nw')
     if l:space != 0
         let l:spacecheck_warning .= printf('trail[%s]', l:space)
@@ -244,6 +240,7 @@ function! LightLineWordCount() abort
         let s:word_count = ''
         let s:started_count = 0
     endif
+    " TODO need to rewrite word count
     if (s:started_count == 0 || &modified) && mode() ==# 'n'
         let s:word_count = matchstr(split(system('wc -w ' . expand('%'))), '\d\+')
         let s:started_count = 1

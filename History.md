@@ -2,6 +2,7 @@
 Unreleased / 2015-11-04
 =======================
 
+  * [Changed] improve vim performance
   * [Added] more specific todo in README
   * [Added] google's searchindex
   * [Changed] lazy some plugins and update settings

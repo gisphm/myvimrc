@@ -54,7 +54,6 @@ NeoBundle 'Shougo/unite-help'
 NeoBundle 'Shougo/unite-session'
 NeoBundle 'Shougo/neoyank.vim'
 NeoBundle 'ujihisa/neco-look'
-NeoBundle 'chrisbra/vim-zsh'
 
 " }}}
 
@@ -69,7 +68,6 @@ NeoBundle 'mbbill/undotree'
 NeoBundle 'tpope/vim-abolish.git'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-indent'
-NeoBundle 'gcmt/wildfire.vim'
 NeoBundle 'diffchar.vim'
 NeoBundle 'chrisbra/vim-diff-enhanced'
 NeoBundle 'kshenoy/vim-signature'

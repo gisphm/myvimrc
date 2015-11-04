@@ -32,11 +32,17 @@ NeoBundleLazy 'tpope/vim-jdaddy', {
 " Misc {{{
 
 NeoBundle 'google/vim-searchindex'
-NeoBundle 'bootleq/LargeFile'
+NeoBundle 'Maxlufs/LargeFile.vim'
 NeoBundle 's3rvac/AutoFenc'
 NeoBundle 'antoyo/vim-licenses'
 NeoBundle 'itchyny/calendar.vim'
 NeoBundle 'junegunn/rainbow_parentheses.vim'
+NeoBundleLazy 'lilydjwg/colorizer', {
+            \ 'autoload' : { 'filetypes' : ['vim', 'css', 'scss', 'less', 'html', 'eruby'] },
+            \ }
+NeoBundleLazy 'chrisbra/vim-zsh', {
+            \ 'autoload' : { 'filetypes' : ['zsh'] },
+            \ }
 NeoBundleLazy 'chrisbra/csv.vim', {
             \ 'filetypes' : 'csv',
             \ }

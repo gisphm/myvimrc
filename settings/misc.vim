@@ -43,3 +43,9 @@ augroup Rainbow
 augroup END
 
 " }}}
+
+" Largefile {{{
+
+" let g:LargeFile = 1
+
+" }}}

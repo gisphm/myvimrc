@@ -20,10 +20,18 @@
 
 " Ruby {{{
 
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'tpope/vim-rake'
-NeoBundle 'tpope/vim-cucumber'
+NeoBundleLazy 'vim-ruby/vim-ruby', {
+            \ 'filetypes' : ['ruby', 'eruby'],
+            \ }
+NeoBundleLazy 'tpope/vim-rails', {
+            \ 'filetypes' : ['ruby', 'eruby'],
+            \ }
+NeoBundleLazy 'tpope/vim-rake', {
+            \ 'filetypes' : ['ruby', 'eruby'],
+            \ }
+NeoBundleLazy 'tpope/vim-cucumber', {
+            \ 'filetypes' : ['ruby', 'eruby'],
+            \ }
 NeoBundleLazy 'tpope/vim-bundler', {
             \ 'filetypes' : ['ruby', 'eruby'],
             \ }

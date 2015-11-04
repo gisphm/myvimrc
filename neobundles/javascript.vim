@@ -20,10 +20,18 @@
 
 " Javascript {{{
 
-NeoBundle 'othree/yajs.vim'
-NeoBundle 'othree/javascript-libraries-syntax.vim'
-NeoBundle 'othree/jspc.vim'
-NeoBundle 'pangloss/vim-javascript'
+NeoBundleLazy 'othree/yajs.vim', {
+            \ 'autoload' : { 'filetypes' : ['javascript','markdown'] },
+            \ }
+NeoBundleLazy 'othree/javascript-libraries-syntax.vim', {
+            \ 'autoload' : { 'filetypes' : ['javascript','markdown'] },
+            \ }
+NeoBundleLazy 'othree/jspc.vim', {
+            \ 'autoload' : { 'filetypes' : ['javascript','markdown'] },
+            \ }
+NeoBundleLazy 'pangloss/vim-javascript', {
+            \ 'autoload' : { 'filetypes' : ['javascript','markdown'] },
+            \ }
 NeoBundleLazy 'briancollins/vim-jst', {
             \ 'autoload' : { 'filetypes' : ['javascript'] },
             \ }
