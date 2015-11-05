@@ -36,7 +36,7 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors           = 1
 
 let g:indent_guides_exclude_filetypes     =
-            \ ['help', 'vimfiler', 'startify', 'unite']
+            \ ['help', 'vimfiler', 'startify', 'unite', 'calendar', 'tagbar', 'undotree']
 
 " }}}
 
@@ -110,7 +110,7 @@ let g:lightline.mode_map           = {
 
 " Component Functions {{{2
 
-let s:skip_filetypes = 'startify\|help\|unite\|vimfiler\|tagbar\|diff\|undotree'
+let s:skip_filetypes = 'startify\|help\|unite\|vimfiler\|tagbar\|undotree\|calendar'
 
 function! LightLineMode()
     let l:fname = expand('%:t')
@@ -479,9 +479,9 @@ endfunction
 function! s:RandomCow() abort
     let l:index = <SID>RandomVim() % 2
     if l:index == 0
-        return split(system('fortune -s | cowthink -f `ls /usr/share/cows/ | shuf -n 1`'), '\n')
+        return split(system('fortune -s | cowthink'), '\n')
     else
-        return split(system('fortune -s | cowsay -f `ls /usr/share/cows/ | shuf -n 1`'), '\n')
+        return split(system('fortune -s | cowsay'), '\n')
     endif
 endfunction
 

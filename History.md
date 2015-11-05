@@ -1,7 +1,8 @@
 
-Unreleased / 2015-11-04
+Unreleased / 2015-11-05
 =======================
 
+  * [Changed] update unite settings
   * [Changed] wordcount only works in git-files
   * [Changed] improve vim performance
   * [Added] more specific todo in README
