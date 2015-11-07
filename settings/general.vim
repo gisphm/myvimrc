@@ -81,13 +81,6 @@ let g:SignatureMap = {
 
 " }}}
 
-" DiffChar {{{
-
-let g:DiffColors = 100
-let g:DiffUpdate = 1
-
-" }}}
-
 " EasyMotion {{{
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
