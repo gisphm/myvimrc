@@ -20,8 +20,8 @@
 
 " Markup {{{
 
+NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'mattn/webapi-vim'
-NeoBundleLazy 'othree/html5.vim'
 NeoBundleLazy 'amirh/HTML-AutoCloseTag', {
             \ 'filetypes' : ['html', 'eruby'],
             \ }
@@ -33,9 +33,6 @@ NeoBundleLazy 'chrisgillis/vim-bootstrap3-snippets', {
             \     'filetypes' : ['html', 'eruby']
             \   }
             \ }
-NeoBundleLazy 'tpope/vim-haml', {
-            \ 'filetypes' : ['haml'],
-            \ }
 NeoBundleLazy 'Valloric/MatchTagAlways', {
             \ 'filetypes' : ['html', 'eruby', 'css', 'xml', 'javascript', 'scss', 'less'],
             \ }
@@ -45,6 +42,5 @@ NeoBundleLazy 'sukima/xmledit', {
 NeoBundleLazy 'tpope/vim-ragtag', {
             \ 'filetypes' : ['html', 'eruby', 'css', 'xml', 'javascript', 'scss', 'less'],
             \ }
-NeoBundle 'tpope/vim-unimpaired'
 
 " }}}

@@ -20,9 +20,6 @@
 
 " json {{{
 
-NeoBundleLazy 'elzr/vim-json', {
-            \ 'autoload' : { 'filetypes' : ['json'] },
-            \ }
 NeoBundleLazy 'tpope/vim-jdaddy', {
             \ 'autoload' : { 'filetypes' : ['json'] },
             \ }
@@ -39,24 +36,17 @@ NeoBundle 'itchyny/calendar.vim'
 NeoBundleLazy 'lilydjwg/colorizer', {
             \ 'autoload' : { 'filetypes' : ['vim', 'css', 'scss', 'less', 'html', 'eruby'] },
             \ }
-NeoBundleLazy 'chrisbra/vim-zsh', {
-            \ 'autoload' : { 'filetypes' : ['zsh'] },
-            \ }
 NeoBundleLazy 'chrisbra/csv.vim', {
             \ 'filetypes' : 'csv',
             \ }
 NeoBundleLazy 'gisphm/vim-gitignore', {
             \ 'autoload' : { 'filetypes' : ['gitignore'] },
             \ }
-NeoBundleLazy 'tmux-plugins/vim-tmux', {
-            \ 'autoload' : { 'filetypes' : ['tmux'] },
-            \ }
 
 " }}}
 
 " Git Staff {{{
 
-NeoBundle 'tpope/vim-git'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'idanarye/vim-merginal'
 NeoBundle 'int3/vim-extradite'

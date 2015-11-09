@@ -1,7 +1,8 @@
 
-Unreleased / 2015-11-09
+Unreleased / 2015-11-10
 =======================
 
+  * [Changed] replace those plugins with ployglot
   * [Removed] rainbow-parenthesis
   * [Changed] unlazy unimpaired
   * [Removed] diffchar plugin

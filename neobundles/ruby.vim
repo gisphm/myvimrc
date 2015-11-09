@@ -20,22 +20,13 @@
 
 " Ruby {{{
 
-NeoBundleLazy 'vim-ruby/vim-ruby', {
-            \ 'filetypes' : ['ruby', 'eruby'],
-            \ }
 NeoBundleLazy 'tpope/vim-rails', {
             \ 'filetypes' : ['ruby', 'eruby'],
             \ }
 NeoBundleLazy 'tpope/vim-rake', {
             \ 'filetypes' : ['ruby', 'eruby'],
             \ }
-NeoBundleLazy 'tpope/vim-cucumber', {
-            \ 'filetypes' : ['ruby', 'eruby'],
-            \ }
 NeoBundleLazy 'tpope/vim-bundler', {
-            \ 'filetypes' : ['ruby', 'eruby'],
-            \ }
-NeoBundleLazy 'thoughtbot/vim-rspec', {
             \ 'filetypes' : ['ruby', 'eruby'],
             \ }
 NeoBundleLazy 'stefanoverna/vim-i18n', {

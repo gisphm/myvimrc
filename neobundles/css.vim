@@ -20,14 +20,8 @@
 
 " CSS {{{
 
-NeoBundleLazy 'JulesWang/css.vim', {
-            \ 'autoload' : { 'filetypes' : ['css', 'scss', 'less'] },
-            \ }
 NeoBundleLazy 'hail2u/vim-css3-syntax', {
             \ 'autoload' : { 'filetypes' : ['css', 'scss', 'less'] },
-            \ }
-NeoBundleLazy 'groenewege/vim-less', {
-            \ 'autoload' : { 'filetypes' : ['less'] },
             \ }
 NeoBundleLazy 'cakebaker/scss-syntax.vim', {
             \ 'autoload' : { 'filetypes' : ['scss'] },

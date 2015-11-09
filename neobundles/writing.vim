@@ -27,17 +27,10 @@ NeoBundleLazy 'vimwiki/vimwiki', {
             \ 'rev' : 'dev',
             \ 'autoload' : { 'filetypes' : ['vimwiki'] },
             \ }
-NeoBundleLazy 'plasticboy/vim-markdown', {
-            \ 'depends' : ['godlygeek/tabular'],
-            \ 'autoload' : { 'filetypes' : ['markdown'] },
-            \ }
-NeoBundleLazy 'cespare/vim-toml', {
-            \ 'autoload' : { 'filetypes' : ['toml'] },
-            \ }
 NeoBundleLazy 'hotoo/pangu.vim', {
             \ 'autoload' : {
             \   'filetypes' : [
-            \     'markdown', 'text', 'wiki', 'cnx'
+            \     'markdown', 'text', 'vimwiki', 'cnx'
             \     ]
             \   }
             \ }

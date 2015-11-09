@@ -54,6 +54,7 @@ NeoBundle 'Shougo/unite-help'
 NeoBundle 'Shougo/unite-session'
 NeoBundle 'Shougo/neoyank.vim'
 NeoBundle 'ujihisa/neco-look'
+NeoBundle 'gisphm/vim-polyglot'
 
 " }}}
 
