@@ -33,17 +33,6 @@ let g:licenses_default_commands       = ['apache', 'unlicense', 'wtfpl']
 
 " }}}
 
-" Rainbow Parentheses {{{
-
-let g:rainbow#max_level = 16
-let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['<', '>']]
-augroup Rainbow
-    autocmd!
-    autocmd FileType * RainbowParentheses
-augroup END
-
-" }}}
-
 " Largefile {{{
 
 " let g:LargeFile = 1

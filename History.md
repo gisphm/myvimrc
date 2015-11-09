@@ -2,6 +2,7 @@
 Unreleased / 2015-11-09
 =======================
 
+  * [Removed] rainbow-parenthesis
   * [Changed] unlazy unimpaired
   * [Removed] diffchar plugin
   * [Changed] update unite settings

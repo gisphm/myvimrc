@@ -98,6 +98,7 @@ nmap ga <Plug>(EasyAlign)
 
 " Vimwiki {{{
 
+autocmd BufNewFile,BufRead *.wiki setlocal filetype=vimwiki
 nnoremap <space>ww <Plug>VimwikiIndex
 nnoremap <space>wt <Plug>VimwikiTabIndex
 nnoremap <space>wi <Plug>VimwikiDiaryIndex
