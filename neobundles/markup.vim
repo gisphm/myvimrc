@@ -45,8 +45,6 @@ NeoBundleLazy 'sukima/xmledit', {
 NeoBundleLazy 'tpope/vim-ragtag', {
             \ 'filetypes' : ['html', 'eruby', 'css', 'xml', 'javascript', 'scss', 'less'],
             \ }
-NeoBundleLazy 'tpope/vim-unimpaired', {
-            \ 'filetypes' : ['html', 'eruby', 'css', 'xml', 'javascript', 'scss', 'less'],
-            \ }
+NeoBundle 'tpope/vim-unimpaired'
 
 " }}}

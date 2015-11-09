@@ -1,7 +1,8 @@
 
-Unreleased / 2015-11-08
+Unreleased / 2015-11-09
 =======================
 
+  * [Changed] unlazy unimpaired
   * [Removed] diffchar plugin
   * [Changed] update unite settings
   * [Changed] wordcount only works in git-files
