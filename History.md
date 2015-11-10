@@ -2,6 +2,7 @@
 Unreleased / 2015-11-10
 =======================
 
+  * [Removed] some unite plugins
   * [Changed] replace those plugins with ployglot
   * [Removed] rainbow-parenthesis
   * [Changed] unlazy unimpaired

@@ -49,8 +49,6 @@ NeoBundle 'Shougo/vimfiler.vim', {
             \ 'mappings' : '<Plug>',
             \ 'explorer' : 1,
             \ }
-NeoBundle 'Shougo/unite-outline'
-NeoBundle 'Shougo/unite-help'
 NeoBundle 'Shougo/unite-session'
 NeoBundle 'Shougo/neoyank.vim'
 NeoBundle 'ujihisa/neco-look'

@@ -93,8 +93,7 @@ nmap <Space>u [unite]
 nnoremap [unite]f :<C-u>Unite source<CR>
 nnoremap <silent> <Leader>b
             \ :<C-u>Unite -auto-resize -buffer-name=buffers buffer<CR>
-nnoremap <silent> [unite]u
-            \ :<C-u>Unite -auto-resize
+nnoremap [unite]u :<C-u>Unite -auto-resize
 
 nnoremap <silent> <Space>n :UniteNext<CR>
 nnoremap <silent> <Space>p :UnitePrevious<CR>
