@@ -124,6 +124,8 @@ function! LightLineMode()
         let l:mode = 'Unite'
     elseif &ft == 'vimfiler'
         let l:mode = 'VimFiler'
+    elseif &ft == 'startify'
+        let l:mode = 'Starify'
     else
         let l:mode = lightline#mode()
     endif
@@ -145,6 +147,8 @@ function! LightLineFilename()
         let l:display = vimfiler#get_status_string()
     elseif &ft == 'unite'
         let l:display = unite#get_status_string()
+    elseif &ft == 'startify'
+        let l:display = ''
     else
         let l:display = ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
                     \ ('' != fname ? fname : '[No Name]') .
@@ -196,7 +200,11 @@ function! LightLineFileformat()
 endfunction
 
 function! LightLineFiletype()
-    return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : '') : ''
+    if winwidth(0) < 70 || &filetype == 'startify'
+        return ''
+    else
+        return strlen(&filetype) ? &filetype : ''
+    endif
 endfunction
 
 function! LightLineFileencoding()
@@ -233,23 +241,24 @@ function! LightLineSpaceCheck() abort
 endfunction
 
 function! LightLineWordCount() abort
-    if &filetype =~ s:skip_filetypes || winwidth(0) < 70 || !strlen(fugitive#head())
+    if &filetype =~ s:skip_filetypes || winwidth(0) < 70 || executable('wc') != 1
         return ''
     endif
 
     if !exists("s:word_count") || !exists("s:old_stats") || !exists("s:started_count")
         let s:word_count = ''
-        let s:old_stats = [0, 0, 0]
+        let s:old_stats = 0
         let s:started_count = 0
     endif
 
     if s:started_count == 0
         let s:word_count = matchstr(split(system('wc -w ' . expand('%'))), '\d\+')
         let s:started_count = 1
-    elseif s:old_stats !=? sy#repo#get_stats()
-        let s:old_stats = sy#repo#get_stats()
+    elseif !&modified && s:old_stats
         let s:word_count = matchstr(split(system('wc -w ' . expand('%'))), '\d\+')
     endif
+
+    let s:old_stats = &modified
 
     return s:word_count
 endfunction
@@ -297,8 +306,10 @@ let g:startify_enable_special         = 1
 let g:startify_enable_unsafe          = 0
 let g:startify_session_dir            = '~/.vim/session'
 let g:startify_list_order             = [
-            \ ['MRU'], 'files',
-            \ ['Sessions'], 'sessions',
+            \ ['MRU'],
+            \ 'files',
+            \ ['Sessions'],
+            \ 'sessions',
             \ ]
 let g:startify_skiplist               = [
             \ 'COMMIT_EDITMSG',
@@ -496,8 +507,11 @@ endfunction
 let g:startify_custom_header = <SID>RandomHeader()
 
 let g:startify_custom_footer = [
-            \ "", "", strftime('        %A %Y-%m-%d'),
-            \ "        Welcome to Vim World!"
+            \ "",
+            \ strftime('        %A %Y-%m-%d'),
+            \ "        Welcome to Vim World!",
+            \ "        Vim is charityware. Please read ':help uganda'.",
+            \ ""
             \ ]
 
 " }}}2

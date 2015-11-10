@@ -35,13 +35,3 @@ vmap <Leader>ts :call I18nTranslateString()<CR>
 vmap <Leader>td :call I18nDisplayTranslation()<CR>
 
 " }}}
-
-" Rspec {{{
-
-nmap <LocalLeader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-let g:rspec_command = "Dispatch rspec {spec}"
-
-" }}}

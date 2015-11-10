@@ -56,6 +56,36 @@ NeoBundle 'gisphm/vim-polyglot'
 
 " }}}
 
+" Snippets & AutoComplete {{{
+
+NeoBundle 'kana/vim-smartchr', {
+            \ 'insert' : 1
+            \ }
+NeoBundle 'Shougo/neocomplete.vim', {
+            \ 'insert' : 1
+            \ }
+NeoBundle 'Shougo/neco-syntax'
+NeoBundle 'Shougo/neco-vim'
+NeoBundle 'Shougo/neosnippet.vim', {
+            \ 'insert' : 1,
+            \ 'depends' : [
+            \     'Shougo/neosnippet-snippets', 'Shougo/context_filetype.vim'
+            \   ],
+            \ 'unite_sources' : [
+            \     'neosnippet', 'neosnippet/user', 'neosnippet/runtime'
+            \   ],
+            \ }
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'gisphm/vim-snippets-neosnippet'
+
+NeoBundle 'chrisbra/unicode.vim', {
+            \ 'build' : {
+            \     'linux' : 'mkdir -p autoload/unicode/ && wget -q http://www.unicode.org/Public/UNIDATA/UnicodeData.txt -O autoload/unicode/UnicodeData.txt',
+            \   },
+            \ }
+
+" }}}
+
 " General {{{
 
 NeoBundle 'tpope/vim-surround'

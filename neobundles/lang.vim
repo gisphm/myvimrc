@@ -18,6 +18,44 @@
 "
 " }}}
 
+" CSS {{{
+
+NeoBundleLazy 'hail2u/vim-css3-syntax', {
+            \ 'autoload' : { 'filetypes' : ['css', 'scss', 'less'] },
+            \ }
+NeoBundleLazy 'cakebaker/scss-syntax.vim', {
+            \ 'autoload' : { 'filetypes' : ['scss'] },
+            \ }
+
+" }}}
+
+" Markup {{{
+
+NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'mattn/webapi-vim'
+NeoBundleLazy 'amirh/HTML-AutoCloseTag', {
+            \ 'filetypes' : ['html', 'eruby'],
+            \ }
+NeoBundleLazy 'mattn/emmet-vim', {
+            \ 'filetypes' : ['html', 'eruby', 'css', 'xml', 'javascript', 'scss', 'less'],
+            \ }
+NeoBundleLazy 'chrisgillis/vim-bootstrap3-snippets', {
+            \ 'autoload' : {
+            \     'filetypes' : ['html', 'eruby']
+            \   }
+            \ }
+NeoBundleLazy 'Valloric/MatchTagAlways', {
+            \ 'filetypes' : ['html', 'eruby', 'css', 'xml', 'javascript', 'scss', 'less'],
+            \ }
+NeoBundleLazy 'sukima/xmledit', {
+            \ 'filetypes' : ['html', 'eruby', 'css', 'xml', 'javascript', 'scss', 'less'],
+            \ }
+NeoBundleLazy 'tpope/vim-ragtag', {
+            \ 'filetypes' : ['html', 'eruby', 'css', 'xml', 'javascript', 'scss', 'less'],
+            \ }
+
+" }}}
+
 " Javascript {{{
 
 NeoBundleLazy 'othree/javascript-libraries-syntax.vim', {
@@ -49,6 +87,26 @@ NeoBundleLazy 'moll/vim-node', {
             \ }
 NeoBundleLazy 'heavenshell/vim-jsdoc', {
             \ 'autoload' : { 'filetypes' : ['javascript', 'html'] },
+            \ }
+
+" }}}
+
+" Ruby {{{
+
+NeoBundleLazy 'tpope/vim-rails', {
+            \ 'filetypes' : ['ruby', 'eruby'],
+            \ }
+NeoBundleLazy 'tpope/vim-rake', {
+            \ 'filetypes' : ['ruby', 'eruby'],
+            \ }
+NeoBundleLazy 'tpope/vim-bundler', {
+            \ 'filetypes' : ['ruby', 'eruby'],
+            \ }
+NeoBundleLazy 'stefanoverna/vim-i18n', {
+            \ 'filetypes' : ['ruby', 'eruby'],
+            \ }
+NeoBundleLazy 'killphi/vim-ruby-refactoring', {
+            \ 'filetypes' : ['ruby', 'eruby'],
             \ }
 
 " }}}

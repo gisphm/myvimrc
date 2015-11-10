@@ -2,6 +2,7 @@
 Unreleased / 2015-11-10
 =======================
 
+  * [Changed] combine plugins to reduce bundle files
   * [Removed] some unite plugins
   * [Changed] replace those plugins with ployglot
   * [Removed] rainbow-parenthesis

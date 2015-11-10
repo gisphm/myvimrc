@@ -18,6 +18,30 @@
 "
 " }}}
 
+" UI {{{
+
+NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'mhinz/vim-startify'
+NeoBundle 'ryanoasis/vim-devicons'
+
+" }}}
+
+" Programming {{{
+
+NeoBundle 'tpope/vim-dispatch'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'mhinz/vim-signify'
+NeoBundle 'tomtom/tcomment_vim'
+if executable('ctags')
+    NeoBundle 'majutsushi/tagbar'
+endif
+NeoBundle 'Chiel92/vim-autoformat'
+NeoBundle 'tpope/vim-projectionist'
+
+" }}}
+
 " json {{{
 
 NeoBundleLazy 'tpope/vim-jdaddy', {
@@ -50,5 +74,24 @@ NeoBundleLazy 'gisphm/vim-gitignore', {
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'idanarye/vim-merginal'
 NeoBundle 'int3/vim-extradite'
+
+" }}}
+
+" Writing {{{
+
+NeoBundle 'reedes/vim-wordy'
+NeoBundle 'junegunn/vim-easy-align'
+NeoBundle 'godlygeek/tabular'
+NeoBundleLazy 'vimwiki/vimwiki', {
+            \ 'rev' : 'dev',
+            \ 'autoload' : { 'filetypes' : ['vimwiki'] },
+            \ }
+NeoBundleLazy 'hotoo/pangu.vim', {
+            \ 'autoload' : {
+            \   'filetypes' : [
+            \     'markdown', 'text', 'vimwiki', 'cnx'
+            \     ]
+            \   }
+            \ }
 
 " }}}
