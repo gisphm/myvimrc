@@ -18,17 +18,6 @@
 "
 " }}}
 
-" CSS {{{
-
-NeoBundleLazy 'hail2u/vim-css3-syntax', {
-            \ 'autoload' : { 'filetypes' : ['css', 'scss', 'less'] },
-            \ }
-NeoBundleLazy 'cakebaker/scss-syntax.vim', {
-            \ 'autoload' : { 'filetypes' : ['scss'] },
-            \ }
-
-" }}}
-
 " Markup {{{
 
 NeoBundle 'tpope/vim-unimpaired'

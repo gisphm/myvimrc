@@ -63,9 +63,6 @@ NeoBundleLazy 'gisphm/dbext.vim', {
 NeoBundleLazy 'lilydjwg/colorizer', {
             \ 'autoload' : { 'filetypes' : ['vim', 'css', 'scss', 'less', 'html', 'eruby'] },
             \ }
-NeoBundleLazy 'chrisbra/csv.vim', {
-            \ 'filetypes' : 'csv',
-            \ }
 NeoBundleLazy 'gisphm/vim-gitignore', {
             \ 'autoload' : { 'filetypes' : ['gitignore'] },
             \ }
