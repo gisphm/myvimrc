@@ -28,11 +28,6 @@ NeoBundleLazy 'amirh/HTML-AutoCloseTag', {
 NeoBundleLazy 'mattn/emmet-vim', {
             \ 'filetypes' : ['html', 'eruby', 'css', 'xml', 'javascript', 'scss', 'less'],
             \ }
-NeoBundleLazy 'chrisgillis/vim-bootstrap3-snippets', {
-            \ 'autoload' : {
-            \     'filetypes' : ['html', 'eruby']
-            \   }
-            \ }
 NeoBundleLazy 'Valloric/MatchTagAlways', {
             \ 'filetypes' : ['html', 'eruby', 'css', 'xml', 'javascript', 'scss', 'less'],
             \ }

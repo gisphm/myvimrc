@@ -2,6 +2,7 @@
 Unreleased / 2015-11-11
 =======================
 
+  * [Removed] bootstrap3-snippets
   * [Removed] css3-syntax and csv
   * [Added] dbext.vim
   * [Removed] js-context-coloring
