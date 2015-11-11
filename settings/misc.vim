@@ -32,9 +32,3 @@ let g:licenses_authors_name           = 'gisphm <phmfk@hotmail.com>'
 let g:licenses_default_commands       = ['apache', 'unlicense', 'wtfpl']
 
 " }}}
-
-" Largefile {{{
-
-" let g:LargeFile = 1
-
-" }}}

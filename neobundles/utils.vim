@@ -57,6 +57,9 @@ NeoBundle 'Maxlufs/LargeFile.vim'
 NeoBundle 's3rvac/AutoFenc'
 NeoBundle 'antoyo/vim-licenses'
 NeoBundle 'itchyny/calendar.vim'
+NeoBundleLazy 'gisphm/dbext.vim', {
+            \ 'autoload' : { 'filetypes' : ['sql'] },
+            \ }
 NeoBundleLazy 'lilydjwg/colorizer', {
             \ 'autoload' : { 'filetypes' : ['vim', 'css', 'scss', 'less', 'html', 'eruby'] },
             \ }

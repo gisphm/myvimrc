@@ -2,6 +2,7 @@
 Unreleased / 2015-11-11
 =======================
 
+  * [Added] dbext.vim
   * [Removed] js-context-coloring
   * [Changed] combine plugins to reduce bundle files
   * [Removed] some unite plugins
