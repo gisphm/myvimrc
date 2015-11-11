@@ -252,10 +252,10 @@ function! LightLineWordCount() abort
     endif
 
     if s:started_count == 0
-        let s:word_count = matchstr(split(system('wc -w ' . expand('%'))), '\d\+')
+        let s:word_count = matchstr(split(vimproc#system('wc -w ' . expand('%'))), '\d\+')
         let s:started_count = 1
     elseif !&modified && s:old_stats
-        let s:word_count = matchstr(split(system('wc -w ' . expand('%'))), '\d\+')
+        let s:word_count = matchstr(split(vimproc#system('wc -w ' . expand('%'))), '\d\+')
     endif
 
     let s:old_stats = &modified
@@ -480,9 +480,9 @@ endfunction
 function! s:RandomCow() abort
     let l:index = <SID>RandomVim() % 2
     if l:index == 0
-        return split(system('fortune -s | cowthink'), '\n')
+        return split(vimproc#system('fortune -s | cowthink'), '\n')
     else
-        return split(system('fortune -s | cowsay'), '\n')
+        return split(vimproc#system('fortune -s | cowsay'), '\n')
     endif
 endfunction
 

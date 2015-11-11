@@ -122,7 +122,11 @@ augroup END
 set tags=tags,./tags;/,gems.tags,./gems.tags
 
 " Make tags placed in .git/tags file available in all levels of a repository
-let gitroot = substitute(system('git rev-parse --show-toplevel'), '[\n\r]', '', 'g')
+if vimproc#version()
+    let gitroot = substitute(vimproc#system('git rev-parse --show-toplevel'), '[\n\r]', '', 'g')
+else
+    let gitroot = substitute(system('git rev-parse --show-toplevel'), '[\n\r]', '', 'g')
+endif
 if gitroot != ''
     let &tags = &tags . ',' . gitroot . '/.git/tags'
 endif
