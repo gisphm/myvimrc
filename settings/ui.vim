@@ -274,16 +274,6 @@ function! TagbarStatusFunc(current, sort, fname, ...) abort
     return lightline#statusline(0)
 endfunction
 
-function! s:syntastic()
-    SyntasticCheck
-    call lightline#update()
-endfunction
-
-augroup AutoSyntastic
-    autocmd!
-    autocmd BufWritePost * call s:syntastic()
-augroup END
-
 let g:unite_force_overwrite_statusline    = 0
 let g:vimfiler_force_overwrite_statusline = 0
 

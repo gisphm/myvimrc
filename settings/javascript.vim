@@ -21,6 +21,8 @@
 " jshint2.vim {{{
 
 let jshint2_command = '/home/vagrant/nodejs/bin/jshint'
+let jshint2_read = 0
+let jshint2_save = 0
 nnoremap <silent><Space>jh :JSHint<CR>
 nnoremap <silent><Space>jn :lnext<CR>
 nnoremap <silent><Space>jp :lprevious<CR>
@@ -60,5 +62,7 @@ augroup tern_au
     autocmd!
     autocmd FileType javascript setlocal omnifunc=tern#Complete
 augroup END
+let g:tern_show_argument_hits = 'on_move'
+let g:tern_map_keys           = 1
 
 " }}}

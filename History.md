@@ -1,7 +1,8 @@
 
-Unreleased / 2015-11-10
+Unreleased / 2015-11-11
 =======================
 
+  * [Removed] js-context-coloring
   * [Changed] combine plugins to reduce bundle files
   * [Removed] some unite plugins
   * [Changed] replace those plugins with ployglot
