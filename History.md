@@ -2,6 +2,7 @@
 Unreleased / 2015-11-11
 =======================
 
+  * [Removed] vim-css-color
   * [Changed] revert colorize back to vim-css-color
   * [Added] use vimproc to call system command in vim
   * [Removed] bootstrap3-snippets
