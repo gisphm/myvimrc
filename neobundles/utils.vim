@@ -60,8 +60,12 @@ NeoBundle 'itchyny/calendar.vim'
 NeoBundleLazy 'gisphm/dbext.vim', {
             \ 'autoload' : { 'filetypes' : ['sql'] },
             \ }
-NeoBundleLazy 'lilydjwg/colorizer', {
-            \ 'autoload' : { 'filetypes' : ['vim', 'css', 'scss', 'less', 'html', 'eruby'] },
+NeoBundleLazy 'ap/vim-css-color', {
+            \ 'autoload' : {
+            \     'filetypes' : [
+            \       'css', 'html', 'json', 'less', 'lua', 'moon', 'r', 'sass', 'scss', 'stylus', 'vim', 'yaml'
+            \     ]
+            \   }
             \ }
 NeoBundleLazy 'gisphm/vim-gitignore', {
             \ 'autoload' : { 'filetypes' : ['gitignore'] },
