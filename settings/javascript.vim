@@ -66,3 +66,9 @@ let g:tern_show_argument_hits = 'on_move'
 let g:tern_map_keys           = 1
 
 " }}}
+
+" Node {{{
+
+autocmd User Node if &filetype == "javascript" | setlocal expandtab | endif
+
+" }}}

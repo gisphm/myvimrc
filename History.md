@@ -1,7 +1,8 @@
 
-Unreleased / 2015-11-11
+Unreleased / 2015-11-12
 =======================
 
+  * [Added] node autocommand for vim-node
   * [Removed] vim-css-color
   * [Changed] revert colorize back to vim-css-color
   * [Added] use vimproc to call system command in vim
