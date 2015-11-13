@@ -2,6 +2,7 @@
 Unreleased / 2015-11-13
 =======================
 
+  * [Changed] update TODO in README
   * [Added] abbr in some snips
   * [Added] node autocommand for vim-node
   * [Removed] vim-css-color

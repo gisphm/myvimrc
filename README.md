@@ -42,22 +42,23 @@
     > those mappings are too complicated and most of them seem to be useless.
 
 * [ ] use less plugins as possible, this should be considered at first
-    + [ ] combine some plugins together to `.vim` directory and update them through scripts
     + [ ] delete some `useless`(only works for me) plugins
+    + [x] combine some plugins together to `.vim` directory and update them through scripts
+        - [x] fork `vim-polyglot` repo and modify it to combine runtimes of multiple languages
 
 * [ ] more customizations for lightline
     + [ ] customize statusline
-        + [ ] trailing whitespace and mixed-indent
+        + [x] trailing whitespace ~~and mixed-indent~~
             - [x] copy and customize function from airline
-            - [ ] fix issue that the component sometimes may showing wrong when text has multiple whitespace and indent warnings
-        + [ ] wordcount status
-            - [x] using `sy#repo#get_stats()` to generate wordcount, only works for files under git control
-            - [ ] consider a new better way to generate wordcount
-        + [ ] a new wordcount way should be considered because using `v:statusmsg` is not always useful.
-            + [ ] use `wc` like tool
+            - [x] now only checks whitespace
+        + [x] wordcount status
+            - [x] ~~using `sy#repo#get_stats()` to generate wordcount, only works for files under git control~~
+            - [x] consider a new better way to generate wordcount
+                - [x] only count word using `wc` when the buffer is saved
         - [x] add hunk from signify function
         - [x] customize symbols for mode
         - [x] add devicons for filetype and fileformat
+        - [x] fix syntastic checking frequently issue raised by autocommand defined in `lightline#update()`
     + [ ] customize tabline
         - [ ] components layout for tabline
         - [ ] complete component function
@@ -71,6 +72,9 @@
 
 * [ ] group plugins (optional)
     + [ ] at least two groups -- `system`(for root user) and `common`
+
+* [ ] write test for my vimrc using vimscript test framework
+    + [ ] choose one framework of `vader.vim`, `vim-respec` and `vim-themis`
 
 * [ ] fix issues met in use regularly
 
