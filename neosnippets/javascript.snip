@@ -1,0 +1,34 @@
+snippet     var function
+abbr        function no name with var
+options     head
+    var ${1:name} = function() {
+        ${2:body}
+    }
+
+snippet     app get
+abbr        get
+options     head
+    ${1:app}.get('${2:route}', function (req, res) {
+        res.render('${3:view}', ${4:other});
+    })${0}
+
+snippet     app post
+abbr        post
+options     head
+    ${1:app}.post('${2:route}', function (req, res) {
+    })${0}
+
+snippet     app get post
+abbr        get and post
+options     head
+    ${1:app}.get('${2:route}', function (req, res) {
+        res.render('${3:view}', ${4:other});
+    })
+    $1.post('$2', function (req, res) {
+    })${0}
+
+snippet     app get simple
+abbr        simple get
+options     head
+    ${1:app}.get('${2:route}', function (req, res) {
+    })${0}

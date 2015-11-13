@@ -29,18 +29,77 @@
 
 ## TODO List
 * [x] replace nerdtree with vimfiler
-    * [baa4ecf3062f0d3883451bdabb2080ead39db51e](https://github.com/gisphm/myvimrc/commit/baa4ecf3062f0d3883451bdabb2080ead39db51e)
 
 * [x] fix arrow key and esc mapping error
-    * [eed0cb099cdf6051b32b8d28514c47b0f1a148eb](https://github.com/gisphm/myvimrc/commit/eed0cb099cdf6051b32b8d28514c47b0f1a148eb)
 
 * [x] split plugins list
-    * [c4656b10b61a40d37909d3aae4da8ae8580d37dd](https://github.com/gisphm/myvimrc/commit/c4656b10b61a40d37909d3aae4da8ae8580d37dd)
+    - [x] there are three files -- `general.vim`, `lang.vim` and `utils.vim`
 
 * [x] split plugins settings
-    * [294c0c70f7179a236e39d088fcb0fd3300312ae1](https://github.com/gisphm/myvimrc/commit/294c0c70f7179a236e39d088fcb0fd3300312ae1)
+    - [x] there are four files -- `base.vim`, `general.vim`, `lang.vim` and `utils.vim`
 
-* [x] fix rubycomplete issue
+* [x] write some mappings of `unite.vim` ~~acting as `ctrlp.vim`~~
+    - [x] there are only two mappings for `unite.vim` defined in `normal` mode when editing in buffer
+
+* [x] clean up neosnippets mappings
+    - [x] those mappings are too complicated and most of them seem to be useless.
+    - [x] use `<C-k>` to expand and `<Tab>` to jump
+
+* [x] use less plugins as possible, this should be considered at first
+    + [x] delete some `useless`(only works for me) plugins
+        - [x] I think, for now, the number of plugins should be stable
+    + [x] combine some plugins together to `.vim` directory and update them through scripts
+        - [x] fork `vim-polyglot` repo and modify it to combine runtimes of multiple languages
+
+* [ ] more customizations for lightline
+    + [x] customize statusline
+        + [x] trailing whitespace ~~and mixed-indent~~
+            - [x] copy and customize function from airline
+            - [x] now only checks whitespace
+        + [x] wordcount status
+            - [x] ~~using `sy#repo#get_stats()` to generate wordcount, only works for files under git control~~
+            - [x] consider a new better way to generate wordcount
+                - [x] only count word using `wc` when the buffer is saved
+        - [x] add hunk from signify function
+        - [x] customize symbols for mode
+        - [x] add devicons for filetype and fileformat
+        - [x] fix syntastic checking frequently issue raised by autocommand defined with `lightline#update()`
+    + [ ] customize tabline
+        - [ ] components layout for tabline
+        - [ ] complete component function
+    + [ ] create own colorscheme for lightline
+        - [x] copy an existed colorscheme as a sample
+            - [x] copied `solarizeed` as sample file but still need some time to read through the doc
+        - [ ] modify the sample
+
+* [ ] add more dictionary files for multiple languages
+
+* [ ] documentation of snippets
+    + [ ] use them more often
+    + [ ] create own snippets cause the existed snippets sometimes do not work for me
+
+* [ ] group plugins (optional)
+    + [ ] at least two groups -- `system`(for root user) and `common`
+
+* [ ] write test for my vimrc using vimscript test framework
+    + [ ] choose one framework of `vader.vim`, `vim-respec` and `vim-themis`
+
+* [ ] fix issues met in use regularly
+
+
+## Deprecated TODO
+* ~~complete install.sh~~
+
+    > 1. After executing [install.sh](scripts/install.sh), the basic plugin `neobundle` has been installed.
+    > 2. When you open `vim`, `neobundle` will take care of all other plugins that need installing.
+    > 2. Or, you can execute `vim +NeoBundleInstall +q +q` to install the rest plugins.
+    > 3. So, in some way, this [install.sh](scripts/install.sh) is incomplete but enough to use.
+
+* ~~replace neocomplete with youcompleteme~~
+    > ~~Just another trying for completion.~~
+    > I just cannot stand the slow speed when trying to open tiny files.
+
+* ~~fix rubycomplete issue~~
 
     > ~~well, this could be difficult.~~
     > ~~`neocomplete` says the `omnicomplete` of ruby provided by other plugins or vim~~
@@ -49,45 +108,7 @@
 
     > It seems that `vim-ruby` has fix this issue. What a great job!
 
-* [x] write some mappings of `unite.vim` acting as `ctrlp.vim`
-    * [a59c85e605dcfaffc70ce17a74b6115e503c3c44](https://github.com/gisphm/myvimrc/commit/a59c85e605dcfaffc70ce17a74b6115e503c3c44)
-    * [bb211598c81344252fbf3dd90c4cbfbae57713c2](https://github.com/gisphm/myvimrc/commit/bb211598c81344252fbf3dd90c4cbfbae57713c2)
-
-* [x] clean up neosnippets mappings
-    > those mappings are too complicated and most of them seem to be useless.
-
-* [ ] create own colorscheme for lightline
-
-* [ ] documentation of snippets(especially rails)
-
-    > ~~1. This is impossible for me...~~
-    > ~~2. The snippets are too many... WTF ...~~
-    > ~~3. So... forget about it for now...~~
-
-    > I may have some time to complete it.
-    > But I am not sure when I will complete it.
-    > Just try!
-
-* [ ] plugins as groups that can be enabled or disabled (optional)
-
-* [ ] use less plugins as possible
-
-    > This could be difficult for me now. I will try my best.
-
-* [ ] fix issues met in use regularly
-
-* ~~complete install.sh~~
-
-    > 1. After executing [install.sh](scripts/install.sh), the basic plugin `neobundle` has been installed.
-    > 2. When you open `vim`, `neobundle` will take care of all other plugins that need installing.
-    > 2. Or, you can execute `vim +NeoBundleInstall +q +q` to install the rest plugins.
-    > 3. So, in some way, this [install.sh](scripts/install.sh) is incomplete but enough to use.
-
-* ~~✓ replace neocomplete with youcompleteme~~
-    > ~~Just another trying for completion.~~
-    > I just cannot stand the slow speed when trying to open tiny files.
-
-* ~~✓ add necessary snippets from [vim-snippets][5] repo~~
+* ~~add necessary snippets from [vim-snippets][5] repo~~
     > ~~well, the convert script has been written and still has room to optimize.~~
 
 * ~~add `abbr` to each snippet of snippets in neosnippets directory~~
@@ -105,7 +126,6 @@
 
 + 之所以用 [neobundle][4] 而不是 [vundle][3]，纯粹是因为当时凑巧`vundle`用不了，
     各种无奈下只好用了`neobundle`
-    > 0. [94b0d32078f76ba21120133a4f1c1297ee4865cb](https://github.com/gisphm/myvimrc/commit/94b0d32078f76ba21120133a4f1c1297ee4865cb)
     > 1. `neobundle`的使用过程基本平滑，没有出现问题
     > 2. `neobundle`对插件的各种“花式”写法体现了插件调用的灵活性，大大提高 vim 的启动和运行速度
     > 3. `neobundle`唯一不爽的是没有跟`vundle`一样的直观的插件列表

@@ -20,7 +20,11 @@
 
 " General {{{
 
-set shell=/bin/sh
+if &shell =~# 'fish$'
+    set shell=/bin/bash
+else
+    set shell=/bin/sh
+endif
 set background=dark
 filetype plugin on
 syntax on
@@ -42,20 +46,22 @@ endif
 
 autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 
-set autowrite
-set autochdir
+set autoread autowrite autowriteall
+set noautochdir
 set shortmess+=filmnrxoOtT
 set viewoptions=folds,options,cursor,unix,slash
 set virtualedit=onemore
 set history=1000
 set ttimeoutlen=50
-set linebreak
-let &showbreak='↪'
-set spell
 set hidden
 set iskeyword-=.
 set iskeyword-=#
 set iskeyword-=-
+
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,.hg,*.gem
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.7z,*.lzma
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+set wildignore+=*.swp,*~,._*,*.bak*
 
 augroup resCur
     autocmd!
@@ -73,7 +79,7 @@ set dir=~/.vim/tmp/swap/
 set backupdir=~/.vim/tmp/backup/
 set undodir=~/.vim/tmp/undo/
 set viewdir=~/.vim/tmp/view/
-set viminfo+=n$HOME/.vim/tmp/viminfo
+set viminfo+=f1,n$HOME/.vim/tmp/viminfo viminfo^=!
 
 " Resolve performance problems
 " clear match command gracefully
@@ -81,16 +87,14 @@ autocmd BufWinLeave * call clearmatches()
 
 if executable('ag')
     set grepprg=ag\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow
+elseif executable('hw')
+    set grepprg=hw\ --no-group\ --no-color\ --follow-link
+else
+    set grepprg=grep\ -rnH\ --exclude='.*.swp'\ --exclude='*~'\ --exclude=tags
 endif
 set grepformat=%f:%l:%c:%m
 
 " RestoreView {{{2
-
-let s:skipview_files = [
-            \ 'gitcommit', 'startify', 'undotree',
-            \ 'unite', 'vimfiler', 'tagbar',
-            \ 'help', 'diffpanel'
-            \ ]
 
 function! MakeViewCheck()
     if &l:diff | return 0 | endif
@@ -100,20 +104,13 @@ function! MakeViewCheck()
     if &modifiable == 0 | return 0 | endif
     if len($TEMP) && expand('%:p:h') == $TEMP | return 0 | endif
     if len($TMP) && expand('%:p:h') == $TMP | return 0 | endif
-
-    let file_name = expand('%:p')
-    for ifiles in s:skipview_files
-        if file_name =~ ifiles
-            return 0
-        endif
-    endfor
-
+    if &filetype =~ 'gitcommit\|unite\|log' | return 0 | endif
+    if &filetype == '' | return 0 | endif
     return 1
 endfunction
 
 augroup AutoView
     autocmd!
-    " Autosave & Load Views.
     autocmd BufWritePre,BufWinLeave ?* if MakeViewCheck() | silent! mkview | endif
     autocmd BufWinEnter ?* if MakeViewCheck() | silent! loadview | endif
 augroup END
@@ -122,10 +119,14 @@ augroup END
 
 " Ctags {{{2
 
-set tags=tags,./tags;/,~/.vimtags,gems.tags,./gems.tags
+set tags=tags,./tags;/,gems.tags,./gems.tags
 
 " Make tags placed in .git/tags file available in all levels of a repository
-let gitroot = substitute(system('git rev-parse --show-toplevel'), '[\n\r]', '', 'g')
+if vimproc#version()
+    let gitroot = substitute(vimproc#system('git rev-parse --show-toplevel'), '[\n\r]', '', 'g')
+else
+    let gitroot = substitute(system('git rev-parse --show-toplevel'), '[\n\r]', '', 'g')
+endif
 if gitroot != ''
     let &tags = &tags . ',' . gitroot . '/.git/tags'
 endif
@@ -136,8 +137,8 @@ endif
 
 " Vim UI {{{
 
-set showmode
-set listchars=tab:➪Þ,trail:•,extends:#,nbsp:.,eol:¶
+set noshowmode
+set lazyredraw
 set colorcolumn=80
 set backspace=indent,eol,start
 set linespace=0
@@ -149,11 +150,23 @@ set ignorecase smartcase
 set wildmenu
 set wildmode=list:longest,full
 set whichwrap=b,s,h,l,<,>,[,]
+set display=lastline,uhex
+set formatoptions+=mMj
 set scrolljump=5 scrolloff=3
 set foldenable
 set list
+set nospell
+set spelllang=en_us
 set noerrorbells novisualbell
 set t_vb=
+set wrap linebreak
+let &showbreak='↪ '
+if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
+    set listchars=tab:➪Þ,trail:•,extends:#,nbsp:.,eol:¶
+    let &fillchars="vert:\u259a,fold:\u00b7"
+else
+    set listchars=tab:>\,trail:-,extends:>,precedes:<
+endif
 
 highlight clear SignColumn
 highlight clear LineNr
@@ -176,7 +189,6 @@ endif
 
 " Formatting {{{
 
-set wrap
 set autoindent smartindent
 set expandtab shiftwidth=4 tabstop=4 softtabstop=4
 set nojoinspaces
@@ -190,7 +202,7 @@ augroup FileAutoCmd
     au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
     autocmd FileType gitcommit setlocal tw=72 colorcolumn=72
     autocmd FileType gitcommit,qfreplace setlocal nofoldenable
-    autocmd FileType help setlocal number colorcolumn=
+    autocmd FileType help setlocal colorcolumn=
 augroup END
 
 " }}}
@@ -198,12 +210,14 @@ augroup END
 " Key Mappings {{{
 
 let mapleader = ";"
-let maplocalleader = "_"
+let maplocalleader = ","
 
-map <C-J> <C-W>j<C-W>_
-map <C-K> <C-W>k<C-W>_
-map <C-L> <C-W>l<C-W>_
-map <C-H> <C-W>h<C-W>_
+nnoremap <Leader>w <C-W>
+
+map <LocalLeader>j <C-W>j<C-W>_
+map <LocalLeader>k <C-W>k<C-W>_
+map <LocalLeader>l <C-W>l<C-W>_
+map <LocalLeader>h <C-W>h<C-W>_
 
 nnoremap j gj
 nnoremap k gk
@@ -260,6 +274,10 @@ nmap <Leader>f9 :set foldlevel=9<CR>
 nnoremap g^ gUiW
 nnoremap gv guiW
 
+" Auto center on matched string
+noremap n nzz
+noremap N Nzz
+
 "go to first and last char of line
 nnoremap H ^
 nnoremap L g_
@@ -302,18 +320,12 @@ map <Leader>= <C-w>=
 " and ask which one to jump to
 nmap <Leader>ff [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
-" Easier horizontal scrolling
-map zl zL
-map zh zH
-
 " Easier formatting
 nnoremap <silent> <Leader>q gwip
 
-" FIXME: Revert this f70be548
-" fullscreen mode for GVIM and Terminal, need 'wmctrl' in you PATH
-map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
+set pastetoggle=<Leader>p
 
-nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
+nmap _$ :call <SID>Preserve("%s/\\s\\+$//e")<CR>
 
 " }}}
 
@@ -346,5 +358,33 @@ function! s:ResCur()
         return 1
     endif
 endfunction
+
+" }}}
+
+" GUI {{{
+
+if has('gui_running')
+    set mouse=a
+    set mousehide
+    " Disable toolbar and scrollbars
+    set guioptions-=T
+    set guioptions-=r
+    set guioptions-=R
+    set guioptions-=l
+    set guioptions-=L
+    set guioptions-=m
+
+    " 50 lines of text
+    set lines=50
+
+    " Ubuntu Mono patched font
+    set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
+
+    " gui using solarized colorscheme
+    colo solarized
+
+    " fullscreen mode for GVIM and Terminal, need 'wmctrl' in you PATH
+    map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
+endif
 
 " }}}

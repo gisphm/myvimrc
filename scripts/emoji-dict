@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+emoji_file=emoji.json
+emojis_file=emojis.json
+emoji_dict=~/.vim/words/emoji_dict
+emojis_dict=~/.vim/words/emojis_dict
+
+echo "Removing old dictionaries"
+[[ -f "$emoji_dict" ]] && rm $emoji_dict
+[[ -f "$emojis_dict" ]] && rm $emojis_dict
+
+cd ~/.vim/tmp/
+
+[[ -f "$emoji_file" ]] && rm $emoji_file
+[[ -f "$emojis_file" ]] && rm $emojis_file
+
+echo "Retrieving new json files from GitHub"
+wget -q https://github.com/github/gemoji/raw/master/db/emoji.json
+wget -q https://github.com/muan/emojilib/raw/master/emojis.json
+
+echo "Creatiing new dictionaries"
+cat emoji.json | jq '.[].aliases[]' | sort > dict && sed -i 's/\"/\:/' dict && sed -i 's/\"/\:/' dict
+cat emojis.json | jq '.keys[]' | sort > dicts && sed -i 's/\"/\:/' dicts && sed -i 's/\"/\:/' dicts
+echo "Creation is done."
+
+echo "Removing json files"
+[[ -f "$emoji_file" ]] && rm $emoji_file
+[[ -f "$emojis_file" ]] && rm $emojis_file
+
+echo "Moving dictionaries to words directory"
+mv dict $emoji_dict
+mv dicts $emojis_dict
+
+exit

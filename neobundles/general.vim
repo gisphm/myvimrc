@@ -49,12 +49,40 @@ NeoBundle 'Shougo/vimfiler.vim', {
             \ 'mappings' : '<Plug>',
             \ 'explorer' : 1,
             \ }
-NeoBundle 'Shougo/unite-outline'
-NeoBundle 'Shougo/unite-help'
 NeoBundle 'Shougo/unite-session'
 NeoBundle 'Shougo/neoyank.vim'
 NeoBundle 'ujihisa/neco-look'
-NeoBundle 'chrisbra/vim-zsh'
+NeoBundle 'gisphm/vim-polyglot'
+
+" }}}
+
+" Snippets & AutoComplete {{{
+
+NeoBundle 'kana/vim-smartchr', {
+            \ 'insert' : 1
+            \ }
+NeoBundle 'Shougo/neocomplete.vim', {
+            \ 'insert' : 1
+            \ }
+NeoBundle 'Shougo/neco-syntax'
+NeoBundle 'Shougo/neco-vim'
+NeoBundle 'Shougo/neosnippet.vim', {
+            \ 'insert' : 1,
+            \ 'depends' : [
+            \     'Shougo/neosnippet-snippets', 'Shougo/context_filetype.vim'
+            \   ],
+            \ 'unite_sources' : [
+            \     'neosnippet', 'neosnippet/user', 'neosnippet/runtime'
+            \   ],
+            \ }
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'gisphm/vim-snippets-neosnippet'
+
+NeoBundle 'chrisbra/unicode.vim', {
+            \ 'build' : {
+            \     'linux' : 'mkdir -p autoload/unicode/ && wget -q http://www.unicode.org/Public/UNIDATA/UnicodeData.txt -O autoload/unicode/UnicodeData.txt',
+            \   },
+            \ }
 
 " }}}
 
@@ -69,22 +97,14 @@ NeoBundle 'mbbill/undotree'
 NeoBundle 'tpope/vim-abolish.git'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-indent'
-NeoBundle 'gcmt/wildfire.vim'
-NeoBundle 'diffchar.vim'
 NeoBundle 'chrisbra/vim-diff-enhanced'
 NeoBundle 'kshenoy/vim-signature'
 NeoBundle 'gisphm/auto-pairs'
 NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'tpope/vim-endwise'
-
-" }}}
-
-" UI {{{
-
-NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'roman/golden-ratio'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'mhinz/vim-startify'
+NeoBundleLazy 'tpope/vim-endwise', {
+            \ 'autoload' : {
+            \    'filetypes' : ['ruby', 'vim', 'sh', 'c', 'cpp', 'bash', 'zsh']
+            \   }
+            \ }
 
 " }}}

@@ -1,6 +1,67 @@
 
-Unreleased / 2015-10-27
+Unreleased / 2015-11-13
 =======================
+
+  * [Changed] Be ready for 2.0
+  * [Fixed] startup.png is replaced with a right one
+  * [Changed] update startup.png
+  * [Changed] reduce number of settings files
+  * [Changed] update TODO in README
+  * [Added] abbr in some snips
+  * [Added] node autocommand for vim-node
+  * [Removed] vim-css-color
+  * [Changed] revert colorize back to vim-css-color
+  * [Added] use vimproc to call system command in vim
+  * [Removed] bootstrap3-snippets
+  * [Removed] css3-syntax and csv
+  * [Added] dbext.vim
+  * [Removed] js-context-coloring
+  * [Changed] combine plugins to reduce bundle files
+  * [Removed] some unite plugins
+  * [Changed] replace those plugins with ployglot
+  * [Removed] rainbow-parenthesis
+  * [Changed] unlazy unimpaired
+  * [Removed] diffchar plugin
+  * [Changed] update unite settings
+  * [Changed] wordcount only works in git-files
+  * [Changed] improve vim performance
+  * [Added] more specific todo in README
+  * [Added] google's searchindex
+  * [Changed] lazy some plugins and update settings
+  * [Changed] revert polyglot back to multiple plugins
+  * [Changed] improve lightline's display
+  * [Changed] update emoji-dict script
+  * [Changed] update settings
+  * [Fixed] one dot in mud_horse
+  * [Removed] all commit links removed
+  * [Fixed] still...
+  * [Fixed] still for the links in README
+  * [Fixed] commit link in README
+  * [Changed] update README and markdown.snip
+  * [Changed] update README
+  * [Fixed] issue of nested checkboxes in README
+  * [Changed] update README
+  * [Removed] one mapping in vimfiler
+  * [Fixed] improve base and ui settings
+  * [Changed] update README
+  * [Changed] mappings for neobundle
+  * [Added] devicons for fun icons
+  * [Added] another emoji dictionary file
+  * [Added] emoji dictionary for markdown files
+  * [Added] securemodelines for modeline parse
+  * [Added] rainbow_parentheses
+  * [Added] add some basic setting for vim
+  * [Changed] use elzr's json instead
+  * [Added] polyglot -- collection of languages
+  * [Added] more base settings and markup plugins
+  * [Added] plan to create own lightline colorscheme
+  * [Added] hw as a candidate for unite and vimgrep
+  * [Removed] unite_yank_enable according to doc
+  * [Added] vim-smalls for a try
+  * [Changed] update some settings
+
+v1.4 / 2015-10-27
+=================
 
   * [Changed] update README
   * [Added] link to commit hash in markdown.snip
