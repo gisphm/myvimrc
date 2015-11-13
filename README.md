@@ -33,21 +33,26 @@
 * [x] fix arrow key and esc mapping error
 
 * [x] split plugins list
+    - [x] there are three files -- `general.vim`, `lang.vim` and `utils.vim`
 
 * [x] split plugins settings
+    - [x] there are four files -- `base.vim`, `general.vim`, `lang.vim` and `utils.vim`
 
-* [x] write some mappings of `unite.vim` acting as `ctrlp.vim`
+* [x] write some mappings of `unite.vim` ~~acting as `ctrlp.vim`~~
+    - [x] there are only two mappings for `unite.vim` defined in `normal` mode when editing in buffer
 
 * [x] clean up neosnippets mappings
-    > those mappings are too complicated and most of them seem to be useless.
+    - [x] those mappings are too complicated and most of them seem to be useless.
+    - [x] use `<C-k>` to expand and `<Tab>` to jump
 
-* [ ] use less plugins as possible, this should be considered at first
-    + [ ] delete some `useless`(only works for me) plugins
+* [x] use less plugins as possible, this should be considered at first
+    + [x] delete some `useless`(only works for me) plugins
+        - [x] I think, for now, the number of plugins should be stable
     + [x] combine some plugins together to `.vim` directory and update them through scripts
         - [x] fork `vim-polyglot` repo and modify it to combine runtimes of multiple languages
 
 * [ ] more customizations for lightline
-    + [ ] customize statusline
+    + [x] customize statusline
         + [x] trailing whitespace ~~and mixed-indent~~
             - [x] copy and customize function from airline
             - [x] now only checks whitespace
@@ -58,13 +63,16 @@
         - [x] add hunk from signify function
         - [x] customize symbols for mode
         - [x] add devicons for filetype and fileformat
-        - [x] fix syntastic checking frequently issue raised by autocommand defined in `lightline#update()`
+        - [x] fix syntastic checking frequently issue raised by autocommand defined with `lightline#update()`
     + [ ] customize tabline
         - [ ] components layout for tabline
         - [ ] complete component function
     + [ ] create own colorscheme for lightline
         - [x] copy an existed colorscheme as a sample
+            - [x] copied `solarizeed` as sample file but still need some time to read through the doc
         - [ ] modify the sample
+
+* [ ] add more dictionary files for multiple languages
 
 * [ ] documentation of snippets
     + [ ] use them more often

@@ -360,3 +360,31 @@ function! s:ResCur()
 endfunction
 
 " }}}
+
+" GUI {{{
+
+if has('gui_running')
+    set mouse=a
+    set mousehide
+    " Disable toolbar and scrollbars
+    set guioptions-=T
+    set guioptions-=r
+    set guioptions-=R
+    set guioptions-=l
+    set guioptions-=L
+    set guioptions-=m
+
+    " 50 lines of text
+    set lines=50
+
+    " Ubuntu Mono patched font
+    set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
+
+    " gui using solarized colorscheme
+    colo solarized
+
+    " fullscreen mode for GVIM and Terminal, need 'wmctrl' in you PATH
+    map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
+endif
+
+" }}}
