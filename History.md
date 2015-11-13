@@ -2,6 +2,12 @@
 Unreleased / 2015-11-13
 =======================
 
+
+
+v1.5 / 2015-11-13
+=================
+
+  * [Changed] Be ready for 2.0
   * [Fixed] startup.png is replaced with a right one
   * [Changed] update startup.png
   * [Changed] reduce number of settings files
@@ -44,6 +50,10 @@ Unreleased / 2015-11-13
   * [Fixed] improve base and ui settings
   * [Changed] update README
   * [Changed] mappings for neobundle
+
+flagship / 2015-10-31
+=====================
+
   * [Added] devicons for fun icons
   * [Added] another emoji dictionary file
   * [Added] emoji dictionary for markdown files
