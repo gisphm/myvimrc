@@ -2,6 +2,7 @@
 Unreleased / 2015-11-13
 =======================
 
+  * [Changed] update startup.png
   * [Changed] reduce number of settings files
   * [Changed] update TODO in README
   * [Added] abbr in some snips
