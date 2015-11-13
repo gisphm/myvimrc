@@ -61,10 +61,10 @@ NeoBundleLazy 'Shutnik/jshint2.vim', {
             \ 'autoload' : { 'filetypes' : ['javascript'] },
             \ }
 NeoBundleLazy 'moll/vim-node', {
-            \ 'autoload' : { 'filetypes' : ['javascript', 'html'] },
+            \ 'autoload' : { 'filetypes' : ['javascript'] },
             \ }
 NeoBundleLazy 'heavenshell/vim-jsdoc', {
-            \ 'autoload' : { 'filetypes' : ['javascript', 'html'] },
+            \ 'autoload' : { 'filetypes' : ['javascript'] },
             \ }
 
 " }}}

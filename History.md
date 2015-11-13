@@ -1,7 +1,8 @@
 
-Unreleased / 2015-11-12
+Unreleased / 2015-11-13
 =======================
 
+  * [Added] abbr in some snips
   * [Added] node autocommand for vim-node
   * [Removed] vim-css-color
   * [Changed] revert colorize back to vim-css-color
