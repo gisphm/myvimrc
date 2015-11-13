@@ -2,6 +2,7 @@
 Unreleased / 2015-11-13
 =======================
 
+  * [Changed] Be ready for 2.0
   * [Fixed] startup.png is replaced with a right one
   * [Changed] update startup.png
   * [Changed] reduce number of settings files
