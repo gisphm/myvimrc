@@ -2,6 +2,7 @@
 Unreleased / 2015-11-15
 =======================
 
+  * [Added] Proper Nouns list just for trying
   * [Removed] vim-ruby settings
 
 v1.5 / 2015-11-13
