@@ -52,17 +52,6 @@ let g:colorizer_nomap = 1
 
 " }}}
 
-" vim-ruby {{{
-
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading       = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global    = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails                = 1
-autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile         = 1
-autocmd FileType ruby,eruby let g:rubycomplete_include_object       = 1
-autocmd FileType ruby,eruby let g:rubycomplete_include_object_space = 1
-
-" }}}
-
 " vim-i18n {{{
 
 vmap <Leader>ts :call I18nTranslateString()<CR>

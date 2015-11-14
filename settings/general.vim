@@ -204,7 +204,6 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 " }}}
 
@@ -243,7 +242,6 @@ let g:neocomplete#manual_completion_start_length = 0
 let g:neocomplete#enable_auto_select             = 0
 let g:neocomplete#enable_refresh_always          = 1
 let g:neocomplete#enable_cursor_hold_i           = 0
-let g:neocomplete#enable_omni_fallback           = 1
 let g:neocomplete#enable_auto_close_preview      = 1
 let g:neocomplete#enable_multibyte_completion    = 1
 let g:neocomplete#use_vimproc                    = 1
@@ -284,12 +282,6 @@ let g:neocomplete#sources#omni#input_patterns.eruby = '[^. *\t]\.\h\w*\|\h\w*::\
 " }}}2
 
 " Omni Functions {{{2
-
-if !exists('g:neocomplete#sources#omni#functions')
-    let g:neocomplete#sources#omni#functions   = {}
-endif
-let g:neocomplete#sources#omni#functions.ruby  = 'rubycomplete#Complete'
-let g:neocomplete#sources#omni#functions.eruby = 'rubycomplete#Complete'
 
 if !exists('g:neocomplete#force_omni_input_patterns')
     let g:neocomplete#force_omni_input_patterns   = {}

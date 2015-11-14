@@ -73,6 +73,7 @@
         - [ ] modify the sample
 
 * [ ] add more dictionary files for multiple languages
+    + [ ] consider to generate dictionary files by parsing tags file
 
 * [ ] documentation of snippets
     + [ ] use them more often

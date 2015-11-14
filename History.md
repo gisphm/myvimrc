@@ -1,8 +1,8 @@
 
-Unreleased / 2015-11-13
+Unreleased / 2015-11-15
 =======================
 
-
+  * [Removed] vim-ruby settings
 
 v1.5 / 2015-11-13
 =================
@@ -50,10 +50,6 @@ v1.5 / 2015-11-13
   * [Fixed] improve base and ui settings
   * [Changed] update README
   * [Changed] mappings for neobundle
-
-flagship / 2015-10-31
-=====================
-
   * [Added] devicons for fun icons
   * [Added] another emoji dictionary file
   * [Added] emoji dictionary for markdown files

@@ -57,6 +57,7 @@ set hidden
 set iskeyword-=.
 set iskeyword-=#
 set iskeyword-=-
+set complete+=k
 
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,.hg,*.gem
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.7z,*.lzma
@@ -80,6 +81,7 @@ set backupdir=~/.vim/tmp/backup/
 set undodir=~/.vim/tmp/undo/
 set viewdir=~/.vim/tmp/view/
 set viminfo+=f1,n$HOME/.vim/tmp/viminfo viminfo^=!
+set tags=tags,./tags;/,gems.tags,./gems.tags
 
 " Resolve performance problems
 " clear match command gracefully
@@ -114,22 +116,6 @@ augroup AutoView
     autocmd BufWritePre,BufWinLeave ?* if MakeViewCheck() | silent! mkview | endif
     autocmd BufWinEnter ?* if MakeViewCheck() | silent! loadview | endif
 augroup END
-
-" }}}2
-
-" Ctags {{{2
-
-set tags=tags,./tags;/,gems.tags,./gems.tags
-
-" Make tags placed in .git/tags file available in all levels of a repository
-if vimproc#version()
-    let gitroot = substitute(vimproc#system('git rev-parse --show-toplevel'), '[\n\r]', '', 'g')
-else
-    let gitroot = substitute(system('git rev-parse --show-toplevel'), '[\n\r]', '', 'g')
-endif
-if gitroot != ''
-    let &tags = &tags . ',' . gitroot . '/.git/tags'
-endif
 
 " }}}2
 
@@ -203,6 +189,7 @@ augroup FileAutoCmd
     autocmd FileType gitcommit setlocal tw=72 colorcolumn=72
     autocmd FileType gitcommit,qfreplace setlocal nofoldenable
     autocmd FileType help setlocal colorcolumn=
+    autocmd BufRead *.tags,TAGS,tags setlocal filetype=tags
 augroup END
 
 " }}}
