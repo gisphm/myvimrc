@@ -119,10 +119,10 @@ function! LightLineMode()
     elseif &ft == 'undotree'
         let l:mode = 'Undo'
     elseif l:fname =~ 'diffpanel'
-        let l:mode = 'Diff'
+        let l:mode = 'DiffPanel'
     elseif &ft == 'unite'
         let l:mode = 'Unite'
-    elseif &ft == 'vimfiler'
+    elseif &ft == 'vimfiler' && winwidth(0) > 50
         let l:mode = 'VimFiler'
     elseif &ft == 'startify'
         let l:mode = 'Starify'
@@ -147,12 +147,15 @@ function! LightLineFilename()
         let l:display = vimfiler#get_status_string()
     elseif &ft == 'unite'
         let l:display = unite#get_status_string()
-    elseif &ft == 'startify'
+    elseif &ft == 'startify' || &ft == 'tagbar' || l:fname =~ 'diffpanel' || &ft == 'undotree'
         let l:display = ''
     else
         let l:display = ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
                     \ ('' != fname ? fname : '[No Name]') .
                     \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+    endif
+    if &ft == 'vimfiler'
+        return l:display
     endif
     return l:display . ' ' . WebDevIconsGetFileTypeSymbol()
 endfunction
@@ -561,6 +564,31 @@ let g:tagbar_type_ruby = {
             \ 'C:contexts',
             \ 'f:methods',
             \ 'F:singleton methods'
+            \ ]
+            \ }
+let g:tagbar_type_xslt = {
+            \ 'ctagstype' : 'xslt',
+            \ 'kinds' : [
+            \ 'v:variables',
+            \ 't:templates'
+            \ ]
+            \}
+let g:tagbar_type_markdown = {
+            \ 'ctagstype': 'markdown',
+            \ 'kinds' : [
+            \ 'h:Heading_L1',
+            \ 'i:Heading_L2',
+            \ 'k:Heading_L3'
+            \ ]
+            \ }
+let g:tagbar_type_coffee = {
+            \ 'ctagstype' : 'coffee',
+            \ 'kinds'     : [
+            \ 'c:classes',
+            \ 'm:methods',
+            \ 'f:functions',
+            \ 'v:variables',
+            \ 'f:fields',
             \ ]
             \ }
 

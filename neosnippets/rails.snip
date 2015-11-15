@@ -489,3 +489,26 @@ snippet isresw
     it { should respond_to(:${1}).with(${0}).arguments }
 snippet super_call
     ${1:super_class}.instance_method(:${0:method}).bind(self).call
+
+snippet     allow ip
+abbr        BetterErrors allow_ip
+options     word
+    BetterErrors::Middleware.allow_ip! ENV['TRUSTED_UP'] if ENV['TRUSTED_UP']${0}
+
+snippet     Bullet conf
+abbr        config Bullet gem
+options     word
+    config.after_initialize do
+      Bullet.enable = true
+      Bullet.alert = true
+      Bullet.bullet_logger = true
+      Bullet.console = true
+      Bullet.rails_logger = true
+      Bullet.raise = true
+      Bullet.add_footer = true
+    end${0}
+
+snippet     whitelisted_ips
+abbr        web_console whitelisted_ips
+options     word
+    config.web_console.whitelisted_ips = '10.0.2.2'${0}
