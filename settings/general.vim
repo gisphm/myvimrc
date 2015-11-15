@@ -204,6 +204,7 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType ruby setlocal omnifunc=
 
 " }}}
 
@@ -269,25 +270,11 @@ let g:neocomplete#keyword_patterns.rst =
 
 " }}}2
 
-" Input Patterns {{{2
-
-if !exists('g:neocomplete#sources#omni#input_patterns')
-    let g:neocomplete#sources#omni#input_patterns   = {}
-endif
-let g:neocomplete#sources#omni#input_patterns.c     = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocomplete#sources#omni#input_patterns.cpp   = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-let g:neocomplete#sources#omni#input_patterns.ruby  = '[^. *\t]\.\h\w*\|\h\w*::\w*'
-let g:neocomplete#sources#omni#input_patterns.eruby = '[^. *\t]\.\h\w*\|\h\w*::\w*'
-
-" }}}2
-
 " Omni Functions {{{2
 
-if !exists('g:neocomplete#force_omni_input_patterns')
-    let g:neocomplete#force_omni_input_patterns   = {}
-endif
-let g:neocomplete#force_omni_input_patterns.ruby  = '[^. *\t]\.\w*\|\h\w*::\w*'
-let g:neocomplete#force_omni_input_patterns.eruby = '[^. *\t]\.\w*\|\h\w*::\w*'
+let g:neocomplete#force_omni_input_patterns = {
+            \ 'ruby' : '[^. *\t]\.\w*\|\h\w*::'
+            \ }
 
 " }}}2
 
@@ -298,6 +285,7 @@ if !exists('g:neocomplete#same_filetypes')
 endif
 let g:neocomplete#same_filetypes.gitconfig = '_'
 let g:neocomplete#same_filetypes._ = '_'
+let g:neocomplete#same_filetypes.eruby = 'ruby'
 
 " }}}2
 

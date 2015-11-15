@@ -64,13 +64,11 @@
         - [x] customize symbols for mode
         - [x] add devicons for filetype and fileformat
         - [x] fix syntastic checking frequently issue raised by autocommand defined with `lightline#update()`
-    + [ ] customize tabline
-        - [ ] components layout for tabline
-        - [ ] complete component function
     + [ ] create own colorscheme for lightline
         - [x] copy an existed colorscheme as a sample
             - [x] copied `solarizeed` as sample file but still need some time to read through the doc
         - [ ] modify the sample
+    + [ ] filename and some other components display at the center of the statusline
 
 * [ ] add more dictionary files for multiple languages
     + [ ] consider to generate dictionary files by parsing tags file

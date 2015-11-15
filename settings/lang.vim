@@ -113,3 +113,9 @@ let g:tern_map_keys           = 1
 autocmd User Node if &filetype == "javascript" | setlocal expandtab | endif
 
 " }}}
+
+" Monster {{{
+
+let g:monster#completion#rcodetools#backend = "async_rct_complete"
+
+" }}}

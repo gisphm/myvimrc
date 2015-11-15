@@ -86,5 +86,8 @@ NeoBundleLazy 'stefanoverna/vim-i18n', {
 NeoBundleLazy 'killphi/vim-ruby-refactoring', {
             \ 'filetypes' : ['ruby', 'eruby'],
             \ }
+NeoBundleLazy 'osyo-manga/vim-monster', {
+            \ 'filetypes' : ['ruby'],
+            \ }
 
 " }}}
