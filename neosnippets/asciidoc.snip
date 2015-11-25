@@ -1,0 +1,120 @@
+snippet     version
+abbr        Document header version string
+options     head
+    v${1:version}, `strftime('%Y-%m-%d', localtime())`:${2:Revision remark}
+
+snippet     author
+abbr        Document header author string
+options     head
+    `g:snips_author` <`g:snips_email`>
+
+snippet     header
+abbr        Document Blockheader
+options     head
+    `expand('%:t:r')`
+    `repeat('=', len(expand('%:t:r')))`
+    `g:snips_author` <`g:snips_email`>
+    v${1:version}, `strftime('%Y-%m-%d', localtime())`:${2:Revision remark}
+
+snippet     quote author source
+abbr        Quote Block with Author and Source
+options     word
+    [quote,${1:author},${2:source}]
+    ____
+    ${3:quote}
+    ____
+
+snippet     verse
+abbr        Verse Block with Author and Source
+options     word
+    [verse,${1:author},${2:source}]
+    ____
+    ${3:verse}
+    ____
+
+snippet     comment
+abbr        Comment Block
+options     head
+    ////
+    ${1:comment}
+    ////
+
+snippet     passthrough
+abbr        Passthrough Block
+options     head
+    ++++
+    ${1:passthrough}
+    ++++
+
+snippet     listing
+abbr        Listing Block
+options     head
+    ----
+    ${1:list}
+    ----
+
+snippet     literal
+abbr        Literal Block
+options     head
+    ....
+    ${1:literal}
+    ....
+
+snippet     sidebar
+abbr        Sidebar Block
+options     head
+    ****
+    ${1:sidebar}
+    ****
+
+snippet     quote
+abbr        Quote Block
+options     head
+    ____
+    ${1:quote}
+    ____
+
+snippet     example
+abbr        Example Block
+options     head
+    ====
+    ${1:example}
+    ====
+
+snippet     note
+abbr        Note admonition
+options     head
+    [NOTE]
+    .${1:Title}
+    ====
+    ${2:note}
+    ====
+
+snippet     footnote
+abbr        Footnote
+options     head
+    footnote:[${1:text}]
+
+snippet     anchor
+abbr        Hypertext link target
+options     head
+    anchor:${1:id}[${2:label}]
+
+snippet     xref
+abbr        Link to hypertext anchor
+options     head
+    xref:${1:id}[${2:caption}]
+
+snippet     image
+abbr        Image
+options     head
+    image:${1:target}[${2:alt="$3"}]
+
+snippet     table
+abbr        Table
+options     head
+    .${1:Title}
+    [${2:width="50%",cols=">s,^m,e",frame="topbot",options="header,footer"}]
+    |====
+    |${3:content}
+    |====

@@ -1,7 +1,8 @@
 
-Unreleased / 2015-11-25
+Unreleased / 2015-11-26
 =======================
 
+  * [Changed] neocomplete default dict and snippets
   * [Changed] remove some plugins and add rails dict
   * [Added] more snips and tagbar settings
   * [Added] monster.vim for ruby

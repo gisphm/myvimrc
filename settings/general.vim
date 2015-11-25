@@ -248,7 +248,7 @@ let g:neocomplete#enable_multibyte_completion    = 1
 let g:neocomplete#use_vimproc                    = 1
 
 let g:neocomplete#sources#dictionary#dictionaries = {
-            \ 'default' : '',
+            \ 'default' : $HOME.'/.vim/words/en_us',
             \ 'vimshell' : $CACHE.'/vimshell/command-history',
             \ 'ruby' : $HOME.'/.vim/words/rails.dict'
             \ }
