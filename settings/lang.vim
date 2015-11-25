@@ -97,17 +97,6 @@ let g:javascript_conceal_super      = "Ω"
 
 " }}}
 
-" Tern {{{
-
-augroup tern_au
-    autocmd!
-    autocmd FileType javascript setlocal omnifunc=tern#Complete
-augroup END
-let g:tern_show_argument_hits = 'on_move'
-let g:tern_map_keys           = 1
-
-" }}}
-
 " Node {{{
 
 autocmd User Node if &filetype == "javascript" | setlocal expandtab | endif

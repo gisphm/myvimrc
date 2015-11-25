@@ -25,6 +25,7 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'mhinz/vim-startify'
 NeoBundle 'ryanoasis/vim-devicons'
+NeoBundle 't9md/vim-choosewin'
 
 " }}}
 
@@ -57,12 +58,6 @@ NeoBundle 'Maxlufs/LargeFile.vim'
 NeoBundle 's3rvac/AutoFenc'
 NeoBundle 'antoyo/vim-licenses'
 NeoBundle 'itchyny/calendar.vim'
-NeoBundleLazy 'gisphm/dbext.vim', {
-            \ 'autoload' : { 'filetypes' : ['sql'] },
-            \ }
-NeoBundleLazy 'gisphm/vim-gitignore', {
-            \ 'autoload' : { 'filetypes' : ['gitignore'] },
-            \ }
 
 " }}}
 

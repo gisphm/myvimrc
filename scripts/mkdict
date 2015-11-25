@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+TAGS_DICT_FILE=rails.dict
+
+cp gems.tags $TAGS_DICT_FILE
+
+sed -i 's/\/home.*$//' $TAGS_DICT_FILE
+sed -i 's/[ \t]*$//' $TAGS_DICT_FILE
+sed -i 's/,\s*.*$//' $TAGS_DICT_FILE
+sed -i '/\sdo$/d' $TAGS_DICT_FILE
+
+mv $TAGS_DICT_FILE temp
+sort temp | uniq -i > $TAGS_DICT_FILE
+rm temp
+
+sed -i '/^[^a-zA-Z].*/d' $TAGS_DICT_FILE
+sed -i '/^[a-zA-Z?!=]$/d' $TAGS_DICT_FILE
+sed -i '/^[tT][eE][Ss][tT]/d' $TAGS_DICT_FILE
+sed -i '/^[a-zA-Z][a-zA-Z0-9]$/d' $TAGS_DICT_FILE
+
+sort $TAGS_DICT_FILE > temp1
+sort original > temp2
+join -v 1 temp1 temp2 > $TAGS_DICT_FILE
+rm temp1 temp2
+
+generate_dict() {
+    local word=$1
+    local file=$2
+    local original=$3
+    local delete_line="/.*$word:.*/!d"
+    local delete_regex="s/^.*$word://"
+    local delete_non_alph="/^[^a-zA-Z].*$/d"
+    local delete_end_1="s/\.[^a-zA-Z].*$//"
+    local delete_end_2="s/,\s*.*$//"
+    local delete_end_3="s/\s*do$//"
+    cp $original $file
+    sed -i $delete_line $file
+    sed -i $delete_regex $file
+    mv $file temp
+    sort temp | uniq > $file
+    rm temp
+    sed -i $delete_non_alph $file
+    sed -i $delete_end_1 $file
+    sed -i $delete_end_2 $file
+    sed -i $delete_end_3 $file
+    mv $file temp
+    sort temp | uniq > $file
+    rm temp
+}
+
+list="class module describe context"
+
+for needle in $list ; do
+    generate_dict $needle $needle gems.tags
+    cat $needle >> $TAGS_DICT_FILE
+    rm $needle
+done
+
+mv $TAGS_DICT_FILE temp
+sort temp | uniq -i > $TAGS_DICT_FILE
+rm temp
+
+mv $TAGS_DICT_FILE temp1
+sort original > temp2
+join -v 1 temp1 temp2 > $TAGS_DICT_FILE
+rm temp1 temp2
+
+exit

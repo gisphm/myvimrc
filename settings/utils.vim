@@ -45,6 +45,10 @@ let g:indent_guides_exclude_filetypes     =
 " Components {{{2
 
 let g:lightline                    = {}
+let g:lightline.enable             = {
+            \ 'statusline' : 1,
+            \ 'tabline'    : 1
+            \ }
 let g:lightline.colorscheme        = 'phm'
 let g:lightline.active             = {
             \   'left': [
@@ -776,5 +780,15 @@ let g:vim_json_syntax_conceal = 1
 let g:licenses_copyright_holders_name = 'gisphm <phmfk@hotmail.com>'
 let g:licenses_authors_name           = 'gisphm <phmfk@hotmail.com>'
 let g:licenses_default_commands       = ['apache', 'unlicense', 'wtfpl']
+
+" }}}
+
+" Choose Window {{{
+
+nmap - <Plug>(choosewin)
+let g:choosewin_overlay_enable          = 1
+let g:choosewin_overlay_clear_multibyte = 1
+let g:choosewin_statusline_replace      = 0
+let g:choosewin_tabline_replace         = 0
 
 " }}}

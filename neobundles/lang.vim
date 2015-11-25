@@ -42,28 +42,7 @@ NeoBundleLazy 'tpope/vim-ragtag', {
 
 " Javascript {{{
 
-NeoBundleLazy 'othree/javascript-libraries-syntax.vim', {
-            \ 'autoload' : { 'filetypes' : ['javascript','markdown'] },
-            \ }
-NeoBundleLazy 'othree/jspc.vim', {
-            \ 'autoload' : { 'filetypes' : ['javascript','markdown'] },
-            \ }
-NeoBundleLazy 'pangloss/vim-javascript', {
-            \ 'autoload' : { 'filetypes' : ['javascript','markdown'] },
-            \ }
-NeoBundleLazy 'marijnh/tern_for_vim', {
-            \ 'autoload' : { 'filetypes' : ['javascript'] },
-            \ 'build' : {
-            \     'linux' : 'npm install --update',
-            \   },
-            \ }
 NeoBundleLazy 'Shutnik/jshint2.vim', {
-            \ 'autoload' : { 'filetypes' : ['javascript'] },
-            \ }
-NeoBundleLazy 'moll/vim-node', {
-            \ 'autoload' : { 'filetypes' : ['javascript'] },
-            \ }
-NeoBundleLazy 'heavenshell/vim-jsdoc', {
             \ 'autoload' : { 'filetypes' : ['javascript'] },
             \ }
 

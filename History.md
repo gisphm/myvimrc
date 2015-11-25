@@ -1,7 +1,8 @@
 
-Unreleased / 2015-11-15
+Unreleased / 2015-11-25
 =======================
 
+  * [Changed] remove some plugins and add rails dict
   * [Added] more snips and tagbar settings
   * [Added] monster.vim for ruby
   * [Added] Proper Nouns list just for trying

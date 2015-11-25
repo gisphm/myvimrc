@@ -156,14 +156,7 @@ let g:vimfiler_tree_closed_icon        = "▸"
 let g:vimfiler_file_icon               = "✎"
 let g:vimfiler_max_directories_history = 100
 let g:vimfiler_ignore_pattern          = '\%(\.hg\|\.svn\|\.git\)$'
-
 let g:vimfiler_enable_clipboard = 0
-call vimfiler#custom#profile('default', 'context', {
-            \ 'safe' : 0,
-            \ 'auto_expand' : 1,
-            \ 'parent' : 0,
-            \ 'explorer' : 1
-            \ })
 
 function! s:vimfiler_my_settings() abort
     nnoremap <silent><buffer> J
@@ -179,6 +172,13 @@ augroup VimFilerSetting
     autocmd!
     autocmd FileType vimfiler call s:vimfiler_my_settings()
 augroup END
+
+call vimfiler#custom#profile('default', 'context', {
+            \ 'safe' : 0,
+            \ 'auto_expand' : 1,
+            \ 'parent' : 0,
+            \ 'explorer' : 1
+            \ })
 
 " }}}
 
@@ -250,6 +250,7 @@ let g:neocomplete#use_vimproc                    = 1
 let g:neocomplete#sources#dictionary#dictionaries = {
             \ 'default' : '',
             \ 'vimshell' : $CACHE.'/vimshell/command-history',
+            \ 'ruby' : $HOME.'/.vim/words/rails.dict'
             \ }
 
 let g:neocomplete#disable_auto_select_buffer_name_pattern =
