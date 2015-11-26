@@ -40,14 +40,6 @@ NeoBundleLazy 'tpope/vim-ragtag', {
 
 " }}}
 
-" Javascript {{{
-
-NeoBundleLazy 'Shutnik/jshint2.vim', {
-            \ 'autoload' : { 'filetypes' : ['javascript'] },
-            \ }
-
-" }}}
-
 " Ruby {{{
 
 NeoBundleLazy 'tpope/vim-rails', {
@@ -56,17 +48,11 @@ NeoBundleLazy 'tpope/vim-rails', {
 NeoBundleLazy 'tpope/vim-rake', {
             \ 'filetypes' : ['ruby', 'eruby'],
             \ }
-NeoBundleLazy 'tpope/vim-bundler', {
-            \ 'filetypes' : ['ruby', 'eruby'],
-            \ }
 NeoBundleLazy 'stefanoverna/vim-i18n', {
             \ 'filetypes' : ['ruby', 'eruby'],
             \ }
 NeoBundleLazy 'killphi/vim-ruby-refactoring', {
             \ 'filetypes' : ['ruby', 'eruby'],
-            \ }
-NeoBundleLazy 'osyo-manga/vim-monster', {
-            \ 'filetypes' : ['ruby'],
             \ }
 
 " }}}

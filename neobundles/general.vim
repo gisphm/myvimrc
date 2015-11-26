@@ -66,6 +66,12 @@ NeoBundle 'Shougo/neocomplete.vim', {
             \ }
 NeoBundle 'Shougo/neco-syntax'
 NeoBundle 'Shougo/neco-vim'
+NeoBundle 'Shougo/neopairs.vim', {
+            \ 'insert' : 1
+            \ }
+NeoBundle 'Shougo/junkfile.vim', {
+            \ 'unite_sources' : [ 'junkfile' ],
+            \ }
 NeoBundle 'Shougo/neosnippet.vim', {
             \ 'insert' : 1,
             \ 'depends' : [
@@ -76,8 +82,6 @@ NeoBundle 'Shougo/neosnippet.vim', {
             \   ],
             \ }
 NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'gisphm/vim-snippets-neosnippet'
-
 NeoBundle 'chrisbra/unicode.vim', {
             \ 'build' : {
             \     'linux' : 'mkdir -p autoload/unicode/ && wget -q http://www.unicode.org/Public/UNIDATA/UnicodeData.txt -O autoload/unicode/UnicodeData.txt',
@@ -99,12 +103,17 @@ NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-indent'
 NeoBundle 'chrisbra/vim-diff-enhanced'
 NeoBundle 'kshenoy/vim-signature'
-NeoBundle 'gisphm/auto-pairs'
 NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'kana/vim-niceblock', {
+            \ 'mappings' : [ '<Plug>' ],
+            \ }
 NeoBundleLazy 'tpope/vim-endwise', {
             \ 'autoload' : {
             \    'filetypes' : ['ruby', 'vim', 'sh', 'c', 'cpp', 'bash', 'zsh']
             \   }
+            \ }
+NeoBundleLazy 'Shutnik/jshint2.vim', {
+            \ 'autoload' : { 'filetypes' : ['javascript'] },
             \ }
 
 " }}}

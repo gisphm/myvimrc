@@ -343,21 +343,18 @@ imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 imap <expr><silent><C-k> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : (pumvisible() ? "\<C-e>" : "<Plug>(neosnippet_expand_or_jump)")
 smap <Tab> <Plug>(neosnippet_jump)
-inoremap <silent> (( <C-r>=neosnippet#anonymous('\left(${1}\right)${0}')<CR>
 
 " }}}
 
-" AutoPairs {{{
+" NeoPairs {{{
 
-let g:AutoPairsFlyMode        = 0
-let g:AutoPairsMapSpace       = 0
-let g:AutoPairsMultilineClose = 0
-let g:AutoPairs = {
-            \ '(' : ')',
+let g:neopairs#enable = 1
+let g:neopairs#pairs  = {
             \ '[' : ']',
+            \ '<' : '>',
+            \ '(' : ')',
             \ '{' : '}',
-            \ "'" : "'",
-            \ '"' : '"',
+            \ '`' : '`'
             \ }
 
 " }}}

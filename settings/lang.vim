@@ -102,9 +102,3 @@ let g:javascript_conceal_super      = "Ω"
 autocmd User Node if &filetype == "javascript" | setlocal expandtab | endif
 
 " }}}
-
-" Monster {{{
-
-let g:monster#completion#rcodetools#backend = "async_rct_complete"
-
-" }}}
