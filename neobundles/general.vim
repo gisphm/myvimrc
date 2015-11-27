@@ -103,7 +103,6 @@ NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-indent'
 NeoBundle 'chrisbra/vim-diff-enhanced'
 NeoBundle 'kshenoy/vim-signature'
-NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'kana/vim-niceblock', {
             \ 'mappings' : [ '<Plug>' ],
             \ }

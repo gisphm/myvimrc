@@ -1,7 +1,8 @@
 
-Unreleased / 2015-11-26
+Unreleased / 2015-11-28
 =======================
 
+  * [Added] DelimitMate settings
   * [Changed] add and remove some plugins
   * [Changed] neocomplete default dict and snippets
   * [Changed] remove some plugins and add rails dict

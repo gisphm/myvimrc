@@ -74,6 +74,7 @@ NeoBundle 'int3/vim-extradite'
 NeoBundle 'reedes/vim-wordy'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'godlygeek/tabular'
+NeoBundle 'Raimondi/delimitMate'
 NeoBundleLazy 'vimwiki/vimwiki', {
             \ 'rev' : 'dev',
             \ 'autoload' : { 'filetypes' : ['vimwiki'] },
