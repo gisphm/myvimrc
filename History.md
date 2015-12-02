@@ -1,7 +1,8 @@
 
-Unreleased / 2015-11-28
+Unreleased / 2015-12-03
 =======================
 
+  * [Removed] custom calls in some plugins
   * [Added] DelimitMate settings
   * [Changed] add and remove some plugins
   * [Changed] neocomplete default dict and snippets

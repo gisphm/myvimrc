@@ -29,40 +29,6 @@ nnoremap <Leader>nl :NeoBundleUpdatesLog<CR>
 
 " Unite.vim {{{
 
-" custom call {{{2
-
-call unite#custom#source(
-            \ 'buffer,file_rec,file_rec/async,file_rec/git',
-            \ 'matchers',
-            \ ['converter_relative_word',
-            \  'matcher_fuzzy',
-            \  'matcher_project_ignore_files']
-            \ )
-call unite#custom#source(
-            \ 'file_mru',
-            \ 'mathers',
-            \ ['matcher_project_files',
-            \  'matcher_fuzzy',
-            \  'matcher_hide_hidden_files',
-            \  'matcher_hide_current_file']
-            \ )
-call unite#custom#source(
-            \ 'file_rec,file_rec/async,file_rec/git,file_mru',
-            \ 'converters',
-            \ ['converter_file_directory']
-            \ )
-
-call unite#filters#sorter_default#use(['sorter_rank'])
-
-call unite#custom#profile('default', 'context', {
-            \ 'start_insert' : 0,
-            \ 'winheight' : 10,
-            \ 'direction' : 'botright',
-            \ 'short_source_names' : 1,
-            \})
-
-" }}}2
-
 " unite common {{{2
 
 let g:unite_enable_auto_select            = 0
@@ -147,6 +113,7 @@ endfunction
 map <C-e> :VimFilerExplorer<CR>
 let g:vimfiler_as_default_explorer     = 1
 let g:loaded_netrwPlugin               = 1
+let g:vimfiler_enable_clipboard        = 0
 let g:vimfiler_define_wrapper_commands = 1
 let g:vimfiler_tree_leaf_icon          = "→"
 let g:vimfiler_readonly_file_icon      = ''
@@ -156,7 +123,6 @@ let g:vimfiler_tree_closed_icon        = "▸"
 let g:vimfiler_file_icon               = "✎"
 let g:vimfiler_max_directories_history = 100
 let g:vimfiler_ignore_pattern          = '\%(\.hg\|\.svn\|\.git\)$'
-let g:vimfiler_enable_clipboard = 0
 
 function! s:vimfiler_my_settings() abort
     nnoremap <silent><buffer> J
@@ -172,13 +138,6 @@ augroup VimFilerSetting
     autocmd!
     autocmd FileType vimfiler call s:vimfiler_my_settings()
 augroup END
-
-call vimfiler#custom#profile('default', 'context', {
-            \ 'safe' : 0,
-            \ 'auto_expand' : 1,
-            \ 'parent' : 0,
-            \ 'explorer' : 1
-            \ })
 
 " }}}
 
@@ -255,8 +214,6 @@ let g:neocomplete#sources#dictionary#dictionaries = {
 
 let g:neocomplete#disable_auto_select_buffer_name_pattern =
             \ '\[Command Line\]'
-
-call neocomplete#custom#source('look', 'min_patter_length', 4)
 
 " }}}2
 
