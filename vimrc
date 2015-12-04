@@ -22,18 +22,16 @@
 
 if !1 | finish | endif
 
-if has('vim_starting')
-    if &compatible
-        set nocompatible
-    endif
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
+if &compatible
+    set nocompatible
 endif
+set runtimepath+=~/.vim/bundle/neobundle.vim/
 
 call neobundle#begin(expand("~/.vim/bundle/"))
 
 NeoBundleFetch "Shougo/neobundle.vim"
 
-let vimbundles = '~/.vim/neobundles/'
+let vimbundles = expand('~/.vim/neobundles/')
 for eachbundle in split(globpath(vimbundles, '*.vim'), '\n')
     exe 'source' eachbundle
 endfor
@@ -48,7 +46,7 @@ NeoBundleCheck
 
 " Load Configurations {{{
 
-let bundlesettings = '~/.vim/settings/'
+let bundlesettings = expand('~/.vim/settings/')
 for eachsetting in split(globpath(bundlesettings, '*.vim'), '\n')
     exe 'source' eachsetting
 endfor

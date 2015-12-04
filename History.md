@@ -1,7 +1,8 @@
 
-Unreleased / 2015-12-03
+Unreleased / 2015-12-04
 =======================
 
+  * [Changed] add expand for path in vimrc
   * [Removed] custom calls in some plugins
   * [Added] DelimitMate settings
   * [Changed] add and remove some plugins
