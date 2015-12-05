@@ -9,6 +9,8 @@ tmp/
 bundle/
 session/
 lock/
+plugged
+local.vim
 
 ### Python ###
 # Byte-compiled / optimized / DLL files

@@ -21,5 +21,6 @@ mkdir -p ~/.vim/tmp/backup
 mkdir -p ~/.vim/tmp/swap
 mkdir -p ~/.vim/tmp/undo
 mkdir -p ~/.vim/tmp/view
+mkdir -p ~/.vim/plugged
 
 [[ -d ~/.vim/bundle/neobundle.vim/ ]] || git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
