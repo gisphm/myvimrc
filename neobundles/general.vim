@@ -114,5 +114,6 @@ NeoBundleLazy 'tpope/vim-endwise', {
 NeoBundleLazy 'Shutnik/jshint2.vim', {
             \ 'autoload' : { 'filetypes' : ['javascript'] },
             \ }
+NeoBundle 'Konfekt/FastFold'
 
 " }}}

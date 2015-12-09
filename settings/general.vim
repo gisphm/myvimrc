@@ -368,10 +368,12 @@ let g:wildfire_objects = {
 
 let g:undotree_SetFocusWhenToggle = 1
 let g:undotree_TreeNodeShape      = '▸'
-nnoremap <Leader>ut :UndotreeToggle<CR>
-nnoremap <Leader>uf :UndotreeFocus<CR>
-nnoremap <Leader>uh :UndotreeHide<CR>
-nnoremap <Leader>us :UndotreeShow<CR>
+nnoremap <buffer> <Leader>ut :UndotreeToggle<CR>
+nnoremap <buffer> <Leader>uf :UndotreeFocus<CR>
+nnoremap <buffer> <Leader>uh :UndotreeHide<CR>
+nnoremap <buffer> <Leader>us :UndotreeShow<CR>
+nnoremap <buffer> <Leader>uj <plug>UndotreeGoNextState
+nnoremap <buffer> <Leader>uk <plug>UndotreeGoPreviousState
 
 " }}}
 
@@ -428,5 +430,14 @@ let g:unite_source_session_enable_beta_feature = 1
 
 nnoremap <Space>o :UniteSessionSave
 nnoremap <Leader>o :UniteSessionLoad
+
+" }}}
+
+" FastFold {{{
+
+nmap <Leader>fu <Plug>(FastFoldUpdate)
+let g:fastfold_savehook               = 1
+let g:fastfold_fold_command_suffixes  = ['x', 'X', 'a', 'A', 'o', 'O', 'c', 'C']
+let g:fastfold_fold_movement_commands = [ ']z', '[z', 'zj', 'zk']
 
 " }}}

@@ -65,5 +65,6 @@ Plug 'kshenoy/vim-signature'
 Plug 'kana/vim-niceblock'
 Plug 'tpope/vim-endwise', { 'for' : ['ruby', 'vim', 'sh', 'c', 'cpp', 'bash', 'zsh'] }
 Plug 'Shutnik/jshint2.vim', { 'for' : 'javascript' }
+Plug 'Konfekt/FastFold'
 
 " }}}

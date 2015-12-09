@@ -1,7 +1,8 @@
 
-Unreleased / 2015-12-05
+Unreleased / 2015-12-09
 =======================
 
+  * [Added] add FastFold
   * [Changed] use vim-plug
   * [Changed] add expand for path in vimrc
   * [Removed] custom calls in some plugins
