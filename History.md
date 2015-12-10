@@ -2,6 +2,7 @@
 Unreleased / 2015-12-10
 =======================
 
+  * add python dict to neocomplete
   * [Added] jedi
   * [Added] add FastFold
   * [Changed] use vim-plug

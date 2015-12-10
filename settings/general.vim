@@ -245,8 +245,8 @@ let g:neocomplete#use_vimproc                    = 1
 
 let g:neocomplete#sources#dictionary#dictionaries = {
             \ 'default' : $HOME.'/.vim/words/en_us',
-            \ 'vimshell' : $CACHE.'/vimshell/command-history',
-            \ 'ruby' : $HOME.'/.vim/words/rails.dict'
+            \ 'ruby' : $HOME.'/.vim/words/rails.dict',
+            \ 'python' : $HOME.'/.vim/words/python.dict'
             \ }
 
 let g:neocomplete#disable_auto_select_buffer_name_pattern =

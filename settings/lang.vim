@@ -116,5 +116,6 @@ let g:jedi#smart_auto_mappings        = 0
 let g:jedi#show_call_signatures_delay = 4000
 let g:jedi#force_py_version           = 3
 let g:jedi#show_call_signatures       = 0
+let python_highlight_all = 1
 
 " }}}
