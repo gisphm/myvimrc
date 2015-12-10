@@ -1,7 +1,8 @@
 
-Unreleased / 2015-12-09
+Unreleased / 2015-12-10
 =======================
 
+  * [Added] jedi
   * [Added] add FastFold
   * [Changed] use vim-plug
   * [Changed] add expand for path in vimrc

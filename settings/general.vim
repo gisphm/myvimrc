@@ -269,9 +269,13 @@ let g:neocomplete#keyword_patterns.rst =
 
 " Omni Functions {{{2
 
-let g:neocomplete#force_omni_input_patterns = {
-            \ 'ruby' : '[^. *\t]\.\w*\|\h\w*::'
-            \ }
+if !exists("g:neocomplete#force_omni_input_patterns")
+    let g:neocomplete#force_omni_input_patterns    = {}
+endif
+let g:neocomplete#force_omni_input_patterns.ruby   =
+            \ '[^. *\t]\.\w*\|\h\w*::'
+let g:neocomplete#force_omni_input_patterns.python =
+            \ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 
 " }}}2
 

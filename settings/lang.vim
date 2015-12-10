@@ -102,3 +102,19 @@ let g:javascript_conceal_super      = "Ω"
 autocmd User Node if &filetype == "javascript" | setlocal expandtab | endif
 
 " }}}
+
+" Jedi {{{
+
+augroup Jedi
+    autocmd!
+    autocmd BufEnter *.py setlocal updatetime=4000
+    autocmd FileType python setlocal omnifunc=jedi#completions completeopt-=preview
+augroup END
+let g:jedi#completions_enabled        = 0
+let g:jedi#auto_vim_configuration     = 0
+let g:jedi#smart_auto_mappings        = 0
+let g:jedi#show_call_signatures_delay = 4000
+let g:jedi#force_py_version           = 3
+let g:jedi#show_call_signatures       = 0
+
+" }}}

@@ -38,3 +38,9 @@ Plug 'stefanoverna/vim-i18n', { 'for' : ['ruby', 'eruby'] }
 Plug 'killphi/vim-ruby-refactoring', { 'for' : ['ruby', 'eruby'] }
 
 " }}}
+
+" Python {{{
+
+Plug 'davidhalter/jedi-vim', { 'for' : ['python'] }
+
+" }}}

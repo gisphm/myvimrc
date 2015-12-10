@@ -56,3 +56,13 @@ NeoBundleLazy 'killphi/vim-ruby-refactoring', {
             \ }
 
 " }}}
+
+" Python {{{
+
+neobundlelazy 'davidhalter/jedi-vim', {
+            \ 'autoload' : {
+            \     'filetypes' : ['python'],
+            \   },
+            \ }
+
+" }}}

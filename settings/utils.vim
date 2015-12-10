@@ -636,7 +636,7 @@ let g:syntastic_loc_list_height          = 5
 let g:syntastic_mode_map                 = {
             \ 'mode' : 'active',
             \ 'active_filetypes' : [],
-            \ 'passive_filetypes' : ['ruby', 'javascript', 'html', 'eruby']
+            \ 'passive_filetypes' : ['ruby', 'javascript', 'html', 'eruby', 'python']
             \ }
 nnoremap <silent> <Space>st :SyntasticToggleMode<CR>
 nnoremap <silent> <Space>sc :SyntasticCheck<CR>
