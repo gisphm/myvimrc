@@ -18,8 +18,19 @@
 "
 " }}}
 
-" neobundle {{{
+" Plugin Manager Mappings {{{
 
+if g:custom_plugin_manager == 0
+    nnoremap <leader>nu :unite neobundle/update -log -wrap<cr>
+    nnoremap <leader>ni :unite neobundle/install -auto-quit<cr>
+    nnoremap <leader>nc :neobundleclean<cr>
+    nnoremap <leader>nl :neobundleupdateslog<cr>
+else
+    nnoremap <leader>nu :PlugUpdate<cr>
+    nnoremap <leader>ni :PlugInstall<cr>
+    nnoremap <leader>nc :PlugClean<cr>
+    nnoremap <leader>np :PlugUpgrade<cr>
+endif
 
 " }}}
 

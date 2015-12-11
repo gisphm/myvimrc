@@ -293,7 +293,7 @@ let g:vimfiler_force_overwrite_statusline = 0
 " Common {{{2
 
 let g:startify_relative_path          = 0
-let g:startify_files_number           = 5
+let g:startify_files_number           = 6
 let g:startify_session_persistence    = 0
 let g:startify_session_autoload       = 0
 let g:startify_session_delete_buffers = 1
@@ -302,23 +302,30 @@ let g:startify_change_to_vcs_root     = 1
 let g:startify_enable_special         = 1
 let g:startify_enable_unsafe          = 0
 let g:startify_session_dir            = '~/.vim/session'
+let g:startify_custom_indices         = ['a', 'd', 'f', 'g', 'h', 'l']
 let g:startify_list_order             = [
-            \ ['MRU'],
+            \ ['   LRU:'],
             \ 'files',
-            \ ['Sessions'],
+            \ ['   LRU within this dir:'],
+            \ 'dir',
+            \ ['   Sessions:'],
             \ 'sessions',
             \ ]
 let g:startify_skiplist               = [
             \ 'COMMIT_EDITMSG',
             \ $HOME .'/.vim/bundle/',
+            \ $HOME .'/.vim/plugged/',
             \ $HOME .'/.vim/tmp/',
+            \ $HOME .'/.vim/sessions/',
             \ $HOME .'/tools/',
             \ '^/tmp/',
             \ '/*.tags',
             \ ]
-autocmd FileType startify
-            \ setlocal colorcolumn= nospell
-autocmd User Startified setlocal buftype=
+augroup StartifyCommands
+    autocmd!
+    autocmd FileType startify setlocal colorcolumn= nospell
+    autocmd User Startified setlocal buftype=
+augroup END
 
 " }}}2
 
