@@ -1,7 +1,8 @@
 
-Unreleased / 2015-12-10
+Unreleased / 2015-12-11
 =======================
 
+  * [Added] pymode
   * add python dict to neocomplete
   * [Added] jedi
   * [Added] add FastFold

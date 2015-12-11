@@ -42,5 +42,6 @@ Plug 'killphi/vim-ruby-refactoring', { 'for' : ['ruby', 'eruby'] }
 " Python {{{
 
 Plug 'davidhalter/jedi-vim', { 'for' : ['python'] }
+Plug 'wilywampa/python-mode', { 'branch' : 'develop', 'for' : ['python'] }
 
 " }}}

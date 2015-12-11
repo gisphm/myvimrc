@@ -112,10 +112,41 @@ augroup Jedi
 augroup END
 let g:jedi#completions_enabled        = 0
 let g:jedi#auto_vim_configuration     = 0
+let g:jedi#popup_select_first         = 0
 let g:jedi#smart_auto_mappings        = 0
 let g:jedi#show_call_signatures_delay = 4000
+let g:jedi#use_tag_stack              = 1
 let g:jedi#force_py_version           = 3
 let g:jedi#show_call_signatures       = 0
-let python_highlight_all = 1
+
+" }}}
+
+" Pymode {{{
+
+let g:pymode_options              = 0
+let g:pymode_warnings             = 1
+let g:pymode_indent               = 1
+let g:pymode_folding              = 1
+let g:pymode_doc                  = 1
+let g:pymode_rope                 = 1
+let g:pymode_rope_completion      = 0
+let g:pymode_rope_complete_on_dot = 0
+let g:pymode_rope_autoimport      = 0
+let g:pymode_syntax               = 1
+let g:pymode_syntax_all           = 1
+let g:pymode_trim_whitespaces     = 1
+let g:pymode_options_colorcolumn  = 1
+let g:pymode_lint                 = 1
+let g:pymode_lint_on_write        = 1
+let g:pymode_lint_unmodified      = 0
+let g:pymode_lint_on_fly          = 0
+let g:pymode_python               = 'python3'
+let g:pymode_lint_todo_symbol     = 'T'
+let g:pymode_lint_comment_symbol  = 'C'
+let g:pymode_lint_visual_symbol   = 'V'
+let g:pymode_lint_error_symbol    = 'E'
+let g:pymode_lint_info_symbol     = 'I'
+let g:pymode_lint_pyflakes_symbol = 'P'
+let g:pymode_lint_checkers        = ['pylama', 'pep8', 'pyflakes', 'pylint']
 
 " }}}

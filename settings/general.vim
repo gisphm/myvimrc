@@ -338,6 +338,7 @@ let g:snips_github                     = "https://github.com/gisphm"
 let g:neosnippet#expand_word_boundary  = 1
 let g:neosnippet#scope_aliases         = {}
 let g:neosnippet#scope_aliases['ruby'] = 'ruby,rails,gemfile'
+let g:neosnippet#scope_aliases['html'] = 'htmldjango,html'
 
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
