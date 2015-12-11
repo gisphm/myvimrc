@@ -804,6 +804,6 @@ let g:choosewin_tabline_replace         = 0
 
 let delimitMate_autoclose = 1
 let delimitMate_matchpairs = "(:),[:],{:},<:>"
-let delimitMate_quotes = "\" ' ` *"
+let delimitMate_quotes = "\" ' `"
 
 " }}}

@@ -2,6 +2,7 @@
 Unreleased / 2015-12-11
 =======================
 
+  * [Changed] update neocomplete and neopairs settings
   * [Changed] update README and startup img
   * [Changed] upgrade plug and update some settings
   * [Added] pymode

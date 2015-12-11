@@ -272,13 +272,14 @@ call neocomplete#custom#source('look', 'min_patter_length', 4)
 if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
 endif
-let g:neocomplete#keyword_patterns._   = '\h\w*'
+let g:neocomplete#keyword_patterns._   = '\h\k*(\?'
+let g:neocomplete#keyword_patterns.perl = '\h\w*->\h\w*\|\h\w*::\w*'
 let g:neocomplete#keyword_patterns.rst =
             \ '\$\$\?\w*\|[[:alpha:]_.\\/~-][[:alnum:]_.\\/~-]*\|\d\+\%(\.\d\+\)\+'
 
 " }}}2
 
-" Omni Functions {{{2
+" Omni Input Pattern {{{2
 
 if !exists("g:neocomplete#force_omni_input_patterns")
     let g:neocomplete#force_omni_input_patterns    = {}
@@ -293,11 +294,11 @@ let g:neocomplete#force_omni_input_patterns.python =
 " Same FileTypes {{{2
 
 if !exists('g:neocomplete#same_filetypes')
-    let g:neocomplete#same_filetypes = {}
+    let g:neocomplete#same_filetypes       = {}
 endif
 let g:neocomplete#same_filetypes.gitconfig = '_'
-let g:neocomplete#same_filetypes._ = '_'
-let g:neocomplete#same_filetypes.eruby = 'ruby'
+let g:neocomplete#same_filetypes._         = '_'
+let g:neocomplete#same_filetypes.eruby     = 'ruby'
 
 " }}}2
 
@@ -307,6 +308,12 @@ let g:neocomplete#sources#vim#complete_functions = {
             \ 'Unite' : 'unite#complete_source',
             \ 'VimFiler' : 'vimfiler#complete',
             \ }
+
+if !exists('g:neocomplete#sources#omni#input_patterns')
+    let g:neocomplete#sources#omni#input_patterns    = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.python =
+            \ '[^. *\t]\.\w*\|\h\w*'
 
 " }}}2
 
@@ -360,8 +367,9 @@ smap <Tab> <Plug>(neosnippet_jump)
 
 " NeoPairs {{{
 
-let g:neopairs#enable = 1
-let g:neopairs#pairs  = {
+let g:neopairs#enable         = 1
+let g:neopairs#auto_delimiter = 1
+let g:neopairs#pairs          = {
             \ '[' : ']',
             \ '<' : '>',
             \ '(' : ')',
