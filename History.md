@@ -1,7 +1,8 @@
 
-Unreleased / 2015-12-11
+Unreleased / 2015-12-12
 =======================
 
+  * [Changed] update unicode settings and en_us file
   * [Changed] update neocomplete and neopairs settings
   * [Changed] update README and startup img
   * [Changed] upgrade plug and update some settings
