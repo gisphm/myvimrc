@@ -147,6 +147,6 @@ let g:pymode_lint_visual_symbol   = 'V'
 let g:pymode_lint_error_symbol    = 'E'
 let g:pymode_lint_info_symbol     = 'I'
 let g:pymode_lint_pyflakes_symbol = 'P'
-let g:pymode_lint_checkers        = ['pylama', 'pep8', 'pyflakes', 'pylint']
+let g:pymode_lint_checkers        = ['mccabe', 'pep8', 'pyflakes']
 
 " }}}
