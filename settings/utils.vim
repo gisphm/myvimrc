@@ -114,7 +114,7 @@ let g:lightline.mode_map           = {
 
 " Component Functions {{{2
 
-let s:skip_filetypes = 'startify\|help\|unite\|vimfiler\|tagbar\|undotree\|calendar'
+let s:skip_filetypes = 'startify\|help\|unite\|vimfiler\|tagbar\|undotree\|calendar\|vim-plug'
 
 function! LightLineMode()
     let l:fname = expand('%:t')
@@ -130,6 +130,8 @@ function! LightLineMode()
         let l:mode = 'VimFiler'
     elseif &ft == 'startify'
         let l:mode = 'Starify'
+    elseif &ft == 'vim-plug'
+        let l:mode = 'Vim-Plug'
     else
         let l:mode = lightline#mode()
     endif
@@ -151,7 +153,7 @@ function! LightLineFilename()
         let l:display = vimfiler#get_status_string()
     elseif &ft == 'unite'
         let l:display = unite#get_status_string()
-    elseif &ft == 'startify' || &ft == 'tagbar' || l:fname =~ 'diffpanel' || &ft == 'undotree'
+    elseif &ft =~ 'startify\|tagbar\|diffpanel\|undotree\|vim-plug'
         let l:display = ''
     else
         let l:display = ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
@@ -207,7 +209,7 @@ function! LightLineFileformat()
 endfunction
 
 function! LightLineFiletype()
-    if winwidth(0) < 70 || &filetype == 'startify'
+    if winwidth(0) < 70 || &filetype =~ 'startify\|vim-plug'
         return ''
     else
         return strlen(&filetype) ? &filetype : ''

@@ -11,6 +11,7 @@ session/
 lock/
 plugged
 local.vim
+autoload/plug.vim*
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
