@@ -18,19 +18,12 @@
 "
 " }}}
 
-" Plugin Manager Mappings {{{
+" Vim-Plug Mappings {{{
 
-if g:custom_plugin_manager == 0
-    nnoremap <leader>nu :unite neobundle/update -log -wrap<cr>
-    nnoremap <leader>ni :unite neobundle/install -auto-quit<cr>
-    nnoremap <leader>nc :neobundleclean<cr>
-    nnoremap <leader>nl :neobundleupdateslog<cr>
-else
-    nnoremap <leader>nu :PlugUpdate<cr>
-    nnoremap <leader>ni :PlugInstall<cr>
-    nnoremap <leader>nc :PlugClean<cr>
-    nnoremap <leader>np :PlugUpgrade<cr>
-endif
+nnoremap <leader>nu :PlugUpdate<cr>
+nnoremap <leader>ni :PlugInstall<cr>
+nnoremap <leader>nc :PlugClean<cr>
+nnoremap <leader>np :PlugUpgrade<cr>
 
 " }}}
 
@@ -207,7 +200,7 @@ hi PmenuThumb  guifg=#F8F8F8 guibg=#8A95A7 gui=NONE ctermfg=lightgray ctermbg=da
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
 " Enable omni-completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType ruby setlocal omnifunc=

@@ -18,51 +18,15 @@
 "
 " }}}
 
-" NeoBundle or Vim-Plug {{{
-
-" Two value, 0 or 1
-" 0 : NeoBundle
-" 1 : Vim-Plug
-if !exists('g:custom_plugin_manager')
-    let g:custom_plugin_manager = 1
-endif
-
-if filereadable(expand("~/.vim/local.vim"))
-    source ~/.vim/local.vim
-endif
-
-" }}}
-
 " Plugin Manager Initialization {{{
 
 set nocompatible
-if g:custom_plugin_manager == 0
-    if !1 | finish | endif
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
-
-    call neobundle#begin(expand("~/.vim/bundle/"))
-    NeoBundleFetch "Shougo/neobundle.vim"
-    let vimbundles = expand('~/.vim/neobundles/')
-    for eachbundle in split(globpath(vimbundles, '*.vim'), '\n')
-        exe 'source' eachbundle
-    endfor
-    call neobundle#end()
-
-    filetype plugin indent on
-    NeoBundleCheck
-
-    nnoremap <leader>nu :unite neobundle/update -log -wrap<cr>
-    nnoremap <leader>ni :unite neobundle/install -auto-quit<cr>
-    nnoremap <leader>nc :neobundleclean<cr>
-    nnoremap <leader>nl :neobundleupdateslog<cr>
-else
-    call plug#begin('~/.vim/plugged/')
-    let vimplugs = expand('~/.vim/plugs/')
-    for eachfile in split(globpath(vimplugs, '*.vim'), '\n')
-        exe 'source' eachfile
-    endfor
-    call plug#end()
-endif
+call plug#begin('~/.vim/plugged/')
+let vimplugs = expand('~/.vim/plugs/')
+for eachfile in split(globpath(vimplugs, '*.vim'), '\n')
+    exe 'source' eachfile
+endfor
+call plug#end()
 
 " }}}
 

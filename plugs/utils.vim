@@ -20,7 +20,6 @@
 
 " UI {{{
 
-Plug 'flazz/vim-colorschemes'
 Plug 'itchyny/lightline.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'mhinz/vim-startify'

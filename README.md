@@ -6,13 +6,13 @@
 + 创建自己配置的直接原因是 [spf13-vim][1] 在某次 pr 合并后让人用得不爽。
 + 创建配置的另一个原因是自己用 `Vim` 有一段时间了，是时候该自己定制一份专用配置。
 + 现在也还是在完善整个配置，插件增增减减，相应的配置也是如此。但相比最初的配置，个性化程度已经比较高了。
-+ 此配置目前希望是有助于`Ruby on Rails`相关项目的开发。
++ 此配置目前相对稳定、可用。
 
 
 ## 配置列表
 + __vimrc__ 主配置文件 -- [neobundle][4] 的初始化
 
-+ __neobundles/__ 插件列表文件夹 -- 所有安装的插件
++ __plugs/__ 插件列表文件夹 -- 所有安装的插件
 
 + __settings/__ 插件配置文件夹 -- 已安装插件的一些配置与 Vim 的基本配置，与`neobundles`的分组对应
 
@@ -20,7 +20,7 @@
     > 1. [install.sh](scripts/install.sh) -- 创建`tmp`目录、下载`neobundle`插件管理器
     > 2. [post-commit](scripts/post-commit) -- 用于在提交时自动生成变更日志 [History.md](History.md) 的 hook 脚本
 
-+ __bundle__ 插件的安装文件夹
++ __plugged/__ 插件的安装文件夹
 
 + __tmp__ vim 的`swap` `undo` `view` `backup`等目录所在的文件夹
 
@@ -123,11 +123,13 @@
 ## 几点说明
 + 使用该配置前有些工作需要做，请参考 [Requirements](docs/Requirements.md)
 
-+ 之所以用 [neobundle][4] 而不是 [vundle][3]，纯粹是因为当时凑巧`vundle`用不了，
-    各种无奈下只好用了`neobundle`
++ ~~之所以用 [neobundle][4] 而不是 [vundle][3]，纯粹是因为当时凑巧`vundle`用不了，
+    各种无奈下只好用了`neobundle`~~
     > 1. `neobundle`的使用过程基本平滑，没有出现问题
     > 2. `neobundle`对插件的各种“花式”写法体现了插件调用的灵活性，大大提高 vim 的启动和运行速度
     > 3. `neobundle`唯一不爽的是没有跟`vundle`一样的直观的插件列表
+
++ 现在使用的插件管理器是 `Vim-Plug`，因为个人感觉 `NeoBundle` 在自己的使用过程中出现了问题，但我一时查不出来。
 
 + ✓ ~~目前此配置还在向着`1.0`版本进行着，我所期待的`1.0`主要是有以下几点：~~
 

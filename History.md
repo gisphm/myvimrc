@@ -1,7 +1,8 @@
 
-Unreleased / 2015-12-23
+Unreleased / 2016-01-02
 =======================
 
+  * [Changed] update README and some settings
   * [Changed] update multiple settings
   * [Changed] update plug and remove pythoncomplete
   * [Changed] update plug file and pymode settings
