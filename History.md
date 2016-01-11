@@ -1,7 +1,8 @@
 
-Unreleased / 2016-01-02
+Unreleased / 2016-01-11
 =======================
 
+  * [Changed] disable vim default plugins
   * [Changed] update README and some settings
   * [Changed] update multiple settings
   * [Changed] update plug and remove pythoncomplete

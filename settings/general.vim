@@ -146,7 +146,6 @@ endfunction
 
 map <C-e> :VimFilerExplorer<CR>
 let g:vimfiler_as_default_explorer     = 1
-let g:loaded_netrwPlugin               = 1
 let g:vimfiler_enable_clipboard        = 0
 let g:vimfiler_define_wrapper_commands = 1
 let g:vimfiler_tree_leaf_icon          = "→"
@@ -207,7 +206,7 @@ autocmd FileType ruby setlocal omnifunc=
 
 " }}}
 
-" smartchr {{{
+" Smartchr {{{
 
 augroup MySmartchrAutoCmd
     autocmd!
@@ -223,7 +222,7 @@ augroup END
 
 " }}}
 
-" neocomplete {{{1
+" Neocomplete {{{1
 
 " Common {{{2
 
@@ -340,12 +339,13 @@ endfunction
 
 " }}}1
 
-" neosnippet {{{
+" Neosnippet {{{
 
 let g:snips_author                     = "gisphm"
 let g:snips_email                      = "phmfk@hotmail.com"
 let g:snips_github                     = "https://github.com/gisphm"
 let g:neosnippet#expand_word_boundary  = 1
+let g:neosnippet#enable_complete_done  = 1
 let g:neosnippet#scope_aliases         = {}
 let g:neosnippet#scope_aliases['ruby'] = 'ruby,rails,gemfile'
 let g:neosnippet#scope_aliases['html'] = 'htmldjango,html'
