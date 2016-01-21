@@ -211,6 +211,7 @@ augroup FileAutoCmd
     autocmd FileType gitcommit,qfreplace setlocal nofoldenable
     autocmd FileType help setlocal colorcolumn=
     autocmd BufRead *.tags,TAGS,tags setlocal filetype=tags
+    autocmd BufRead .tern-config setlocal filetype=json
 augroup END
 
 " }}}

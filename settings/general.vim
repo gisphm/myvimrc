@@ -275,6 +275,14 @@ let g:neocomplete#keyword_patterns.rst =
 if !exists("g:neocomplete#force_omni_input_patterns")
     let g:neocomplete#force_omni_input_patterns    = {}
 endif
+let g:neocomplete#force_omni_input_patterns.c =
+            \ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
+let g:neocomplete#force_omni_input_patterns.cpp =
+            \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+let g:neocomplete#force_omni_input_patterns.objc =
+            \ '\[\h\w*\s\h\?\|\h\w*\%(\.\|->\)'
+let g:neocomplete#force_omni_input_patterns.objcpp =
+            \ '\[\h\w*\s\h\?\|\h\w*\%(\.\|->\)\|\h\w*::\w*'
 let g:neocomplete#force_omni_input_patterns.ruby   =
             \ '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplete#force_omni_input_patterns.python =
@@ -363,10 +371,10 @@ let g:neopairs#enable         = 1
 let g:neopairs#auto_delimiter = 1
 let g:neopairs#pairs          = {
             \ '[' : ']',
-            \ '<' : '>',
             \ '(' : ')',
             \ '{' : '}',
-            \ '`' : '`'
+            \ '`' : '`',
+            \ '"' : ':'
             \ }
 
 " }}}
