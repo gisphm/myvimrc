@@ -1,7 +1,8 @@
 
-Unreleased / 2016-01-21
+Unreleased / 2016-01-28
 =======================
 
+  * [Changed] update settings
   * [Changed] update settings
   * [Changed] disable vim default plugins
   * [Changed] update README and some settings

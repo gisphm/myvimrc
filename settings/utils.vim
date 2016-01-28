@@ -100,13 +100,14 @@ let g:lightline.mode_map           = {
             \ 'n'      : 'N',
             \ 'i'      : 'I',
             \ 'R'      : 'R',
+            \ 'Rv'     : 'RV',
             \ 'c'      : 'C',
             \ 'v'      : 'V',
             \ 's'      : 'S',
-            \ 'V'      : 'V-LINE',
-            \ "\<C-v>" : 'V-BLOCK',
-            \ 'S'      : 'S-LINE',
-            \ "\<C-s>" : 'S-BLOCK',
+            \ 'V'      : 'VL',
+            \ "\<C-v>" : 'VB',
+            \ 'S'      : 'SL',
+            \ "\<C-s>" : 'SB',
             \ '?'      : '      '
             \ }
 

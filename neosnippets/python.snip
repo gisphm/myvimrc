@@ -3,3 +3,21 @@ abbr        class without init
 options     head
     class ${1:ClassName}(${2:object}):
         ${0}
+
+snippet     urlpa
+abbr        urlpattern=()
+options     word
+    urlpattern = (
+        ${0}
+    )
+
+snippet     url
+abbr        url(regex,view)
+options     word
+    url(r'${1:regex}', ${2:view}),
+
+snippet     defunc
+abbr        def func without doc
+options     head
+    def ${1:name}(${2:paras}):
+        ${3:body}
