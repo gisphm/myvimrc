@@ -1,7 +1,8 @@
 
-Unreleased / 2016-01-28
-=======================
+n.n.n / 2016-03-22
+==================
 
+  * [Changed] update emoji_dict
   * [Changed] update settings
   * [Changed] update settings
   * [Changed] disable vim default plugins
