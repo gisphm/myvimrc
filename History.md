@@ -1,7 +1,8 @@
 
-n.n.n / 2016-03-22
+n.n.n / 2016-04-02
 ==================
 
+  * [Changed] remove emojis-dict
   * [Changed] update emoji_dict
   * [Changed] update settings
   * [Changed] update settings
