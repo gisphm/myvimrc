@@ -8,22 +8,23 @@
 
 ### 从源码编译
 下载 [vim 的源码][1]，然后进行编译，编译的参数大体如下，请合适取用：
-    ```shell
-    ./configure \
-        --enable-rubyinterp=yes \
-        --enable-pythoninterp=yes \
-        --enable-perlinterp=yes \
-        --enable-tclinterp \
-        --enable-luainterp=yes \
-        --enable-multibyte \
-        --enable-sniff \
-        --disable-netbeans \
-        --with-features=huge \
-        --prefix=$prefix \
-        ...
 
-    VIMRUNTIMEDIR=$prefix/share/vim/vim74 make && make install
-    ```
+```shell
+./configure \
+    --enable-rubyinterp=yes \
+    --enable-pythoninterp=yes \
+    --enable-perlinterp=yes \
+    --enable-tclinterp \
+    --enable-luainterp=yes \
+    --enable-multibyte \
+    --enable-sniff \
+    --disable-netbeans \
+    --with-features=huge \
+    --prefix=$prefix \
+    ...
+
+VIMRUNTIMEDIR=$prefix/share/vim/vim74 make && make install
+```
 
 ### 包软件管理系统
 我只在`ArchLinux`上测试过
@@ -40,13 +41,13 @@
 但我推荐使用 [GitHub 上的这个版本][3]，原因是这个版本的 ctags 更新比较多，
 对一些语言有更好的支持。从源码编译这个软件也是相当简单的事情，
 
-    ```shell
-    autoreconf -v -f -i
+```shell
+autoreconf -v -f -i
 
-    ./configure
+./configure
 
-    make && make install
-    ```
+make && make install
+```
 
 ### `js-beautify` 和 `jshint`
 这个需要`node.js`或者`io.js`的支持，安装好两个中的一个后，直接

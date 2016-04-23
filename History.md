@@ -1,7 +1,8 @@
 
-n.n.n / 2016-04-02
-==================
+Unreleased / 2016-04-23
+=======================
 
+  * [Changed] update Requirements.md
   * [Changed] remove emojis-dict
   * [Changed] update emoji_dict
   * [Changed] update settings
