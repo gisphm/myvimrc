@@ -90,7 +90,7 @@ endif
 nnoremap [unite] <Nop>
 nmap <Space>u [unite]
 
-nnoremap [unite]f :<C-u>Unite source<CR>
+nnoremap [unite]s :<C-u>Unite source<CR>
 nnoremap <silent> <Leader>b
             \ :<C-u>Unite -auto-resize -buffer-name=buffers buffer<CR>
 nnoremap [unite]u :<C-u>Unite -auto-resize
@@ -477,5 +477,12 @@ nmap <Leader>fu <Plug>(FastFoldUpdate)
 let g:fastfold_savehook               = 1
 let g:fastfold_fold_command_suffixes  = ['x', 'X', 'a', 'A', 'o', 'O', 'c', 'C']
 let g:fastfold_fold_movement_commands = [ ']z', '[z', 'zj', 'zk']
+
+" }}}
+
+" NeoYank {{{
+
+let g:neoyank#limit = 1000
+autocmd BufWinEnter \(*.asc\|*.gpg\) let g:neoyank_disable = 1
 
 " }}}

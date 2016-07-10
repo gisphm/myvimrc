@@ -132,7 +132,7 @@ function! LightLineMode()
     elseif &ft == 'startify'
         let l:mode = 'Starify'
     elseif &ft == 'vim-plug'
-        let l:mode = 'Vim-Plug'
+        let l:mode = 'Plug'
     else
         let l:mode = lightline#mode()
     endif
@@ -168,7 +168,7 @@ function! LightLineFilename()
 endfunction
 
 function! LightLineFugitive()
-    if winwidth(0) < 70 || &ft == '' || &ft =~ s:skip_filetypes
+    if winwidth(0) < 80 || &ft == '' || &ft =~ s:skip_filetypes
         return ''
     endif
     if exists("*fugitive#head")
@@ -179,10 +179,10 @@ function! LightLineFugitive()
 endfunction
 
 function! LightLineSignify()
-    if winwidth(0) < 70 || !strlen(fugitive#head())
+    if winwidth(0) < 80 || !strlen(fugitive#head())
         return ''
     endif
-    let l:symbols = ['+', '-', '~']
+    let l:symbols = ['+', '−', '∼']
     let [added, modified, removed] = sy#repo#get_stats()
     let l:stats = [added, removed, modified]  " reorder
     let l:hunkline = ''
@@ -203,7 +203,7 @@ function! LightLineSignify()
 endfunction
 
 function! LightLineFileformat()
-    if &filetype =~ s:skip_filetypes || winwidth(0) < 70
+    if &filetype =~ s:skip_filetypes || winwidth(0) < 80
         return ''
     endif
     return WebDevIconsGetFileFormatSymbol()
@@ -218,28 +218,28 @@ function! LightLineFiletype()
 endfunction
 
 function! LightLineFileencoding()
-    if &filetype =~ s:skip_filetypes || winwidth(0) < 70
+    if &filetype =~ s:skip_filetypes || winwidth(0) < 80
         return ''
     endif
     return strlen(&fenc) ? &fenc : &enc
 endfunction
 
 function! LightLineLineinfo() abort
-    if &filetype =~ s:skip_filetypes || winwidth(0) < 70
+    if &filetype =~ s:skip_filetypes || winwidth(0) < 80
         return ''
     endif
     return printf(' %3s:%-2s', line('.'), col('.'))
 endfunction
 
 function! LightLinePercent() abort
-    if &filetype =~ s:skip_filetypes || winwidth(0) < 70
+    if &filetype =~ s:skip_filetypes || winwidth(0) < 80
         return ''
     endif
     return printf('%5.1f%%', line('.')*100.0/line('$'))
 endfunction
 
 function! LightLineSpaceCheck() abort
-    if &filetype =~ s:skip_filetypes || winwidth(0) < 70
+    if &filetype =~ s:skip_filetypes || winwidth(0) < 80
         return ''
     endif
     let l:spacecheck_warning = ''
@@ -251,7 +251,7 @@ function! LightLineSpaceCheck() abort
 endfunction
 
 function! LightLineWordCount() abort
-    if &filetype =~ s:skip_filetypes || winwidth(0) < 70 || executable('wc') != 1
+    if &filetype =~ s:skip_filetypes || winwidth(0) < 80 || executable('wc') != 1
         return ''
     endif
 

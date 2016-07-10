@@ -2,6 +2,7 @@
 Unreleased / 2016-07-10
 =======================
 
+  * remove confusing eruby snip
   * move unicode.vim to another file
   * update unicode.vim settings
   * [Changed] update Requirements.md
