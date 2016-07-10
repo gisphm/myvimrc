@@ -46,7 +46,6 @@ Plug 'Shougo/neopairs.vim'
 Plug 'Shougo/junkfile.vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
-Plug 'chrisbra/unicode.vim', { 'do' : 'mkdir -p autoload/unicode/ && wget -q http://www.unicode.org/Public/UNIDATA/UnicodeData.txt -O autoload/unicode/UnicodeData.txt' }
 
 " }}}
 

@@ -810,3 +810,10 @@ let delimitMate_matchpairs = "(:),[:],{:}"
 let delimitMate_quotes = "\" ' `"
 
 " }}}
+
+" Unicode.vim {{{
+
+nmap fam <Plug>(MakeDigraph)
+nmap fau <Plug>(UnicodeGA)
+
+" }}}

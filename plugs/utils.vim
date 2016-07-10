@@ -55,6 +55,7 @@ Plug 'Maxlufs/LargeFile.vim'
 Plug 's3rvac/AutoFenc'
 Plug 'antoyo/vim-licenses'
 Plug 'itchyny/calendar.vim'
+Plug 'chrisbra/unicode.vim', { 'do' : 'mkdir -p autoload/unicode/ && wget -q http://www.unicode.org/Public/UNIDATA/UnicodeData.txt -O autoload/unicode/UnicodeData.txt' }
 
 " }}}
 

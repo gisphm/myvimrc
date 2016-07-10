@@ -2,6 +2,7 @@
 Unreleased / 2016-07-10
 =======================
 
+  * move unicode.vim to another file
   * update unicode.vim settings
   * [Changed] update Requirements.md
   * [Changed] remove emojis-dict
