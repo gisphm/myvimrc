@@ -1,7 +1,8 @@
 
-Unreleased / 2016-04-23
+Unreleased / 2016-07-10
 =======================
 
+  * update unicode.vim settings
   * [Changed] update Requirements.md
   * [Changed] remove emojis-dict
   * [Changed] update emoji_dict

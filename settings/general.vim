@@ -243,7 +243,9 @@ let g:neocomplete#enable_refresh_always          = 1
 let g:neocomplete#enable_cursor_hold_i           = 0
 let g:neocomplete#enable_auto_close_preview      = 1
 let g:neocomplete#enable_multibyte_completion    = 1
+let g:neocomplete#sources#tags#cache_limit_size  = 20000000
 let g:neocomplete#use_vimproc                    = 1
+let g:neocomplete#skip_auto_completion_time      = ''
 
 let g:neocomplete#sources#dictionary#dictionaries = {
             \ 'default' : $HOME.'/.vim/words/en_us',
@@ -313,6 +315,11 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
 endif
 let g:neocomplete#sources#omni#input_patterns.python =
             \ '[^. *\t]\.\w*\|\h\w*'
+if !exists('g:neocomplete#sources#omni#functions')
+    let g:neocomplete#sources#omni#functions = {}
+endif
+let g:neocomplete#sources#omni#functions.ruby =
+            \ 'rubyComplete#Complete'
 
 " }}}2
 
@@ -324,6 +331,7 @@ inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><c-l> neocomplete#complete_common_string()
 inoremap <expr><Space> pumvisible()? neocomplete#close_popup() : "\<Space>"
 imap <expr> <Tab> <SID>CleverTab()
+nnoremap <Leader>nt :NeoCompleteTagMakeCache<CR>
 
 function! s:CleverTab()
     if pumvisible()
@@ -346,6 +354,12 @@ endfunction
 " }}}2
 
 " }}}1
+
+" Tmux Complete {{{
+
+let g:tmuxcomplete#trigger = ''
+
+" }}}
 
 " Neosnippet {{{
 
@@ -463,5 +477,12 @@ nmap <Leader>fu <Plug>(FastFoldUpdate)
 let g:fastfold_savehook               = 1
 let g:fastfold_fold_command_suffixes  = ['x', 'X', 'a', 'A', 'o', 'O', 'c', 'C']
 let g:fastfold_fold_movement_commands = [ ']z', '[z', 'zj', 'zk']
+
+" }}}
+
+" Unicode.vim {{{
+
+nmap fam <Plug>(MakeDigraph)
+nmap fau <Plug>(UnicodeGA)
 
 " }}}

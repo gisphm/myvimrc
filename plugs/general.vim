@@ -39,13 +39,14 @@ Plug 'gisphm/vim-polyglot'
 
 Plug 'kana/vim-smartchr'
 Plug 'Shougo/neocomplete.vim'
+Plug 'wellle/tmux-complete.vim'
 Plug 'Shougo/neco-syntax'
 Plug 'Shougo/neco-vim'
 Plug 'Shougo/neopairs.vim'
 Plug 'Shougo/junkfile.vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
-Plug 'chrisbra/unicode.vim', { 'do' : 'mkdir -p autoload/unicode/ && wget -q http://www.unicode.org/Public/UNIDATA/UnicodeData.txt -O autoload/unicode/UnicodeData.txt', 'for' : ['vimwiki', 'markdown', 'rdoc', 'asciidoc', 'rst'] }
+Plug 'chrisbra/unicode.vim', { 'do' : 'mkdir -p autoload/unicode/ && wget -q http://www.unicode.org/Public/UNIDATA/UnicodeData.txt -O autoload/unicode/UnicodeData.txt' }
 
 " }}}
 
